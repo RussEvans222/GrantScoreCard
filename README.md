@@ -9,6 +9,13 @@ GrantScoreCard is a Salesforce DX project for a flow-first grantmaking demo:
 
 This repo is curated so another team can deploy to a demo org and stand up the solution quickly.
 
+## One-Click Deploy
+
+<a href="https://githubsfdeploy.herokuapp.com?owner=RussEvans222&repo=GrantScoreCard&ref=main">
+  <img alt="Deploy to Salesforce"
+    src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
+
 ## Architecture Overview
 
 ```text
