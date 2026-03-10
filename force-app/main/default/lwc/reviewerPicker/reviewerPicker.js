@@ -42,6 +42,7 @@ export default class ReviewerPicker extends LightningElement {
         } else {
             return;
         }
+        // Auto-add after label resolution so pills never render raw user Id values.
         this.tryAddPendingReviewer();
     }
 
@@ -128,6 +129,7 @@ export default class ReviewerPicker extends LightningElement {
     }
 
     updateFlowOutputs() {
+        // Flow invocable action expects a semicolon-delimited String input for reviewer ids.
         const ids = this.selectedReviewers.map((r) => r.id);
         this.reviewerIds = ids;
         this.reviewerIdsCsv = ids.join(';');
@@ -154,6 +156,7 @@ export default class ReviewerPicker extends LightningElement {
     }
 
     refreshReviewerHydrationRequests() {
+        // Batch hydrate names for preselected reviewers provided by flow input state.
         const uniqueIds = [...new Set(this.selectedReviewers.map((reviewer) => reviewer.id).filter(Boolean))];
         this.reviewerRecordRequests = uniqueIds.map((id) => ({
             recordIds: [id],

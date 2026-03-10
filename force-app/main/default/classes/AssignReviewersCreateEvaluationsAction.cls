@@ -1,4 +1,5 @@
 public with sharing class AssignReviewersCreateEvaluationsAction {
+    // These statuses are treated as "closed" for dedupe so reviewers can be reassigned after completion/cancel.
     private static final Set<String> CLOSED_STATUSES = new Set<String>{ 'Completed', 'Cancelled' };
     private static final Integer DEFAULT_TASK_DUE_OFFSET_DAYS = 7;
 
@@ -62,6 +63,7 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
                 continue;
             }
 
+            // Build reviewer dedupe map first so we create only net-new open AFEs.
             Map<Id, Boolean> reviewerHasOpenAfe = new Map<Id, Boolean>();
             for (Id reviewerId : reviewerIds) {
                 reviewerHasOpenAfe.put(reviewerId, false);
@@ -313,6 +315,7 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
             }
         }
 
+        // Fallback to the first active value when org picklists differ from expected defaults.
         for (Schema.PicklistEntry entry : entries) {
             if (entry == null || !entry.isActive()) {
                 continue;

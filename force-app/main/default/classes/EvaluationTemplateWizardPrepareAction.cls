@@ -28,6 +28,7 @@ public with sharing class EvaluationTemplateWizardPrepareAction {
                 continue;
             }
 
+            // Wizard always works against a mutable draft template, never a published in-use version.
             Id workingTemplateId;
             if (req.cloneFromFundingOpportunityId != null) {
                 workingTemplateId = cloneFromFundingOpportunity(req.cloneFromFundingOpportunityId);

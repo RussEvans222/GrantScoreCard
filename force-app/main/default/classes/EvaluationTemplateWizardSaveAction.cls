@@ -1,4 +1,5 @@
 public with sharing class EvaluationTemplateWizardSaveAction {
+    // Activation is allowed only at exactly 100 total weight to preserve runtime scoring assumptions.
     private static final Decimal REQUIRED_TOTAL_WEIGHT = 100;
 
     public class Request {
@@ -79,6 +80,7 @@ public with sharing class EvaluationTemplateWizardSaveAction {
                 String sectionKey = asString(row.get('Section_Key__c'));
                 String sectionName = asString(row.get('Section_Name__c'));
                 Decimal sectionOrder = asDecimal(row.get('Section_Order__c'));
+                // When a criterion comes from library, inherit section metadata unless explicitly overridden.
                 if (source != null && source.Section_Library__r != null) {
                     if (String.isBlank(sectionKey)) {
                         sectionKey = source.Section_Library__r.DeveloperKey__c;
@@ -98,6 +100,7 @@ public with sharing class EvaluationTemplateWizardSaveAction {
                 }
 
                 String criterionKey = asString(row.get('Criterion_Key__c'));
+                // Criterion keys are durable identifiers used by runtime joins; always generate deterministic fallback.
                 if (String.isBlank(criterionKey)) {
                     criterionKey = generatedKeys.get(index);
                 }
@@ -128,7 +131,7 @@ public with sharing class EvaluationTemplateWizardSaveAction {
             resp.totalWeight = weightTotal.setScale(2);
             resp.weightValid = resp.totalWeight == REQUIRED_TOTAL_WEIGHT;
 
-            // For the working draft template, we replace the criterion set atomically from the editor payload.
+            // For the working draft template, replace the criterion set atomically from editor payload.
             // Historical evaluations remain safe because published/in-use templates are cloned before editing.
             delete [
                 SELECT Id
