@@ -1,0 +1,31 @@
+.picker-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.add-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.selection-count {
+    color: #5c5c5c;
+    font-size: 0.8125rem;
+}
+
+.chips-label {
+    font-weight: 600;
+}
+
+.chips-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Style hook for bold reviewer pill label text */
+.chips-wrap lightning-pill {
+    --slds-c-pill-text-font-weight: 700;
+}

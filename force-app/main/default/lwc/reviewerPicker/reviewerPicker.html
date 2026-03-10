@@ -1,0 +1,40 @@
+<template>
+    <div class="picker-wrap">
+        <lightning-record-picker
+            label="Search Users"
+            placeholder="Search by name or email"
+            object-api-name="User"
+            value={pendingReviewerId}
+            onchange={handleLookupChange}
+            matching-info={matchingInfo}
+            display-info={displayInfo}
+        ></lightning-record-picker>
+
+        <div class="add-row">
+            <lightning-button
+                label="Add Reviewer"
+                variant="neutral"
+                onclick={handleAddReviewer}
+                disabled={disableAdd}
+            ></lightning-button>
+            <span class="selection-count">{selectionCountText}</span>
+        </div>
+        <template if:true={isResolvingReviewer}>
+            <div class="selection-count">Resolving reviewer name...</div>
+        </template>
+
+        <template if:true={selectedReviewers.length}>
+            <div class="chips-label">Selected Reviewers</div>
+            <div class="chips-wrap">
+                <template for:each={selectedReviewers} for:item="reviewer">
+                    <lightning-pill
+                        key={reviewer.id}
+                        name={reviewer.id}
+                        label={reviewer.label}
+                        onremove={handleRemoveReviewer}
+                    ></lightning-pill>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>
