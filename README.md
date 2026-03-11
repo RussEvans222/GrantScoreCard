@@ -54,8 +54,7 @@ FundingOpportunity
 ## Feature Walkthrough
 
 ### 1) Applicant Intake
-
-Banner: `docs/images/headers/intake/01-intake-header-1600x200.png`  
+'docs/images/headers/intake/01-intake-header-1600x200.png'
 Launch path: `FundingOpportunity.Apply Now` -> `Grant_Application_Intake_Flow`
 
 - Applicants complete a guided submission flow instead of filling out raw object fields.
