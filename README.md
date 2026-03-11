@@ -1,13 +1,7 @@
 # GrantScoreCard (Salesforce Grantmaking Starter Kit)
 
-GrantScoreCard is a Salesforce DX project for a flow-first grantmaking demo:
-
-- applicant intake in Experience Cloud
-- rubric/template setup for Funding Opportunities
-- reviewer assignment automation
-- evaluator scorecard with AI-assisted scoring suggestions
-
-This repo is curated so another team can deploy to a demo org and stand up the solution quickly.
+GrantScoreCard is a Salesforce DX project for a flow-first grantmaking demo on Public Sector Solutions / Grants Management data.  
+It provides end-to-end intake, rubric setup, reviewer assignment, and AI-assisted evaluation.
 
 ## One-Click Deploy
 
@@ -27,25 +21,76 @@ FundingOpportunity
                 -> Evaluation_Criterion_Score__c snapshots
 ```
 
-Runtime paths:
+## Feature Set Headers (Image Placeholders)
 
-1. **Applicant Intake**
+Use 1600 x 200 header images for each feature section.
+
+`docs/images/headers/intake/01-intake-header-1600x200.png`  
+`docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png`  
+`docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png`  
+`docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png`  
+`docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png`  
+`docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png`
+
+### Drop-In Banner Placeholders
+
+Replace these with your exported 1600x200 files when ready:
+
+![Grantmaking Scorecard - Application Intake](docs/images/headers/intake/01-intake-header-1600x200.png)
+![Grantmaking Scorecard - Evaluation Rubric Setup](docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png)
+![Grantmaking Scorecard - Criterion Library](docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png)
+![Grantmaking Scorecard - Reviewer Assignment](docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png)
+![Grantmaking Scorecard - AI Evaluation Scorecard](docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png)
+![Grantmaking Scorecard - Application Status Tracker](docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png)
+
+## Latest Updates (March 11, 2026)
+
+- **Rubric setup wizard simplified** to a cleaner admin flow:
+  - optional clone -> criteria selection -> matrix configuration -> activation
+  - library management removed from normal setup path
+  - bundle-oriented language in criteria editing
+- **Application status card updated** to use Lightning Data Service on `ApplicationForm` record context.
+- **Assign Reviewers UX improved**:
+  - clean confirmation messaging
+  - task automation tuned for review workflow
+  - reviewer notification email format updated
+- **Scorecard AI experience updated**:
+  - default mode is `Overwrite all`
+  - button label is `Run AI Evaluation`
+  - helper text clarifies reviewer final authority
+- **AI prompt guidance improved** for evidence-based rationale quality and balanced 1-5 scoring.
+
+## Runtime Paths
+
+1. **Applicant Intake**  
+   `[Header Image Placeholder: docs/images/headers/intake/01-intake-header-1600x200.png]`  
    `FundingOpportunity.Apply Now` -> `Grant_Application_Intake_Flow` -> creates `ApplicationForm` + `ApplicationFormRelation`
 
-2. **Rubric Setup (Admin)**
+2. **Rubric Setup (Admin)**  
+   `[Header Image Placeholder: docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png]`  
    `FundingOpportunity.Setup Evaluation Criteria` -> `Evaluation_Template_Wizard_Flow`
 
-3. **Reviewer Assignment**
-   `ApplicationForm.Assign Reviewers` -> `Assign_Reviewers_Create_Evaluations` -> creates AFEs + stage/task/email side effects
+3. **Criterion Library (Admin Data)**  
+   `[Header Image Placeholder: docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png]`  
+   `Criterion_Library__c` + `Section_Library__c` provide reusable rubric criteria across funding opportunities.
 
-4. **Scoring**
+4. **Reviewer Assignment**  
+   `[Header Image Placeholder: docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png]`  
+   `ApplicationForm.Assign Reviewers` -> `Assign_Reviewers_Create_Evaluations` -> creates AFEs + task/email/stage side effects
+
+5. **Scoring**  
+   `[Header Image Placeholder: docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png]`  
    `afeScorecard` LWC + `AFEScorecardController` for manual + AI suggestions
+
+6. **Application Status Tracking**  
+   `[Header Image Placeholder: docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png]`  
+   `applicationStatusTracker` on `ApplicationForm` record page
 
 ## Prerequisites
 
-- Salesforce CLI (`sf`) installed
-- Dev Hub / target demo org access
-- Einstein Prompt Builder enabled in target org (for AI features)
+- Salesforce CLI (`sf`)
+- Access to a target org (alias examples use `GRANTS`)
+- Einstein Prompt Builder enabled for AI features
 - User permissions to deploy metadata and assign permission sets
 
 ## Quick Start
@@ -58,7 +103,7 @@ cd GrantScoreCard
 sf org login web --alias GRANTS
 ```
 
-### 2) Deploy core metadata (manifest)
+### 2) Deploy core metadata
 
 ```bash
 sf project deploy start \
@@ -67,13 +112,11 @@ sf project deploy start \
   --wait 60
 ```
 
-### 3) Seed required library data (idempotent)
+### 3) Seed section + criterion library data
 
 ```bash
 sf apex run --target-org GRANTS --file scripts/apex/seed_grantmaking_demo.apex
 ```
-
-This creates/updates starter `Section_Library__c` and `Criterion_Library__c` records by `DeveloperKey__c`.
 
 ### 4) Assign permission sets
 
@@ -82,20 +125,14 @@ sf org assign permset --target-org GRANTS --name Evaluation_Rubric_Admin
 sf org assign permset --target-org GRANTS --name ApplicationForm_Applicant_Access
 ```
 
-## Prompt Template Setup (Important)
+## Prompt Templates
 
-### Required templates used by Apex
+Required templates used by scorecard Apex:
 
-- Single-criterion AI template API name: `AFE_Criterion_Scoring_Suggestion`
-- Bulk scorecard AI template API name: `AFE_Scorecard`
+- `AFE_Criterion_Scoring_Suggestion` (single criterion AI)
+- `AFE_Scorecard` (bulk AI)
 
-`AFE_Criterion_Scoring_Suggestion` is included in source metadata.
-
-`AFE_Scorecard` must exist in the org and be active with this input contract:
-
-- `Input:ApplicationFormEvaluation` (Object: `ApplicationFormEvaluation`)
-
-Expected response JSON:
+Bulk expected response contract:
 
 ```json
 {
@@ -109,80 +146,62 @@ Expected response JSON:
 }
 ```
 
-## Post-Deploy Activation Checklist
+## Post-Deploy Checklist
 
-1. Confirm these flows are **Active**:
+1. Activate flows:
    - `Grant_Application_Intake_Flow`
    - `Evaluation_Template_Wizard_Flow`
    - `Assign_Reviewers_Create_Evaluations`
    - `Initialize_Evaluation_Criteria_Scores`
    - `Recalculate_AFE_Weighted_Total`
-2. Confirm quick actions are on layouts/pages:
+2. Confirm quick actions:
    - `FundingOpportunity.Apply Now`
    - `FundingOpportunity.Setup Evaluation Criteria`
    - `ApplicationForm.Assign Reviewers`
-3. Confirm `afeScorecard` appears on `ApplicationFormEvaluation` record page.
+3. Confirm page placements:
+   - `afeScorecard` on `ApplicationFormEvaluation`
+   - `applicationStatusTracker` on `ApplicationForm`
 
-## End-to-End Validation (Smoke)
+## Smoke Validation
 
-### Admin setup
-
-1. Open a Funding Opportunity.
-2. Click **Setup Evaluation Criteria**.
-3. Choose criteria, set weights to total 100, activate template.
-
-### Applicant intake
-
-1. From Funding Opportunity, click **Apply Now**.
-2. Submit flow.
-3. Verify created:
-   - `ApplicationForm`
-   - `ApplicationFormRelation` with `ReferenceRecordId = FundingOpportunity.Id`
-
-### Reviewer path
-
-1. Open the Application Form and click **Assign Reviewers**.
-2. Verify:
-   - AFE records created
-   - `ApplicationForm.Stage` set to `In Review`
-   - reviewer tasks + emails generated
-
-### Scorecard
-
-1. Open an AFE record and load `afeScorecard`.
-2. Generate AI suggestions (single + bulk).
-3. Save reviewer scores.
-4. Verify `Evaluation_Criterion_Score__c` updated and weighted totals recomputed.
+1. Configure a rubric on a Funding Opportunity and publish it.
+2. Submit intake via `Apply Now`.
+3. Verify redirect to created `ApplicationForm`.
+4. Run `Assign Reviewers` and confirm:
+   - AFEs are created
+   - Stage updates to `In Review`
+   - tasks and reviewer emails are generated
+5. Open an AFE scorecard and run AI evaluation (single + bulk).
 
 ## Troubleshooting
 
-### AI bulk returns fallback for all rows
+### AI bulk fallback behavior
 
-Check debug logs for:
+Check logs for:
 
 - `AI PROMPT INVOKE template=AFE_Scorecard`
 - `AI RAW RESPONSE TEXT:`
 
 Common causes:
 
-- `AFE_Scorecard` template missing/inactive
-- wrong prompt input resource API name
+- prompt template missing/inactive
+- prompt input resource mismatch
 - model/runtime access not enabled for running user
 
-### Reviewer flow says template missing
+### Reviewer flow template missing message
 
-Ensure the Funding Opportunity has `Evaluation_Template__c` set to an active published template.
+Ensure `FundingOpportunity.Evaluation_Template__c` points to an active published template.
 
 ## Repo Structure
 
-- `config/deploy-manifest-core.xml` -> deployable core keep-list manifest
-- `scripts/apex/seed_grantmaking_demo.apex` -> idempotent seed script
-- `docs/setup/demo-org-setup.md` -> detailed setup runbook
-- `docs/testing/e2e-test-plan.md` -> end-to-end test scenarios
-- `docs/architecture/component-map.md` -> component dependency map
+- `config/deploy-manifest-core.xml` - deploy manifest
+- `scripts/apex/seed_grantmaking_demo.apex` - idempotent seed data
+- `docs/setup/demo-org-setup.md` - setup runbook
+- `docs/testing/e2e-test-plan.md` - test scenarios
+- `docs/architecture/component-map.md` - component dependency map
 
-## Notes for Extending
+## Extension Notes
 
-- Keep `Evaluation_Template__c` versioning semantics intact (draft/published)
-- Do not bypass `AssignReviewersCreateEvaluationsAction` if you need stage/task/email side effects
-- Preserve scorecard AI response contract (`scores[]`) and parser aliases in controller
+- Preserve `Evaluation_Template__c` version semantics (draft/published)
+- Keep reviewer side effects in `AssignReviewersCreateEvaluationsAction`
+- Preserve scorecard AI parser contract keys (`criterionId`, `score`, `reason`)
