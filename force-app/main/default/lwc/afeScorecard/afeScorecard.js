@@ -1,5 +1,6 @@
 import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import { notifyRecordUpdateAvailable } from 'lightning/uiRecordApi';
 import getScores from '@salesforce/apex/AFEScorecardController.getScores';
 import saveScores from '@salesforce/apex/AFEScorecardController.saveScores';
 import getEvaluationSummary from '@salesforce/apex/AFEScorecardController.getEvaluationSummary';
@@ -393,6 +394,7 @@ export default class AfeScorecard extends LightningElement {
                 }]
             });
 
+            await this.notifyRelatedRecordUpdates();
             await this.refreshAll();
             if (result?.source === 'fallback') {
                 this.showToast(
@@ -522,6 +524,7 @@ export default class AfeScorecard extends LightningElement {
             }));
 
             await saveScores({ updates: payload });
+            await this.notifyRelatedRecordUpdates();
             this.showToast('Success', 'Evaluation scores saved successfully.', 'success');
             await this.refreshAll();
         } catch (error) {
@@ -580,5 +583,22 @@ export default class AfeScorecard extends LightningElement {
 
     normalizeRationale(value) {
         return value === null || value === undefined ? '' : value;
+    }
+
+    async notifyRelatedRecordUpdates() {
+        const recordIds = [];
+        if (this.recordId) {
+            recordIds.push({ recordId: this.recordId });
+        }
+
+        const applicationFormId = this.applicationForm?.id;
+        if (applicationFormId) {
+            recordIds.push({ recordId: applicationFormId });
+        }
+
+        if (recordIds.length > 0) {
+            // Notify LDS so other record-page components (for example snapshot/status cards) refresh in place.
+            await notifyRecordUpdateAvailable(recordIds);
+        }
     }
 }

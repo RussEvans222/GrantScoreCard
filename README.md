@@ -50,6 +50,14 @@ FundingOpportunity
   - Kept explicit placeholder paths for Rubric Setup, Criterion Library, and Reviewer Assignment.
 - Added banner preview slots so new header images can be dropped in without further README edits.
 - Consolidated feature language around applicant intake, rubric setup, criterion library reuse, reviewer assignment automation, AI-assisted scoring, and status visibility.
+- Fixed scorecard data refresh behavior after save:
+  - Removed cacheable reads from `AFEScorecardController` score/summary/context methods to avoid stale LWC data.
+  - Added LDS `notifyRecordUpdateAvailable` calls from `afeScorecard` after save operations so related record-page cards refresh immediately.
+- Updated reviewer assignment defaults:
+  - New `ApplicationFormEvaluation` records now initialize with `Status = In Progress` (with picklist-safe fallback).
+- Added AI confidence auto-population:
+  - `ApplicationFormEvaluation.AI_Confidence__c` now calculates from weighted agreement between AI suggested scores and reviewer final scores once all rubric rows are scored.
+- Deployed these metadata updates to org alias `GRANTS` (Deploy ID: `0AfHp00003nhtVMKAY`, Status: Succeeded).
 
 ## Feature Walkthrough
 ![Application Intake Banner](docs/images/headers/intake/01-intake-header-1600x200.png)

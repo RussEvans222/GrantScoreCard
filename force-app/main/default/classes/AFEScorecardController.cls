@@ -20,7 +20,8 @@ public with sharing class AFEScorecardController {
         public ApplicationForm applicationForm;
     }
 
-    @AuraEnabled(cacheable=true)
+    // Non-cacheable: score rows are edited in-session and must reflect latest DML immediately.
+    @AuraEnabled
     public static List<Evaluation_Criterion_Score__c> getScores(Id afeId) {
         if (afeId == null) {
             return new List<Evaluation_Criterion_Score__c>();
@@ -53,10 +54,12 @@ public with sharing class AFEScorecardController {
         }
 
         List<Evaluation_Criterion_Score__c> sanitized = new List<Evaluation_Criterion_Score__c>();
+        Set<Id> updatedScoreIds = new Set<Id>();
         for (Evaluation_Criterion_Score__c incoming : updates) {
             if (incoming == null || incoming.Id == null) {
                 continue;
             }
+            updatedScoreIds.add(incoming.Id);
 
             Decimal score = incoming.Final_Score__c;
             if (score != null && (score < 0 || score > 5 || score != score.setScale(0))) {
@@ -81,10 +84,92 @@ public with sharing class AFEScorecardController {
 
         if (!sanitized.isEmpty()) {
             update sanitized;
+            updateAiConfidenceForEvaluations(updatedScoreIds);
         }
     }
 
-    @AuraEnabled(cacheable=true)
+    private static void updateAiConfidenceForEvaluations(Set<Id> updatedScoreIds) {
+        if (updatedScoreIds == null || updatedScoreIds.isEmpty()) {
+            return;
+        }
+        if (!Schema.SObjectType.ApplicationFormEvaluation.fields.getMap().containsKey('AI_Confidence__c')) {
+            return;
+        }
+
+        Set<Id> evaluationIds = new Set<Id>();
+        for (Evaluation_Criterion_Score__c scoreRow : [
+            SELECT ApplicationFormEvaluation__c
+            FROM Evaluation_Criterion_Score__c
+            WHERE Id IN :updatedScoreIds
+        ]) {
+            if (scoreRow.ApplicationFormEvaluation__c != null) {
+                evaluationIds.add(scoreRow.ApplicationFormEvaluation__c);
+            }
+        }
+        if (evaluationIds.isEmpty()) {
+            return;
+        }
+
+        Map<Id, List<Evaluation_Criterion_Score__c>> scoresByEvaluation = new Map<Id, List<Evaluation_Criterion_Score__c>>();
+        for (Evaluation_Criterion_Score__c scoreRow : [
+            SELECT ApplicationFormEvaluation__c, Weight__c, Suggested_Score__c, Final_Score__c
+            FROM Evaluation_Criterion_Score__c
+            WHERE ApplicationFormEvaluation__c IN :evaluationIds
+        ]) {
+            Id evaluationId = scoreRow.ApplicationFormEvaluation__c;
+            if (!scoresByEvaluation.containsKey(evaluationId)) {
+                scoresByEvaluation.put(evaluationId, new List<Evaluation_Criterion_Score__c>());
+            }
+            scoresByEvaluation.get(evaluationId).add(scoreRow);
+        }
+
+        List<ApplicationFormEvaluation> afeUpdates = new List<ApplicationFormEvaluation>();
+        for (Id evaluationId : evaluationIds) {
+            List<Evaluation_Criterion_Score__c> scoreRows = scoresByEvaluation.get(evaluationId);
+            if (scoreRows == null || scoreRows.isEmpty()) {
+                continue;
+            }
+
+            Boolean allFinalScoresPresent = true;
+            Decimal weightedAgreement = 0;
+            Decimal totalWeight = 0;
+            for (Evaluation_Criterion_Score__c scoreRow : scoreRows) {
+                if (scoreRow.Final_Score__c == null) {
+                    allFinalScoresPresent = false;
+                }
+                if (scoreRow.Final_Score__c == null || scoreRow.Suggested_Score__c == null) {
+                    continue;
+                }
+
+                // Weighted agreement compares reviewer final score vs AI suggestion on a normalized 0-1 scale.
+                Decimal weight = (scoreRow.Weight__c == null || scoreRow.Weight__c <= 0) ? 1 : scoreRow.Weight__c;
+                Decimal scoreDelta = (scoreRow.Final_Score__c - scoreRow.Suggested_Score__c).abs();
+                Decimal agreementRatio = (5 - scoreDelta) / 5;
+                if (agreementRatio < 0) {
+                    agreementRatio = 0;
+                }
+                weightedAgreement += (agreementRatio * weight);
+                totalWeight += weight;
+            }
+
+            ApplicationFormEvaluation afeUpdate = new ApplicationFormEvaluation(Id = evaluationId);
+            if (!allFinalScoresPresent || totalWeight == 0) {
+                // Keep confidence blank until the review has a complete scored rubric.
+                afeUpdate.put('AI_Confidence__c', null);
+            } else {
+                Decimal confidencePercent = (weightedAgreement / totalWeight) * 100;
+                afeUpdate.put('AI_Confidence__c', confidencePercent.setScale(2));
+            }
+            afeUpdates.add(afeUpdate);
+        }
+
+        if (!afeUpdates.isEmpty()) {
+            update afeUpdates;
+        }
+    }
+
+    // Non-cacheable: summary values (weighted total/recommendation/status) change after score updates.
+    @AuraEnabled
     public static ApplicationFormEvaluation getEvaluationSummary(Id afeId) {
         if (afeId == null) {
             return null;
@@ -112,7 +197,8 @@ public with sharing class AFEScorecardController {
         return (ApplicationFormEvaluation) rows[0];
     }
 
-    @AuraEnabled(cacheable=true)
+    // Non-cacheable: keep context panel aligned with current related record data.
+    @AuraEnabled
     public static Map<String, Object> getApplicationContext(Id afeId) {
         Map<String, Object> response = new Map<String, Object>{
             'fundingOpportunity' => new Map<String, Object>(),

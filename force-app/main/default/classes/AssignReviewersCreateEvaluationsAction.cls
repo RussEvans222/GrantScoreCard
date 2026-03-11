@@ -2,6 +2,7 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
     // These statuses are treated as "closed" for dedupe so reviewers can be reassigned after completion/cancel.
     private static final Set<String> CLOSED_STATUSES = new Set<String>{ 'Completed', 'Cancelled' };
     private static final Integer TASK_DUE_OFFSET_DAYS = -1;
+    private static final String AFE_IN_PROGRESS_STATUS = 'In Progress';
 
     public class Request {
         @InvocableVariable(required=true)
@@ -63,6 +64,12 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
                 continue;
             }
 
+            String evaluationStatusValue = resolveTaskOrApplicationPicklistValue(
+                ApplicationFormEvaluation.Status.getDescribe().getPicklistValues(),
+                AFE_IN_PROGRESS_STATUS,
+                null
+            );
+
             // Build reviewer dedupe map first so we create only net-new open AFEs.
             Map<Id, Boolean> reviewerHasOpenAfe = new Map<Id, Boolean>();
             for (Id reviewerId : reviewerIds) {
@@ -91,14 +98,19 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
                     resp.skippedCount++;
                     continue;
                 }
-                inserts.add(new ApplicationFormEvaluation(
+                ApplicationFormEvaluation newEvaluation = new ApplicationFormEvaluation(
                     ApplicationFormId = req.applicationFormId,
                     EvaluatorId = reviewerId,
                     OwnerId = reviewerId,
                     Date = req.dueDate == null ? Date.today() : req.dueDate,
                     Comments = req.comments,
                     Evaluation_Template__c = req.evaluationTemplateId
-                ));
+                );
+                if (!String.isBlank(evaluationStatusValue)) {
+                    // Start assigned evaluations in an active state for reviewer work queues and snapshot cards.
+                    newEvaluation.Status = evaluationStatusValue;
+                }
+                inserts.add(newEvaluation);
             }
 
             if (!inserts.isEmpty()) {
