@@ -32,33 +32,33 @@ Use 1600 x 200 header images for each feature section.
 `docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png`  
 `docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png`
 
-### Drop-In Banner Placeholders
+## Drop-In Banner Placeholders
 
-Replace these with your exported 1600x200 files when ready:
+Replace these labels with your exported 1600x200 images:
 
-![Grantmaking Scorecard - Application Intake](docs/images/headers/intake/01-intake-header-1600x200.png)
-![Grantmaking Scorecard - Evaluation Rubric Setup](docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png)
-![Grantmaking Scorecard - Criterion Library](docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png)
-![Grantmaking Scorecard - Reviewer Assignment](docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png)
-![Grantmaking Scorecard - AI Evaluation Scorecard](docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png)
-![Grantmaking Scorecard - Application Status Tracker](docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png)
+- Grantmaking Scorecard - Application Intake
+- Grantmaking Scorecard - Evaluation Rubric Setup
+- Grantmaking Scorecard - Criterion Library
+- Grantmaking Scorecard - Reviewer Assignment
+- Grantmaking Scorecard - AI Evaluation Scorecard
+- Grantmaking Scorecard - Application Status Tracker
 
 ## Latest Updates (March 11, 2026)
 
-- **Rubric setup wizard simplified** to a cleaner admin flow:
+- Rubric setup wizard simplified to a cleaner admin flow:
   - optional clone -> criteria selection -> matrix configuration -> activation
   - library management removed from normal setup path
   - bundle-oriented language in criteria editing
-- **Application status card updated** to use Lightning Data Service on `ApplicationForm` record context.
-- **Assign Reviewers UX improved**:
+- Application status card updated to use Lightning Data Service on `ApplicationForm` record context.
+- Assign Reviewers UX improved:
   - clean confirmation messaging
   - task automation tuned for review workflow
   - reviewer notification email format updated
-- **Scorecard AI experience updated**:
+- Scorecard AI experience updated:
   - default mode is `Overwrite all`
   - button label is `Run AI Evaluation`
   - helper text clarifies reviewer final authority
-- **AI prompt guidance improved** for evidence-based rationale quality and balanced 1-5 scoring.
+- AI prompt guidance improved for evidence-based rationale quality and balanced 1-5 scoring.
 
 ## Runtime Paths
 
