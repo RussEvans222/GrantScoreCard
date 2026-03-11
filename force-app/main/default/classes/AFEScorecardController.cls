@@ -1,5 +1,4 @@
 public with sharing class AFEScorecardController {
-    // Keep AI scoring contracts centralized so prompt/template changes are controlled in one place.
     private static final String SCORE_VALIDATION_MESSAGE = 'Score must be a whole number between 0 and 5.';
     private static final String AI_FAILURE_MESSAGE = 'AI suggestion failed. Please try again.';
     private static final String AI_TEMPLATE_API_NAME = 'AFE_Criterion_Scoring_Suggestion';
@@ -17,7 +16,6 @@ public with sharing class AFEScorecardController {
     private static System.Callable promptInvokerOverride;
 
     private class EvaluationContext {
-        // Shared context object used by both single and bulk AI paths.
         public ApplicationFormEvaluation evaluation;
         public ApplicationForm applicationForm;
     }
@@ -54,7 +52,6 @@ public with sharing class AFEScorecardController {
             return;
         }
 
-        // Only persist editable fields from the UI payload to avoid accidental overwrites.
         List<Evaluation_Criterion_Score__c> sanitized = new List<Evaluation_Criterion_Score__c>();
         for (Evaluation_Criterion_Score__c incoming : updates) {
             if (incoming == null || incoming.Id == null) {
@@ -166,10 +163,10 @@ public with sharing class AFEScorecardController {
             LIMIT 1
         ];
         if (!relationRows.isEmpty() && relationRows[0].ReferenceRecordId != null) {
-            // ApplicationFormRelation is the source of truth linking an application to FundingOpportunity.
             Id foId = relationRows[0].ReferenceRecordId;
             Map<String, Schema.SObjectField> foFields = Schema.SObjectType.FundingOpportunity.fields.getMap();
             List<String> foSelectFields = new List<String>{ 'Id', 'Name' };
+            // Guard optional fields so this controller works across org/package variants.
             if (foFields.containsKey('MinimumFundingAmount')) {
                 foSelectFields.add('MinimumFundingAmount');
             }
@@ -277,7 +274,6 @@ public with sharing class AFEScorecardController {
                 }
             }
 
-            // Single-row AI uses scalar text inputs to keep the prompt focused on one criterion.
             Map<String, Object> inputParams = new Map<String, Object>{
                 'ApplicationPurpose' => toPromptString(applicationForm.get('Purpose')),
                 'RequestedAmount' => toPromptString(applicationForm.get('RequestedAmount')),
@@ -349,7 +345,6 @@ public with sharing class AFEScorecardController {
             return results;
         }
 
-        // FILL_BLANKS mode is default; OVERWRITE_ALL must be explicitly requested by caller.
         String effectiveMode = normalizeMode(mode);
         List<Evaluation_Criterion_Score__c> criteria = [
             SELECT Id, Criterion_Key__c, Label__c, Description__c, Weight__c, Suggested_Score__c, Rationale__c
@@ -379,7 +374,6 @@ public with sharing class AFEScorecardController {
             if (context == null || context.evaluation == null || context.applicationForm == null) {
                 throw buildAiFailureException();
             }
-            // Max score comes from template criteria metadata; AI scores are bounded server-side.
             Map<Id, Integer> maxScoreByCriterionId =
                 resolveMaxScoreByCriterionId(targetCriteria, context.evaluation.Evaluation_Template__c);
             Map<Id, Map<String, Object>> suggestionByCriterionId =
@@ -444,7 +438,6 @@ public with sharing class AFEScorecardController {
         List<Evaluation_Criterion_Score__c> criteria,
         Map<Id, Integer> maxScoreByCriterionId
     ) {
-        // Bulk scoring depends on full evaluation/application context for prompt hydration.
         if (context == null || context.evaluation == null || context.applicationForm == null) {
             throw new AuraHandledException('AI scoring failed: missing evaluation or application context');
         }
@@ -454,14 +447,12 @@ public with sharing class AFEScorecardController {
             expectedIds.add(criterion.Id);
         }
 
-        // Bulk prompt now hydrates context from ApplicationFormEvaluation relationships/related lists.
         Map<String, ConnectApi.WrappedValue> inputParams = new Map<String, ConnectApi.WrappedValue>();
 
         ConnectApi.WrappedValue evaluationInput = new ConnectApi.WrappedValue();
         evaluationInput.value = new Map<String, String>{ 'id' => String.valueOf(context.evaluation.Id) };
         inputParams.put('Input:ApplicationFormEvaluation', evaluationInput);
 
-        // PromptInvoker accepts Map<String,Object>; values are still object-resource maps ({id: ...}).
         Map<String, Object> invokeInputParams = new Map<String, Object>();
         for (String key : inputParams.keySet()) {
             invokeInputParams.put(key, inputParams.get(key).value);
@@ -485,7 +476,7 @@ public with sharing class AFEScorecardController {
             throw buildAiFailureException();
         }
 
-        // Prompt responses can include non-breaking spaces (U+00A0), which breaks JSON parsing in Apex.
+        // Prompt responses can include non-breaking spaces in pretty-printed JSON.
         String normalizedRawJson = rawJson.replace('\u00A0', ' ');
         Object parsed = JSON.deserializeUntyped(normalizedRawJson);
         if (!(parsed instanceof Map<String, Object>)) {
@@ -504,7 +495,6 @@ public with sharing class AFEScorecardController {
                 continue;
             }
             Map<String, Object> scoreItem = (Map<String, Object>) scoreItemRaw;
-            // Support both legacy and current prompt response keys during template transitions.
             Object criterionIdRaw = scoreItem.containsKey('criterionScoreId')
                 ? scoreItem.get('criterionScoreId')
                 : scoreItem.get('criterionId');
@@ -514,6 +504,7 @@ public with sharing class AFEScorecardController {
             }
 
             Integer maxScore = maxScoreByCriterionId.containsKey(criterionId) ? maxScoreByCriterionId.get(criterionId) : 5;
+            // Accept both legacy and current parser keys so prompt template updates remain backward compatible.
             Object suggestedScoreRaw = scoreItem.containsKey('suggestedScore')
                 ? scoreItem.get('suggestedScore')
                 : scoreItem.get('score');
@@ -629,7 +620,6 @@ public with sharing class AFEScorecardController {
             if (firstGeneration == null) {
                 throw buildAiFailureException();
             }
-            // Never serialize or return ConnectApi types; extract plain text and parse downstream.
             String outputText = firstGeneration.text;
             if (String.isBlank(outputText)) {
                 throw buildAiFailureException();
@@ -748,7 +738,6 @@ public with sharing class AFEScorecardController {
             criterionIdsByKey.get(criterion.Criterion_Key__c).add(criterion.Id);
         }
 
-        // Default max is 5 when template metadata is unavailable.
         if (templateId == null || criterionIdsByKey.isEmpty()) {
             return maxByCriterionId;
         }
@@ -776,10 +765,10 @@ public with sharing class AFEScorecardController {
     }
 
     private static String normalizeMode(String mode) {
-        if (mode == AI_MODE_OVERWRITE_ALL) {
-            return AI_MODE_OVERWRITE_ALL;
+        if (mode == AI_MODE_FILL_BLANKS) {
+            return AI_MODE_FILL_BLANKS;
         }
-        return AI_MODE_FILL_BLANKS;
+        return AI_MODE_OVERWRITE_ALL;
     }
 
     private static Boolean shouldFillBlank(Evaluation_Criterion_Score__c criterion) {

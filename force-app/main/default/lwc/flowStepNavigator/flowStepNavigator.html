@@ -1,0 +1,20 @@
+<template>
+    <div class="nav-wrap slds-m-top_medium slds-p-top_small">
+        <div class="slds-grid slds-wrap slds-grid_vertical-align-center slds-m-bottom_x-small">
+            <div class="slds-col slds-size_1-of-1 slds-text-title_bold">
+                Step {stepNumber} of {totalSteps}: {stepLabel}
+            </div>
+        </div>
+        <div class="progress-track slds-m-bottom_small">
+            <div class="progress-fill" style={progressStyle}></div>
+        </div>
+        <div class="slds-grid slds-grid_align-end slds-gutters_x-small">
+            <div class="slds-col">
+                <lightning-button label="Back" onclick={handleBack} disabled={disableBack}></lightning-button>
+            </div>
+            <div class="slds-col">
+                <lightning-button variant="brand" label="Next" onclick={handleNext} disabled={disableNext}></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

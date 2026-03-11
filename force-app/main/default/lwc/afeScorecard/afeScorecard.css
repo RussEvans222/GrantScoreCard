@@ -1,0 +1,249 @@
+:host {
+    display: block;
+}
+
+.quick-action-body {
+    max-height: 82vh;
+    overflow-y: auto;
+}
+
+.summary-panel {
+    border: 1px solid var(--lwc-colorBorder);
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    background: var(--lwc-colorBackgroundAlt);
+}
+
+.context-panel {
+    border: 1px solid var(--lwc-colorBorder);
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    background: var(--lwc-colorBackgroundAlt);
+}
+
+.context-title {
+    color: var(--lwc-colorTextDefault);
+    font-weight: 600;
+}
+
+.context-section {
+    border-top: 1px solid var(--lwc-colorBorder);
+    padding-top: 0.5rem;
+}
+
+.context-toggle {
+    align-items: center;
+    color: var(--lwc-colorTextDefault);
+    display: inline-flex;
+    font-weight: 600;
+}
+
+.context-toggle-icon {
+    margin-right: 0.25rem;
+}
+
+.context-section-title {
+    font-size: 0.875rem;
+}
+
+.context-toggle-text {
+    color: var(--lwc-colorTextLabel);
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.context-body {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
+}
+
+.context-body-no-indent {
+    padding-left: 0;
+}
+
+.context-label {
+    color: var(--lwc-colorTextLabel);
+    font-size: 0.75rem;
+    margin-bottom: 0.125rem;
+    text-transform: uppercase;
+}
+
+.context-value {
+    color: var(--lwc-colorTextDefault);
+    font-size: 0.875rem;
+}
+
+.context-rich-text {
+    border: 1px solid var(--lwc-colorBorder);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    background: var(--lwc-colorBackground);
+}
+
+.context-long-text {
+    border-left: 2px solid var(--lwc-colorBorder);
+    margin-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    white-space: pre-wrap;
+}
+
+.summary-label {
+    font-size: 0.75rem;
+    color: var(--lwc-colorTextLabel);
+    margin-bottom: 0.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.summary-value {
+    font-size: 1.75rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--lwc-colorTextDefault);
+}
+
+.summary-right {
+    text-align: right;
+}
+
+.summary-meta {
+    color: var(--lwc-colorTextLabel);
+    font-size: 0.75rem;
+}
+
+.table-wrapper {
+    border: 1px solid var(--lwc-colorBorder);
+    border-radius: 0.25rem;
+    overflow-x: hidden;
+}
+
+.ai-toolbar {
+    align-items: end;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: minmax(12rem, 20rem) auto;
+}
+
+.ai-helper-text {
+    color: var(--lwc-colorTextLabel);
+    font-size: 0.8rem;
+}
+
+.build-tag {
+    color: var(--lwc-colorTextWeak);
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.score-table thead th {
+    background: var(--lwc-colorBackgroundAlt);
+    font-weight: 600;
+}
+
+.score-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.score-table .col-section {
+    width: 12%;
+}
+
+.score-table .col-criterion {
+    width: 20%;
+}
+
+.score-table .col-weight {
+    width: 7%;
+}
+
+.score-table .col-ai-score {
+    width: 9%;
+}
+
+.score-table .col-reviewer-score {
+    width: 10%;
+}
+
+.score-table .col-rationale {
+    width: 42%;
+}
+
+.score-table th,
+.score-table td {
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.score-table thead th {
+    white-space: nowrap;
+    word-break: keep-all;
+    overflow-wrap: normal;
+}
+
+.score-table tbody tr:nth-child(odd).score-row {
+    background: var(--lwc-colorBackground);
+}
+
+.score-table tbody tr:nth-child(even).score-row {
+    background: var(--lwc-colorBackgroundAlt);
+}
+
+.num-col {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.action-col {
+    min-width: 9rem;
+    text-align: center;
+    white-space: normal;
+}
+
+.muted-value {
+    color: var(--lwc-colorTextLabel);
+}
+
+.final-score-cell lightning-input {
+    max-width: 6rem;
+    margin-left: auto;
+}
+
+.criterion-label {
+    font-weight: 600;
+}
+
+.section-name {
+    color: var(--lwc-colorTextDefault);
+    font-weight: 600;
+}
+
+.rationale-editor {
+    min-width: 0;
+    width: 100%;
+}
+
+.loading-container {
+    min-height: 2rem;
+}
+
+@media (max-width: 48rem) {
+    .ai-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-right {
+        text-align: left;
+    }
+
+    .final-score-cell lightning-input {
+        margin-left: 0;
+    }
+
+    .score-table thead th {
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+}

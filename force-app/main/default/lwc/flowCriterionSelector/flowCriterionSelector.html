@@ -1,0 +1,48 @@
+<template>
+    <lightning-card title="Criteria Selection Matrix">
+        <div class="slds-p-horizontal_small slds-p-bottom_small intro-copy">
+            <p>Select the criteria you want to include in this evaluation rubric.</p>
+            <p>Most evaluation rubrics include 3-5 criteria.</p>
+            <p class="selection-count">Selected: {selectedCount}</p>
+            <template if:true={showRecommendedIndicator}>
+                <p class="recommended">Recommended range selected (4-6 criteria).</p>
+            </template>
+            <template if:true={showSelectionWarning}>
+                <p class="warning">You selected more than 6 criteria. Consider narrowing the rubric for easier scoring.</p>
+            </template>
+        </div>
+
+        <template if:true={loading}>
+            <div class="slds-p-around_medium">
+                <lightning-spinner size="small"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-p-horizontal_small slds-p-bottom_small">{error}</div>
+        </template>
+
+        <template if:false={loading}>
+            <div class="bundle-wrap">
+                <template for:each={groupedRows} for:item="group">
+                    <section key={group.bundleName} class="bundle-card">
+                        <h3 class="bundle-title">Bundle: {group.bundleName}</h3>
+                        <template for:each={group.items} for:item="row">
+                            <div key={row.id} class="criterion-row">
+                                <lightning-input
+                                    type="checkbox"
+                                    label={row.label}
+                                    data-id={row.id}
+                                    checked={row.selected}
+                                    onchange={handleToggle}
+                                ></lightning-input>
+                                <p class="criterion-description">{row.description}</p>
+                                <p class="criterion-meta">Default Weight: {row.defaultWeight}</p>
+                            </div>
+                        </template>
+                    </section>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

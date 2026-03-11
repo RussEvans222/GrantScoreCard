@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Application Progress" icon-name="standard:task2">
+        <template if:true={hasStatusValue}>
+            <div class="status-wrap">
+                <p class="status-value">{statusValue}</p>
+                <p class="status-message">{statusMessage}</p>
+            </div>
+        </template>
+
+        <template if:false={hasStatusValue}>
+            <div class="empty">No application status available.</div>
+        </template>
+    </lightning-card>
+</template>

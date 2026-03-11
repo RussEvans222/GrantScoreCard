@@ -1,0 +1,257 @@
+<template>
+    <lightning-card title="Evaluation Scorecard" icon-name="standard:evaluation">
+        <div class="slds-p-horizontal_medium slds-p-bottom_medium quick-action-body">
+            <template if:true={isLoading}>
+                <div class="slds-is-relative loading-container">
+                    <lightning-spinner alternative-text="Loading scorecard" size="small"></lightning-spinner>
+                </div>
+            </template>
+            <template if:true={isContextScreen}>
+                <section class="summary-panel slds-m-bottom_medium" aria-label="Evaluation summary">
+                    <div class="slds-grid slds-wrap slds-gutters_small slds-grid_vertical-align-center">
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <p class="summary-label">Overall Score</p>
+                            <p class="summary-value" title="Overall weighted score">
+                                <template if:true={hasWeightedTotal}>
+                                    <lightning-formatted-number
+                                        value={weightedTotal}
+                                        minimum-fraction-digits="2"
+                                        maximum-fraction-digits="2"
+                                    ></lightning-formatted-number>
+                                </template>
+                                <template if:false={hasWeightedTotal}>--</template>
+                            </p>
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 summary-right">
+                            <span class={recommendationBadgeClass} title="Final recommendation">
+                                Recommendation: {recommendationLabel}
+                            </span>
+                            <p class="summary-meta slds-m-top_x-small">
+                                <span>Created: </span>
+                                <lightning-formatted-date-time
+                                    value={createdDate}
+                                    year="numeric"
+                                    month="short"
+                                    day="2-digit"
+                                ></lightning-formatted-date-time>
+                                <template if:true={hasStatusField}>
+                                    <span class="slds-m-left_medium">Status: {statusValue}</span>
+                                </template>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="context-panel slds-m-bottom_medium" aria-label="Application context">
+                    <h2 class="context-title slds-text-heading_small">Application Context</h2>
+
+                    <div class="context-section slds-m-top_small">
+                        <p class="context-section-title">Funding Opportunity</p>
+                        <div class="context-body context-body-no-indent slds-grid slds-wrap slds-gutters_small">
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <p class="context-label">Name</p>
+                                <p class="context-value">{fundingName}</p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <p class="context-label">Program Minimum Funding Amount</p>
+                                <p class="context-value">
+                                    <template if:true={hasFundingProgramMin}>
+                                        <lightning-formatted-number
+                                            value={fundingProgramMin}
+                                            format-style="currency"
+                                            currency-code="USD"
+                                        ></lightning-formatted-number>
+                                    </template>
+                                    <template if:false={hasFundingProgramMin}>--</template>
+                                </p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <p class="context-label">Program Maximum Funding Amount</p>
+                                <p class="context-value">
+                                    <template if:true={hasFundingProgramMax}>
+                                        <lightning-formatted-number
+                                            value={fundingProgramMax}
+                                            format-style="currency"
+                                            currency-code="USD"
+                                        ></lightning-formatted-number>
+                                    </template>
+                                    <template if:false={hasFundingProgramMax}>--</template>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="context-section slds-m-top_small">
+                        <p class="context-section-title">Application Form</p>
+                        <div class="context-body context-body-no-indent slds-grid slds-wrap slds-gutters_small">
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <p class="context-label">Name</p>
+                                <p class="context-value">
+                                    <template if:true={hasApplicationFormName}>{applicationFormName}</template>
+                                    <template if:false={hasApplicationFormName}>--</template>
+                                </p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <p class="context-label">Purpose</p>
+                                <div class="context-rich-text">
+                                    <template if:true={applicationFormPurpose}>
+                                        <lightning-formatted-rich-text value={applicationFormPurpose}></lightning-formatted-rich-text>
+                                    </template>
+                                    <template if:false={applicationFormPurpose}>--</template>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1">
+                                <p class="context-label">Application Summary</p>
+                                <div class="context-rich-text">
+                                    <template if:true={applicationFormSummary}>
+                                        <lightning-formatted-rich-text value={applicationFormSummary}></lightning-formatted-rich-text>
+                                    </template>
+                                    <template if:false={applicationFormSummary}>--</template>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <p class="context-label">Requested Amount</p>
+                                <p class="context-value">
+                                    <template if:true={hasApplicationFormRequestedAmount}>
+                                        <lightning-formatted-number
+                                            value={applicationFormRequestedAmount}
+                                            format-style="currency"
+                                            currency-code="USD"
+                                        ></lightning-formatted-number>
+                                    </template>
+                                    <template if:false={hasApplicationFormRequestedAmount}>--</template>
+                                </p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <p class="context-label">Stage</p>
+                                <p class="context-value">
+                                    <template if:true={hasApplicationFormStage}>{applicationFormStage}</template>
+                                    <template if:false={hasApplicationFormStage}>--</template>
+                                </p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <p class="context-label">Type</p>
+                                <p class="context-value">
+                                    <template if:true={hasApplicationFormType}>{applicationFormType}</template>
+                                    <template if:false={hasApplicationFormType}>--</template>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="slds-grid slds-grid_align-end">
+                    <lightning-button
+                        variant="brand"
+                        label="Next: Score Application"
+                        title="Continue to scoring"
+                        onclick={goToScoringScreen}
+                    ></lightning-button>
+                </div>
+            </template>
+
+            <template if:true={isScoringScreen}>
+                <p class="build-tag">UI Build: 2026-03-01.3 · Developed by Russ Evans</p>
+                <div class="ai-toolbar slds-m-bottom_small">
+                    <lightning-combobox
+                        name="aiMode"
+                        label="AI Review Mode"
+                        value={aiMode}
+                        options={aiModeOptions}
+                        onchange={handleAiModeChange}
+                    ></lightning-combobox>
+                    <lightning-button
+                        variant="neutral"
+                        label="Run AI Evaluation"
+                        title="Generate AI suggestions for all criteria"
+                        onclick={handleGenerateAllSuggestions}
+                        disabled={isAiAllDisabled}
+                    ></lightning-button>
+                </div>
+                <p class="ai-helper-text slds-m-bottom_small">
+                    AI suggestions are provided to assist reviewers. Final scoring decisions remain with the assigned reviewer.
+                </p>
+                <div class="table-wrapper" role="region" aria-label="Criterion score table">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered score-table">
+                        <colgroup>
+                            <col class="col-section" />
+                            <col class="col-criterion" />
+                            <col class="col-weight" />
+                            <col class="col-ai-score" />
+                            <col class="col-reviewer-score" />
+                            <col class="col-rationale" />
+                        </colgroup>
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th scope="col">Section</th>
+                                <th scope="col">Criterion</th>
+                                <th scope="col" class="num-col">Weight</th>
+                                <th scope="col" class="num-col">AI Suggested</th>
+                                <th scope="col" class="num-col">Reviewer Score</th>
+                                <th scope="col">Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={rows} for:item="row">
+                                <tr key={row.id} class="score-row">
+                                    <td>
+                                        <div class="section-name">{row.sectionName}</div>
+                                    </td>
+                                    <th scope="row">
+                                        <div class="criterion-label">{row.label}</div>
+                                    </th>
+                                    <td class="num-col">{row.weightDisplay}</td>
+                                    <td class="num-col muted-value">{row.suggestedScoreDisplay}</td>
+                                    <td class="num-col final-score-cell">
+                                        <lightning-input
+                                            type="number"
+                                            variant="label-hidden"
+                                            name={row.id}
+                                            data-id={row.id}
+                                            value={row.finalScoreInput}
+                                            min="0"
+                                            max="5"
+                                            step="1"
+                                            label={row.finalScoreLabel}
+                                            title={row.finalScoreTitle}
+                                            oninput={handleScoreChange}
+                                            onchange={handleScoreChange}
+                                        ></lightning-input>
+                                    </td>
+                                    <td>
+                                        <lightning-textarea
+                                            class="rationale-editor slds-m-bottom_x-small"
+                                            data-id={row.id}
+                                            label={row.rationaleLabel}
+                                            title={row.rationaleTitle}
+                                            value={row.rationaleInput}
+                                            placeholder="Optional reviewer comments..."
+                                            oninput={handleRationaleChange}
+                                            onchange={handleRationaleChange}
+                                        ></lightning-textarea>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
+                    <lightning-button
+                        variant="neutral"
+                        label="Back to Context"
+                        title="Go back to application context"
+                        onclick={goToContextScreen}
+                    ></lightning-button>
+                    <lightning-button
+                        variant="brand"
+                        label="Save Scores"
+                        title="Save updated final scores"
+                        onclick={handleSave}
+                        disabled={isSaveDisabled}
+                    ></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

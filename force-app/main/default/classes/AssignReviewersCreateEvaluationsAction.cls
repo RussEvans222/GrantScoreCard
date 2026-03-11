@@ -1,7 +1,7 @@
 public with sharing class AssignReviewersCreateEvaluationsAction {
     // These statuses are treated as "closed" for dedupe so reviewers can be reassigned after completion/cancel.
     private static final Set<String> CLOSED_STATUSES = new Set<String>{ 'Completed', 'Cancelled' };
-    private static final Integer DEFAULT_TASK_DUE_OFFSET_DAYS = 7;
+    private static final Integer TASK_DUE_OFFSET_DAYS = -1;
 
     public class Request {
         @InvocableVariable(required=true)
@@ -106,6 +106,8 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
                 resp.createdCount = inserts.size();
 
                 String appName = fetchApplicationName(req.applicationFormId);
+                Date evaluationDueDate = req.dueDate == null ? Date.today() : req.dueDate;
+                String fundingOpportunityName = fetchFundingOpportunityName(req.applicationFormId);
                 // Side effects run only when new AFEs are created to avoid duplicate activity/email noise.
                 resp.stageUpdated = updateApplicationStageToInReview(req.applicationFormId);
 
@@ -119,15 +121,14 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
                 resp.taskCount = createReviewerTasks(
                     req.applicationFormId,
                     appName,
-                    req.comments,
-                    req.dueDate,
+                    evaluationDueDate,
                     createdReviewerIds
                 );
                 resp.emailCount = sendReviewerEmails(
                     appName,
+                    fundingOpportunityName,
                     req.applicationFormId,
-                    req.comments,
-                    req.dueDate,
+                    evaluationDueDate,
                     createdReviewerIds
                 );
             }
@@ -177,6 +178,30 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
         return forms.isEmpty() ? null : forms[0].Name;
     }
 
+    private static String fetchFundingOpportunityName(Id applicationFormId) {
+        if (applicationFormId == null) {
+            return null;
+        }
+        List<ApplicationFormRelation> relations = [
+            SELECT ReferenceRecordId
+            FROM ApplicationFormRelation
+            WHERE ApplicationFormId = :applicationFormId
+            AND ReferenceObjectName = 'FundingOpportunity'
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (relations.isEmpty() || relations[0].ReferenceRecordId == null) {
+            return null;
+        }
+        List<FundingOpportunity> opportunities = [
+            SELECT Name
+            FROM FundingOpportunity
+            WHERE Id = :relations[0].ReferenceRecordId
+            LIMIT 1
+        ];
+        return opportunities.isEmpty() ? null : opportunities[0].Name;
+    }
+
     private static Boolean updateApplicationStageToInReview(Id applicationFormId) {
         if (applicationFormId == null) {
             return false;
@@ -201,8 +226,7 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
     private static Integer createReviewerTasks(
         Id applicationFormId,
         String applicationName,
-        String comments,
-        Date dueDate,
+        Date evaluationDueDate,
         Set<Id> reviewerIds
     ) {
         if (applicationFormId == null || reviewerIds == null || reviewerIds.isEmpty()) {
@@ -219,15 +243,15 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
             'Normal',
             true
         );
-        Date activityDate = dueDate == null ? Date.today().addDays(DEFAULT_TASK_DUE_OFFSET_DAYS) : dueDate;
-        String safeAppName = String.isBlank(applicationName) ? String.valueOf(applicationFormId) : applicationName;
+        Date safeEvaluationDueDate = evaluationDueDate == null ? Date.today() : evaluationDueDate;
+        Date activityDate = safeEvaluationDueDate.addDays(TASK_DUE_OFFSET_DAYS);
 
         List<Task> tasksToInsert = new List<Task>();
         for (Id reviewerId : reviewerIds) {
             Task t = new Task();
             t.OwnerId = reviewerId;
             t.WhatId = applicationFormId;
-            t.Subject = 'Review Application: ' + safeAppName;
+            t.Subject = 'Grant Application Review';
             t.ActivityDate = activityDate;
             if (!String.isBlank(statusValue)) {
                 t.Status = statusValue;
@@ -236,16 +260,8 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
                 t.Priority = priorityValue;
             }
 
-            List<String> parts = new List<String>{
-                'Please review assigned application ' + safeAppName + '.'
-            };
-            if (dueDate != null) {
-                parts.add('Due Date: ' + String.valueOf(dueDate));
-            }
-            if (!String.isBlank(comments)) {
-                parts.add('Instructions: ' + comments);
-            }
-            t.Description = String.join(parts, '\n');
+            t.Description =
+                'Please complete the evaluation for the assigned grant application before the review deadline.';
             tasksToInsert.add(t);
         }
 
@@ -261,9 +277,9 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
 
     private static Integer sendReviewerEmails(
         String applicationName,
+        String fundingOpportunityName,
         Id applicationFormId,
-        String comments,
-        Date dueDate,
+        Date evaluationDueDate,
         Set<Id> reviewerIds
     ) {
         if (reviewerIds == null || reviewerIds.isEmpty()) {
@@ -271,23 +287,41 @@ public with sharing class AssignReviewersCreateEvaluationsAction {
         }
 
         String safeAppName = String.isBlank(applicationName) ? String.valueOf(applicationFormId) : applicationName;
+        String safeFundingOpportunityName = String.isBlank(fundingOpportunityName)
+            ? 'Not Available'
+            : fundingOpportunityName;
+        Date safeEvaluationDueDate = evaluationDueDate == null ? Date.today() : evaluationDueDate;
+
+        Map<Id, String> reviewerNameById = new Map<Id, String>();
+        for (User reviewer : [
+            SELECT Id, Name
+            FROM User
+            WHERE Id IN :reviewerIds
+        ]) {
+            reviewerNameById.put(reviewer.Id, reviewer.Name);
+        }
+
         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
         for (Id reviewerId : reviewerIds) {
             Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
             email.setTargetObjectId(reviewerId);
             email.setSaveAsActivity(true);
-            email.setSubject('Reviewer Assignment: ' + safeAppName);
+            email.setSubject('New Grant Application Review Assigned');
 
+            String reviewerName = reviewerNameById.containsKey(reviewerId) ? reviewerNameById.get(reviewerId) : 'Reviewer';
             List<String> bodyLines = new List<String>{
-                'You have been assigned to review application ' + safeAppName + '.'
+                'Hello ' + reviewerName + ',',
+                '',
+                'You have been assigned to review a grant application.',
+                '',
+                'Application: ' + safeAppName,
+                'Funding Opportunity: ' + safeFundingOpportunityName,
+                'Review Due Date: ' + String.valueOf(safeEvaluationDueDate),
+                '',
+                'Please complete your review in Salesforce before the due date.',
+                '',
+                'Thank you.'
             };
-            if (dueDate != null) {
-                bodyLines.add('Due Date: ' + String.valueOf(dueDate));
-            }
-            if (!String.isBlank(comments)) {
-                bodyLines.add('Instructions: ' + comments);
-            }
-            bodyLines.add('Record Id: ' + String.valueOf(applicationFormId));
             email.setPlainTextBody(String.join(bodyLines, '\n'));
             emails.add(email);
         }

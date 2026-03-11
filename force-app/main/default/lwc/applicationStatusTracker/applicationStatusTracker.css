@@ -1,0 +1,21 @@
+.status-wrap {
+    padding: 0.95rem 1rem 1rem;
+}
+
+.empty {
+    padding: 1rem;
+    color: #706e6b;
+}
+
+.status-value {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #181818;
+}
+
+.status-message {
+    margin: 0;
+    color: #3e3e3c;
+    line-height: 1.35;
+}

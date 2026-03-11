@@ -342,7 +342,7 @@
     </screens>
     <screens>
         <name>Success_Message</name>
-        <label>Evaluations Processed</label>
+        <label>Reviewer Assigned</label>
         <locationX>120</locationX>
         <locationY>980</locationY>
         <allowBack>false</allowBack>
@@ -350,7 +350,7 @@
         <allowPause>false</allowPause>
         <fields>
             <name>SuccessText</name>
-            <fieldText>&lt;p&gt;Created {!var_CreatedCount} evaluation(s). Skipped {!var_SkippedCount} reviewer(s) due to existing open evaluations.&lt;/p&gt;&lt;p&gt;Created {!var_TaskCount} follow-up task(s). Sent {!var_EmailCount} reviewer email(s).&lt;/p&gt;&lt;p&gt;Application Stage updated to In Review: {!var_StageUpdated}.&lt;/p&gt;&lt;p&gt;Note: score snapshot rows are created by existing Initialize_Evaluation_Criteria_Scores automation.&lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;b&gt;An evaluation has been created for this application.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;• A review task has been assigned to the reviewer&lt;br/&gt;• A notification email has been sent&lt;br/&gt;• The application status has been updated to &quot;In Review&quot;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <showFooter>true</showFooter>

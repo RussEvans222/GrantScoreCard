@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</activeVersionIdentifier>
+    <developerName>AFE_Criterion_Scoring_Suggestion</developerName>
+    <masterLabel>AFE Criterion Scoring Suggestion</masterLabel>
+    <templateVersions>
+        <content>You are a grant application evaluator assistant.
+
+Use the application context and criterion details to suggest one criterion score and rationale.
+
+Application Purpose: {!$Input:ApplicationPurpose}
+Requested Amount: {!$Input:RequestedAmount}
+Application Stage: {!$Input:ApplicationStage}
+Criterion Label: {!$Input:CriterionLabel}
+Criterion Description: {!$Input:CriterionDescription}
+
+Rules:
+- Return JSON only.
+- suggestedScore must be an integer from 0 to 5.
+- suggestedRationale must be concise and reviewer-ready, using: Application Evidence -> Interpretation -> Scoring Justification.
+- Do not include markdown or any text outside JSON.
+- Reference specific details from the application whenever possible.
+- Mention relevant data such as RequestedAmount, ApplicationPurpose, ApplicationStage, CriterionLabel, and CriterionDescription.
+- Avoid generic statements like "the project demonstrates potential impact" without supporting details.
+- Explain both strengths and missing details when evidence is partial.
+- Use the full scoring range from 1 to 5.
+- Do not default to the highest score unless the application clearly satisfies the criterion at an exceptional level.
+- Score based on how well the application satisfies the criterion description.
+- Scoring calibration:
+  - 5: Fully satisfies the criterion with strong supporting evidence.
+  - 4: Strong alignment with minor gaps.
+  - 3: Adequate alignment with some missing detail.
+  - 2: Weak alignment.
+  - 1: Does not satisfy the criterion.
+- Example rationale style:
+  "The application requests $175,000 to support development of advanced aerospace composite materials and workforce training for aerospace manufacturing technicians. These activities align with the criterion of Aerospace Technology Advancement; however, additional technical detail about the innovation would strengthen the proposal."
+- The output key "suggestedRationale" maps directly to the scorecard Rationale field; do not rename it.
+
+Return exactly:
+{
+  &quot;suggestedScore&quot;: 0,
+  &quot;suggestedRationale&quot;: &quot;&quot;
+}
+</content>
+        <inputs>
+            <apiName>ApplicationPurpose</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Application Purpose</masterLabel>
+            <referenceName>Input:ApplicationPurpose</referenceName>
+            <required>false</required>
+        </inputs>
+        <inputs>
+            <apiName>RequestedAmount</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Requested Amount</masterLabel>
+            <referenceName>Input:RequestedAmount</referenceName>
+            <required>false</required>
+        </inputs>
+        <inputs>
+            <apiName>ApplicationStage</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Application Stage</masterLabel>
+            <referenceName>Input:ApplicationStage</referenceName>
+            <required>false</required>
+        </inputs>
+        <inputs>
+            <apiName>CriterionLabel</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Criterion Label</masterLabel>
+            <referenceName>Input:CriterionLabel</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>CriterionDescription</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Criterion Description</masterLabel>
+            <referenceName>Input:CriterionDescription</referenceName>
+            <required>false</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

@@ -1,6 +1,7 @@
 # GrantScoreCard (Salesforce Grantmaking Starter Kit)
 
 GrantScoreCard is a Salesforce DX starter project for a complete grant review lifecycle on Public Sector Solutions / Grants Management.  
+
 It covers applicant intake, rubric setup, reviewer assignment, AI-assisted scoring, and application status tracking.
 
 ## One-Click Deploy
@@ -21,33 +22,6 @@ FundingOpportunity
                 -> Evaluation_Criterion_Score__c snapshots
 ```
 
-## Feature Set Banners (1600 x 200)
-
-Verified banner files currently in this repo:
-
-- `docs/images/headers/intake/01-intake-header-1600x200.png`
-- `docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png`
-- `docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png`
-
-Planned filenames (drop your exported images here):
-
-- `docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png`
-- `docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png`
-- `docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png`
-
-### Banner Preview Slots
-
-![Grantmaking Scorecard - Application Intake](docs/images/headers/intake/01-intake-header-1600x200.png)
-
-`[Pending banner file] docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png`
-
-`[Pending banner file] docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png`
-
-`[Pending banner file] docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png`
-
-![Grantmaking Scorecard - AI Evaluation Scorecard](docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png)
-
-![Grantmaking Scorecard - Application Status Tracker](docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png)
 
 ## Latest Updates (March 11, 2026)
 
@@ -65,6 +39,17 @@ Planned filenames (drop your exported images here):
   - button label is `Run AI Evaluation`
   - helper text clarifies reviewer final authority
 - AI prompt guidance improved for evidence-based rationale quality and balanced 1-5 scoring.
+
+## Changelog
+
+### March 11, 2026
+
+- Refactored README feature documentation into a clearer, user-friendly walkthrough for all core grantmaking capabilities.
+- Updated banner documentation to match current repo assets:
+  - Verified existing files for Intake, AI Scorecard, and Status Tracker.
+  - Kept explicit placeholder paths for Rubric Setup, Criterion Library, and Reviewer Assignment.
+- Added banner preview slots so new header images can be dropped in without further README edits.
+- Consolidated feature language around applicant intake, rubric setup, criterion library reuse, reviewer assignment automation, AI-assisted scoring, and status visibility.
 
 ## Feature Walkthrough
 
