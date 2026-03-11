@@ -1,7 +1,7 @@
 # GrantScoreCard (Salesforce Grantmaking Starter Kit)
 
-GrantScoreCard is a Salesforce DX project for a flow-first grantmaking demo on Public Sector Solutions / Grants Management data.  
-It provides end-to-end intake, rubric setup, reviewer assignment, and AI-assisted evaluation.
+GrantScoreCard is a Salesforce DX starter project for a complete grant review lifecycle on Public Sector Solutions / Grants Management.  
+It covers applicant intake, rubric setup, reviewer assignment, AI-assisted scoring, and application status tracking.
 
 ## One-Click Deploy
 
@@ -21,27 +21,33 @@ FundingOpportunity
                 -> Evaluation_Criterion_Score__c snapshots
 ```
 
-## Feature Set Headers (Image Placeholders)
+## Feature Set Banners (1600 x 200)
 
-Use 1600 x 200 header images for each feature section.
+Verified banner files currently in this repo:
 
-`docs/images/headers/intake/01-intake-header-1600x200.png`  
-`docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png`  
-`docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png`  
-`docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png`  
-`docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png`  
-`docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png`
+- `docs/images/headers/intake/01-intake-header-1600x200.png`
+- `docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png`
+- `docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png`
 
-## Drop-In Banner Placeholders
+Planned filenames (drop your exported images here):
 
-Replace these labels with your exported 1600x200 images:
+- `docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png`
+- `docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png`
+- `docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png`
 
-- Grantmaking Scorecard - Application Intake
-- Grantmaking Scorecard - Evaluation Rubric Setup
-- Grantmaking Scorecard - Criterion Library
-- Grantmaking Scorecard - Reviewer Assignment
-- Grantmaking Scorecard - AI Evaluation Scorecard
-- Grantmaking Scorecard - Application Status Tracker
+### Banner Preview Slots
+
+![Grantmaking Scorecard - Application Intake](docs/images/headers/intake/01-intake-header-1600x200.png)
+
+`[Pending banner file] docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png`
+
+`[Pending banner file] docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png`
+
+`[Pending banner file] docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png`
+
+![Grantmaking Scorecard - AI Evaluation Scorecard](docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png)
+
+![Grantmaking Scorecard - Application Status Tracker](docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png)
 
 ## Latest Updates (March 11, 2026)
 
@@ -50,7 +56,7 @@ Replace these labels with your exported 1600x200 images:
   - library management removed from normal setup path
   - bundle-oriented language in criteria editing
 - Application status card updated to use Lightning Data Service on `ApplicationForm` record context.
-- Assign Reviewers UX improved:
+- Assign Reviewers experience improved:
   - clean confirmation messaging
   - task automation tuned for review workflow
   - reviewer notification email format updated
@@ -60,31 +66,60 @@ Replace these labels with your exported 1600x200 images:
   - helper text clarifies reviewer final authority
 - AI prompt guidance improved for evidence-based rationale quality and balanced 1-5 scoring.
 
-## Runtime Paths
+## Feature Walkthrough
 
-1. **Applicant Intake**  
-   `[Header Image Placeholder: docs/images/headers/intake/01-intake-header-1600x200.png]`  
-   `FundingOpportunity.Apply Now` -> `Grant_Application_Intake_Flow` -> creates `ApplicationForm` + `ApplicationFormRelation`
+### 1) Applicant Intake
 
-2. **Rubric Setup (Admin)**  
-   `[Header Image Placeholder: docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png]`  
-   `FundingOpportunity.Setup Evaluation Criteria` -> `Evaluation_Template_Wizard_Flow`
+Banner: `docs/images/headers/intake/01-intake-header-1600x200.png`  
+Launch path: `FundingOpportunity.Apply Now` -> `Grant_Application_Intake_Flow`
 
-3. **Criterion Library (Admin Data)**  
-   `[Header Image Placeholder: docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png]`  
-   `Criterion_Library__c` + `Section_Library__c` provide reusable rubric criteria across funding opportunities.
+- Applicants complete a guided submission flow instead of filling out raw object fields.
+- The flow creates a new `ApplicationForm` and links it to the funding opportunity.
+- After submit, teams can immediately track progress on the new application record.
 
-4. **Reviewer Assignment**  
-   `[Header Image Placeholder: docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png]`  
-   `ApplicationForm.Assign Reviewers` -> `Assign_Reviewers_Create_Evaluations` -> creates AFEs + task/email/stage side effects
+### 2) Evaluation Rubric Setup (Admin)
 
-5. **Scoring**  
-   `[Header Image Placeholder: docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png]`  
-   `afeScorecard` LWC + `AFEScorecardController` for manual + AI suggestions
+Banner placeholder: `docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png`  
+Launch path: `FundingOpportunity.Setup Evaluation Criteria` -> `Evaluation_Template_Wizard_Flow`
 
-6. **Application Status Tracking**  
-   `[Header Image Placeholder: docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png]`  
-   `applicationStatusTracker` on `ApplicationForm` record page
+- Program admins build the scoring rubric reviewers will use.
+- Admins can start from scratch or clone from an existing funding opportunity.
+- The wizard publishes a versioned template that drives downstream scoring.
+
+### 3) Criterion Library (Admin Data)
+
+Banner placeholder: `docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png`
+
+- Central library for reusable criteria and rubric bundles.
+- Keeps language and scoring standards consistent across funding programs.
+- Reduces rework when standing up new opportunities.
+
+### 4) Reviewer Assignment
+
+Banner placeholder: `docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png`  
+Launch path: `ApplicationForm.Assign Reviewers` -> `Assign_Reviewers_Create_Evaluations`
+
+- Assigns one or more reviewers to an application in a single action.
+- Creates `ApplicationFormEvaluation` records automatically.
+- Triggers assignment side effects such as status updates, tasks, and notifications.
+
+### 5) AI Evaluation Scorecard
+
+Banner: `docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png`  
+Core: `afeScorecard` LWC + `AFEScorecardController`
+
+- Reviewers score each criterion with weighted rubric controls.
+- AI can propose draft scores and rationales to speed up evaluation.
+- Reviewers remain in control of final scoring decisions.
+
+### 6) Application Status Tracker
+
+Banner: `docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png`  
+Core: `applicationStatusTracker`
+
+- Displays current application progress directly on the application record.
+- Pulls status from record context so users see live state after submission.
+- Provides a simple, reassuring status view for applicants and staff.
 
 ## Prerequisites
 
