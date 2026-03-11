@@ -52,18 +52,17 @@ FundingOpportunity
 - Consolidated feature language around applicant intake, rubric setup, criterion library reuse, reviewer assignment automation, AI-assisted scoring, and status visibility.
 
 ## Feature Walkthrough
-
-### 1) Applicant Intake
 ![Application Intake Banner](docs/images/headers/intake/01-intake-header-1600x200.png)
+### 1) Applicant Intake
+
 Launch path: `FundingOpportunity.Apply Now` -> `Grant_Application_Intake_Flow`
 
 - Applicants complete a guided submission flow instead of filling out raw object fields.
 - The flow creates a new `ApplicationForm` and links it to the funding opportunity.
 - After submit, teams can immediately track progress on the new application record.
 
+![Evaluation Rubric Banner](docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png)
 ### 2) Evaluation Rubric Setup (Admin)
-
-Banner placeholder: `docs/images/headers/rubric-setup/02-rubric-setup-header-1600x200.png`  
 Launch path: `FundingOpportunity.Setup Evaluation Criteria` -> `Evaluation_Template_Wizard_Flow`
 
 - Program admins build the scoring rubric reviewers will use.
@@ -71,16 +70,14 @@ Launch path: `FundingOpportunity.Setup Evaluation Criteria` -> `Evaluation_Templ
 - The wizard publishes a versioned template that drives downstream scoring.
 
 ### 3) Criterion Library (Admin Data)
-
-Banner placeholder: `docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png`
+![Criterion Library Banner](/docs/images/headers/criterion-library/03-criterion-library-header-1600x200.png)
 
 - Central library for reusable criteria and rubric bundles.
 - Keeps language and scoring standards consistent across funding programs.
 - Reduces rework when standing up new opportunities.
 
 ### 4) Reviewer Assignment
-
-Banner placeholder: `docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png`  
+![Reviewer Assignment Banner](docs/images/headers/reviewer-assignment/04-reviewer-assignment-header-1600x200.png) 
 Launch path: `ApplicationForm.Assign Reviewers` -> `Assign_Reviewers_Create_Evaluations`
 
 - Assigns one or more reviewers to an application in a single action.
@@ -88,7 +85,7 @@ Launch path: `ApplicationForm.Assign Reviewers` -> `Assign_Reviewers_Create_Eval
 - Triggers assignment side effects such as status updates, tasks, and notifications.
 
 ### 5) AI Evaluation Scorecard
-
+![Ai Evaluation Banner](docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png) 
 Banner: `docs/images/headers/scorecard-ai/05-scorecard-ai-header-1600x200.png`  
 Core: `afeScorecard` LWC + `AFEScorecardController`
 
@@ -97,8 +94,7 @@ Core: `afeScorecard` LWC + `AFEScorecardController`
 - Reviewers remain in control of final scoring decisions.
 
 ### 6) Application Status Tracker
-
-Banner: `docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png`  
+![Application Statu Banner](docs/images/headers/status-tracker/06-status-tracker-header-1600x200.png)   
 Core: `applicationStatusTracker`
 
 - Displays current application progress directly on the application record.
