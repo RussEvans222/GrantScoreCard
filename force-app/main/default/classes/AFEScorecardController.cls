@@ -155,10 +155,10 @@ public with sharing class AFEScorecardController {
             ApplicationFormEvaluation afeUpdate = new ApplicationFormEvaluation(Id = evaluationId);
             if (!allFinalScoresPresent || totalWeight == 0) {
                 // Keep confidence blank until the review has a complete scored rubric.
-                afeUpdate.put('AI_Confidence__c', null);
+                setAiConfidenceFieldValue(afeUpdate, null);
             } else {
                 Decimal confidencePercent = (weightedAgreement / totalWeight) * 100;
-                afeUpdate.put('AI_Confidence__c', confidencePercent.setScale(2));
+                setAiConfidenceFieldValue(afeUpdate, confidencePercent.setScale(2));
             }
             afeUpdates.add(afeUpdate);
         }
@@ -166,6 +166,66 @@ public with sharing class AFEScorecardController {
         if (!afeUpdates.isEmpty()) {
             update afeUpdates;
         }
+    }
+
+    private static void setAiConfidenceFieldValue(ApplicationFormEvaluation afeUpdate, Decimal confidencePercent) {
+        if (afeUpdate == null) {
+            return;
+        }
+
+        Schema.DescribeFieldResult confidenceDescribe =
+            Schema.SObjectType.ApplicationFormEvaluation.fields.getMap().get('AI_Confidence__c').getDescribe();
+        Schema.DisplayType confidenceType = confidenceDescribe == null ? null : confidenceDescribe.getType();
+        if (confidenceDescribe == null || !confidenceDescribe.isUpdateable()) {
+            return;
+        }
+
+        if (confidencePercent == null) {
+            afeUpdate.put('AI_Confidence__c', null);
+            return;
+        }
+
+        if (confidenceType == Schema.DisplayType.Double ||
+            confidenceType == Schema.DisplayType.Currency ||
+            confidenceType == Schema.DisplayType.Percent ||
+            confidenceType == Schema.DisplayType.Integer ||
+            confidenceType == Schema.DisplayType.Long) {
+            afeUpdate.put('AI_Confidence__c', confidencePercent);
+            return;
+        }
+
+        if (confidenceType == Schema.DisplayType.Picklist) {
+            String mappedBand;
+            if (confidencePercent >= 80) {
+                mappedBand = 'High';
+            } else if (confidencePercent >= 60) {
+                mappedBand = 'Medium';
+            } else {
+                mappedBand = 'Low';
+            }
+            afeUpdate.put('AI_Confidence__c', resolvePicklistValue(confidenceDescribe.getPicklistValues(), mappedBand));
+            return;
+        }
+
+        // Some org variants may define AI_Confidence__c as text; serialize numeric confidence for display.
+        afeUpdate.put('AI_Confidence__c', String.valueOf(confidencePercent));
+    }
+
+    private static String resolvePicklistValue(List<Schema.PicklistEntry> entries, String preferredValue) {
+        if (entries == null || entries.isEmpty()) {
+            return null;
+        }
+        for (Schema.PicklistEntry entry : entries) {
+            if (entry != null && entry.isActive() && entry.getValue() == preferredValue) {
+                return entry.getValue();
+            }
+        }
+        for (Schema.PicklistEntry entry : entries) {
+            if (entry != null && entry.isActive()) {
+                return entry.getValue();
+            }
+        }
+        return null;
     }
 
     // Non-cacheable: summary values (weighted total/recommendation/status) change after score updates.

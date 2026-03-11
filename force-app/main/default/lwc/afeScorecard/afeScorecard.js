@@ -188,6 +188,24 @@ export default class AfeScorecard extends LightningElement {
         return !!this.applicationFormType;
     }
 
+    get scoredCriteriaRows() {
+        return (this.rows || [])
+            .filter((row) => row.finalScore !== null && row.finalScore !== undefined)
+            .map((row) => ({
+                id: row.id,
+                sectionName: row.sectionName || 'General',
+                criterionLabel: row.label || 'Untitled Criterion',
+                weightDisplay: row.weightDisplay || '--',
+                finalScoreDisplay: row.finalScore,
+                rationaleDisplay: this.normalizeRationale(row.rationaleInput) || 'No rationale provided.',
+                hasRationale: !!this.normalizeRationale(row.rationaleInput)
+            }));
+    }
+
+    get hasScoredCriteriaRows() {
+        return this.scoredCriteriaRows.length > 0;
+    }
+
     toViewModel(row) {
         const rationaleInput = this.normalizeRationale(row.Rationale__c);
 

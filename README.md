@@ -58,6 +58,17 @@ FundingOpportunity
 - Added AI confidence auto-population:
   - `ApplicationFormEvaluation.AI_Confidence__c` now calculates from weighted agreement between AI suggested scores and reviewer final scores once all rubric rows are scored.
 - Deployed these metadata updates to org alias `GRANTS` (Deploy ID: `0AfHp00003nhtVMKAY`, Status: Succeeded).
+- Resolved score-save runtime errors by validating live org metadata for `ApplicationFormEvaluation.AI_Confidence__c`:
+  - Confirmed field type is `Picklist` with values `High`, `Medium`, `Low`.
+  - Updated scorecard save logic to map computed confidence to org-supported picklist values instead of writing raw decimals.
+  - Added type-safe assignment handling for schema variants.
+- Enhanced `afeScorecard` context screen UX:
+  - Added a new **Scored Criteria and Rationale** panel that surfaces completed criterion scores and rationale text without switching screens.
+  - Added visual score chips, structured criterion cards, and responsive layout improvements for readability.
+- Additional deployments completed to org alias `GRANTS`:
+  - `0AfHp00003nhtWjKAI` (AFEScorecardController confidence type-safety update) - Succeeded
+  - `0AfHp00003nhtWyKAI` (AFEScorecardController picklist mapping update) - Succeeded
+  - `0AfHp00003nhtUtKAI` (`afeScorecard` UI enhancement bundle) - Succeeded
 
 ## Feature Walkthrough
 ![Application Intake Banner](docs/images/headers/intake/01-intake-header-1600x200.png)

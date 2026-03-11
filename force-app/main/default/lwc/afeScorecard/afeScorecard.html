@@ -138,6 +138,43 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="context-section slds-m-top_small">
+                        <div class="criteria-section-header">
+                            <p class="context-section-title">Scored Criteria and Rationale</p>
+                            <span class="criteria-count-badge">{scoredCriteriaRows.length}</span>
+                        </div>
+
+                        <template if:true={hasScoredCriteriaRows}>
+                            <div class="criteria-list slds-m-top_small">
+                                <template for:each={scoredCriteriaRows} for:item="item">
+                                    <article key={item.id} class="criteria-card">
+                                        <div class="criteria-card-top">
+                                            <div class="criteria-card-headline">
+                                                <p class="criteria-title">{item.criterionLabel}</p>
+                                                <p class="criteria-subtitle">{item.sectionName} · {item.weightDisplay}</p>
+                                            </div>
+                                            <span class="score-chip">Score: {item.finalScoreDisplay}</span>
+                                        </div>
+                                        <div class="criteria-rationale">
+                                            <template if:true={item.hasRationale}>
+                                                <lightning-formatted-rich-text value={item.rationaleDisplay}></lightning-formatted-rich-text>
+                                            </template>
+                                            <template if:false={item.hasRationale}>
+                                                {item.rationaleDisplay}
+                                            </template>
+                                        </div>
+                                    </article>
+                                </template>
+                            </div>
+                        </template>
+
+                        <template if:false={hasScoredCriteriaRows}>
+                            <p class="criteria-empty-message slds-m-top_small">
+                                No scored criteria yet. Enter scores on the scoring screen to populate this summary.
+                            </p>
+                        </template>
+                    </div>
                 </section>
 
                 <div class="slds-grid slds-grid_align-end">
