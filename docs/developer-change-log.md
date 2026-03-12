@@ -8,6 +8,14 @@
 - Added **inline editing for template display names** with dynamic field selection and FLS-aware save behavior.
 - Enabled **AI evidence storage** on criterion score records via `Evaluation_Criterion_Score__c.AI_Evidence__c` and updated permission access.
 
+### AI Feature Expansion
+- Added multi-workflow AI coverage across the grant evaluation lifecycle.
+- Prompt template support now includes:
+  - `EvaluationFrameworkReview`
+  - `ETDisplayName`
+  - scorecard suggestion prompts (`AFE_Criterion_Scoring_Suggestion`, `AFE_Scorecard`)
+- The platform now demonstrates framework analysis, template naming assistance, and reviewer scoring guidance as connected AI-assisted workflows.
+
 ### Evaluation Template Display Name Generator
 A new AI prompt template was introduced to automatically generate meaningful display names for evaluation templates.
 

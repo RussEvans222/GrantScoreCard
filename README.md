@@ -27,6 +27,64 @@ Funding Opportunity
 -> Criteria Library Governance  
 -> Funding Decision Insights
 
+## 🤖 AI Capabilities
+
+Icon placeholder/reference: `docs/images/icons/einstein-ai.png`
+
+This accelerator demonstrates how Salesforce Einstein and Prompt Builder
+can enhance grant evaluation workflows using AI-powered analysis,
+automation, and intelligent recommendations.
+
+### ![Einstein AI](docs/images/icons/einstein-ai.png) Evaluation Framework Review
+
+The system uses prompt template `EvaluationFrameworkReview`.
+
+This AI analyzes evaluation frameworks and identifies:
+
+- weight imbalances  
+- redundant criteria  
+- unclear scoring guidance  
+- missing evaluation dimensions  
+
+The result is structured JSON used to generate framework health scores and improvement recommendations.
+
+### ![Einstein AI](docs/images/icons/einstein-ai.png) AI Scorecard Suggestions
+
+Reviewer scorecards can generate AI-assisted scoring guidance
+based on evaluation criteria and application context.
+
+This helps reviewers:
+
+- score consistently  
+- reduce bias  
+- identify key evaluation factors
+
+### ![Einstein AI](docs/images/icons/einstein-ai.png) Evaluation Template Display Name Generator
+
+The prompt template `ETDisplayName` generates concise, meaningful display names
+for evaluation templates by analyzing:
+
+- template description  
+- selected evaluation criteria  
+- scoring structure
+
+Example outputs:
+
+Innovation Impact Grant Review  
+Community Development Evaluation  
+Economic Growth Program Scoring
+
+### AI Architecture
+
+AI capabilities in this project are implemented using:
+
+- Salesforce Prompt Builder  
+- Einstein Trust Layer  
+- Apex orchestration services  
+- Lightning Web Components for UI integration  
+
+Prompt outputs are parsed and optionally persisted back to Salesforce records
+to enhance evaluation workflows.
 
 ## Latest Updates (March 11, 2026)
 
@@ -187,30 +245,6 @@ Required templates used by scorecard Apex:
 - `AFE_Scorecard` (bulk AI)
 - `EvaluationFrameworkReview` (framework quality analysis)
 - `ETDisplayName` (evaluation template display-name generation)
-
-## AI Features
-
-### AI Display Name Generation
-
-Evaluation templates can now generate a concise, human-friendly display name using AI.
-
-Administrators can trigger an Einstein Action on an `Evaluation_Template__c` record that invokes prompt template `ETDisplayName`.
-
-The prompt analyzes:
-
-- Template name
-- Template description
-- Selected evaluation criteria
-
-It returns a short display name that summarizes the evaluation framework.
-
-Example outputs:
-
-- `Community Impact Grant Review`
-- `Innovation Grant Evaluation`
-- `Economic Development Project Scoring`
-
-This improves usability when managing many templates because admins can scan and select templates by meaningful names instead of auto-number values.
 
 Bulk expected response contract:
 
