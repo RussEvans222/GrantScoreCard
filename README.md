@@ -44,7 +44,7 @@ Funding Opportunity
   - button label is `Run AI Evaluation`
   - helper text clarifies reviewer final authority
 - AI prompt guidance improved for evidence-based rationale quality and balanced 1-5 scoring.
-
+![Developer Logs Banner](docs/images/headers/Gemini_Generated_Image_dfhslbdfhslbdfhs.png )
 ## Developer Change Log (Top Highlights - March 12, 2026)
 
 - **Evaluation Criteria Manager app delivered** with admin-focused tabs for Home, Criteria Library, Evaluation Templates, AI Tools, Criteria Insights, and Template Usage.
