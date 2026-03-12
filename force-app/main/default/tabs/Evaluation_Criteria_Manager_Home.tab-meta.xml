@@ -3,5 +3,5 @@
     <description>Home workspace for Evaluation Criteria Manager.</description>
     <label>Home</label>
     <lwcComponent>evaluationCriteriaManagerHome</lwcComponent>
-    <motif>Custom63: Stopwatch</motif>
+    <motif>Custom63: Chip</motif>
 </CustomTab>

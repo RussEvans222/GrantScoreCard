@@ -3,5 +3,5 @@
     <description>Public Sector Grantmaking home dashboard.</description>
     <label>Home</label>
     <lwcComponent>publicSectorGrantmakingHome</lwcComponent>
-    <motif>Custom63: Stopwatch</motif>
+    <motif>Custom63: Chip</motif>
 </CustomTab>

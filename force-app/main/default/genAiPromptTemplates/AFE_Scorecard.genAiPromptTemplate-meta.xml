@@ -67,25 +67,6 @@ For each evaluation criterion:
 2. Consider how well the project satisfies the purpose of the criterion.
 3. Suggest an appropriate score.
 4. Provide a short rationale explaining the reasoning behind the score.
-5. When writing the rationale, use this structure: Application Evidence -&gt; Interpretation -&gt; Scoring Justification.
-6. Reference specific details from the application whenever possible.
-7. Mention relevant data such as RequestedAmount, Purpose, ApplicationSummary, Title, Stage, Type, and SubmissionDate when relevant to the criterion.
-8. Use the criterion description to determine what should be evaluated.
-9. Avoid generic statements like &quot;the project demonstrates potential impact&quot; without evidence.
-10. Explain both strengths and missing details when evidence is partial.
-11. Use the full scoring range from 1 to 5.
-12. Do not assign the highest score unless the application clearly demonstrates exceptional alignment to the criterion.
-13. Score based on how well the application satisfies the criterion description.
-
-Score guidance:
-- 5: Fully satisfies the criterion with strong supporting evidence.
-- 4: Strong alignment with minor gaps.
-- 3: Adequate alignment with some missing detail.
-- 2: Weak alignment.
-- 1: Does not satisfy the criterion.
-
-Example rationale style:
-&quot;The application requests $175,000 to support development of advanced aerospace composite materials and workforce training for aerospace manufacturing technicians. These activities align with the criterion of Aerospace Technology Advancement; however, additional technical detail about the innovation would strengthen the proposal.&quot;
 
 Scores should reflect typical grant evaluation practices used by public sector and nonprofit funding programs.
 
@@ -108,11 +89,7 @@ REQUIRED OUTPUT FORMAT
   {
    &quot;criterionId&quot;: &quot;SalesforceRecordId&quot;,
    &quot;score&quot;: number,
-   &quot;reason&quot;: &quot;Short explanation of why this score was suggested&quot;,
-   &quot;citations&quot;: [
-    &quot;Short excerpt from application text&quot;,
-    &quot;Short excerpt from application text&quot;
-   ]
+   &quot;reason&quot;: &quot;Short explanation of why this score was suggested&quot;
   }
  ]
 }
@@ -124,12 +101,7 @@ ADDITIONAL RULES
 • Include one entry for each evaluation criterion  
 • Use the Salesforce record Id of the criterion score record  
 • The score must be numeric  
-• Use the 1-5 range with balanced scoring across criteria when warranted  
 • Keep the rationale concise (1–2 sentences)  
-• Each rationale should reference relevant application details, not generic statements  
-• Include up to 3 citations for each criterion using short application excerpts  
-• Each citation should be 200 characters or fewer  
-• Output key &quot;reason&quot; maps directly to the scorecard Rationale field; do not rename it  
 • Return only valid JSON
 </content>
         <inputs>

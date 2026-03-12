@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>Evaluation_Criteria_Manager</application>
+        <visible>true</visible>
+    </applicationVisibilities>
     <classAccesses>
         <apexClass>AFEScorecardController</apexClass>
         <enabled>true</enabled>
@@ -9,11 +13,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>RubricTemplateService</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>CriterionLibrarySelectorController</apexClass>
+        <apexClass>AssignReviewersCreateEvaluationsAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -21,7 +21,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>EvaluationTemplateWizardPrepareAction</apexClass>
+        <apexClass>CriterionLibrarySelectorController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -29,35 +29,7 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>EvaluationTemplateWizardSaveAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>RubricTemplateCreateInitialAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>RubricTemplateCloneAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>RubricTemplateGenerateCustomKeysAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>RubricTemplateCriteriaJsonBridgeAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>AssignReviewersCreateEvaluationsAction</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>EvaluationCriteriaManagerReadController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>EvaluationFrameworkReviewService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -65,15 +37,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>EvaluationFrameworkReviewService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>EvaluationFrameworkTemplateUpdater</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>PublicSectorGrantmakingReadController</apexClass>
+        <apexClass>EvaluationTemplateWizardPrepareAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>GrantIntakeOrchestrationGateway</apexClass>
+        <apexClass>EvaluationTemplateWizardSaveAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -82,6 +58,34 @@
     </classAccesses>
     <classAccesses>
         <apexClass>GrantIntakeEvalInitService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GrantIntakeOrchestrationGateway</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PublicSectorGrantmakingReadController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RubricTemplateCloneAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RubricTemplateCreateInitialAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RubricTemplateCriteriaJsonBridgeAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RubricTemplateGenerateCustomKeysAction</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RubricTemplateService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <description>Access to rubric evaluation templates, criteria, and score snapshots.</description>
@@ -152,6 +156,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ApplicationFormEvaluation.Evaluation_Template__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ApplicationFormEvaluation.Final_Recommendation__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -167,7 +176,42 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ApplicationFormEvaluation.Evaluation_Template__c</field>
+        <field>Criterion_Library__c.Active__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Criterion_Library__c.DefaultRequired__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Criterion_Library__c.DefaultWeight__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Criterion_Library__c.Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Criterion_Library__c.DisplayOrder__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Criterion_Library__c.IsStandard__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Criterion_Library__c.Section_Library__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Evaluation_Criterion_Score__c.AI_Evidence__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -212,11 +256,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Evaluation_Criterion_Score__c.AI_Evidence__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Evaluation_Criterion_Score__c.Rationale__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -257,6 +296,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Evaluation_Template_Criterion__c.IsCustom__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Evaluation_Template_Criterion__c.Max_Score__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -268,21 +312,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Evaluation_Template_Criterion__c.Required__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Evaluation_Template_Criterion__c.IsCustom__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Evaluation_Template_Criterion__c.SourceLibraryCriterion__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Evaluation_Template__c.Display_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -302,12 +331,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Evaluation_Template__c.Active__c</field>
+        <field>Evaluation_Template_Criterion__c.SourceLibraryCriterion__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Evaluation_Template__c.IsLocked__c</field>
+        <field>Evaluation_Template__c.Active__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -322,12 +351,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Evaluation_Template__c.Revise_Threshold__c</field>
+        <field>Evaluation_Template__c.Display_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Evaluation_Template__c.Score_Scale_Max__c</field>
+        <field>Evaluation_Template__c.IsLocked__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Evaluation_Template__c.Revise_Threshold__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -337,7 +371,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Evaluation_Template__c.Score_Scale_Max__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Evaluation_Template__c.Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Evaluation_Template__c.Version_Key__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -347,7 +391,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Evaluation_Template__c.Version_Key__c</field>
+        <field>FundingOpportunity.Evaluation_Template__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -360,50 +404,6 @@
         <field>Section_Library__c.DisplayOrder__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Criterion_Library__c.Active__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Criterion_Library__c.DefaultRequired__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Criterion_Library__c.DefaultWeight__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Criterion_Library__c.Description__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Criterion_Library__c.DisplayOrder__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Criterion_Library__c.IsStandard__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Criterion_Library__c.Section_Library__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>FundingOpportunity.Evaluation_Template__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <flowAccesses>
-        <enabled>true</enabled>
-        <flow>Initialize_Evaluation_Criteria_Scores</flow>
-    </flowAccesses>
     <flowAccesses>
         <enabled>true</enabled>
         <flow>Assign_Reviewers_Create_Evaluations</flow>
@@ -411,6 +411,10 @@
     <flowAccesses>
         <enabled>true</enabled>
         <flow>Evaluation_Template_Wizard_Flow</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>true</enabled>
+        <flow>Initialize_Evaluation_Criteria_Scores</flow>
     </flowAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Evaluation Rubric Admin</label>
@@ -421,6 +425,16 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>ApplicationForm</object>
+        <viewAllFields>false</viewAllFields>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>ApplicationFormEvalSection</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -440,7 +454,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Evaluation_Criterion_Score__c</object>
+        <object>Criterion_Library__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -450,7 +464,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>ApplicationFormEvalSection</object>
+        <object>Evaluation_Criterion_Score__c</object>
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -494,22 +508,12 @@
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Criterion_Library__c</object>
-        <viewAllFields>false</viewAllFields>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <applicationVisibilities>
-        <application>Evaluation_Criteria_Manager</application>
-        <visible>true</visible>
-    </applicationVisibilities>
     <tabSettings>
-        <tab>Evaluation_Criteria_Manager_Home</tab>
+        <tab>AI_Criteria_Tools</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Criteria_Insights</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
@@ -521,7 +525,7 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>Evaluation_Templates</tab>
+        <tab>Evaluation_Criteria_Manager_Home</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
@@ -529,11 +533,7 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
-        <tab>AI_Criteria_Tools</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>Criteria_Insights</tab>
+        <tab>Evaluation_Templates</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

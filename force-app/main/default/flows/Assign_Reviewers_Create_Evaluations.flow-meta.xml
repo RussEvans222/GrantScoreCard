@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Assign_Reviewers_And_Create_AFEs</name>
         <label>Assign Reviewers And Create AFEs</label>
-        <locationX>120</locationX>
-        <locationY>890</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>AssignReviewersCreateEvaluationsAction</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -64,65 +64,13 @@
             <name>stageUpdated</name>
         </outputParameters>
     </actionCalls>
-
     <apiVersion>65.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
-
-    <decisions>
-        <name>Application_Form_Found</name>
-        <label>Application Form Found?</label>
-        <locationX>120</locationX>
-        <locationY>170</locationY>
-        <defaultConnector>
-            <targetReference>Error_Application_Not_Found</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Not Found</defaultConnectorLabel>
-        <rules>
-            <name>ApplicationFound</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Application_Form</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Funding_Opportunity_Relation</targetReference>
-            </connector>
-            <label>Found</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Funding_Opportunity_Relation_Found</name>
-        <label>Funding Opportunity Relation Found?</label>
-        <locationX>120</locationX>
-        <locationY>350</locationY>
-        <defaultConnector>
-            <targetReference>Error_Missing_Funding_Opportunity</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Missing Relation</defaultConnectorLabel>
-        <rules>
-            <name>RelationFound</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Funding_Opportunity_Relation</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Funding_Opportunity</targetReference>
-            </connector>
-            <label>Found</label>
-        </rules>
-    </decisions>
     <decisions>
         <name>Active_Template_Configured</name>
         <label>Active Template Configured?</label>
-        <locationX>120</locationX>
-        <locationY>530</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>Error_Missing_Active_Template</targetReference>
         </defaultConnector>
@@ -146,8 +94,8 @@
     <decisions>
         <name>Active_Template_Found</name>
         <label>Active Template Found?</label>
-        <locationX>120</locationX>
-        <locationY>710</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnector>
             <targetReference>Error_Missing_Active_Template</targetReference>
         </defaultConnector>
@@ -168,11 +116,59 @@
             <label>Found</label>
         </rules>
     </decisions>
-
+    <decisions>
+        <name>Application_Form_Found</name>
+        <label>Application Form Found?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Error_Application_Not_Found</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not Found</defaultConnectorLabel>
+        <rules>
+            <name>ApplicationFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Application_Form</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Funding_Opportunity_Relation</targetReference>
+            </connector>
+            <label>Found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Funding_Opportunity_Relation_Found</name>
+        <label>Funding Opportunity Relation Found?</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Error_Missing_Funding_Opportunity</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Missing Relation</defaultConnectorLabel>
+        <rules>
+            <name>RelationFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Funding_Opportunity_Relation</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Funding_Opportunity</targetReference>
+            </connector>
+            <label>Found</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Assign Reviewers Create Evaluations {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Assign Reviewers Create Evaluations</label>
-
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -192,12 +188,32 @@
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
-
+    <recordLookups>
+        <name>Get_Active_Template</name>
+        <label>Get Active Template</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Active_Template_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Funding_Opportunity.Evaluation_Template__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Evaluation_Template__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Application_Form</name>
         <label>Get Application Form</label>
-        <locationX>120</locationX>
-        <locationY>80</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Application_Form_Found</targetReference>
@@ -215,10 +231,31 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Funding_Opportunity</name>
+        <label>Get Funding Opportunity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Active_Template_Configured</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Funding_Opportunity_Relation.ReferenceRecordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>FundingOpportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Funding_Opportunity_Relation</name>
         <label>Get Funding Opportunity Relation</label>
-        <locationX>120</locationX>
-        <locationY>260</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Funding_Opportunity_Relation_Found</targetReference>
@@ -244,61 +281,101 @@
         <sortOrder>Desc</sortOrder>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
-    <recordLookups>
-        <name>Get_Funding_Opportunity</name>
-        <label>Get Funding Opportunity</label>
-        <locationX>120</locationX>
-        <locationY>440</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Active_Template_Configured</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Funding_Opportunity_Relation.ReferenceRecordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>FundingOpportunity</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Active_Template</name>
-        <label>Get Active Template</label>
-        <locationX>120</locationX>
-        <locationY>620</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Active_Template_Found</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_Funding_Opportunity.Evaluation_Template__c</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Evaluation_Template__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-
+    <screens>
+        <name>Error_Application_Not_Found</name>
+        <label>Application Not Found</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>ApplicationNotFoundText</name>
+            <fieldText>&lt;p&gt;Unable to find the Application Form record for this request.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Missing_Active_Template</name>
+        <label>Active Template Missing</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>MissingTemplateText</name>
+            <fieldText>&lt;p&gt;The linked Funding Opportunity does not have an active Evaluation Template configured.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Missing_Funding_Opportunity</name>
+        <label>Funding Opportunity Not Found</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>MissingFundingOpportunityText</name>
+            <fieldText>&lt;p&gt;This application is not linked to a Funding Opportunity. Add an ApplicationFormRelation with ReferenceObjectName = FundingOpportunity and try again.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <screens>
         <name>Select_Reviewers</name>
         <label>Assign Review</label>
-        <locationX>120</locationX>
-        <locationY>800</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Assign_Reviewers_And_Create_AFEs</targetReference>
+        </connector>
         <fields>
             <name>AssignIntro</name>
             <fieldText>&lt;p&gt;Select one or more reviewers for this application. Existing open evaluations for the same reviewer are skipped.&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>ReviewerPicker</name>
@@ -317,34 +394,57 @@
                     <elementReference>reviewerIdsCsv</elementReference>
                 </value>
             </inputParameters>
+            <isRequired>true</isRequired>
             <outputParameters>
                 <assignToReference>reviewerIdsCsv</assignToReference>
                 <name>reviewerIdsCsv</name>
             </outputParameters>
-            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>DueDateInput</name>
             <dataType>Date</dataType>
             <fieldText>Due Date (Optional)</fieldText>
             <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <fields>
             <name>InstructionsInput</name>
             <fieldText>Reviewer Instructions / Comments (Optional)</fieldText>
             <fieldType>LargeTextArea</fieldType>
+            <isRequired>true</isRequired>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
-        <connector>
-            <targetReference>Assign_Reviewers_And_Create_AFEs</targetReference>
-        </connector>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Success_Message</name>
         <label>Reviewer Assigned</label>
-        <locationX>120</locationX>
-        <locationY>980</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -352,76 +452,26 @@
             <name>SuccessText</name>
             <fieldText>&lt;p&gt;&lt;b&gt;An evaluation has been created for this application.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;• A review task has been assigned to the reviewer&lt;br/&gt;• A notification email has been sent&lt;br/&gt;• The application status has been updated to &quot;In Review&quot;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+            <styleProperties>
+                <verticalAlignment>
+                    <stringValue>top</stringValue>
+                </verticalAlignment>
+                <width>
+                    <stringValue>12</stringValue>
+                </width>
+            </styleProperties>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
-    <screens>
-        <name>Error_Application_Not_Found</name>
-        <label>Application Not Found</label>
-        <locationX>760</locationX>
-        <locationY>170</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>ApplicationNotFoundText</name>
-            <fieldText>&lt;p&gt;Unable to find the Application Form record for this request.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>Error_Missing_Funding_Opportunity</name>
-        <label>Funding Opportunity Not Found</label>
-        <locationX>760</locationX>
-        <locationY>350</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>MissingFundingOpportunityText</name>
-            <fieldText>&lt;p&gt;This application is not linked to a Funding Opportunity. Add an ApplicationFormRelation with ReferenceObjectName = FundingOpportunity and try again.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>Error_Missing_Active_Template</name>
-        <label>Active Template Missing</label>
-        <locationX>760</locationX>
-        <locationY>530</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>MissingTemplateText</name>
-            <fieldText>&lt;p&gt;The linked Funding Opportunity does not have an active Evaluation Template configured.&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-
     <start>
-        <locationX>50</locationX>
+        <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Application_Form</targetReference>
         </connector>
     </start>
-
     <status>Active</status>
-
-    <variables>
-        <name>reviewerIdsCsv</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
@@ -430,29 +480,14 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>reviewerIdsCsv</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>var_CreatedCount</name>
-        <dataType>Number</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <scale>0</scale>
-        <value>
-            <numberValue>0.0</numberValue>
-        </value>
-    </variables>
-    <variables>
-        <name>var_SkippedCount</name>
-        <dataType>Number</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <scale>0</scale>
-        <value>
-            <numberValue>0.0</numberValue>
-        </value>
-    </variables>
-    <variables>
-        <name>var_TaskCount</name>
         <dataType>Number</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -474,6 +509,17 @@
         </value>
     </variables>
     <variables>
+        <name>var_SkippedCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
         <name>var_StageUpdated</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -481,6 +527,17 @@
         <isOutput>false</isOutput>
         <value>
             <booleanValue>false</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>var_TaskCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
         </value>
     </variables>
 </Flow>

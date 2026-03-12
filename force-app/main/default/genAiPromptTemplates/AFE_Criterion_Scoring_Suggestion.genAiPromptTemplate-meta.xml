@@ -17,34 +17,13 @@ Criterion Description: {!$Input:CriterionDescription}
 Rules:
 - Return JSON only.
 - suggestedScore must be an integer from 0 to 5.
-- suggestedRationale must be concise and reviewer-ready, using: Application Evidence -> Interpretation -> Scoring Justification.
-- Include citations as short evidence excerpts from the application.
-- Include up to 3 citations and keep each citation under 200 characters.
+- suggestedRationale must be concise and reviewer-ready.
 - Do not include markdown or any text outside JSON.
-- Reference specific details from the application whenever possible.
-- Mention relevant data such as RequestedAmount, ApplicationPurpose, ApplicationStage, CriterionLabel, and CriterionDescription.
-- Avoid generic statements like "the project demonstrates potential impact" without supporting details.
-- Explain both strengths and missing details when evidence is partial.
-- Use the full scoring range from 1 to 5.
-- Do not default to the highest score unless the application clearly satisfies the criterion at an exceptional level.
-- Score based on how well the application satisfies the criterion description.
-- Scoring calibration:
-  - 5: Fully satisfies the criterion with strong supporting evidence.
-  - 4: Strong alignment with minor gaps.
-  - 3: Adequate alignment with some missing detail.
-  - 2: Weak alignment.
-  - 1: Does not satisfy the criterion.
-- Example rationale style:
-  "The application requests $175,000 to support development of advanced aerospace composite materials and workforce training for aerospace manufacturing technicians. These activities align with the criterion of Aerospace Technology Advancement; however, additional technical detail about the innovation would strengthen the proposal."
-- The output key "suggestedRationale" maps directly to the scorecard Rationale field; do not rename it.
 
 Return exactly:
 {
   &quot;suggestedScore&quot;: 0,
-  &quot;suggestedRationale&quot;: &quot;&quot;,
-  &quot;citations&quot;: [
-    &quot;&quot;
-  ]
+  &quot;suggestedRationale&quot;: &quot;&quot;
 }
 </content>
         <inputs>
