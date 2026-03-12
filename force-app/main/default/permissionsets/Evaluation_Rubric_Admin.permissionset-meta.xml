@@ -68,6 +68,22 @@
         <apexClass>EvaluationFrameworkTemplateUpdater</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>PublicSectorGrantmakingReadController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GrantIntakeOrchestrationGateway</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GrantIntakeAppService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>GrantIntakeEvalInitService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description>Access to rubric evaluation templates, criteria, and score snapshots.</description>
     <fieldPermissions>
         <editable>true</editable>

@@ -9,6 +9,7 @@
  * User filters -> Apex getTemplateUsageRows() -> table rows with record links.
  */
 import { LightningElement } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getTemplateUsageRows from '@salesforce/apex/EvaluationCriteriaManagerReadController.getTemplateUsageRows';
 
 const COLUMNS = [
@@ -111,5 +112,26 @@ export default class TemplateUsageWorkspace extends LightningElement {
 
     get showEmptyState() {
         return !this.isLoading && !this.errorMessage && !this.hasRows;
+    }
+
+    async handleRefresh() {
+        await this.loadRows();
+        if (this.errorMessage) {
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Refresh Failed',
+                    message: this.errorMessage,
+                    variant: 'error'
+                })
+            );
+            return;
+        }
+        this.dispatchEvent(
+            new ShowToastEvent({
+                title: 'Refreshed',
+                message: 'Template usage rows were refreshed.',
+                variant: 'success'
+            })
+        );
     }
 }

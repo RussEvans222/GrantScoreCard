@@ -18,6 +18,8 @@ Rules:
 - Return JSON only.
 - suggestedScore must be an integer from 0 to 5.
 - suggestedRationale must be concise and reviewer-ready, using: Application Evidence -> Interpretation -> Scoring Justification.
+- Include citations as short evidence excerpts from the application.
+- Include up to 3 citations and keep each citation under 200 characters.
 - Do not include markdown or any text outside JSON.
 - Reference specific details from the application whenever possible.
 - Mention relevant data such as RequestedAmount, ApplicationPurpose, ApplicationStage, CriterionLabel, and CriterionDescription.
@@ -39,7 +41,10 @@ Rules:
 Return exactly:
 {
   &quot;suggestedScore&quot;: 0,
-  &quot;suggestedRationale&quot;: &quot;&quot;
+  &quot;suggestedRationale&quot;: &quot;&quot;,
+  &quot;citations&quot;: [
+    &quot;&quot;
+  ]
 }
 </content>
         <inputs>

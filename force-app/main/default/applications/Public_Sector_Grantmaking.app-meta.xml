@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Workspace-first grantmaking operations app for public sector teams.</description>
+    <formFactors>Large</formFactors>
+    <formFactors>Small</formFactors>
+    <label>Public Sector Grantmaking</label>
+    <navType>Standard</navType>
+    <tabs>PSG_Home</tabs>
+    <tabs>PSG_Funding_Opportunities</tabs>
+    <tabs>PSG_Application_Forms</tabs>
+    <tabs>PSG_Evaluations</tabs>
+    <tabs>PSG_Evaluation_Templates</tabs>
+    <tabs>PSG_Criteria_Library</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

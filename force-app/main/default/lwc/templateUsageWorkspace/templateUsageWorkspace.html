@@ -8,6 +8,14 @@
                     <p>Manage reusable evaluation criteria and AI-assisted rubric design.</p>
                 </div>
             </div>
+            <lightning-button-icon
+                class="refresh-button"
+                icon-name="utility:refresh"
+                alternative-text="Refresh"
+                title="Refresh"
+                onclick={handleRefresh}
+                disabled={isLoading}>
+            </lightning-button-icon>
         </header>
 
         <div class="slds-p-around_medium">

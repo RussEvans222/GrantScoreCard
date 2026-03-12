@@ -108,7 +108,11 @@ REQUIRED OUTPUT FORMAT
   {
    &quot;criterionId&quot;: &quot;SalesforceRecordId&quot;,
    &quot;score&quot;: number,
-   &quot;reason&quot;: &quot;Short explanation of why this score was suggested&quot;
+   &quot;reason&quot;: &quot;Short explanation of why this score was suggested&quot;,
+   &quot;citations&quot;: [
+    &quot;Short excerpt from application text&quot;,
+    &quot;Short excerpt from application text&quot;
+   ]
   }
  ]
 }
@@ -123,6 +127,8 @@ ADDITIONAL RULES
 • Use the 1-5 range with balanced scoring across criteria when warranted  
 • Keep the rationale concise (1–2 sentences)  
 • Each rationale should reference relevant application details, not generic statements  
+• Include up to 3 citations for each criterion using short application excerpts  
+• Each citation should be 200 characters or fewer  
 • Output key &quot;reason&quot; maps directly to the scorecard Rationale field; do not rename it  
 • Return only valid JSON
 </content>

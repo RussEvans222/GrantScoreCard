@@ -1,0 +1,31 @@
+<template>
+    <section class="page-shell">
+        <article class="discovery-card" aria-label="AI-powered funding discovery">
+            <header class="card-header">
+                <h1 class="title">AI-Powered Grant Discovery</h1>
+                <p class="subtitle">Describe your project and we'll recommend the best funding opportunities.</p>
+            </header>
+
+            <div class="content-stack">
+                <lightning-textarea
+                    name="projectDescription"
+                    label="Project Description"
+                    value={projectDescription}
+                    onchange={handleDescriptionChange}
+                    class="project-input"
+                    max-length="5000"
+                    placeholder="Describe the project you want to fund, the problem it solves, and the impact it will create."
+                    variant="label-hidden">
+                </lightning-textarea>
+
+                <lightning-button
+                    label="Analyze Project"
+                    variant="brand"
+                    class="analyze-btn"
+                    onclick={handleAnalyzeProject}
+                    disabled={isAnalyzeDisabled}>
+                </lightning-button>
+            </div>
+        </article>
+    </section>
+</template>

@@ -9,14 +9,20 @@
  * Apex (wire) -> this.data -> computed getters -> card UI.
  */
 import { LightningElement, wire } from 'lwc';
+import { refreshApex } from '@salesforce/apex';
 import { NavigationMixin } from 'lightning/navigation';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getHomeDashboardData from '@salesforce/apex/EvaluationCriteriaManagerReadController.getHomeDashboardData';
 
 export default class EvaluationCriteriaManagerHome extends NavigationMixin(LightningElement) {
     data;
+    isRefreshing = false;
+    wiredDashboardResult;
 
     @wire(getHomeDashboardData)
-    wiredDashboard({ data }) {
+    wiredDashboard(wiredResult) {
+        this.wiredDashboardResult = wiredResult;
+        const { data } = wiredResult;
         // Wire adapter automatically refreshes when LDS/Apex cache updates.
         if (data) {
             this.data = data;
@@ -84,5 +90,32 @@ export default class EvaluationCriteriaManagerHome extends NavigationMixin(Light
             type: 'standard__navItemPage',
             attributes: { apiName }
         });
+    }
+
+    async handleRefresh() {
+        if (!this.wiredDashboardResult) {
+            return;
+        }
+        this.isRefreshing = true;
+        try {
+            await refreshApex(this.wiredDashboardResult);
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Refreshed',
+                    message: 'Home metrics and lists were refreshed.',
+                    variant: 'success'
+                })
+            );
+        } catch (error) {
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Refresh Failed',
+                    message: error?.body?.message || error?.message || 'Unable to refresh home data.',
+                    variant: 'error'
+                })
+            );
+        } finally {
+            this.isRefreshing = false;
+        }
     }
 }

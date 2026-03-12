@@ -68,6 +68,7 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
     categoryFilter = 'All';
     activeFilter = 'All';
     versionFilter = 'All';
+    showFlatList = false;
 
     criteriaRows = [];
     templateRows = [];
@@ -81,7 +82,9 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
     selectedCriterionName;
     selectedBundleId = '';
     newBundleLabel = '';
+    quickBundleLabel = '';
     bundleOptions = [];
+    isRefreshing = false;
 
     showDeleteConfirm = false;
     deleteTargetId;
@@ -90,12 +93,7 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
     criteriaColumns = CRITERIA_COLUMNS;
     templateColumns = TEMPLATE_COLUMNS;
 
-    categoryOptions = [
-        { label: 'All', value: 'All' },
-        { label: 'General', value: 'General' },
-        { label: 'Financial', value: 'Financial' },
-        { label: 'Innovation', value: 'Innovation' }
-    ];
+    categoryOptions = [{ label: 'All', value: 'All' }];
 
     activeOptions = [
         { label: 'All', value: 'All' },
@@ -103,12 +101,7 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
         { label: 'Inactive', value: 'Inactive' }
     ];
 
-    versionOptions = [
-        { label: 'All', value: 'All' },
-        { label: '1', value: '1' },
-        { label: '2', value: '2' },
-        { label: '3', value: '3' }
-    ];
+    versionOptions = [{ label: 'All', value: 'All' }];
 
     @wire(CurrentPageReference)
     wiredPageRef(pageRef) {
@@ -232,10 +225,27 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
                 versionFilter: this.versionFilter
             });
             this.criteriaRows = response?.rows || [];
+            this.syncDynamicFilterOptions();
             this.helperNote = response?.helperNote || '';
         } catch (error) {
             this.showError('Failed to load criteria library data.', error);
         }
+    }
+
+    syncDynamicFilterOptions() {
+        const categories = new Set();
+        const versions = new Set();
+        (this.criteriaRows || []).forEach((row) => {
+            if (row?.category && row.category !== '--') {
+                categories.add(row.category);
+            }
+            if (row?.version && row.version !== '--') {
+                versions.add(row.version);
+            }
+        });
+
+        this.categoryOptions = [{ label: 'All', value: 'All' }, ...Array.from(categories).sort().map((v) => ({ label: v, value: v }))];
+        this.versionOptions = [{ label: 'All', value: 'All' }, ...Array.from(versions).sort().map((v) => ({ label: v, value: v }))];
     }
 
     handleSearchChange(event) {
@@ -256,6 +266,10 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
     handleVersionChange(event) {
         this.versionFilter = event.detail.value;
         this.refreshRows();
+    }
+
+    handleToggleFlatList(event) {
+        this.showFlatList = event.target.checked;
     }
 
     handleCriterionSelection(event) {
@@ -297,7 +311,19 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
             name: event.currentTarget.dataset.name,
             bundleId: event.currentTarget.dataset.bundleid
         };
+        this.handleCriteriaAction(actionName, row);
+    }
 
+    handleCriteriaDatatableRowAction(event) {
+        const actionName = event.detail?.action?.name;
+        const row = event.detail?.row;
+        this.handleCriteriaAction(actionName, row);
+    }
+
+    handleCriteriaAction(actionName, row) {
+        if (!actionName || !row?.id) {
+            return;
+        }
         if (actionName === 'delete') {
             this.deleteTargetId = row.id;
             this.deleteTargetName = row.name;
@@ -348,6 +374,32 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
 
     handleNewBundleLabelChange(event) {
         this.newBundleLabel = event.detail.value;
+    }
+
+    handleQuickBundleLabelChange(event) {
+        this.quickBundleLabel = event.detail.value;
+    }
+
+    async handleCreateBundleFromMain() {
+        if (!this.quickBundleLabel || !this.quickBundleLabel.trim()) {
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Bundle name required',
+                    message: 'Enter a bundle name before creating.',
+                    variant: 'warning'
+                })
+            );
+            return;
+        }
+        try {
+            const newBundleId = await createBundle({ bundleLabel: this.quickBundleLabel.trim() });
+            this.quickBundleLabel = '';
+            await this.loadBundleOptions();
+            this.selectedBundleId = newBundleId;
+            this.showSuccess('Bundle ready', 'Bundle created (or existing bundle found) and added to bundle options.');
+        } catch (error) {
+            this.showError('Failed to create bundle.', error);
+        }
     }
 
     async handleCreateBundleAndAssign() {
@@ -453,5 +505,17 @@ export default class CriteriaLibraryWorkspace extends NavigationMixin(LightningE
     showError(title, error) {
         const message = error?.body?.message || error?.message || 'Unexpected error';
         this.dispatchEvent(new ShowToastEvent({ title, message, variant: 'error' }));
+    }
+
+    async handleRefresh() {
+        this.isRefreshing = true;
+        try {
+            await Promise.all([this.refreshRows(), this.loadBundleOptions()]);
+            this.showSuccess('Refreshed', `${this.workspaceTitle} data was refreshed.`);
+        } catch (error) {
+            this.showError('Refresh Failed', error);
+        } finally {
+            this.isRefreshing = false;
+        }
     }
 }

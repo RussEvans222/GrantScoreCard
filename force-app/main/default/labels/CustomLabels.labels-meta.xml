@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>PSG_Tableau_Home_Dashboard_URL</fullName>
+        <categories>Grantmaking</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Public Sector Grantmaking Tableau Home Dashboard URL</shortDescription>
+        <value>https://tableau.example.com/views/your-dashboard</value>
+    </labels>
+</CustomLabels>

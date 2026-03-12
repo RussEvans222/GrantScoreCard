@@ -9,6 +9,7 @@
  * LWC button click -> Apex analyzeFramework() -> DTO response -> UI cards/lists.
  */
 import { LightningElement, wire } from 'lwc';
+import { refreshApex } from '@salesforce/apex';
 import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getEvaluationTemplateOptions from '@salesforce/apex/EvaluationCriteriaManagerReadController.getEvaluationTemplateOptions';
@@ -22,10 +23,14 @@ export default class CriteriaInsightsWorkspace extends NavigationMixin(Lightning
     errorMessage;
     result;
     actionInProgress = false;
+    isRefreshing = false;
     appliedRecommendationKeys = new Set();
+    wiredTemplateOptionsResult;
 
     @wire(getEvaluationTemplateOptions)
-    wiredTemplates({ data }) {
+    wiredTemplates(wiredResult) {
+        this.wiredTemplateOptionsResult = wiredResult;
+        const { data } = wiredResult;
         // Loads template selector options from Apex (real org data, not mocks).
         if (data) {
             this.templateOptions = (data || []).map((row) => ({ label: row.label, value: row.id }));
@@ -137,6 +142,10 @@ export default class CriteriaInsightsWorkspace extends NavigationMixin(Lightning
 
     async handleAnalyze() {
         // Main Apex -> LWC communication point for framework AI analysis.
+        await this.runAnalysis(true);
+    }
+
+    async runAnalysis(showToastOnSuccess) {
         this.errorMessage = null;
         this.appliedRecommendationKeys = new Set();
 
@@ -154,13 +163,15 @@ export default class CriteriaInsightsWorkspace extends NavigationMixin(Lightning
             }
 
             this.result = response;
-            this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'Framework Analysis Complete',
-                    message: response.message,
-                    variant: 'success'
-                })
-            );
+            if (showToastOnSuccess) {
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'Framework Analysis Complete',
+                        message: response.message,
+                        variant: 'success'
+                    })
+                );
+            }
         } catch (error) {
             this.result = null;
             this.errorMessage = error?.body?.message || error?.message || 'Framework analysis failed.';
@@ -271,5 +282,44 @@ export default class CriteriaInsightsWorkspace extends NavigationMixin(Lightning
 
     toDisplay(value) {
         return value === null || value === undefined ? '--' : value;
+    }
+
+    async handleRefresh() {
+        this.isRefreshing = true;
+        try {
+            if (this.wiredTemplateOptionsResult) {
+                await refreshApex(this.wiredTemplateOptionsResult);
+            }
+            if (this.selectedTemplateId && this.result) {
+                await this.runAnalysis(false);
+            }
+            if (this.errorMessage) {
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'Refresh Failed',
+                        message: this.errorMessage,
+                        variant: 'error'
+                    })
+                );
+                return;
+            }
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Refreshed',
+                    message: 'Template options and insight values were refreshed.',
+                    variant: 'success'
+                })
+            );
+        } catch (error) {
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Refresh Failed',
+                    message: error?.body?.message || error?.message || 'Unable to refresh criteria insights.',
+                    variant: 'error'
+                })
+            );
+        } finally {
+            this.isRefreshing = false;
+        }
     }
 }

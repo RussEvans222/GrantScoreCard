@@ -68,6 +68,8 @@ public with sharing class EvaluationCriteriaManagerReadController {
     public class CriteriaDataResponse {
         @AuraEnabled public List<CriteriaRow> rows;
         @AuraEnabled public String helperNote;
+        @AuraEnabled public Integer totalCount;
+        @AuraEnabled public Integer returnedCount;
     }
 
     public class TemplateRow {
@@ -262,6 +264,8 @@ public with sharing class EvaluationCriteriaManagerReadController {
         CriteriaDataResponse response = new CriteriaDataResponse();
         response.rows = new List<CriteriaRow>();
         response.helperNote = 'Manage criteria here: assign bundles, create new bundles, and remove criteria from the library.';
+        response.totalCount = 0;
+        response.returnedCount = 0;
 
         Map<String, Schema.SObjectField> critFields = Schema.SObjectType.Criterion_Library__c.fields.getMap();
         List<String> selectFields = new List<String>{ 'Id', 'Label__c', 'Description__c' };
@@ -302,10 +306,14 @@ public with sharing class EvaluationCriteriaManagerReadController {
         }
 
         String soql = baseQuery;
+        String whereClause = '';
         if (!whereParts.isEmpty()) {
-            soql += ' WHERE ' + String.join(whereParts, ' AND ');
+            whereClause = ' WHERE ' + String.join(whereParts, ' AND ');
+            soql += whereClause;
         }
-        soql += ' ORDER BY LastModifiedDate DESC LIMIT 200';
+        soql += ' ORDER BY LastModifiedDate DESC';
+
+        response.totalCount = (Integer) Database.countQuery('SELECT COUNT() FROM Criterion_Library__c' + whereClause);
 
         Map<Id, Integer> templatesUsingByCriterionId = new Map<Id, Integer>();
         if (Schema.SObjectType.Evaluation_Template_Criterion__c.fields.getMap().containsKey('SourceLibraryCriterion__c')) {
@@ -346,6 +354,12 @@ public with sharing class EvaluationCriteriaManagerReadController {
                 : '--';
             response.rows.add(out);
         }
+
+        response.returnedCount = response.rows.size();
+        response.helperNote =
+            'Showing ' + String.valueOf(response.returnedCount) +
+            ' of ' + String.valueOf(response.totalCount) +
+            ' criteria based on current filters.';
 
         return response;
     }
@@ -759,6 +773,16 @@ public with sharing class EvaluationCriteriaManagerReadController {
 
         String trimmed = bundleLabel.trim();
         Map<String, Schema.SObjectField> fields = Schema.SObjectType.Section_Library__c.fields.getMap();
+
+        for (Section_Library__c existing : [
+            SELECT Id
+            FROM Section_Library__c
+            WHERE Label__c = :trimmed
+            LIMIT 1
+        ]) {
+            return existing.Id;
+        }
+
         Section_Library__c newBundle = new Section_Library__c();
 
         if (fields.containsKey('Label__c') && fields.get('Label__c').getDescribe().isCreateable()) {
@@ -819,6 +843,12 @@ public with sharing class EvaluationCriteriaManagerReadController {
             if (preferred != '--') {
                 return preferred;
             }
+        }
+        String status = asDisplayString(templateRow.get('Status__c'));
+        String version = asDisplayString(templateRow.get('Version__c'));
+        if (version != '--') {
+            String prefix = status == '--' ? 'Evaluation Rubric' : status + ' Rubric';
+            return prefix + ' v' + version;
         }
         return asDisplayString(templateRow.get('Name'));
     }

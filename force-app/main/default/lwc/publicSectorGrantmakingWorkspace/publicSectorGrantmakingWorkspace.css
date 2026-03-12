@@ -30,71 +30,45 @@
     color: #5f6a7d;
 }
 
-.helper-note {
-    color: #5f6a7d;
-    font-size: 0.75rem;
+.refresh-button {
+    flex-shrink: 0;
 }
 
 .filters {
     display: grid;
-    grid-template-columns: repeat(2, minmax(260px, 1fr)) auto;
+    grid-template-columns: 1fr auto;
     gap: 0.75rem;
     align-items: end;
 }
 
 .search-action {
     display: flex;
-    align-items: flex-end;
+    align-items: end;
 }
 
-.selected-filter {
+.info-row {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    padding: 0.4rem 0.55rem;
-    border-radius: 6px;
-    border: 1px solid #dddbda;
-    background: #eef0ff;
-    color: #1b3a5f;
-    font-size: 0.75rem;
-}
-
-.usage-help {
-    border: 1px solid #dddbda;
-    border-radius: 6px;
-    background: #eef0ff;
-    border-left: 4px solid #6f5ef9;
-    padding: 0.6rem 0.75rem;
-}
-
-.usage-help h3 {
-    margin: 0 0 0.3rem;
-    color: #1b3a5f;
-    font-size: 0.85rem;
-    font-weight: 700;
-}
-
-.usage-help ol {
-    margin: 0;
-    padding-left: 1.1rem;
-    color: #5f6a7d;
-    font-size: 0.77rem;
-}
-
-.controls-row {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 0.75rem;
+    gap: 0.7rem;
     flex-wrap: wrap;
+}
+
+.object-chip {
+    background: #eef0ff;
+    border: 1px solid #d9dcff;
+    border-radius: 999px;
+    color: #6f5ef9;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.55rem;
 }
 
 .row-count {
     color: #5f6a7d;
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
 }
 
 .loading-wrap {
@@ -122,12 +96,31 @@
     font-size: 0.78rem;
 }
 
-@media (max-width: 960px) {
+.helper-note {
+    color: #5f6a7d;
+    font-size: 0.75rem;
+}
+
+.pagination-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.6rem;
+}
+
+.page-label {
+    color: #5f6a7d;
+    font-size: 0.78rem;
+    min-width: 4.5rem;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
     .filters {
         grid-template-columns: 1fr;
     }
-}
 
-.refresh-button {
-    flex-shrink: 0;
+    .pagination-row {
+        justify-content: flex-start;
+    }
 }

@@ -1,0 +1,79 @@
+<template>
+    <section class="workspace-shell">
+        <header class="workspace-header slds-p-around_medium">
+            <div class="title-wrap">
+                <lightning-icon icon-name="utility:custom_apps" size="small" alternative-text="App"></lightning-icon>
+                <div>
+                    <h1>Public Sector Grantmaking</h1>
+                    <p>Workspace-first list management for core grantmaking process objects.</p>
+                </div>
+            </div>
+            <lightning-button-icon
+                class="refresh-button"
+                icon-name="utility:refresh"
+                alternative-text="Refresh"
+                title="Refresh"
+                onclick={handleRefresh}
+                disabled={isRefreshing}>
+            </lightning-button-icon>
+        </header>
+
+        <div class="slds-p-around_medium">
+            <lightning-card title={workspaceTitle} icon-name="utility:table">
+                <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                    <div class="filters">
+                        <lightning-input type="search" label="Search" value={searchText} onchange={handleSearchChange}></lightning-input>
+                        <div class="search-action">
+                            <lightning-button variant="brand" label="Search" onclick={handleRunSearch}></lightning-button>
+                        </div>
+                    </div>
+
+                    <div class="info-row slds-m-top_small">
+                        <span class="object-chip">Object: {objectApiName}</span>
+                        <span class="row-count">{rowCountLabel}</span>
+                    </div>
+
+                    <template if:true={errorMessage}>
+                        <div class="error-banner slds-m-top_small" role="alert">{errorMessage}</div>
+                    </template>
+
+                    <div class="slds-m-top_small">
+                        <template if:true={isLoading}>
+                            <div class="loading-wrap">
+                                <lightning-spinner size="small" alternative-text="Loading"></lightning-spinner>
+                            </div>
+                        </template>
+                        <lightning-datatable
+                            key-field="recordId"
+                            data={rows}
+                            columns={columns}
+                            hide-checkbox-column
+                            sorted-by={sortBy}
+                            sorted-direction={sortDirection}
+                            onsort={handleSort}>
+                        </lightning-datatable>
+                        <template if:true={showEmptyState}>
+                            <div class="empty-state slds-m-top_small">No rows match this search.</div>
+                        </template>
+                    </div>
+
+                    <p class="helper-note slds-m-top_small">{helperNote}</p>
+                    <div class="pagination-row slds-m-top_small">
+                        <lightning-button
+                            label="Previous"
+                            onclick={handlePreviousPage}
+                            disabled={disablePrevious}>
+                        </lightning-button>
+                        <span class="page-label">{pageLabel}</span>
+                        <lightning-button
+                            label="Next"
+                            variant="brand-outline"
+                            onclick={handleNextPage}
+                            disabled={disableNext}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+    </section>
+</template>

@@ -7,6 +7,9 @@
     background: #ffffff;
     border: 1px solid #dddbda;
     border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title-wrap {
@@ -158,6 +161,15 @@
     background: #eef0ff;
     color: #1b3a5f;
     font-size: 0.76rem;
+    align-items: flex-end;
+}
+
+.quick-bundle-input {
+    min-width: 220px;
+}
+
+.flat-list-toggle {
+    margin-left: auto;
 }
 
 .filter-row {
@@ -176,6 +188,10 @@
     border-left: 4px solid #6f5ef9;
     border-radius: 6px;
     padding: 0.4rem 0.55rem;
+}
+
+.refresh-button {
+    flex-shrink: 0;
 }
 
 @media (max-width: 1024px) {

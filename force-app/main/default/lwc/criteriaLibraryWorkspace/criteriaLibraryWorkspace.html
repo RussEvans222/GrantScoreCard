@@ -8,6 +8,14 @@
                     <p>Manage reusable evaluation criteria and AI-assisted rubric design.</p>
                 </div>
             </div>
+            <lightning-button-icon
+                class="refresh-button"
+                icon-name="utility:refresh"
+                alternative-text="Refresh"
+                title="Refresh"
+                onclick={handleRefresh}
+                disabled={isRefreshing}>
+            </lightning-button-icon>
         </header>
 
         <div class="slds-p-around_medium">
@@ -55,12 +63,40 @@
                         <div class="bundle-summary slds-m-bottom_small">
                             <span><strong>{totalBundleCount}</strong> bundles</span>
                             <span><strong>{unassignedCount}</strong> unassigned criteria</span>
+                            <lightning-input
+                                class="quick-bundle-input"
+                                label="Quick Add Bundle"
+                                value={quickBundleLabel}
+                                onchange={handleQuickBundleLabelChange}
+                                placeholder="Bundle name">
+                            </lightning-input>
+                            <lightning-button label="Add Bundle" onclick={handleCreateBundleFromMain}></lightning-button>
+                            <lightning-input
+                                class="flat-list-toggle"
+                                type="toggle"
+                                label="Show Flat List"
+                                message-toggle-active="On"
+                                message-toggle-inactive="Off"
+                                checked={showFlatList}
+                                onchange={handleToggleFlatList}>
+                            </lightning-input>
                         </div>
 
-                        <div class="workspace-grid">
-                            <div>
-                                <template for:each={bundleGroups} for:item="group">
-                                    <section key={group.key} class="bundle-group slds-m-bottom_medium">
+                        <template if:true={showFlatList}>
+                            <lightning-datatable
+                                key-field="id"
+                                data={criteriaRows}
+                                columns={criteriaColumns}
+                                onrowaction={handleCriteriaDatatableRowAction}
+                                hide-checkbox-column>
+                            </lightning-datatable>
+                        </template>
+
+                        <template if:false={showFlatList}>
+                            <div class="workspace-grid">
+                                <div>
+                                    <template for:each={bundleGroups} for:item="group">
+                                        <section key={group.key} class="bundle-group slds-m-bottom_medium">
                                         <header class="bundle-header">
                                             <h4>{group.bundleName}</h4>
                                             <span>{group.count} criteria</span>
@@ -120,45 +156,46 @@
                                                 </span>
                                             </div>
                                         </template>
+                                        </section>
+                                    </template>
+                                </div>
+
+                                <div class="right-column">
+                                    <section class="bundle-manager slds-p-around_medium">
+                                        <h3>Bundle Manager</h3>
+                                        <p class="subtext">Select a criterion row, then assign it to a bundle or create a new bundle.</p>
+
+                                        <template if:true={hasSelection}>
+                                            <p class="selected-name">Selected: {selectedCriterionName}</p>
+
+                                            <lightning-combobox
+                                                label="Assign Existing Bundle"
+                                                value={selectedBundleId}
+                                                options={bundleOptionsWithNone}
+                                                onchange={handleBundleSelectionChange}>
+                                            </lightning-combobox>
+                                            <lightning-button class="slds-m-top_small" variant="brand" label="Save Bundle Assignment" onclick={handleAssignBundle}></lightning-button>
+
+                                            <div class="divider"></div>
+
+                                            <lightning-input
+                                                label="Create New Bundle"
+                                                value={newBundleLabel}
+                                                onchange={handleNewBundleLabelChange}
+                                                placeholder="Enter bundle name">
+                                            </lightning-input>
+                                            <lightning-button class="slds-m-top_small" label="Create Bundle and Assign" onclick={handleCreateBundleAndAssign}></lightning-button>
+                                        </template>
+
+                                        <template if:false={hasSelection}>
+                                            <p class="subtext">No criterion selected.</p>
+                                        </template>
                                     </section>
-                                </template>
+
+                                    <c-criterion-record-panel criterion-id={selectedCriterionId}></c-criterion-record-panel>
+                                </div>
                             </div>
-
-                            <div class="right-column">
-                                <section class="bundle-manager slds-p-around_medium">
-                                    <h3>Bundle Manager</h3>
-                                    <p class="subtext">Select a criterion row, then assign it to a bundle or create a new bundle.</p>
-
-                                    <template if:true={hasSelection}>
-                                        <p class="selected-name">Selected: {selectedCriterionName}</p>
-
-                                        <lightning-combobox
-                                            label="Assign Existing Bundle"
-                                            value={selectedBundleId}
-                                            options={bundleOptionsWithNone}
-                                            onchange={handleBundleSelectionChange}>
-                                        </lightning-combobox>
-                                        <lightning-button class="slds-m-top_small" variant="brand" label="Save Bundle Assignment" onclick={handleAssignBundle}></lightning-button>
-
-                                        <div class="divider"></div>
-
-                                        <lightning-input
-                                            label="Create New Bundle"
-                                            value={newBundleLabel}
-                                            onchange={handleNewBundleLabelChange}
-                                            placeholder="Enter bundle name">
-                                        </lightning-input>
-                                        <lightning-button class="slds-m-top_small" label="Create Bundle and Assign" onclick={handleCreateBundleAndAssign}></lightning-button>
-                                    </template>
-
-                                    <template if:false={hasSelection}>
-                                        <p class="subtext">No criterion selected.</p>
-                                    </template>
-                                </section>
-
-                                <c-criterion-record-panel criterion-id={selectedCriterionId}></c-criterion-record-panel>
-                            </div>
-                        </div>
+                        </template>
                     </template>
 
                     <p class="helper-note slds-m-top_small">{helperNote}</p>

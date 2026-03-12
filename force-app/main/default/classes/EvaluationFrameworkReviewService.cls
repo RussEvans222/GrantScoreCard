@@ -20,6 +20,22 @@ This service runs the end-to-end framework review process.
 It loads Salesforce data, calls Prompt Builder, parses JSON into Apex DTOs,
 and returns a response object that LWCs can render.
 */
+/*
+AI PROMPT INTEGRATION
+
+GrantScoreCard uses Salesforce Prompt Builder templates to add AI assistance
+without hard-coding model behavior directly in Apex.
+
+Examples used in this repository:
+- EvaluationFrameworkReview
+- ETDisplayName
+
+ETDisplayName generates a short display name for an evaluation template
+from template metadata and selected criteria context.
+
+Prompt templates run through Salesforce Einstein Trust Layer controls.
+The result can be used for UI display, workflow guidance, or safe field updates.
+*/
 public with sharing class EvaluationFrameworkReviewService {
     private static final String TEMPLATE_API_NAME = 'EvaluationFrameworkReview';
     private static final String AI_SOURCE_LABEL = 'AI Framework Review';
@@ -285,16 +301,27 @@ public with sharing class EvaluationFrameworkReviewService {
             }
         }
 
-        if (templateId == null || String.isBlank(preferredField)) {
+        if (templateId == null) {
             return fallbackName;
         }
 
+        String selectPreferred = String.isBlank(preferredField) ? '' : (preferredField + ', ');
         SObject row = Database.query(
-            'SELECT Name, ' + preferredField + ' FROM Evaluation_Template__c WHERE Id = :templateId LIMIT 1'
+            'SELECT Name, Status__c, Version__c, ' + selectPreferred +
+            'Id FROM Evaluation_Template__c WHERE Id = :templateId LIMIT 1'
         );
-        String preferred = asText(row.get(preferredField));
-        if (!String.isBlank(preferred)) {
-            return preferred;
+        if (!String.isBlank(preferredField)) {
+            String preferred = asText(row.get(preferredField));
+            if (!String.isBlank(preferred)) {
+                return preferred;
+            }
+        }
+
+        String status = asText(row.get('Status__c'));
+        String version = asText(row.get('Version__c'));
+        if (!String.isBlank(version)) {
+            String prefix = String.isBlank(status) ? 'Evaluation Rubric' : status + ' Rubric';
+            return prefix + ' v' + version;
         }
         String fallback = asText(row.get('Name'));
         return String.isBlank(fallback) ? fallbackName : fallback;

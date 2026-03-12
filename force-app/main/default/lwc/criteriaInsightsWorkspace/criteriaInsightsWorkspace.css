@@ -7,6 +7,9 @@
     background: #ffffff;
     border: 1px solid #dddbda;
     border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title-wrap {
@@ -168,4 +171,8 @@
     .result-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.refresh-button {
+    flex-shrink: 0;
 }
