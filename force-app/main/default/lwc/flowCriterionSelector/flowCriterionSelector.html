@@ -4,6 +4,17 @@
             <p>Select the criteria you want to include in this evaluation rubric.</p>
             <p>Most evaluation rubrics include 3-5 criteria.</p>
             <p class="selection-count">Selected: {selectedCount}</p>
+            <template if:true={hasRemovedRows}>
+                <div class="undo-row">
+                    <p class="removed-count">{removedCount} removed</p>
+                    <lightning-button
+                        variant="neutral"
+                        label="Undo Last Remove"
+                        title="Restore the most recently removed criterion"
+                        onclick={handleUndoRemove}
+                    ></lightning-button>
+                </div>
+            </template>
             <template if:true={showRecommendedIndicator}>
                 <p class="recommended">Recommended range selected (4-6 criteria).</p>
             </template>
@@ -29,13 +40,24 @@
                         <h3 class="bundle-title">Bundle: {group.bundleName}</h3>
                         <template for:each={group.items} for:item="row">
                             <div key={row.id} class="criterion-row">
-                                <lightning-input
-                                    type="checkbox"
-                                    label={row.label}
-                                    data-id={row.id}
-                                    checked={row.selected}
-                                    onchange={handleToggle}
-                                ></lightning-input>
+                                <div class="criterion-row-main">
+                                    <lightning-input
+                                        type="checkbox"
+                                        label={row.label}
+                                        data-id={row.id}
+                                        checked={row.selected}
+                                        onchange={handleToggle}
+                                    ></lightning-input>
+                                    <lightning-button-icon
+                                        data-id={row.id}
+                                        icon-name="utility:delete"
+                                        alternative-text="Remove criterion from selection"
+                                        title="Remove criterion from this bundle selection"
+                                        variant="bare"
+                                        class="criterion-remove"
+                                        onclick={handleRemove}
+                                    ></lightning-button-icon>
+                                </div>
                                 <p class="criterion-description">{row.description}</p>
                                 <p class="criterion-meta">Default Weight: {row.defaultWeight}</p>
                             </div>

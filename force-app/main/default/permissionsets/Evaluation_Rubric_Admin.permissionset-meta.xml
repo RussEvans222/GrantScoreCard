@@ -52,6 +52,22 @@
         <apexClass>AssignReviewersCreateEvaluationsAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>EvaluationCriteriaManagerReadController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>EvaluationFrameworkReviewService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>EvaluationFrameworkPromptInvoker</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>EvaluationFrameworkTemplateUpdater</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <description>Access to rubric evaluation templates, criteria, and score snapshots.</description>
     <fieldPermissions>
         <editable>true</editable>
@@ -176,6 +192,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Evaluation_Criterion_Score__c.Label__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Evaluation_Criterion_Score__c.AI_Evidence__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -462,4 +483,40 @@
         <viewAllFields>false</viewAllFields>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <applicationVisibilities>
+        <application>Evaluation_Criteria_Manager</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <tabSettings>
+        <tab>Evaluation_Criteria_Manager_Home</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Criteria_Library</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Criterion_Library__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Evaluation_Templates</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Evaluation_Template__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>AI_Criteria_Tools</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Criteria_Insights</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Template_Usage</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
 </PermissionSet>

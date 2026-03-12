@@ -1,0 +1,84 @@
+<template>
+    <lightning-card title="Criterion Details" icon-name="utility:record_lookup">
+        <template if:true={criterion}>
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                <dl class="slds-list_horizontal slds-wrap detail-grid">
+                    <dt class="slds-item_label slds-truncate" title="Name">Name</dt>
+                    <dd class="slds-item_detail slds-truncate" title={criterion.name}>{criterion.name}</dd>
+
+                    <dt class="slds-item_label slds-truncate" title="Category">Category</dt>
+                    <dd class="slds-item_detail slds-truncate">{criterion.category}</dd>
+
+                    <dt class="slds-item_label slds-truncate" title="Bundle">Bundle</dt>
+                    <dd class="slds-item_detail slds-truncate">{criterion.bundleName}</dd>
+
+                    <dt class="slds-item_label slds-truncate" title="Default Weight">Default Weight</dt>
+                    <dd class="slds-item_detail slds-truncate">{criterion.defaultWeightDisplay}</dd>
+
+                    <dt class="slds-item_label slds-truncate" title="Status">Status</dt>
+                    <dd class="slds-item_detail slds-truncate">{criterion.status}</dd>
+
+                    <dt class="slds-item_label slds-truncate" title="Version">Version</dt>
+                    <dd class="slds-item_detail slds-truncate">{criterion.version}</dd>
+
+                    <dt class="slds-item_label slds-truncate" title="Templates Using">Templates Using</dt>
+                    <dd class="slds-item_detail slds-truncate">{criterion.templatesUsing}</dd>
+                </dl>
+
+                <div class="content-block">
+                    <h3>Description</h3>
+                    <p>{criterion.description}</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Scoring Guidance</h3>
+                    <p>{criterion.scoringGuidance}</p>
+                </div>
+
+                <div class="content-block ai-panel">
+                    <h3>
+                        <lightning-icon icon-name="utility:einstein" size="xx-small" alternative-text="AI"></lightning-icon>
+                        AI Notes
+                    </h3>
+                    <p>{criterion.aiNotes}</p>
+                </div>
+
+                <div class="content-block">
+                    <h3>Recent Application Usage</h3>
+                    <template if:true={hasRecentUsage}>
+                        <ul class="usage-list">
+                            <template for:each={criterion.recentApplicationUsages} for:item="row">
+                                <li key={row.key} class="usage-item">
+                                    <div class="usage-title">
+                                        <template if:true={row.appFormUrl}>
+                                            <a href={row.appFormUrl} target="_self">{row.applicationFormName}</a>
+                                        </template>
+                                        <template if:false={row.appFormUrl}>{row.applicationFormName}</template>
+                                        <span class="usage-meta"> · {row.evaluationStatus}</span>
+                                    </div>
+                                    <div class="usage-meta">
+                                        Evaluation:
+                                        <template if:true={row.evaluationUrl}>
+                                            <a href={row.evaluationUrl} target="_self">{row.evaluationName}</a>
+                                        </template>
+                                        <template if:false={row.evaluationUrl}>{row.evaluationName}</template>
+                                        · Template: {row.evaluationTemplateName}
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <template if:false={hasRecentUsage}>
+                        <p class="muted">No recent application usage found for this criterion.</p>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+        <template if:false={criterion}>
+            <div class="slds-p-horizontal_medium slds-p-bottom_medium muted">
+                Select a criterion to view details.
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Administrative workspace for reusable evaluation criteria and AI-assisted rubric analysis.</description>
+    <formFactors>Large</formFactors>
+    <formFactors>Small</formFactors>
+    <label>Evaluation Criteria Manager</label>
+    <navType>Standard</navType>
+    <tabs>Evaluation_Criteria_Manager_Home</tabs>
+    <tabs>Criteria_Library</tabs>
+    <tabs>Evaluation_Templates</tabs>
+    <tabs>AI_Criteria_Tools</tabs>
+    <tabs>Criteria_Insights</tabs>
+    <tabs>Template_Usage</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

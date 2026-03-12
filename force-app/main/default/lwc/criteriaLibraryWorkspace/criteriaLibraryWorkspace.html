@@ -1,0 +1,187 @@
+<template>
+    <section class="workspace-shell">
+        <header class="workspace-header slds-p-around_medium">
+            <div class="title-wrap">
+                <lightning-icon icon-name="utility:custom_apps" size="small" alternative-text="App"></lightning-icon>
+                <div>
+                    <h1>Evaluation Criteria Manager</h1>
+                    <p>Manage reusable evaluation criteria and AI-assisted rubric design.</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="slds-p-around_medium">
+            <lightning-card title={workspaceTitle} icon-name={workspaceIcon}>
+                <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                    <div class="slds-grid slds-wrap slds-gutters filter-row">
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3">
+                            <lightning-input type="search" label="Search" value={searchText} onchange={handleSearchChange}></lightning-input>
+                        </div>
+
+                        <template if:false={isTemplateMode}>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-3">
+                                <div class="slds-grid slds-wrap slds-gutters">
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                        <lightning-combobox label="Category" value={categoryFilter} options={categoryOptions} onchange={handleCategoryChange}></lightning-combobox>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                        <lightning-combobox label="Active" value={activeFilter} options={activeOptions} onchange={handleActiveChange}></lightning-combobox>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                        <lightning-combobox label="Version" value={versionFilter} options={versionOptions} onchange={handleVersionChange}></lightning-combobox>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <template if:true={isTemplateMode}>
+                        <p class="template-edit-help slds-m-bottom_x-small">{templateEditHelpText}</p>
+                        <lightning-datatable
+                            key-field="id"
+                            data={templateRows}
+                            columns={templateColumnsResolved}
+                            draft-values={templateDraftValues}
+                            onsave={handleTemplateInlineSave}
+                            onrowaction={handleTemplateRowAction}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                    </template>
+
+                    <template if:false={isTemplateMode}>
+                        <div class="count-row slds-m-bottom_x-small">
+                            <span>{criteriaCountLabel}</span>
+                        </div>
+                        <div class="bundle-summary slds-m-bottom_small">
+                            <span><strong>{totalBundleCount}</strong> bundles</span>
+                            <span><strong>{unassignedCount}</strong> unassigned criteria</span>
+                        </div>
+
+                        <div class="workspace-grid">
+                            <div>
+                                <template for:each={bundleGroups} for:item="group">
+                                    <section key={group.key} class="bundle-group slds-m-bottom_medium">
+                                        <header class="bundle-header">
+                                            <h4>{group.bundleName}</h4>
+                                            <span>{group.count} criteria</span>
+                                        </header>
+                                        <div class="bundle-grid bundle-grid-header">
+                                            <span>Criterion</span>
+                                            <span>Weight</span>
+                                            <span>Status</span>
+                                            <span>Templates</span>
+                                            <span class="actions-col">Actions</span>
+                                        </div>
+                                        <template for:each={group.rows} for:item="row">
+                                            <div key={row.id} class="bundle-grid bundle-row">
+                                                <button
+                                                    class="criterion-link"
+                                                    data-id={row.id}
+                                                    data-name={row.name}
+                                                    data-bundleid={row.bundleId}
+                                                    onclick={handleOpenCriterionRecord}>
+                                                    {row.name}
+                                                </button>
+                                                <span>{row.defaultWeight}</span>
+                                                <span>{row.status}</span>
+                                                <span>{row.templatesUsing}</span>
+                                                <span class="actions-col">
+                                                    <lightning-button-icon
+                                                        icon-name="utility:preview"
+                                                        alternative-text="Select for bundle manager"
+                                                        title="Select for bundle manager"
+                                                        data-action="view"
+                                                        data-id={row.id}
+                                                        data-name={row.name}
+                                                        data-bundleid={row.bundleId}
+                                                        onclick={handleCriteriaRowAction}>
+                                                    </lightning-button-icon>
+                                                    <lightning-button-icon
+                                                        icon-name="utility:edit"
+                                                        alternative-text="Edit"
+                                                        title="Edit"
+                                                        data-action="edit"
+                                                        data-id={row.id}
+                                                        data-name={row.name}
+                                                        data-bundleid={row.bundleId}
+                                                        onclick={handleCriteriaRowAction}>
+                                                    </lightning-button-icon>
+                                                    <lightning-button-icon
+                                                        class="delete-btn"
+                                                        icon-name="utility:delete"
+                                                        alternative-text="Delete"
+                                                        title="Delete"
+                                                        data-action="delete"
+                                                        data-id={row.id}
+                                                        data-name={row.name}
+                                                        data-bundleid={row.bundleId}
+                                                        onclick={handleCriteriaRowAction}>
+                                                    </lightning-button-icon>
+                                                </span>
+                                            </div>
+                                        </template>
+                                    </section>
+                                </template>
+                            </div>
+
+                            <div class="right-column">
+                                <section class="bundle-manager slds-p-around_medium">
+                                    <h3>Bundle Manager</h3>
+                                    <p class="subtext">Select a criterion row, then assign it to a bundle or create a new bundle.</p>
+
+                                    <template if:true={hasSelection}>
+                                        <p class="selected-name">Selected: {selectedCriterionName}</p>
+
+                                        <lightning-combobox
+                                            label="Assign Existing Bundle"
+                                            value={selectedBundleId}
+                                            options={bundleOptionsWithNone}
+                                            onchange={handleBundleSelectionChange}>
+                                        </lightning-combobox>
+                                        <lightning-button class="slds-m-top_small" variant="brand" label="Save Bundle Assignment" onclick={handleAssignBundle}></lightning-button>
+
+                                        <div class="divider"></div>
+
+                                        <lightning-input
+                                            label="Create New Bundle"
+                                            value={newBundleLabel}
+                                            onchange={handleNewBundleLabelChange}
+                                            placeholder="Enter bundle name">
+                                        </lightning-input>
+                                        <lightning-button class="slds-m-top_small" label="Create Bundle and Assign" onclick={handleCreateBundleAndAssign}></lightning-button>
+                                    </template>
+
+                                    <template if:false={hasSelection}>
+                                        <p class="subtext">No criterion selected.</p>
+                                    </template>
+                                </section>
+
+                                <c-criterion-record-panel criterion-id={selectedCriterionId}></c-criterion-record-panel>
+                            </div>
+                        </div>
+                    </template>
+
+                    <p class="helper-note slds-m-top_small">{helperNote}</p>
+                </div>
+            </lightning-card>
+        </div>
+
+        <template if:true={showDeleteConfirm}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Confirm delete" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <h2 class="slds-modal__title slds-hyphenate">Delete Criterion</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        Delete <strong>{deleteTargetName}</strong> from the criterion library? This cannot be undone.
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning-button label="Cancel" onclick={handleCloseDeleteModal}></lightning-button>
+                        <lightning-button class="slds-m-left_small" variant="destructive" label="Delete" onclick={handleConfirmDelete}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </section>
+</template>

@@ -1,0 +1,82 @@
+<template>
+    <lightning-card title="Evaluation Snapshot" icon-name="standard:evaluation">
+        <template if:true={hasData}>
+            <div class="snapshot-shell">
+                <section class="hero">
+                    <div>
+                        <p class="hero-label">Evaluation Snapshot</p>
+                        <p class="hero-title">{evaluatorName}</p>
+                        <p class="hero-subtitle">Assigned Reviewer</p>
+                    </div>
+                    <div class="hero-badges">
+                        <span class={statusBadgeClass}>{statusValue}</span>
+                        <span class={recommendationBadgeClass}>{recommendationValue}</span>
+                    </div>
+                </section>
+
+                <section class="section-card">
+                    <h3 class="section-title">Reviewer</h3>
+                    <div class="row-grid">
+                        <div class="metric">
+                            <p class="metric-label">Reviewer Name</p>
+                            <p class="metric-value">{evaluatorName}</p>
+                        </div>
+                        <div class="metric">
+                            <p class="metric-label">Evaluation Status</p>
+                            <p class="metric-value">{statusValue}</p>
+                        </div>
+                        <div class="metric">
+                            <p class="metric-label">Due Date</p>
+                            <p class="metric-value">
+                                <lightning-formatted-date-time value={dueDateValue}></lightning-formatted-date-time>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-card section-highlight">
+                    <h3 class="section-title">Score Summary</h3>
+                    <div class="row-grid">
+                        <div class="metric">
+                            <p class="metric-label">Weighted Score</p>
+                            <p class="metric-value metric-value-strong">
+                                <template if:true={hasWeightedTotal}>
+                                    <lightning-formatted-number value={weightedTotalValue} maximum-fraction-digits="2"></lightning-formatted-number>
+                                </template>
+                                <template if:false={hasWeightedTotal}>--</template>
+                            </p>
+                        </div>
+                        <div class="metric">
+                            <p class="metric-label">Recommendation</p>
+                            <p class="metric-value">{recommendationValue}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-card">
+                    <h3 class="section-title">Application Context</h3>
+                    <div class="row-grid">
+                        <div class="metric">
+                            <p class="metric-label">Project Title</p>
+                            <p class="metric-value">{applicationTitle}</p>
+                        </div>
+                        <div class="metric">
+                            <p class="metric-label">Requested Amount</p>
+                            <p class="metric-value">
+                                <lightning-formatted-number value={requestedAmount} format-style="currency"></lightning-formatted-number>
+                            </p>
+                        </div>
+                        <div class="metric metric-wide">
+                            <p class="metric-label">Funding Opportunity</p>
+                            <p class="metric-value">{fundingOpportunityName}</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </template>
+
+        <template if:false={hasData}>
+            <div class="empty">No evaluation snapshot available.</div>
+        </template>
+    </lightning-card>
+</template>

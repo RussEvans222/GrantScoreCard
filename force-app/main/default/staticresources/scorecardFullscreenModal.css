@@ -1,0 +1,25 @@
+/* Fullscreen modal override (opt-in via body class toggled by LWC). */
+body.gs-fullscreen-modal-open .slds-modal__container {
+    width: 98vw !important;
+    max-width: 98vw !important;
+    min-width: 98vw !important;
+}
+
+body.gs-fullscreen-modal-open .slds-modal__content {
+    height: 95vh !important;
+    max-height: 95vh !important;
+    padding: 0 !important;
+}
+
+@media (max-width: 64rem) {
+    body.gs-fullscreen-modal-open .slds-modal__container {
+        width: 99vw !important;
+        max-width: 99vw !important;
+        min-width: 99vw !important;
+    }
+
+    body.gs-fullscreen-modal-open .slds-modal__content {
+        height: 96vh !important;
+        max-height: 96vh !important;
+    }
+}

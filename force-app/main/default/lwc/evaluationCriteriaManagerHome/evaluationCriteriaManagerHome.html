@@ -1,0 +1,100 @@
+<template>
+    <section class="workspace-shell">
+        <header class="workspace-header slds-p-around_medium">
+            <div class="title-wrap">
+                <lightning-icon icon-name="utility:custom_apps" size="small" alternative-text="App"></lightning-icon>
+                <div>
+                    <h1>Evaluation Criteria Manager</h1>
+                    <p>Manage reusable evaluation criteria and AI-assisted rubric design.</p>
+                </div>
+            </div>
+        </header>
+
+        <template if:true={data}>
+            <div class="slds-p-around_medium">
+                <div class="slds-grid slds-wrap slds-gutters metrics-grid">
+                    <template for:each={metricCards} for:item="metric">
+                        <div key={metric.label} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-4">
+                            <article class="metric-card">
+                                <p class="metric-label">{metric.label}</p>
+                                <p class="metric-value">{metric.value}</p>
+                            </article>
+                        </div>
+                    </template>
+                </div>
+
+                <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-3">
+                        <lightning-card title="Recent Criteria Updates" icon-name="utility:date_time">
+                            <div class="slds-p-horizontal_medium slds-p-bottom_small">
+                                <template if:true={data.recentCriteriaUpdates.length}>
+                                    <template for:each={data.recentCriteriaUpdates} for:item="row">
+                                        <div key={row.id} class="list-row">
+                                            <div>
+                                                <button class="row-name-link" data-id={row.id} onclick={handleCriterionRowClick}>
+                                                    {row.name}
+                                                </button>
+                                                <p class="row-subtitle">{row.subtitle}</p>
+                                            </div>
+                                            <span class="row-detail">{row.detail}</span>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3">
+                        <lightning-card title="Quick Actions" icon-name="utility:forward_up">
+                            <div class="slds-p-horizontal_medium slds-p-bottom_medium action-stack">
+                                <lightning-button label="New Criterion" onclick={handleActionClick} data-action="new"></lightning-button>
+                                <lightning-button label="Generate Criteria with AI" onclick={handleActionClick} data-action="generate"></lightning-button>
+                                <lightning-button label="Create Evaluation Template" onclick={handleActionClick} data-action="template"></lightning-button>
+                                <lightning-button label="Review Criteria Insights" onclick={handleActionClick} data-action="insights"></lightning-button>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <lightning-card title="Top Used Criteria" icon-name="utility:rank">
+                            <div class="slds-p-horizontal_medium slds-p-bottom_small">
+                                <template if:true={data.topUsedCriteria.length}>
+                                    <template for:each={data.topUsedCriteria} for:item="row">
+                                        <div key={row.id} class="list-row">
+                                            <div>
+                                                <button class="row-name-link" data-id={row.id} onclick={handleCriterionRowClick}>
+                                                    {row.name}
+                                                </button>
+                                                <p class="row-subtitle">{row.detail}</p>
+                                            </div>
+                                            <span class="row-detail">{row.subtitle}</span>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <lightning-card title="AI Insights" icon-name="utility:einstein">
+                            <div class="slds-p-horizontal_medium slds-p-bottom_medium ai-panel">
+                                <p class="ai-primary">{data.aiInsightText}</p>
+                                <p class="ai-secondary">{data.aiInsightSecondaryText}</p>
+                                <lightning-button
+                                    class="slds-m-top_small"
+                                    variant="brand"
+                                    label="Open Criteria Insights"
+                                    onclick={handleOpenInsights}>
+                                </lightning-button>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </div>
+
+                <p class="helper-note slds-m-top_small">{data.helperNote}</p>
+            </div>
+        </template>
+    </section>
+</template>

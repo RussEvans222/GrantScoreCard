@@ -1,54 +1,182 @@
 <template>
     <lightning-card title="Criteria Setup Matrix">
-        <div class="slds-p-horizontal_small slds-p-bottom_small">
-            <lightning-button
-                variant="neutral"
-                label="Add Custom Row"
-                title="Add custom criterion row"
-                onclick={handleAddRow}
-            ></lightning-button>
-        </div>
-        <div class="slds-p-horizontal_small slds-p-bottom_small intro-text">
-            <p>Configure scoring for each criterion. Bundle is used only for visual grouping.</p>
-        </div>
+        <div class="builder-shell">
+            <div class="builder-toolbar">
+                <div class="intro-text">
+                    Configure rubric criteria and scoring. Bundle is used for visual grouping only.
+                </div>
+                <lightning-button
+                    variant="brand"
+                    label="Add Criterion"
+                    title="Add criterion"
+                    onclick={openAddModal}
+                ></lightning-button>
+            </div>
 
-        <template if:true={validationMessage}>
-            <div class="slds-text-color_error slds-p-horizontal_small slds-p-bottom_small">{validationMessage}</div>
-        </template>
-        <div class="slds-p-horizontal_small slds-p-bottom_small slds-text-title_bold">
-            Total Weight: {totalWeight}
-        </div>
+            <div class="weight-panel">
+                <div class="weight-header">
+                    <span class="weight-title">{progressLabel}</span>
+                    <span class={weightStateClass}>
+                        <template if:true={isWeightTotalValid}>Ready</template>
+                        <template if:false={isWeightTotalValid}>Needs 100</template>
+                    </span>
+                </div>
+                <lightning-progress-bar value={progressValue} size="medium"></lightning-progress-bar>
+            </div>
 
-        <div class="editor-grid">
-            <template for:each={rows} for:item="row">
-                <div class="editor-row" key={row.localId}>
-                    <div class="row-actions">
-                        <span class="row-type">{row.rowTypeLabel}</span>
-                        <lightning-button-icon
-                            data-id={row.localId}
-                            icon-name="utility:close"
-                            alternative-text="Remove Row"
-                            title="Remove Row"
-                            onclick={handleRemoveRow}
-                        ></lightning-button-icon>
-                    </div>
+            <template if:true={validationMessage}>
+                <div class="validation-message">{validationMessage}</div>
+            </template>
 
-                    <template if:true={row.isCustom}>
-                        <lightning-input data-id={row.localId} data-field="Label__c" label="Criterion Name" value={row.Label__c} onchange={handleFieldChange}></lightning-input>
-                        <lightning-input data-id={row.localId} data-field="Section_Name__c" label="Bundle" value={row.Section_Name__c} onchange={handleFieldChange}></lightning-input>
-                        <lightning-textarea data-id={row.localId} data-field="Description__c" label="Description" value={row.Description__c} onchange={handleFieldChange}></lightning-textarea>
-                    </template>
+            <template if:true={hasRows}>
+                <div class="table-shell" role="region" aria-label="Rubric criteria table">
+                    <table class="criteria-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="col-order">Display Order</th>
+                                <th scope="col" class="col-name">Criterion Name</th>
+                                <th scope="col" class="col-bundle">Bundle</th>
+                                <th scope="col" class="col-weight">Weight</th>
+                                <th scope="col" class="col-actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={sortedRows} for:item="row">
+                                <tr key={row.localId}>
+                                    <td class="col-order">{row.Display_Order__c}</td>
+                                    <td class="col-name">
+                                        <div class="criterion-title">{row.Label__c}</div>
+                                        <div class="criterion-description">{row.descriptionText}</div>
+                                    </td>
+                                    <td class="col-bundle">
+                                        <span class="bundle-pill" title={row.bundleText}>{row.bundleText}</span>
+                                    </td>
+                                    <td class="col-weight">
+                                        <span class="weight-badge">{row.weightText}</span>
+                                    </td>
+                                    <td class="col-actions">
+                                        <div class="actions-wrap">
+                                            <span class="row-type">{row.rowTypeLabel}</span>
+                                            <lightning-button-icon
+                                                data-id={row.localId}
+                                                icon-name="utility:edit"
+                                                alternative-text="Edit criterion"
+                                                title="Edit criterion"
+                                                variant="bare"
+                                                onclick={openEditModal}
+                                            ></lightning-button-icon>
+                                            <lightning-button-icon
+                                                data-id={row.localId}
+                                                icon-name="utility:delete"
+                                                alternative-text="Delete criterion"
+                                                title="Delete criterion"
+                                                variant="bare"
+                                                onclick={handleDeleteRow}
+                                            ></lightning-button-icon>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+            </template>
 
-                    <template if:false={row.isCustom}>
-                        <lightning-input label="Criterion Name" value={row.Label__c} disabled></lightning-input>
-                        <lightning-input label="Bundle" value={row.Section_Name__c} disabled></lightning-input>
-                        <lightning-textarea label="Description" value={row.Description__c} disabled></lightning-textarea>
-                    </template>
-
-                    <lightning-input data-id={row.localId} data-field="Weight__c" type="number" step="0.01" label="Weight" value={row.Weight__c} onchange={handleFieldChange}></lightning-input>
-                    <lightning-input data-id={row.localId} data-field="Display_Order__c" type="number" label="Display Order" value={row.Display_Order__c} onchange={handleFieldChange}></lightning-input>
+            <template if:false={hasRows}>
+                <div class="empty-state">
+                    No criteria configured yet. Click <strong>Add Criterion</strong> to create your first row.
                 </div>
             </template>
         </div>
     </lightning-card>
+
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-label="Criterion editor" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">{modalTitle}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium modal-body">
+                    <div class="modal-grid">
+                        <lightning-input
+                            data-field="Label__c"
+                            label="Criterion Name"
+                            value={draftRow.Label__c}
+                            disabled={isDraftLibraryRow}
+                            onchange={handleDraftFieldChange}
+                        ></lightning-input>
+
+                        <div class="bundle-typeahead">
+                            <lightning-input
+                                data-field="Section_Name__c"
+                                label="Bundle"
+                                value={draftRow.bundleSearchTerm}
+                                placeholder="Search existing bundles or type a new bundle"
+                                disabled={isDraftLibraryRow}
+                                oninput={handleDraftFieldChange}
+                                onfocus={handleBundleFocus}
+                                onblur={handleBundleBlur}
+                            ></lightning-input>
+                            <template if:true={draftRow.showBundleDropdown}>
+                                <div class="bundle-listbox" role="listbox">
+                                    <template for:each={bundleSuggestions} for:item="option">
+                                        <button
+                                            key={option.key}
+                                            type="button"
+                                            class="bundle-option"
+                                            data-value={option.value}
+                                            onclick={handleBundleOptionSelect}
+                                        >
+                                            {option.value}
+                                        </button>
+                                    </template>
+                                    <template if:true={showCreateBundleOption}>
+                                        <button
+                                            type="button"
+                                            class="bundle-option create-option"
+                                            data-value={draftRow.bundleSearchTerm}
+                                            onclick={handleBundleOptionSelect}
+                                        >
+                                            Create new bundle "{draftRow.bundleSearchTerm}"
+                                        </button>
+                                    </template>
+                                </div>
+                            </template>
+                        </div>
+
+                        <lightning-input
+                            data-field="Weight__c"
+                            type="number"
+                            step="0.01"
+                            label="Weight"
+                            value={draftRow.Weight__c}
+                            onchange={handleDraftFieldChange}
+                        ></lightning-input>
+
+                        <lightning-input
+                            data-field="Display_Order__c"
+                            type="number"
+                            label="Display Order"
+                            value={draftRow.Display_Order__c}
+                            onchange={handleDraftFieldChange}
+                        ></lightning-input>
+
+                        <lightning-textarea
+                            class="span-all"
+                            data-field="Description__c"
+                            label="Description"
+                            value={draftRow.Description__c}
+                            disabled={isDraftLibraryRow}
+                            onchange={handleDraftFieldChange}
+                        ></lightning-textarea>
+                    </div>
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                    <lightning-button class="slds-m-left_small" variant="brand" label="Save" onclick={handleSaveDraft}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
 </template>

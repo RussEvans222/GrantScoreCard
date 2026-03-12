@@ -13,6 +13,11 @@
         <members>CriterionLibraryManageAction</members>
         <members>CriterionLibrarySelectorController</members>
         <members>EvalTemplateWizardBuildAction</members>
+        <members>EvaluationCriteriaManagerReadController</members>
+        <members>EvaluationFrameworkPromptInvoker</members>
+        <members>EvaluationFrameworkReviewService</members>
+        <members>EvaluationFrameworkReviewServiceTest</members>
+        <members>EvaluationFrameworkTemplateUpdater</members>
         <members>EvaluationTemplateWizardPrepareAction</members>
         <members>EvaluationTemplateWizardSaveAction</members>
         <members>RubricTemplateCloneAction</members>
@@ -39,12 +44,31 @@
         <members>afeScorecard</members>
         <members>afeEvaluationSnapshot</members>
         <members>applicationStatusTracker</members>
+        <members>aiCriteriaWorkspace</members>
+        <members>criteriaInsightsWorkspace</members>
+        <members>criteriaLibraryWorkspace</members>
+        <members>criterionRecordPanel</members>
+        <members>evaluationCriteriaManagerHome</members>
         <members>flowAutoRedirect</members>
         <members>flowCriterionSelector</members>
         <members>flowRubricCriteriaEditor</members>
         <members>flowStepNavigator</members>
         <members>reviewerPicker</members>
+        <members>templateUsageWorkspace</members>
         <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Evaluation_Criteria_Manager</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>AI_Criteria_Tools</members>
+        <members>Criteria_Insights</members>
+        <members>Criteria_Library</members>
+        <members>Evaluation_Criteria_Manager_Home</members>
+        <members>Evaluation_Templates</members>
+        <members>Template_Usage</members>
+        <name>CustomTab</name>
     </types>
     <types>
         <members>ApplicationForm.Assign_Reviewers_Create_Evaluations</members>

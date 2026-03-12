@@ -1,0 +1,99 @@
+<template>
+    <section class="workspace-shell">
+        <header class="workspace-header slds-p-around_medium">
+            <div class="title-wrap">
+                <lightning-icon icon-name="utility:custom_apps" size="small" alternative-text="App"></lightning-icon>
+                <div>
+                    <h1>Evaluation Criteria Manager</h1>
+                    <p>Manage reusable evaluation criteria and AI-assisted rubric design.</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="slds-p-around_medium">
+            <lightning-card title="Template Usage" icon-name="utility:connected_apps">
+                <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                    <div class="usage-help slds-m-bottom_small">
+                        <h3>How to use this screen</h3>
+                        <ol>
+                            <li>Use <strong>Filter by Criterion</strong> to pick one library criterion.</li>
+                            <li>Use <strong>Search usage</strong> to narrow by criterion or template name.</li>
+                            <li>Open records from the table links to review or update them.</li>
+                        </ol>
+                    </div>
+
+                    <div class="filters">
+                        <lightning-input type="search" label="Search usage" value={searchText} onchange={handleSearchChange}></lightning-input>
+                        <lightning-record-picker
+                            label="Filter by Criterion"
+                            placeholder="Search criterion library"
+                            object-api-name="Criterion_Library__c"
+                            display-info={criterionDisplayInfo}
+                            matching-info={criterionMatchingInfo}
+                            value={selectedCriterionId}
+                            onchange={handleCriterionSelect}>
+                        </lightning-record-picker>
+                        <div class="search-action">
+                            <lightning-button
+                                variant="brand"
+                                label="Search"
+                                onclick={handleRunSearch}>
+                            </lightning-button>
+                        </div>
+                        <template if:true={selectedCriterionId}>
+                            <div class="selected-filter">
+                                <span>Filtered criterion selected</span>
+                                <lightning-button-icon
+                                    icon-name="utility:close"
+                                    alternative-text="Clear criterion filter"
+                                    title="Clear criterion filter"
+                                    onclick={handleClearCriterionFilter}>
+                                </lightning-button-icon>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="controls-row slds-m-top_small">
+                        <lightning-input
+                            type="toggle"
+                            label="Show only version mismatches"
+                            checked={showMismatchOnly}
+                            onchange={handleMismatchToggle}>
+                        </lightning-input>
+                        <span class="row-count">{rowCountLabel}</span>
+                    </div>
+
+                    <template if:true={errorMessage}>
+                        <div class="error-banner slds-m-top_small" role="alert">
+                            {errorMessage}
+                        </div>
+                    </template>
+
+                    <div class="slds-m-top_small">
+                        <template if:true={isLoading}>
+                            <div class="loading-wrap">
+                                <lightning-spinner size="small" alternative-text="Loading template usage"></lightning-spinner>
+                            </div>
+                        </template>
+                        <lightning-datatable
+                            key-field="key"
+                            data={displayedRows}
+                            columns={columns}
+                            hide-checkbox-column>
+                        </lightning-datatable>
+                        <template if:true={showEmptyState}>
+                            <div class="empty-state slds-m-top_small">
+                                No rows match the current filters. Clear filters or broaden your search.
+                            </div>
+                        </template>
+                    </div>
+
+                    <p class="helper-note slds-m-top_small">
+                        Version mismatch warnings are shown when template and source criterion versions differ.
+                        If a selected criterion returns no rows, run Search and clear the criterion filter to compare all mappings.
+                    </p>
+                </div>
+            </lightning-card>
+        </div>
+    </section>
+</template>

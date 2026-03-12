@@ -188,106 +188,157 @@
             </template>
 
             <template if:true={isScoringScreen}>
-                <p class="build-tag">UI Build: 2026-03-01.3 · Developed by Russ Evans</p>
-                <div class="ai-toolbar slds-m-bottom_small">
-                    <lightning-combobox
-                        name="aiMode"
-                        label="AI Review Mode"
-                        value={aiMode}
-                        options={aiModeOptions}
-                        onchange={handleAiModeChange}
-                    ></lightning-combobox>
-                    <lightning-button
-                        variant="neutral"
-                        label="Run AI Evaluation"
-                        title="Generate AI suggestions for all criteria"
-                        onclick={handleGenerateAllSuggestions}
-                        disabled={isAiAllDisabled}
-                    ></lightning-button>
-                </div>
-                <p class="ai-helper-text slds-m-bottom_small">
-                    AI suggestions are provided to assist reviewers. Final scoring decisions remain with the assigned reviewer.
-                </p>
-                <div class="table-wrapper" role="region" aria-label="Criterion score table">
-                    <table class="slds-table slds-table_cell-buffer slds-table_bordered score-table">
-                        <colgroup>
-                            <col class="col-section" />
-                            <col class="col-criterion" />
-                            <col class="col-weight" />
-                            <col class="col-ai-score" />
-                            <col class="col-reviewer-score" />
-                            <col class="col-rationale" />
-                        </colgroup>
-                        <thead>
-                            <tr class="slds-line-height_reset">
-                                <th scope="col">Section</th>
-                                <th scope="col">Criterion</th>
-                                <th scope="col" class="num-col">Weight</th>
-                                <th scope="col" class="num-col">AI Suggested</th>
-                                <th scope="col" class="num-col">Reviewer Score</th>
-                                <th scope="col">Rationale</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <template for:each={rows} for:item="row">
-                                <tr key={row.id} class="score-row">
-                                    <td>
-                                        <div class="section-name">{row.sectionName}</div>
-                                    </td>
-                                    <th scope="row">
-                                        <div class="criterion-label">{row.label}</div>
-                                    </th>
-                                    <td class="num-col">{row.weightDisplay}</td>
-                                    <td class="num-col muted-value">{row.suggestedScoreDisplay}</td>
-                                    <td class="num-col final-score-cell">
-                                        <lightning-input
-                                            type="number"
-                                            variant="label-hidden"
-                                            name={row.id}
-                                            data-id={row.id}
-                                            value={row.finalScoreInput}
-                                            min="0"
-                                            max="5"
-                                            step="1"
-                                            label={row.finalScoreLabel}
-                                            title={row.finalScoreTitle}
-                                            oninput={handleScoreChange}
-                                            onchange={handleScoreChange}
-                                        ></lightning-input>
-                                    </td>
-                                    <td>
-                                        <lightning-textarea
-                                            class="rationale-editor slds-m-bottom_x-small"
-                                            data-id={row.id}
-                                            label={row.rationaleLabel}
-                                            title={row.rationaleTitle}
-                                            value={row.rationaleInput}
-                                            placeholder="Optional reviewer comments..."
-                                            oninput={handleRationaleChange}
-                                            onchange={handleRationaleChange}
-                                        ></lightning-textarea>
-                                    </td>
-                                </tr>
-                            </template>
-                        </tbody>
-                    </table>
-                </div>
+                <section class="scoring-shell">
+                    <header class="scoring-header">
+                        <div>
+                            <p class="build-tag">UI Build: 2026-03-01.3 · Developed by Russ Evans</p>
+                            <div class="scoring-title-row">
+                                <h2 class="scoring-title">Evaluation Criteria</h2>
+                                <template if:true={hasAnyAiGeneratedRows}>
+                                    <span class="ai-header-badge">
+                                        <lightning-icon
+                                            icon-name="utility:einstein"
+                                            size="xx-small"
+                                            alternative-text="AI assisted"
+                                        ></lightning-icon>
+                                        <span>AI Assisted</span>
+                                    </span>
+                                </template>
+                            </div>
+                            <p class="scoring-subtitle">
+                                Review each criterion, compare AI guidance, and finalize reviewer scores with rationale.
+                            </p>
+                        </div>
+                        <div class="ai-toolbar">
+                            <lightning-combobox
+                                name="aiMode"
+                                label="AI Review Mode"
+                                value={aiMode}
+                                options={aiModeOptions}
+                                onchange={handleAiModeChange}
+                            ></lightning-combobox>
+                            <lightning-button
+                                variant="brand"
+                                label="Run AI Evaluation"
+                                title="Generate AI suggestions for all criteria"
+                                onclick={handleGenerateAllSuggestions}
+                                disabled={isAiAllDisabled}
+                            ></lightning-button>
+                        </div>
+                    </header>
 
-                <div class="slds-m-top_medium slds-grid slds-grid_align-spread">
-                    <lightning-button
-                        variant="neutral"
-                        label="Back to Context"
-                        title="Go back to application context"
-                        onclick={goToContextScreen}
-                    ></lightning-button>
-                    <lightning-button
-                        variant="brand"
-                        label="Save Scores"
-                        title="Save updated final scores"
-                        onclick={handleSave}
-                        disabled={isSaveDisabled}
-                    ></lightning-button>
-                </div>
+                    <p class="ai-helper-text slds-m-bottom_medium">
+                        AI suggestions are provided to assist reviewers. Final scoring decisions remain with the assigned reviewer.
+                    </p>
+                    <div class="heatmap-legend" aria-label="Criterion score strength legend">
+                        <span class="legend-title">Score Strength</span>
+                        <span class="legend-badge score-1">Weak</span>
+                        <span class="legend-badge score-2">Below Average</span>
+                        <span class="legend-badge score-3">Neutral</span>
+                        <span class="legend-badge score-4">Strong</span>
+                        <span class="legend-badge score-5">Excellent</span>
+                    </div>
+
+                    <div class="table-shell" role="region" aria-label="Evaluation criteria table">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered score-table-fixed">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="col-bundle">Bundle</th>
+                                    <th scope="col" class="col-criterion">Criterion</th>
+                                    <th scope="col" class="col-weight">Weight</th>
+                                    <th scope="col" class="col-ai">AI Suggestion</th>
+                                    <th scope="col" class="col-score">Reviewer Score</th>
+                                    <th scope="col" class="col-rationale">Rationale</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={rows} for:item="row">
+                                    <tr key={row.id} class={row.scoreHeatClass} aria-label={row.scoreHeatAriaLabel}>
+                                        <td class="col-bundle">
+                                            <span class="bundle-pill" title={row.sectionName}>{row.sectionName}</span>
+                                        </td>
+                                        <td class="col-criterion">
+                                            <div class="criterion-cell-title">{row.label}</div>
+                                        </td>
+                                        <td class="col-weight">
+                                            <span class="weight-badge">{row.weightDisplay}</span>
+                                        </td>
+                                        <td class="col-ai">
+                                            <span class="ai-pill-wrap">
+                                                <span class={row.aiSuggestionDotClass} aria-label={row.scoreHeatAriaLabel}></span>
+                                                <span class="ai-pill">{row.suggestedScoreDisplay}</span>
+                                            </span>
+                                        </td>
+                                        <td class="col-score">
+                                            <lightning-input
+                                                type="number"
+                                                variant="label-hidden"
+                                                name={row.id}
+                                                data-id={row.id}
+                                                value={row.finalScoreInput}
+                                                min="0"
+                                                max="5"
+                                                step="1"
+                                                label={row.finalScoreLabel}
+                                                title={row.finalScoreTitle}
+                                                oninput={handleScoreChange}
+                                                onchange={handleScoreChange}
+                                            ></lightning-input>
+                                        </td>
+                                        <td class="col-rationale">
+                                            <template if:true={row.aiGenerated}>
+                                                <div class="ai-label">
+                                                    <lightning-icon
+                                                        icon-name="utility:einstein"
+                                                        size="xx-small"
+                                                        alternative-text="AI assisted suggestion"
+                                                    ></lightning-icon>
+                                                    <span>AI Suggested Rationale</span>
+                                                </div>
+                                            </template>
+                                            <lightning-textarea
+                                                class="rationale-editor"
+                                                data-id={row.id}
+                                                label={row.rationaleLabel}
+                                                title={row.rationaleTitle}
+                                                value={row.rationaleInput}
+                                                placeholder="Describe the rationale for the assigned score..."
+                                                oninput={handleRationaleChange}
+                                                onchange={handleRationaleChange}
+                                            ></lightning-textarea>
+                                            <template if:true={row.hasAiCitations}>
+                                                <div class="evidence-block">
+                                                    <p class="evidence-label">AI Referenced Application Evidence</p>
+                                                    <template for:each={row.aiCitationItems} for:item="citation">
+                                                        <blockquote key={citation.key} class="evidence-quote">
+                                                            "{citation.text}"
+                                                        </blockquote>
+                                                    </template>
+                                                </div>
+                                            </template>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="scoring-actions slds-m-top_large">
+                        <lightning-button
+                            variant="neutral"
+                            label="Back to Context"
+                            title="Go back to application context"
+                            onclick={goToContextScreen}
+                        ></lightning-button>
+                        <lightning-button
+                            variant="brand"
+                            label="Save Scores"
+                            title="Save updated final scores"
+                            onclick={handleSave}
+                            disabled={isSaveDisabled}
+                        ></lightning-button>
+                    </div>
+                </section>
             </template>
         </div>
     </lightning-card>

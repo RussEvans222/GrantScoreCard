@@ -1,0 +1,50 @@
+<template>
+    <section class="workspace-shell">
+        <header class="workspace-header slds-p-around_medium">
+            <div class="title-wrap">
+                <lightning-icon icon-name="utility:custom_apps" size="small" alternative-text="App"></lightning-icon>
+                <div>
+                    <h1>Evaluation Criteria Manager</h1>
+                    <p>Manage reusable evaluation criteria and AI-assisted rubric design.</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="slds-p-around_medium">
+            <lightning-card title="AI Criteria Tools" icon-name="utility:einstein">
+                <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                    <p class="intro">AI-assisted authoring tools are available in this workspace. Generation and save actions will be enabled in a follow-up phase.</p>
+
+                    <div class="tool-grid">
+                        <article class="tool-card ai-panel">
+                            <h3>
+                                <lightning-icon icon-name="utility:einstein" size="xx-small" alternative-text="AI"></lightning-icon>
+                                AI Criterion Generator
+                            </h3>
+                            <p>Generate recommended rubric criteria from program type, objectives, and target outcomes.</p>
+                            <lightning-button label="Open Generator" onclick={handlePlaceholder} data-tool="generator"></lightning-button>
+                        </article>
+
+                        <article class="tool-card ai-panel">
+                            <h3>
+                                <lightning-icon icon-name="utility:einstein" size="xx-small" alternative-text="AI"></lightning-icon>
+                                AI Criterion Improver
+                            </h3>
+                            <p>Improve criterion wording, scoring guidance, and measurability for reviewer consistency.</p>
+                            <lightning-button label="Open Improver" onclick={handlePlaceholder} data-tool="improver"></lightning-button>
+                        </article>
+
+                        <article class="tool-card ai-panel">
+                            <h3>
+                                <lightning-icon icon-name="utility:einstein" size="xx-small" alternative-text="AI"></lightning-icon>
+                                AI Rubric Builder
+                            </h3>
+                            <p>Suggest complete rubric structures and weight distributions for new grant programs.</p>
+                            <lightning-button label="Open Rubric Builder" onclick={handlePlaceholder} data-tool="rubric"></lightning-button>
+                        </article>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+    </section>
+</template>

@@ -7,6 +7,19 @@
     font-weight: 600;
 }
 
+.undo-row {
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.4rem;
+}
+
+.removed-count {
+    color: #706e6b;
+    font-size: 0.82rem;
+    margin: 0;
+}
+
 .recommended {
     color: #1b5e20;
 }
@@ -16,7 +29,7 @@
 }
 
 .bundle-wrap {
-    max-height: 24rem;
+    max-height: clamp(24rem, 62vh, 46rem);
     overflow: auto;
     padding: 0 0.75rem 0.75rem;
 }
@@ -37,6 +50,17 @@
 .criterion-row {
     border-top: 1px solid #f3f2f2;
     padding: 0.5rem 0;
+}
+
+.criterion-row-main {
+    align-items: flex-start;
+    display: grid;
+    gap: 0.35rem;
+    grid-template-columns: 1fr auto;
+}
+
+.criterion-remove {
+    margin-top: 0.1rem;
 }
 
 .criterion-row:first-of-type {

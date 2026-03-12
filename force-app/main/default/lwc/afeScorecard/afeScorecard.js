@@ -1,6 +1,8 @@
 import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { notifyRecordUpdateAvailable } from 'lightning/uiRecordApi';
+import { loadStyle } from 'lightning/platformResourceLoader';
+import scorecardFullscreenModal from '@salesforce/resourceUrl/scorecardFullscreenModal';
 import getScores from '@salesforce/apex/AFEScorecardController.getScores';
 import saveScores from '@salesforce/apex/AFEScorecardController.saveScores';
 import getEvaluationSummary from '@salesforce/apex/AFEScorecardController.getEvaluationSummary';
@@ -36,11 +38,31 @@ export default class AfeScorecard extends LightningElement {
 
     pendingChanges = new Map();
     currentScreen = 'context';
+    hasLoadedFullscreenModalStyle = false;
 
     connectedCallback() {
+        document.body.classList.add('gs-fullscreen-modal-open');
         if (this.recordId) {
             this.refreshAll();
         }
+    }
+
+    disconnectedCallback() {
+        document.body.classList.remove('gs-fullscreen-modal-open');
+    }
+
+    renderedCallback() {
+        if (this.hasLoadedFullscreenModalStyle) {
+            return;
+        }
+
+        this.hasLoadedFullscreenModalStyle = true;
+        // Global static-resource CSS is used to expand Salesforce quick-action modal dimensions.
+        loadStyle(this, scorecardFullscreenModal).catch((error) => {
+            // Non-fatal: scorecard remains usable with default modal sizing if style load fails.
+            // eslint-disable-next-line no-console
+            console.warn('Unable to load fullscreen modal style.', error);
+        });
     }
 
     get weightedTotal() {
@@ -206,10 +228,36 @@ export default class AfeScorecard extends LightningElement {
         return this.scoredCriteriaRows.length > 0;
     }
 
+    get hasAnyAiGeneratedRows() {
+        return (this.rows || []).some((row) => row.aiGenerated === true);
+    }
+
+    get groupedScoringSections() {
+        const orderedSections = [];
+        const sectionIndexByName = new Map();
+
+        (this.rows || []).forEach((row) => {
+            const sectionName = row.sectionName || 'General';
+            if (!sectionIndexByName.has(sectionName)) {
+                sectionIndexByName.set(sectionName, orderedSections.length);
+                orderedSections.push({
+                    sectionKey: `section-${orderedSections.length + 1}-${sectionName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`,
+                    sectionName,
+                    criteria: []
+                });
+            }
+            orderedSections[sectionIndexByName.get(sectionName)].criteria.push(row);
+        });
+
+        return orderedSections;
+    }
+
     toViewModel(row) {
         const rationaleInput = this.normalizeRationale(row.Rationale__c);
+        const aiEvidenceText = this.normalizeEvidenceText(row.AI_Evidence__c);
+        const persistedCitationItems = this.evidenceTextToCitationItems(aiEvidenceText, row.Id);
 
-        return {
+        return this.withHeatmapStyling({
             id: row.Id,
             sectionName: row.Section_Name__c || '--',
             criterionKey: row.Criterion_Key__c || '',
@@ -230,13 +278,18 @@ export default class AfeScorecard extends LightningElement {
                     : null,
             rationaleInput,
             originalRationale: rationaleInput,
+            aiEvidenceText,
+            originalAiEvidenceText: aiEvidenceText,
+            aiCitationItems: persistedCitationItems,
+            hasAiCitations: persistedCitationItems.length > 0,
+            aiGenerated: false,
             finalScoreLabel: `Score for ${row.Label__c || 'criterion'}`,
             finalScoreTitle: `Enter score from 0 to 5 for ${row.Label__c || 'criterion'}`,
             rationaleLabel: `Rationale for ${row.Label__c || 'criterion'}`,
             rationaleTitle: `Enter optional rationale for ${row.Label__c || 'criterion'}`,
             displayOrder: row.Display_Order__c,
             isAiLoading: false
-        };
+        });
     }
 
     get aiModeOptions() {
@@ -261,7 +314,17 @@ export default class AfeScorecard extends LightningElement {
 
         if (rawValue === '' || rawValue === null || rawValue === undefined) {
             this.updateRowFinalScore(rowId, null);
-            this.updatePendingChange(rowId, row.suggestedScore, null, row.rationaleInput, row.originalSuggestedScore, row.originalFinalScore, row.originalRationale);
+            this.updatePendingChange(
+                rowId,
+                row.suggestedScore,
+                null,
+                row.rationaleInput,
+                row.aiEvidenceText,
+                row.originalSuggestedScore,
+                row.originalFinalScore,
+                row.originalRationale,
+                row.originalAiEvidenceText
+            );
             return;
         }
 
@@ -274,7 +337,17 @@ export default class AfeScorecard extends LightningElement {
         }
 
         this.updateRowFinalScore(rowId, parsed);
-        this.updatePendingChange(rowId, row.suggestedScore, parsed, row.rationaleInput, row.originalSuggestedScore, row.originalFinalScore, row.originalRationale);
+        this.updatePendingChange(
+            rowId,
+            row.suggestedScore,
+            parsed,
+            row.rationaleInput,
+            row.aiEvidenceText,
+            row.originalSuggestedScore,
+            row.originalFinalScore,
+            row.originalRationale,
+            row.originalAiEvidenceText
+        );
     }
 
     handleRationaleChange(event) {
@@ -286,7 +359,17 @@ export default class AfeScorecard extends LightningElement {
 
         const rationale = this.normalizeRationale(event?.detail?.value ?? event?.target?.value);
         this.updateRowRationale(rowId, rationale);
-        this.updatePendingChange(rowId, row.suggestedScore, row.finalScore, rationale, row.originalSuggestedScore, row.originalFinalScore, row.originalRationale);
+        this.updatePendingChange(
+            rowId,
+            row.suggestedScore,
+            row.finalScore,
+            rationale,
+            row.aiEvidenceText,
+            row.originalSuggestedScore,
+            row.originalFinalScore,
+            row.originalRationale,
+            row.originalAiEvidenceText
+        );
     }
 
     syncPendingChangesFromDom() {
@@ -315,9 +398,11 @@ export default class AfeScorecard extends LightningElement {
                 row.suggestedScore,
                 parsedScore,
                 row.rationaleInput,
+                row.aiEvidenceText,
                 row.originalSuggestedScore,
                 row.originalFinalScore,
-                row.originalRationale
+                row.originalRationale,
+                row.originalAiEvidenceText
             );
         });
 
@@ -336,9 +421,11 @@ export default class AfeScorecard extends LightningElement {
                 row.suggestedScore,
                 row.finalScore,
                 rationale,
+                row.aiEvidenceText,
                 row.originalSuggestedScore,
                 row.originalFinalScore,
-                row.originalRationale
+                row.originalRationale,
+                row.originalAiEvidenceText
             );
         });
     }
@@ -348,11 +435,11 @@ export default class AfeScorecard extends LightningElement {
             if (row.id !== rowId) {
                 return row;
             }
-            return {
+            return this.withHeatmapStyling({
                 ...row,
                 finalScore: score,
                 finalScoreInput: score
-            };
+            });
         });
     }
 
@@ -386,20 +473,26 @@ export default class AfeScorecard extends LightningElement {
             const isValidSuggestion = Number.isInteger(suggestedScore) && suggestedScore >= 0 && suggestedScore <= 5;
             const aiScore = isValidSuggestion ? suggestedScore : null;
             const aiRationale = this.normalizeRationale(result?.suggestedRationale);
+            const aiCitationItems = this.toCitationItems(result?.citations, rowId);
+            const aiEvidenceText = this.citationItemsToEvidenceText(aiCitationItems);
             const nextFinalScore = row.finalScore;
 
             this.rows = this.rows.map((candidate) => {
                 if (candidate.id !== rowId) {
                     return candidate;
                 }
-                return {
+                return this.withHeatmapStyling({
                     ...candidate,
                     suggestedScore: aiScore,
                     suggestedScoreDisplay: aiScore !== null ? aiScore : '--',
                     finalScore: nextFinalScore,
                     finalScoreInput: nextFinalScore,
-                    rationaleInput: aiRationale
-                };
+                    rationaleInput: aiRationale,
+                    aiEvidenceText,
+                    aiCitationItems,
+                    hasAiCitations: aiCitationItems.length > 0,
+                    aiGenerated: true
+                });
             });
 
             // Single-row AI runs persist immediately so users can refresh safely without losing generated text.
@@ -408,7 +501,8 @@ export default class AfeScorecard extends LightningElement {
                     Id: rowId,
                     Suggested_Score__c: aiScore,
                     Final_Score__c: nextFinalScore,
-                    Rationale__c: aiRationale
+                    Rationale__c: aiRationale,
+                    AI_Evidence__c: aiEvidenceText
                 }]
             });
 
@@ -456,6 +550,8 @@ export default class AfeScorecard extends LightningElement {
                     ? suggestedScore
                     : null;
                 const rationale = this.normalizeRationale(suggestion.suggestedRationale);
+                const aiCitationItems = this.toCitationItems(suggestion.citations, row.id);
+                const aiEvidenceText = this.citationItemsToEvidenceText(aiCitationItems);
                 const nextFinalScore = row.finalScore;
                 updatedCount++;
                 if (suggestion.source === 'fallback') {
@@ -468,19 +564,25 @@ export default class AfeScorecard extends LightningElement {
                     validScore,
                     nextFinalScore,
                     rationale,
+                    aiEvidenceText,
                     row.originalSuggestedScore,
                     row.originalFinalScore,
-                    row.originalRationale
+                    row.originalRationale,
+                    row.originalAiEvidenceText
                 );
 
-                return {
+                return this.withHeatmapStyling({
                     ...row,
                     suggestedScore: validScore,
                     suggestedScoreDisplay: validScore !== null ? validScore : '--',
                     finalScore: nextFinalScore,
                     finalScoreInput: nextFinalScore,
-                    rationaleInput: rationale
-                };
+                    rationaleInput: rationale,
+                    aiEvidenceText,
+                    aiCitationItems,
+                    hasAiCitations: aiCitationItems.length > 0,
+                    aiGenerated: true
+                });
             });
 
             if (updatedCount === 0) {
@@ -510,10 +612,10 @@ export default class AfeScorecard extends LightningElement {
             if (row.id !== rowId) {
                 return row;
             }
-            return {
+            return this.withHeatmapStyling({
                 ...row,
                 isAiLoading: isLoading
-            };
+            });
         });
     }
 
@@ -538,7 +640,8 @@ export default class AfeScorecard extends LightningElement {
                 Id: id,
                 Suggested_Score__c: change.suggestedScore,
                 Final_Score__c: change.finalScore,
-                Rationale__c: this.normalizeRationale(change.rationale)
+                Rationale__c: this.normalizeRationale(change.rationale),
+                AI_Evidence__c: this.normalizeEvidenceText(change.aiEvidenceText)
             }));
 
             await saveScores({ updates: payload });
@@ -578,21 +681,27 @@ export default class AfeScorecard extends LightningElement {
         suggestedScore,
         finalScore,
         rationale,
+        aiEvidenceText,
         originalSuggestedScore,
         originalFinalScore,
-        originalRationale
+        originalRationale,
+        originalAiEvidenceText
     ) {
         const normalizedOriginalRationale = this.normalizeRationale(originalRationale);
         const normalizedRationale = this.normalizeRationale(rationale);
+        const normalizedOriginalEvidence = this.normalizeEvidenceText(originalAiEvidenceText);
+        const normalizedEvidence = this.normalizeEvidenceText(aiEvidenceText);
         const isSuggestedChanged = suggestedScore !== originalSuggestedScore;
         const isFinalChanged = finalScore !== originalFinalScore;
         const isRationaleChanged = normalizedRationale !== normalizedOriginalRationale;
+        const isEvidenceChanged = normalizedEvidence !== normalizedOriginalEvidence;
 
-        if (isSuggestedChanged || isFinalChanged || isRationaleChanged) {
+        if (isSuggestedChanged || isFinalChanged || isRationaleChanged || isEvidenceChanged) {
             this.pendingChanges.set(rowId, {
                 suggestedScore,
                 finalScore,
-                rationale: normalizedRationale
+                rationale: normalizedRationale,
+                aiEvidenceText: normalizedEvidence
             });
             return;
         }
@@ -601,6 +710,91 @@ export default class AfeScorecard extends LightningElement {
 
     normalizeRationale(value) {
         return value === null || value === undefined ? '' : value;
+    }
+
+    normalizeEvidenceText(value) {
+        if (value === null || value === undefined) {
+            return '';
+        }
+        return String(value).replace(/\r\n/g, '\n').replace(/\r/g, '\n').trim();
+    }
+
+    toCitationItems(rawCitations, rowId) {
+        if (!Array.isArray(rawCitations)) {
+            return [];
+        }
+        return rawCitations
+            .map((item) => (item === null || item === undefined ? '' : String(item).trim()))
+            .filter((item) => !!item)
+            .slice(0, 3)
+            .map((text, index) => ({
+                key: `${rowId || 'row'}-citation-${index + 1}`,
+                text
+            }));
+    }
+
+    citationItemsToEvidenceText(citationItems) {
+        if (!Array.isArray(citationItems) || citationItems.length === 0) {
+            return '';
+        }
+
+        return citationItems
+            .map((item) => (item && item.text ? String(item.text).trim() : ''))
+            .filter((text) => !!text)
+            .map((text) => `• ${text}`)
+            .join('\n');
+    }
+
+    evidenceTextToCitationItems(rawEvidenceText, rowId) {
+        const normalized = this.normalizeEvidenceText(rawEvidenceText);
+        if (!normalized) {
+            return [];
+        }
+
+        return normalized
+            .split('\n')
+            .map((line) => line.replace(/^\s*[•\-*]\s*/, '').trim())
+            .filter((line) => !!line)
+            .slice(0, 3)
+            .map((text, index) => ({
+                key: `${rowId || 'row'}-stored-citation-${index + 1}`,
+                text
+            }));
+    }
+
+    withHeatmapStyling(row) {
+        const reviewerScore = Number.isInteger(Number(row.finalScore)) ? Number(row.finalScore) : null;
+        const aiScore = Number.isInteger(Number(row.suggestedScore)) ? Number(row.suggestedScore) : null;
+        const effectiveScore = reviewerScore !== null ? reviewerScore : aiScore;
+        const scoreBucket = this.resolveHeatmapScoreBucket(effectiveScore);
+        const strengthLabelByBucket = {
+            1: 'Weak',
+            2: 'Below Average',
+            3: 'Neutral',
+            4: 'Strong',
+            5: 'Excellent'
+        };
+
+        return {
+            ...row,
+            scoreHeatClass: `heat-row score-${scoreBucket}`,
+            scoreHeatAriaLabel: `Criterion score strength: ${strengthLabelByBucket[scoreBucket]}`,
+            aiSuggestionDotClass: `ai-score-dot ai-dot-${this.resolveHeatmapScoreBucket(aiScore)}`
+        };
+    }
+
+    resolveHeatmapScoreBucket(scoreValue) {
+        if (scoreValue === null || scoreValue === undefined || Number.isNaN(Number(scoreValue))) {
+            return 3;
+        }
+        const rounded = Math.round(Number(scoreValue));
+        if (rounded < 1) {
+            return 1;
+        }
+        if (rounded > 5) {
+            return 5;
+        }
+        return rounded;
     }
 
     async notifyRelatedRecordUpdates() {

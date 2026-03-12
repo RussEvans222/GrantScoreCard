@@ -7,6 +7,13 @@ public with sharing class AFEScorecardController {
     private static final String AI_MISSING_SCORE_WARNING = 'AI did not return a score for this criterion.';
     private static final String AI_MODE_FILL_BLANKS = 'FILL_BLANKS';
     private static final String AI_MODE_OVERWRITE_ALL = 'OVERWRITE_ALL';
+    private static final Integer MAX_CITATION_COUNT = 3;
+    private static final Integer MAX_CITATION_LENGTH = 200;
+    private static final Integer MAX_EVIDENCE_STORAGE_LENGTH = 32768;
+    private static final String AFE_STATUS_READY_FOR_SUBMISSION = 'Ready for Submission';
+    private static final String AFE_STATUS_NEEDS_CLARIFICATION = 'Needs Clarification';
+    private static final Decimal LOW_SCORE_THRESHOLD = 80;
+    private static final Set<String> TERMINAL_AFE_STATUSES = new Set<String>{ 'Submitted', 'Panel Reviewed', 'Finalized' };
 
     private interface PromptInvoker {
         String invokeTemplate(String templateApiName, Map<String, Object> inputParams);
@@ -38,6 +45,7 @@ public with sharing class AFEScorecardController {
                    Suggested_Score__c,
                    Final_Score__c,
                    Rationale__c,
+                   AI_Evidence__c,
                    Display_Order__c,
                    CreatedDate
             FROM Evaluation_Criterion_Score__c
@@ -78,7 +86,8 @@ public with sharing class AFEScorecardController {
                 Id = incoming.Id,
                 Suggested_Score__c = suggestedScore,
                 Final_Score__c = score,
-                Rationale__c = incoming.Rationale__c
+                Rationale__c = incoming.Rationale__c,
+                AI_Evidence__c = normalizeEvidenceStorageText(incoming.AI_Evidence__c)
             ));
         }
 
@@ -109,6 +118,12 @@ public with sharing class AFEScorecardController {
         if (evaluationIds.isEmpty()) {
             return;
         }
+
+        Map<Id, ApplicationFormEvaluation> evaluationById = new Map<Id, ApplicationFormEvaluation>([
+            SELECT Id, Status, Final_Recommendation__c, Weighted_Total__c
+            FROM ApplicationFormEvaluation
+            WHERE Id IN :evaluationIds
+        ]);
 
         Map<Id, List<Evaluation_Criterion_Score__c>> scoresByEvaluation = new Map<Id, List<Evaluation_Criterion_Score__c>>();
         for (Evaluation_Criterion_Score__c scoreRow : [
@@ -160,11 +175,56 @@ public with sharing class AFEScorecardController {
                 Decimal confidencePercent = (weightedAgreement / totalWeight) * 100;
                 setAiConfidenceFieldValue(afeUpdate, confidencePercent.setScale(2));
             }
+
+            ApplicationFormEvaluation currentAfe = evaluationById.get(evaluationId);
+            setEvaluationStatusAfterScoring(afeUpdate, currentAfe, allFinalScoresPresent);
             afeUpdates.add(afeUpdate);
         }
 
         if (!afeUpdates.isEmpty()) {
             update afeUpdates;
+        }
+    }
+
+    private static void setEvaluationStatusAfterScoring(
+        ApplicationFormEvaluation afeUpdate,
+        ApplicationFormEvaluation currentAfe,
+        Boolean allFinalScoresPresent
+    ) {
+        if (afeUpdate == null || currentAfe == null || allFinalScoresPresent != true) {
+            return;
+        }
+        Schema.DescribeFieldResult statusDescribe =
+            Schema.SObjectType.ApplicationFormEvaluation.fields.getMap().get('Status').getDescribe();
+        if (statusDescribe == null || !statusDescribe.isUpdateable()) {
+            return;
+        }
+
+        String currentStatus = currentAfe.Status;
+        if (!String.isBlank(currentStatus) && TERMINAL_AFE_STATUSES.contains(currentStatus)) {
+            // Do not move status backward once submitted/panel-reviewed/finalized.
+            return;
+        }
+
+        String recommendation = currentAfe.Final_Recommendation__c == null
+            ? ''
+            : currentAfe.Final_Recommendation__c.toLowerCase();
+        Decimal weightedTotal = currentAfe.Weighted_Total__c;
+        Boolean isLowScore = weightedTotal == null || weightedTotal < LOW_SCORE_THRESHOLD;
+        Boolean needsMoreInfoRecommendation =
+            recommendation.contains('ask for revisions') ||
+            recommendation.contains('more information') ||
+            recommendation.contains('clarification');
+
+        String targetStatus = (isLowScore && needsMoreInfoRecommendation)
+            ? AFE_STATUS_NEEDS_CLARIFICATION
+            : AFE_STATUS_READY_FOR_SUBMISSION;
+        String resolvedStatus = resolvePicklistValue(
+            statusDescribe.getPicklistValues(),
+            targetStatus
+        );
+        if (!String.isBlank(resolvedStatus)) {
+            afeUpdate.Status = resolvedStatus;
         }
     }
 
@@ -479,6 +539,7 @@ public with sharing class AFEScorecardController {
         @AuraEnabled public Id criterionScoreId;
         @AuraEnabled public Integer suggestedScore;
         @AuraEnabled public String suggestedRationale;
+        @AuraEnabled public List<String> citations;
         @AuraEnabled public String source;
         @AuraEnabled public String warning;
         @AuraEnabled public Boolean skipped;
@@ -493,7 +554,7 @@ public with sharing class AFEScorecardController {
 
         String effectiveMode = normalizeMode(mode);
         List<Evaluation_Criterion_Score__c> criteria = [
-            SELECT Id, Criterion_Key__c, Label__c, Description__c, Weight__c, Suggested_Score__c, Rationale__c
+            SELECT Id, Criterion_Key__c, Label__c, Description__c, Weight__c, Suggested_Score__c, Rationale__c, AI_Evidence__c
             FROM Evaluation_Criterion_Score__c
             WHERE ApplicationFormEvaluation__c = :evaluationId
             ORDER BY Section_Order__c ASC, Display_Order__c ASC, CreatedDate ASC
@@ -550,6 +611,7 @@ public with sharing class AFEScorecardController {
         return new Map<String, Object>{
             'suggestedScore' => 3,
             'suggestedRationale' => 'Fallback suggestion applied: AI runtime or context retrieval was unavailable.',
+            'citations' => new List<String>(),
             'source' => 'fallback',
             'warning' => AI_FALLBACK_WARNING + ' Reason: ' + rootCause.getMessage()
         };
@@ -571,10 +633,12 @@ public with sharing class AFEScorecardController {
         String rationale = parsedMap.get('suggestedRationale') == null
             ? ''
             : String.valueOf(parsedMap.get('suggestedRationale'));
+        List<String> citations = extractAndNormalizeCitations(parsedMap);
 
         return new Map<String, Object>{
             'suggestedScore' => score,
             'suggestedRationale' => rationale,
+            'citations' => citations,
             'source' => 'ai'
         };
     }
@@ -663,11 +727,13 @@ public with sharing class AFEScorecardController {
             Object suggestedRationaleRaw = scoreItem.containsKey('suggestedRationale')
                 ? scoreItem.get('suggestedRationale')
                 : scoreItem.get('reason');
+            List<String> citations = extractAndNormalizeCitations(scoreItem);
             resultByCriterionId.put(criterionId, new Map<String, Object>{
                 'suggestedScore' => boundedScore,
                 'suggestedRationale' => suggestedRationaleRaw == null
                     ? ''
                     : String.valueOf(suggestedRationaleRaw),
+                'citations' => citations,
                 'source' => 'ai'
             });
         }
@@ -706,6 +772,7 @@ public with sharing class AFEScorecardController {
         return new Map<String, Object>{
             'suggestedScore' => fallbackScore,
             'suggestedRationale' => rationale,
+            'citations' => new List<String>(),
             'source' => 'fallback',
             'warning' => AI_FALLBACK_WARNING
         };
@@ -921,6 +988,22 @@ public with sharing class AFEScorecardController {
         return criterion.Suggested_Score__c == null || String.isBlank(criterion.Rationale__c);
     }
 
+    private static String normalizeEvidenceStorageText(String rawEvidence) {
+        if (String.isBlank(rawEvidence)) {
+            return null;
+        }
+
+        String normalized = rawEvidence.replace('\r\n', '\n').replace('\r', '\n').trim();
+        if (String.isBlank(normalized)) {
+            return null;
+        }
+
+        if (normalized.length() > MAX_EVIDENCE_STORAGE_LENGTH) {
+            normalized = normalized.substring(0, MAX_EVIDENCE_STORAGE_LENGTH);
+        }
+        return normalized;
+    }
+
     private static AISuggestionResult toAiSuggestionResult(Id criterionId, Map<String, Object> suggestion) {
         AISuggestionResult result = new AISuggestionResult();
         result.criterionScoreId = criterionId;
@@ -930,7 +1013,89 @@ public with sharing class AFEScorecardController {
         Object scoreRaw = suggestion == null ? null : suggestion.get('suggestedScore');
         result.suggestedScore = scoreRaw == null ? null : Integer.valueOf(String.valueOf(scoreRaw));
         result.suggestedRationale = suggestion == null ? null : (String) suggestion.get('suggestedRationale');
+        result.citations = coerceCitationList(suggestion == null ? null : suggestion.get('citations'));
         return result;
+    }
+
+    private static List<String> extractAndNormalizeCitations(Map<String, Object> scoreMap) {
+        if (scoreMap == null) {
+            return new List<String>();
+        }
+
+        Object rawCitations = null;
+        if (scoreMap.containsKey('citations')) {
+            rawCitations = scoreMap.get('citations');
+        } else if (scoreMap.containsKey('evidence')) {
+            rawCitations = scoreMap.get('evidence');
+        } else if (scoreMap.containsKey('supportingEvidence')) {
+            rawCitations = scoreMap.get('supportingEvidence');
+        } else if (scoreMap.containsKey('citation')) {
+            rawCitations = scoreMap.get('citation');
+        }
+
+        return coerceCitationList(rawCitations);
+    }
+
+    private static List<String> coerceCitationList(Object rawCitations) {
+        List<String> normalized = new List<String>();
+        if (rawCitations == null) {
+            return normalized;
+        }
+
+        try {
+            if (rawCitations instanceof List<Object>) {
+                for (Object item : (List<Object>) rawCitations) {
+                    addCitationIfValid(normalized, item);
+                    if (normalized.size() >= MAX_CITATION_COUNT) {
+                        break;
+                    }
+                }
+                return normalized;
+            }
+            addCitationIfValid(normalized, rawCitations);
+        } catch (Exception ex) {
+            return new List<String>();
+        }
+
+        return normalized;
+    }
+
+    private static void addCitationIfValid(List<String> target, Object rawItem) {
+        if (target == null || rawItem == null || target.size() >= MAX_CITATION_COUNT) {
+            return;
+        }
+
+        String candidate;
+        if (rawItem instanceof String) {
+            candidate = (String) rawItem;
+        } else if (rawItem instanceof Map<String, Object>) {
+            Map<String, Object> itemMap = (Map<String, Object>) rawItem;
+            if (itemMap.containsKey('text')) {
+                candidate = String.valueOf(itemMap.get('text'));
+            } else if (itemMap.containsKey('value')) {
+                candidate = String.valueOf(itemMap.get('value'));
+            } else if (itemMap.containsKey('quote')) {
+                candidate = String.valueOf(itemMap.get('quote'));
+            } else {
+                candidate = String.valueOf(rawItem);
+            }
+        } else {
+            candidate = String.valueOf(rawItem);
+        }
+
+        if (String.isBlank(candidate)) {
+            return;
+        }
+
+        String trimmed = candidate.trim();
+        if (String.isBlank(trimmed)) {
+            return;
+        }
+
+        if (trimmed.length() > MAX_CITATION_LENGTH) {
+            trimmed = trimmed.substring(0, MAX_CITATION_LENGTH);
+        }
+        target.add(trimmed.escapeHtml4());
     }
 
 }

@@ -1,0 +1,126 @@
+.workspace-shell {
+    background: #f3f2f2;
+    min-height: 100%;
+}
+
+.workspace-header {
+    background: #ffffff;
+    border: 1px solid #dddbda;
+    border-radius: 6px;
+}
+
+.title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.title-wrap h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: #1b3a5f;
+    font-weight: 700;
+}
+
+.title-wrap p {
+    margin: 0.2rem 0 0;
+    color: #5f6a7d;
+}
+
+.helper-note {
+    color: #5f6a7d;
+    font-size: 0.75rem;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(260px, 1fr)) auto;
+    gap: 0.75rem;
+    align-items: end;
+}
+
+.search-action {
+    display: flex;
+    align-items: flex-end;
+}
+
+.selected-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.4rem 0.55rem;
+    border-radius: 6px;
+    border: 1px solid #dddbda;
+    background: #eef0ff;
+    color: #1b3a5f;
+    font-size: 0.75rem;
+}
+
+.usage-help {
+    border: 1px solid #dddbda;
+    border-radius: 6px;
+    background: #eef0ff;
+    border-left: 4px solid #6f5ef9;
+    padding: 0.6rem 0.75rem;
+}
+
+.usage-help h3 {
+    margin: 0 0 0.3rem;
+    color: #1b3a5f;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.usage-help ol {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #5f6a7d;
+    font-size: 0.77rem;
+}
+
+.controls-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.row-count {
+    color: #5f6a7d;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.loading-wrap {
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-banner {
+    border: 1px solid #e5484d;
+    background: #ffe3e3;
+    color: #7f1d1d;
+    border-radius: 6px;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.78rem;
+}
+
+.empty-state {
+    border: 1px dashed #dddbda;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #5f6a7d;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.78rem;
+}
+
+@media (max-width: 960px) {
+    .filters {
+        grid-template-columns: 1fr;
+    }
+}

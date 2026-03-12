@@ -1,0 +1,214 @@
+<template>
+    <section class="workspace-shell">
+        <header class="workspace-header slds-p-around_medium">
+            <div class="title-wrap">
+                <lightning-icon icon-name="utility:custom_apps" size="small" alternative-text="App"></lightning-icon>
+                <div>
+                    <h1>Evaluation Criteria Manager</h1>
+                    <p>Manage reusable evaluation criteria and AI-assisted rubric design.</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="slds-p-around_medium">
+            <lightning-card title="Criteria Insights" icon-name="utility:insights">
+                <div class="slds-p-horizontal_medium slds-p-bottom_medium">
+                    <section class="ai-panel slds-p-around_medium">
+                        <h2>
+                            <lightning-icon icon-name="utility:einstein" size="xx-small" alternative-text="AI"></lightning-icon>
+                            Evaluation Framework Review
+                        </h2>
+                        <p>Prompt API: <strong>EvaluationFrameworkReview</strong> | Input object: <strong>Evaluation_Template__c</strong></p>
+
+                        <div class="slds-grid slds-wrap slds-gutters">
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                                <lightning-combobox
+                                    label="Evaluation Template"
+                                    value={selectedTemplateId}
+                                    options={templateOptions}
+                                    onchange={handleTemplateChange}
+                                    required>
+                                </lightning-combobox>
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                                <lightning-input
+                                    type="toggle"
+                                    label="Apply Criteria Library Actions"
+                                    message-toggle-active="Enabled"
+                                    message-toggle-inactive="Preview Only"
+                                    checked={applyLibraryActions}
+                                    onchange={handleApplyToggle}>
+                                </lightning-input>
+                            </div>
+                        </div>
+
+                        <div class="slds-m-top_medium">
+                            <lightning-button
+                                variant="brand"
+                                label="Analyze Evaluation Framework"
+                                onclick={handleAnalyze}
+                                disabled={isAnalyzeDisabled}>
+                            </lightning-button>
+                            <lightning-button
+                                class="slds-m-left_small"
+                                label="Open Template Record"
+                                onclick={handleOpenTemplateRecord}
+                                disabled={isAnalyzeDisabled}>
+                            </lightning-button>
+                            <lightning-button
+                                class="slds-m-left_small"
+                                label="Export Insights JSON"
+                                onclick={handleExportJson}
+                                disabled={isAnalyzeDisabled}>
+                            </lightning-button>
+                        </div>
+                    </section>
+
+                    <template if:true={errorMessage}>
+                        <div class="slds-notify slds-notify_alert slds-alert_error slds-m-top_medium" role="alert">
+                            <span class="slds-assistive-text">Error</span>
+                            <h2>{errorMessage}</h2>
+                        </div>
+                    </template>
+
+                    <template if:true={result}>
+                        <div class="result-grid slds-m-top_medium">
+                            <article class="result-card health-card">
+                                <h3>Framework Health</h3>
+                                <div class="health-content">
+                                    <lightning-progress-ring value={frameworkHealthPercent} size="large" variant="base-autocomplete"></lightning-progress-ring>
+                                    <div>
+                                        <p class="health-score">{frameworkHealthDisplay}/10</p>
+                                        <p class="muted">
+                                            Template:
+                                            <button class="template-link" onclick={handleOpenTemplateRecord}>
+                                                {selectedTemplateLabel}
+                                            </button>
+                                        </p>
+                                        <p class="muted">Criteria analyzed: {result.criteriaCount}</p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="result-card">
+                                <h3>Dimension Scores</h3>
+                                <div class="chip-wrap">
+                                    <template for:each={dimensionChips} for:item="chip">
+                                        <span key={chip.label} class="score-chip">{chip.label}: {chip.value}</span>
+                                    </template>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="result-grid slds-m-top_medium">
+                            <article class="result-card">
+                                <h3>Issues</h3>
+                                <template if:true={issues.length}>
+                                    <ul class="insight-list">
+                                        <template for:each={issues} for:item="issue" for:index="index">
+                                            <li key={issue.key} class="insight-item">
+                                                <span class="type-pill">{issue.type}</span>
+                                                <p>{issue.message}</p>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </template>
+                                <template if:false={issues.length}>
+                                    <p class="muted">No structural issues returned.</p>
+                                </template>
+                            </article>
+
+                            <article class="result-card">
+                                <h3>Recommendations</h3>
+                                <template if:true={recommendations.length}>
+                                    <ul class="recommendation-list">
+                                        <template for:each={recommendations} for:item="rec">
+                                            <li key={rec.key} class="recommendation-item">
+                                                <div class="recommendation-header">
+                                                    <span class="type-pill">{rec.typeLabel}</span>
+                                                    <template if:true={rec.canApply}>
+                                                        <lightning-button
+                                                            variant="neutral"
+                                                            label={rec.actionLabel}
+                                                            data-type={rec.type}
+                                                            data-name={rec.name}
+                                                            data-description={rec.description}
+                                                            data-weight={rec.suggestedWeight}
+                                                            onclick={handleRecommendationAction}
+                                                            disabled={rec.isApplied}>
+                                                        </lightning-button>
+                                                    </template>
+                                                </div>
+                                                <h4>{rec.name}</h4>
+                                                <p>{rec.description}</p>
+                                                <p class="muted">Suggested weight: {rec.suggestedWeightDisplay}</p>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </template>
+                                <template if:false={recommendations.length}>
+                                    <p class="muted">No recommendations returned.</p>
+                                </template>
+                            </article>
+                        </div>
+
+                        <article class="result-card slds-m-top_medium">
+                            <h3>Improvements</h3>
+                            <template if:true={improvements.length}>
+                                <ul class="insight-list">
+                                    <template for:each={improvements} for:item="item">
+                                        <li key={item.key} class="insight-item">
+                                            <strong>{item.criterion}</strong>
+                                            <p>{item.message}</p>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </template>
+                            <template if:false={improvements.length}>
+                                <p class="muted">No criterion-specific improvements returned.</p>
+                            </template>
+                        </article>
+
+                        <article class="result-card slds-m-top_medium">
+                            <h3>Library Action Summary</h3>
+                            <p>Created: {result.libraryActionSummary.createdCount}</p>
+                            <p>Flagged for review: {result.libraryActionSummary.flaggedForReviewCount}</p>
+                            <p>Weight suggestions applied: {result.libraryActionSummary.suggestedWeightUpdates}</p>
+                            <p>Skipped: {result.libraryActionSummary.skippedCount}</p>
+                            <template if:true={libraryNotes.length}>
+                                <ul class="slds-list_dotted slds-m-top_x-small">
+                                    <template for:each={libraryNotes} for:item="note">
+                                        <li key={note}>{note}</li>
+                                    </template>
+                                </ul>
+                            </template>
+                        </article>
+
+                        <article class="result-card slds-m-top_medium">
+                            <h3>Retention</h3>
+                            <p>{persistedMessage}</p>
+                        </article>
+
+                        <article class="result-card slds-m-top_medium">
+                            <h3>Related Criteria In This Template</h3>
+                            <template if:true={relatedCriteria.length}>
+                                <ul class="slds-list_dotted">
+                                    <template for:each={relatedCriteria} for:item="item">
+                                        <li key={item.id}>
+                                            <strong>{item.name}</strong>
+                                            <template if:true={item.bundle}> ({item.bundle})</template>
+                                            <template if:true={item.weight}> - Weight: {item.weight}</template>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </template>
+                            <template if:false={relatedCriteria.length}>
+                                <p class="muted">No related criteria found for this template.</p>
+                            </template>
+                        </article>
+                    </template>
+                </div>
+            </lightning-card>
+        </div>
+    </section>
+</template>
