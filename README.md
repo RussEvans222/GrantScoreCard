@@ -1,4 +1,6 @@
-# GrantScoreCard (Salesforce Grantmaking Starter Kit)
+# GrantScoreCard – AI-Powered Grant Evaluation Accelerator
+
+![AI Grant Evaluation Accelerator](docs/images/headers/ai-grant-evaluation-accelerator-header.png)
 
 GrantScoreCard is a Salesforce DX starter project for a complete grant review lifecycle on Public Sector Solutions / Grants Management.  
 
@@ -13,14 +15,17 @@ It covers applicant intake, rubric setup, reviewer assignment, AI-assisted scori
 
 ## Architecture Overview
 
-```text
-FundingOpportunity
-  -> Evaluation_Template__c
-      -> Evaluation_Template_Criterion__c
-          -> (on reviewer assignment)
-             ApplicationFormEvaluation
-                -> Evaluation_Criterion_Score__c snapshots
-```
+![Grant Evaluation Architecture](docs/images/headers/grant-evaluation-architecture-header.png)
+
+This project demonstrates an end-to-end AI-enhanced grant evaluation pipeline on Salesforce:
+
+Funding Opportunity  
+-> Grant Application Intake  
+-> Evaluation Framework Design  
+-> Reviewer Scorecards  
+-> AI Framework Review  
+-> Criteria Library Governance  
+-> Funding Decision Insights
 
 
 ## Latest Updates (March 11, 2026)
@@ -225,6 +230,20 @@ Common causes:
 ### Reviewer flow template missing message
 
 Ensure `FundingOpportunity.Evaluation_Template__c` points to an active published template.
+
+## Developer Change Logs
+
+![Developer Change Logs](docs/images/headers/developer-change-logs-header.png)
+
+This section tracks major development changes so new developers can understand how the system has evolved and where to start learning.
+
+- AI evaluation framework services
+- prompt invocation architecture
+- JSON response parsing
+- criteria library governance
+- Lightning Web Component workspace development
+- evaluation template management
+- developer debugging improvements
 
 ## Repo Structure
 
