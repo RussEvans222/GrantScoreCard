@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_3</activeVersionIdentifier>
+    <description>Analyze the structure and quality of an evaluation rubric and provide AI-driven recommendations to improve clarity, balance, and evaluation effectiveness.</description>
+    <developerName>EvaluationFrameworkReview</developerName>
+    <masterLabel>Evaluation Framework Review</masterLabel>
+    <templateVersions>
+        <content>ROLE
+
+You are an expert in public sector grant evaluation frameworks.
+
+Your task is to analyze the structure and quality of an evaluation rubric and identify improvements that would increase fairness, clarity, and effectiveness.
+
+
+
+EVALUATION TEMPLATE
+
+Template Name:
+{!$Input:Evaluation_Template.Name}
+
+Description:
+{!$Input:Evaluation_Template.Description__c}
+
+Score Scale Max:
+{!$Input:Evaluation_Template.Score_Scale_Max__c}
+
+
+
+CRITERIA INCLUDED IN THIS FRAMEWORK
+
+The following evaluation criteria belong to this template.
+{!$RecordSnapshot:Evaluation_Template_Criterion.snapshot}
+
+
+
+ANALYSIS OBJECTIVES
+
+Review the framework and identify structural issues or opportunities for improvement.
+
+Focus on:
+
+• overlapping or redundant criteria  
+• weight imbalance across criteria  
+• ambiguous evaluation language  
+• missing evaluation dimensions  
+• unclear scoring guidance
+
+
+
+SCORING MODEL
+
+Evaluate the rubric across the following dimensions (0-10):
+
+Clarity  
+Balance  
+Coverage  
+Redundancy
+
+
+
+Then compute an overall **frameworkHealthScore** from those dimensions.
+
+
+
+RECOMMENDATIONS
+
+Suggest improvements such as:
+
+• new criteria that may be missing  
+• improved wording for ambiguous criteria  
+• better scoring guidance  
+• improved weighting balance
+
+
+
+IMPORTANT
+
+Your response must be **valid JSON only**.
+
+Do not include explanations outside the JSON structure.
+
+
+
+REQUIRED OUTPUT
+
+{
+ &quot;frameworkHealthScore&quot;: number,
+ &quot;dimensionScores&quot;: {
+  &quot;clarity&quot;: number,
+  &quot;balance&quot;: number,
+  &quot;coverage&quot;: number,
+  &quot;redundancy&quot;: number
+ },
+ &quot;issues&quot;: [
+  {
+   &quot;type&quot;: &quot;overlap | imbalance | ambiguity | missing_dimension&quot;,
+   &quot;message&quot;: &quot;description of the issue&quot;
+  }
+ ],
+ &quot;recommendations&quot;: [
+  {
+   &quot;type&quot;: &quot;newCriterion | modifyCriterion | adjustWeight&quot;,
+   &quot;name&quot;: &quot;criterion name&quot;,
+   &quot;description&quot;: &quot;suggested improvement&quot;,
+   &quot;suggestedWeight&quot;: number
+  }
+ ],
+ &quot;improvements&quot;: [
+  {
+   &quot;criterion&quot;: &quot;criterion name&quot;,
+   &quot;message&quot;: &quot;specific improvement suggestion&quot;
+  }
+ ]
+}
+</content>
+        <inputs>
+            <apiName>Evaluation_Template</apiName>
+            <definition>SOBJECT://Evaluation_Template__c</definition>
+            <masterLabel>Evaluation Template</masterLabel>
+            <referenceName>Input:Evaluation_Template</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Evaluation_Template_Criterion</apiName>
+            <definition>SOBJECT://Evaluation_Template_Criterion__c</definition>
+            <masterLabel>Evaluation Template Criterion</masterLabel>
+            <referenceName>Input:Evaluation_Template_Criterion</referenceName>
+            <required>false</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <description>Retrieves record data for grounding a prompt template.</description>
+            <label>Record Snapshot</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:Evaluation_Template_Criterion.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:Evaluation_Template_Criterion</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>ROLE
+
+You are an expert in public sector grant evaluation frameworks.
+
+Your task is to analyze the structure and quality of an evaluation rubric and identify improvements that would increase fairness, clarity, and effectiveness.
+
+
+
+EVALUATION TEMPLATE
+
+Template Name:
+{!$Input:Evaluation_Template.Name}
+
+Description:
+{!$Input:Evaluation_Template.Description__c}
+
+Score Scale Max:
+{!$Input:Evaluation_Template.Score_Scale_Max__c}
+
+
+
+CRITERIA INCLUDED IN THIS FRAMEWORK
+
+The following evaluation criteria belong to this template.
+{!$RecordSnapshot:Evaluation_Template_Criterion.snapshot}
+
+
+
+ANALYSIS OBJECTIVES
+
+Review the framework and identify structural issues or opportunities for improvement.
+
+Focus on:
+
+• overlapping or redundant criteria  
+• weight imbalance across criteria  
+• ambiguous evaluation language  
+• missing evaluation dimensions  
+• unclear scoring guidance
+
+
+
+SCORING MODEL
+
+Evaluate the rubric across the following dimensions (0-10):
+
+Clarity  
+Balance  
+Coverage  
+Redundancy
+
+
+
+Then compute an overall **frameworkHealthScore** from those dimensions.
+
+
+
+RECOMMENDATIONS
+
+Suggest improvements such as:
+
+• new criteria that may be missing  
+• improved wording for ambiguous criteria  
+• better scoring guidance  
+• improved weighting balance
+
+
+
+IMPORTANT
+
+Your response must be **valid JSON only**.
+
+Do not include explanations outside the JSON structure.
+
+
+
+REQUIRED OUTPUT
+
+{
+ &quot;frameworkHealthScore&quot;: number,
+ &quot;dimensionScores&quot;: {
+  &quot;clarity&quot;: number,
+  &quot;balance&quot;: number,
+  &quot;coverage&quot;: number,
+  &quot;redundancy&quot;: number
+ },
+ &quot;issues&quot;: [
+  {
+   &quot;type&quot;: &quot;overlap | imbalance | ambiguity | missing_dimension&quot;,
+   &quot;message&quot;: &quot;description of the issue&quot;
+  }
+ ],
+ &quot;recommendations&quot;: [
+  {
+   &quot;type&quot;: &quot;newCriterion | modifyCriterion | adjustWeight&quot;,
+   &quot;name&quot;: &quot;criterion name&quot;,
+   &quot;description&quot;: &quot;suggested improvement&quot;,
+   &quot;suggestedWeight&quot;: number
+  }
+ ],
+ &quot;improvements&quot;: [
+  {
+   &quot;criterion&quot;: &quot;criterion name&quot;,
+   &quot;message&quot;: &quot;specific improvement suggestion&quot;
+  }
+ ]
+}
+
+</content>
+        <inputs>
+            <apiName>Evaluation_Template</apiName>
+            <definition>SOBJECT://Evaluation_Template__c</definition>
+            <masterLabel>Evaluation Template</masterLabel>
+            <referenceName>Input:Evaluation_Template</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Evaluation_Template_Criterion</apiName>
+            <definition>SOBJECT://Evaluation_Template_Criterion__c</definition>
+            <masterLabel>Evaluation Template Criterion</masterLabel>
+            <referenceName>Input:Evaluation_Template_Criterion</referenceName>
+            <required>false</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <description>Retrieves record data for grounding a prompt template.</description>
+            <label>Record Snapshot</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:Evaluation_Template_Criterion.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:Evaluation_Template_Criterion</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_2</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>ROLE
+
+You are an expert in public sector grant evaluation frameworks.
+
+Your task is to analyze the structure and quality of an evaluation rubric and identify improvements that would increase fairness, clarity, and effectiveness.
+
+
+
+EVALUATION TEMPLATE
+
+Template Name:
+{!$Input:Evaluation_Template.Name}
+
+Description:
+{!$Input:Evaluation_Template.Description__c}
+
+Score Scale Max:
+{!$Input:Evaluation_Template.Score_Scale_Max__c}
+
+
+
+CRITERIA INCLUDED IN THIS FRAMEWORK
+
+The following evaluation criteria belong to this template.
+{!$RecordSnapshot:Evaluation_Template_Criterion.snapshot}
+
+
+
+ANALYSIS OBJECTIVES
+
+Review the framework and identify structural issues or opportunities for improvement.
+
+Focus on:
+
+• overlapping or redundant criteria  
+• weight imbalance across criteria  
+• ambiguous evaluation language  
+• missing evaluation dimensions  
+• unclear scoring guidance
+
+
+
+SCORING MODEL
+
+Evaluate the rubric across the following dimensions (0-10):
+
+Clarity  
+Balance  
+Coverage  
+Redundancy
+
+
+
+Then compute an overall **frameworkHealthScore** from those dimensions.
+
+
+
+RECOMMENDATIONS
+
+Suggest improvements such as:
+
+• new criteria that may be missing  
+• improved wording for ambiguous criteria  
+• better scoring guidance  
+• improved weighting balance
+
+
+
+IMPORTANT
+
+Your response must be **valid JSON only**.
+
+Do not include explanations outside the JSON structure.
+
+
+
+REQUIRED OUTPUT
+
+{
+ &quot;frameworkHealthScore&quot;: number,
+ &quot;dimensionScores&quot;: {
+  &quot;clarity&quot;: number,
+  &quot;balance&quot;: number,
+  &quot;coverage&quot;: number,
+  &quot;redundancy&quot;: number
+ },
+ &quot;issues&quot;: [
+  {
+   &quot;type&quot;: &quot;overlap | imbalance | ambiguity | missing_dimension&quot;,
+   &quot;message&quot;: &quot;description of the issue&quot;
+  }
+ ],
+ &quot;recommendations&quot;: [
+  {
+   &quot;type&quot;: &quot;newCriterion | modifyCriterion | adjustWeight&quot;,
+   &quot;name&quot;: &quot;criterion name&quot;,
+   &quot;description&quot;: &quot;suggested improvement&quot;,
+   &quot;suggestedWeight&quot;: number
+  }
+ ],
+ &quot;improvements&quot;: [
+  {
+   &quot;criterion&quot;: &quot;criterion name&quot;,
+   &quot;message&quot;: &quot;specific improvement suggestion&quot;
+  }
+ ]
+}
+
+</content>
+        <inputs>
+            <apiName>Evaluation_Template</apiName>
+            <definition>SOBJECT://Evaluation_Template__c</definition>
+            <masterLabel>Evaluation Template</masterLabel>
+            <referenceName>Input:Evaluation_Template</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Evaluation_Template_Criterion</apiName>
+            <definition>SOBJECT://Evaluation_Template_Criterion__c</definition>
+            <masterLabel>Evaluation Template Criterion</masterLabel>
+            <referenceName>Input:Evaluation_Template_Criterion</referenceName>
+            <required>false</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getDataForGrounding</definition>
+            <description>Retrieves record data for grounding a prompt template.</description>
+            <label>Record Snapshot</label>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>recordId</parameterName>
+                <valueExpression>{!$Input:Evaluation_Template_Criterion.Id}</valueExpression>
+            </parameters>
+            <referenceName>RecordSnapshot:Evaluation_Template_Criterion</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_3</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

@@ -1,5 +1,9 @@
 # Demo Org Setup Runbook
 
+For deployment-ready installs into fresh PSS orgs, use:
+- `config/deploy-manifest-accelerator-curated.xml`
+- `docs/setup/accelerator-deployment-readiness.md`
+
 ## 1) Authenticate target org
 
 ```bash
@@ -11,7 +15,7 @@ sf org login web --alias GRANTS
 ```bash
 sf project deploy start \
   --target-org GRANTS \
-  --manifest config/deploy-manifest-core.xml \
+  --manifest config/deploy-manifest-accelerator-curated.xml \
   --wait 60
 ```
 

@@ -219,6 +219,10 @@ Core: `applicationStatusTracker`
 
 ## Quick Start
 
+Deployment-ready path for fresh PSS orgs:
+- Curated manifest: `config/deploy-manifest-accelerator-curated.xml`
+- Staged runbook: `docs/setup/accelerator-deployment-readiness.md`
+
 ### 1) Clone + auth
 
 ```bash
@@ -232,7 +236,7 @@ sf org login web --alias GRANTS
 ```bash
 sf project deploy start \
   --target-org GRANTS \
-  --manifest config/deploy-manifest-core.xml \
+  --manifest config/deploy-manifest-accelerator-curated.xml \
   --wait 60
 ```
 
@@ -337,8 +341,10 @@ Detailed daily entries: [`docs/developer-change-log.md`](docs/developer-change-l
 ## Repo Structure
 
 - `config/deploy-manifest-core.xml` - deploy manifest
+- `config/deploy-manifest-accelerator-curated.xml` - curated accelerator deployment manifest
 - `scripts/apex/seed_grantmaking_demo.apex` - idempotent seed data
 - `docs/setup/demo-org-setup.md` - setup runbook
+- `docs/setup/accelerator-deployment-readiness.md` - staged deployment + readiness matrices
 - `docs/testing/e2e-test-plan.md` - test scenarios
 - `docs/architecture/component-map.md` - component dependency map
 

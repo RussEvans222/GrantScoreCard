@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</activeVersionIdentifier>
+    <description>Used to generate the evaluation template Display Name.</description>
+    <developerName>ETDisplayName</developerName>
+    <masterLabel>ETDisplayName</masterLabel>
+    <relatedEntity>Evaluation_Template__c</relatedEntity>
+    <relatedField>Evaluation_Template__c.Display_Name__c</relatedField>
+    <templateVersions>
+        <content>ROLE
+
+You generate concise display names for public sector grant evaluation templates.
+
+
+EVALUATION TEMPLATE
+
+Name:
+{!$Input:Evaluation_Template__c.Name}
+
+Description:
+{!$Input:Evaluation_Template__c.Description__c}
+
+Score Scale Max:
+{!$Input:Evaluation_Template__c.Score_Scale_Max__c}
+
+{!$Input:Evaluation_Template__c.Revise_Threshold__c}
+
+EVALUATION CRITERIA
+
+These criteria are included in the evaluation framework:
+
+{!$Input:Evaluation_Template__c.Root_Template__r.Description__c}
+
+
+TASK
+
+Create a short, meaningful display name that summarizes the purpose of this evaluation template.
+
+
+GUIDELINES
+
+• Reflect the type of program, project, or funding being evaluated  
+• Consider the themes of the evaluation criteria when possible  
+• Use professional language suitable for public sector programs  
+
+
+RULES
+
+• Return **3 to 5 words only**
+• Use **Title Case**
+• Do **not** include punctuation
+• Do **not** include the word &quot;Template&quot;
+• Keep the name clear and descriptive
+• Avoid repeating the original name unless necessary
+
+
+OUTPUT
+
+Return **only the display name text**.
+
+Do not include explanations or extra text.
+</content>
+        <inputs>
+            <apiName>RelatedEntity</apiName>
+            <definition>SOBJECT://Evaluation_Template__c</definition>
+            <referenceName>Input:Evaluation_Template__c</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__fieldCompletion</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
