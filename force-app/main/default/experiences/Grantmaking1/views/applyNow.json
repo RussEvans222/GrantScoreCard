@@ -1,0 +1,76 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "bfdbbe56-e804-46cc-bc89-143bd53216c6",
+  "label" : "Apply now",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "d1721fa5-b50e-44ae-ad46-14601017f977",
+          "columns" : [ {
+            "UUID" : "8417ae27-832c-4358-83c8-52a156121e3d",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "d1721fa5-b50e-44ae-ad46-14601017f977",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "direction" : "ltr",
+            "display" : "Display OmniScript on page",
+            "inlineVariant" : "brand",
+            "language" : "English",
+            "subType" : "Application",
+            "theme" : "lightning",
+            "type" : "Grants"
+          },
+          "componentName" : "runtime_omnistudio:omniscript",
+          "id" : "e56d8bd6-382f-433a-857f-352215be0035",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "8417ae27-832c-4358-83c8-52a156121e3d",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "37ff3a2f-2f65-4f1d-ac6c-c66db2dafa22",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Apply now"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "25280a2d-af11-43b8-8d92-78e06b3821cc",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "508b92c9-88de-4f3a-ae19-7f96ad1d0df6",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-apply-now"
+}

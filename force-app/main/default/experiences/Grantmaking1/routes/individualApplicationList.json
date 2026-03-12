@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "6d7d4749-9cb1-4bad-8800-5766211852cc",
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "configurationTags" : [ ],
+  "devName" : "Individual_Application_List",
+  "id" : "25c9cde6-8f1d-4734-9179-9318988a2308",
+  "label" : "Individual Application List",
+  "routeType" : "list-0iT",
+  "type" : "route",
+  "urlPrefix" : "individualapplication"
+}

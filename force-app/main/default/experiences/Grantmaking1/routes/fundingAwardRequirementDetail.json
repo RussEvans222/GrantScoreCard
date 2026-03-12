@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "db12ce79-f9d8-4066-9722-684863a1a11c",
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "configurationTags" : [ ],
+  "devName" : "Funding_Award_Requirement_Detail__c",
+  "id" : "2bebd3f9-8191-4d37-af25-91d03f898455",
+  "label" : "Funding Award Requirement Detail",
+  "routeType" : "detail-124",
+  "type" : "route",
+  "urlPrefix" : "fundingawardrequirement"
+}

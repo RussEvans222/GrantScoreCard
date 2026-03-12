@@ -1,0 +1,77 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "33681199-936f-40d9-8c42-9d62b7ecdca6",
+  "label" : "Grant Discovery",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "b6d0f0fb-9476-495f-a5e6-b9693cff0a3a",
+          "columns" : [ {
+            "UUID" : "c1c0483e-0e65-4fe0-bbb9-78f351c75b87",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "b6d0f0fb-9476-495f-a5e6-b9693cff0a3a",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "direction" : "ltr",
+            "display" : "Display OmniScript on page",
+            "inlineVariant" : "brand",
+            "language" : "English",
+            "subType" : "MVP",
+            "theme" : "lightning",
+            "type" : "GrantIntake",
+            "version" : "1"
+          },
+          "componentName" : "runtime_omnistudio:omniscript",
+          "id" : "ad953178-e977-47bb-8651-fa73330652e7",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "c1c0483e-0e65-4fe0-bbb9-78f351c75b87",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6f100c47-67f1-4033-9de4-35d18ce00af6",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "Public grant discovery intake powered by OmniScript.",
+        "title" : "Grant Discovery"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "eebd74ec-d6d0-404f-b9ea-a6020ff9c385",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6fa9bc73-1a1d-4adc-a97c-82d869267d16",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-grant-discovery"
+}

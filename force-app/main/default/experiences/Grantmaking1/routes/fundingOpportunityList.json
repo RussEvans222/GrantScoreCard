@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "45881d4d-38d4-4e02-96de-ef73b2b3b9c4",
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "configurationTags" : [ ],
+  "devName" : "Funding_Opportunity_List__c",
+  "id" : "4c6edf6a-88cd-49b4-a0d9-bf9d98064286",
+  "label" : "Funding Opportunity List",
+  "routeType" : "list-119",
+  "type" : "route",
+  "urlPrefix" : "fundingopportunity"
+}

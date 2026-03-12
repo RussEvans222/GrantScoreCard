@@ -1,0 +1,42 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:sldsTwoCol84Layout",
+  "dataProviders" : [ ],
+  "id" : "d2a10d31-2611-4e8f-9d54-f55d47d1d192",
+  "label" : "Grantmaking Application Form",
+  "regions" : [ {
+    "id" : "41ae3992-7d9f-405a-ae3c-9e2f81825c43",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "id" : "8700a4b1-2989-4685-b6a4-47dd6f1f943c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "31c01fcb-8c51-4f4e-8a9a-458ad7cb657a",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "7f86b171-2bf1-4c22-a663-16eaa143c983",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Grantmaking Application Form"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "b6353422-543a-442b-9db5-ea34be35eb71",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "fd28bf0b-3e07-48c6-bad1-b5f026d26832",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-grantmaking-application-form"
+}

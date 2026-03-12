@@ -1,0 +1,189 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:sldsTwoCol84Layout",
+  "dataProviders" : [ ],
+  "id" : "a5ecb505-140f-43df-8790-e732ab936ebe",
+  "label" : "Individual Application Detail",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:recordHeadline",
+      "id" : "3419883a-d051-4fb4-950e-e9c67a4bec52",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "986c1ee2-c588-45b3-8fab-025ea114dc87",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "tabsetConfig" : {
+          "UUID" : "3dcbf22b-fd6d-4bb8-bda4-db4ef191f27b",
+          "activeTab" : "",
+          "tabs" : [ {
+            "UUID" : "20338f49-c019-4988-8062-91822b670dd2",
+            "allowGuestUser" : false,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "1",
+            "tabName" : "Details"
+          }, {
+            "UUID" : "27d7712e-d106-4ca7-adcf-7f1a26c9a274",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "abbc4",
+            "tabName" : "Form Overview"
+          }, {
+            "UUID" : "05a2b0bc-cadd-473e-ab77-871723fd9641",
+            "allowGuestUser" : false,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "3",
+            "tabName" : "Budget"
+          }, {
+            "UUID" : "1dd513b4-72d9-46f4-8548-e458b0a34410",
+            "allowGuestUser" : false,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "27623",
+            "tabName" : "Related"
+          } ],
+          "useOverflowMenu" : true
+        }
+      },
+      "componentName" : "forceCommunity:tabLayout",
+      "id" : "3dcbf22b-fd6d-4bb8-bda4-db4ef191f27b",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "forceCommunity:recordDetail",
+          "id" : "bab6f151-db3c-4fff-b862-3269c24e1e01",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "20338f49-c019-4988-8062-91822b670dd2",
+        "regionLabel" : "Details",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "formSectionsPath" : "Id.IndividualApplicationId",
+            "groupRequiredSections" : true,
+            "indicateRequiredOptionalSection" : true,
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "runtime_industries_application:formOverview",
+          "id" : "289ac35b-0841-48e7-a358-25809f6c4bf5",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "27d7712e-d106-4ca7-adcf-7f1a26c9a274",
+        "regionLabel" : "Form Overview",
+        "regionName" : "abbc4",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "flexcardName" : "ExperienceCloudBudgetOverview",
+            "objectApiName" : "{!objectApiName}",
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "runtime_omnistudio:flexcard",
+          "id" : "cc0d5869-2a57-479a-9db9-48a308f560cd",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "budgetState" : "budgetPlanning",
+            "hideSubmit" : false,
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "runtime_industries_budget:budget",
+          "id" : "05805e4d-e6c7-48ce-a767-342840808bcb",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "05a2b0bc-cadd-473e-ab77-871723fd9641",
+        "regionLabel" : "Budget",
+        "regionName" : "3",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!recordId}",
+            "width" : "MEDIUM"
+          },
+          "componentName" : "forceCommunity:relatedRecords",
+          "id" : "0ada77a6-0395-4a47-b99b-71609f491e7b",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1dd513b4-72d9-46f4-8548-e458b0a34410",
+        "regionLabel" : "Related",
+        "regionName" : "27623",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "6c172a9c-e528-4c66-8119-19501e266882",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "flexcardName" : "IDOFundingRequestSidebar",
+        "objectApiName" : "{!objectApiName}",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "runtime_omnistudio:flexcard",
+      "id" : "023e8995-3c97-42f7-bbaf-350e69760573",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c7b132be-a7b4-461f-a2c0-baa684c5813b",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "6ddde40b-d99c-456f-97fe-fd4b342861e3",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "97332d97-ba3a-4f62-a91c-8d3ae8fb19ac",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "fb6450b0-67f9-47ac-bc44-0a39b7f96db5",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-0iT"
+}

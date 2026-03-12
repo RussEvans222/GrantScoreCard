@@ -1,0 +1,50 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "f5e52c4c-b3c3-4021-9ea4-e5ebaf1710b2",
+  "label" : "Intake Form Section Detail",
+  "regions" : [ {
+    "id" : "57cfb4a9-97c2-48fe-a559-661100e498d3",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "formSectionConfiguration" : "IntakeFormSection",
+        "recordId" : "{!recordId}",
+        "renderMethod" : "viewIfSubmittedElseEdit"
+      },
+      "componentName" : "runtime_industries_application:formSection",
+      "id" : "fb32a382-d490-4df7-a8c4-5c9f84844ea7",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "b12d5830-4ab8-4376-b74c-24b2026be97c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "34e205fd-e10d-4ded-ba6f-17e00b58320c",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "3e4b66a4-500c-41ad-9b79-c1797635a5ac",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cd9cd322-0184-468f-826d-1465a1674996",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-1La"
+}

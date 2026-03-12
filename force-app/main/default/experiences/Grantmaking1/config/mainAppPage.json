@@ -1,0 +1,11 @@
+{
+  "cmsSettings" : { },
+  "currentThemeId" : "e1c77795-062c-476b-8153-ef349be1a3f1",
+  "headMarkup" : null,
+  "id" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "isLockerServiceEnabled" : true,
+  "isRelaxedCSPLevel" : true,
+  "label" : "main",
+  "templateName" : "Grantmaking Template",
+  "type" : "appPage"
+}

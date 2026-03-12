@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "29b33a4a-3f76-4f33-a34d-c88bdf0246a2",
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "configurationTags" : [ ],
+  "devName" : "Application_Form_Related_List",
+  "id" : "c408fc9b-0efe-4f1b-9d19-ed438524640e",
+  "label" : "Application Form Related List",
+  "routeType" : "relatedlist-13X",
+  "type" : "route",
+  "urlPrefix" : "applicationform"
+}

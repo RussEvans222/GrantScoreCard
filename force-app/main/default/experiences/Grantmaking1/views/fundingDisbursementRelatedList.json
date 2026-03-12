@@ -1,0 +1,39 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "1b4b6954-b243-4a95-8e80-2ae1d95ed4f4",
+  "label" : "Funding Disbursement Related List",
+  "regions" : [ {
+    "id" : "1c411f1c-5ed3-4956-b700-75b8e3515e99",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customTitle" : "",
+        "parentRecordId" : "{!recordId}",
+        "relatedListName" : "{!relationshipApiName}",
+        "showBreadCrumbs" : true,
+        "showCustomTitle" : false,
+        "showManualRefreshButton" : true,
+        "showRowNumbers" : true
+      },
+      "componentName" : "forceCommunity:relatedList",
+      "id" : "c8d3197f-686d-4646-811a-52f8c1d5e2b3",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "3fb45c47-cb18-484a-8968-78dff154908e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "87124635-7365-41f7-9a6c-35f84adf804a",
+    "regionName" : "footer",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "relatedlist-125"
+}

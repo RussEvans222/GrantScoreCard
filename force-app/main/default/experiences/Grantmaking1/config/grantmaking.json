@@ -1,0 +1,24 @@
+{
+  "forgotPasswordRouteId" : "6c52260f-e589-4919-9569-273b13452a4f",
+  "isAvailableToGuests" : false,
+  "isFilteredComponentsView" : false,
+  "isProgressiveRenderingEnabled" : false,
+  "loginAppPageId" : "653f74da-2fe4-4851-af79-eb5876a54a8c",
+  "mainAppPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : "cc2d2fd6-c5df-454c-99d1-df4f1e4c25bd",
+  "trustedSitesForScript" : [ {
+    "id" : "268c8004-a67d-4762-aec0-6dabf375a104",
+    "isActive" : true,
+    "trustedSiteName" : "https://d.la4-c1-ia2.salesforceliveagent",
+    "trustedSiteUrl" : "https://d.la4-c1-ia2.salesforceliveagent.com/chat/rest/EmbeddedService/",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "b79f6a45-e93d-4c1a-8bf7-b24458359eb0",
+    "isActive" : true,
+    "trustedSiteName" : "force.com",
+    "trustedSiteUrl" : "https://*.force.com",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

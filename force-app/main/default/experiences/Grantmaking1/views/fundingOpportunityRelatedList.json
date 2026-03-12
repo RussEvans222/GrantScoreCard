@@ -1,0 +1,39 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "4f8c8435-0e2a-4177-b9e7-637f2762131c",
+  "label" : "Funding Opportunity Related List",
+  "regions" : [ {
+    "id" : "d22f21c2-1ae4-4a22-b320-dc75aa867be9",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customTitle" : "",
+        "parentRecordId" : "{!recordId}",
+        "relatedListName" : "{!relationshipApiName}",
+        "showBreadCrumbs" : true,
+        "showCustomTitle" : false,
+        "showManualRefreshButton" : true,
+        "showRowNumbers" : true
+      },
+      "componentName" : "forceCommunity:relatedList",
+      "id" : "9a0be726-f8ec-47a8-aee0-875f3db5a7c5",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9f0e8140-9870-4dad-b21a-2a50b478fb43",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "c745a254-dabb-47d0-8256-9da030bfa867",
+    "regionName" : "footer",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "relatedlist-119"
+}

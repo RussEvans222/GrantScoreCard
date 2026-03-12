@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "33681199-936f-40d9-8c42-9d62b7ecdca6",
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "configurationTags" : [ ],
+  "devName" : "Grant_Discovery__c",
+  "id" : "b41c7409-f7dc-48f6-b500-e952abb57f2d",
+  "label" : "Grant Discovery",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-grant-discovery",
+  "type" : "route",
+  "urlPrefix" : "grant-discovery"
+}

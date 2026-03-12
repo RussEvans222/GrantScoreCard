@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "103944c6-2372-42bd-aee8-9767d7100bba",
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "configurationTags" : [ ],
+  "devName" : "Funding_Disbursement_List__c",
+  "id" : "647bc4fe-ed79-4e47-bb2c-25a2141c0e14",
+  "label" : "Funding Disbursement List",
+  "routeType" : "list-125",
+  "type" : "route",
+  "urlPrefix" : "fundingdisbursement"
+}

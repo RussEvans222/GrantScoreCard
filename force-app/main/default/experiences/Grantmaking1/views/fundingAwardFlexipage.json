@@ -1,0 +1,239 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:sldsTwoCol66Layout",
+  "dataProviders" : [ ],
+  "id" : "348eb16e-d66d-4617-a297-35ff1a5e391d",
+  "label" : "Funding Award Flexipage",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:recordHeadline",
+      "id" : "b94dc390-6f82-4237-b46d-54390125037f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a1d32716-e288-41ac-a92e-2bcd65dbc17c",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "flexcardName" : "GPSG_Project_Header",
+        "objectApiName" : "{!objectApiName}",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "runtime_omnistudio:flexcard",
+      "id" : "6b02f5de-77eb-45e1-80d4-63db2947183f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "flexcardName" : "GPSG_Project_Actions",
+        "objectApiName" : "{!objectApiName}",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "runtime_omnistudio:flexcard",
+      "id" : "1a7ad7a1-1b0c-4aaf-9a5b-966208e081af",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "891d9f48-1078-4d75-aae6-1dbe670fd0e1",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "tabsetConfig" : {
+          "UUID" : "23a9677b-373a-4e6d-886b-1b8f2e60e291",
+          "activeTab" : "",
+          "tabs" : [ {
+            "UUID" : "c680c494-123b-4e47-adec-d54015ac7893",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "1",
+            "tabName" : "Reporting"
+          }, {
+            "UUID" : "10cfd7d2-a475-4b18-a5f8-6151a884a5a4",
+            "allowGuestUser" : false,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "2",
+            "tabName" : "Project Detail"
+          }, {
+            "UUID" : "f72a0b53-802a-4f94-88c0-b1dbd8842d2c",
+            "allowGuestUser" : false,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "c368a",
+            "tabName" : "Budget"
+          }, {
+            "UUID" : "03c441c6-dc34-4a2f-82f4-5f530ebdc1d0",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "3",
+            "tabName" : "Related Info"
+          }, {
+            "UUID" : "a9adcb81-27c3-420c-a89e-fd1829e107f6",
+            "allowGuestUser" : true,
+            "locked" : false,
+            "seedComponents" : [ ],
+            "tabKey" : "8e6f3",
+            "tabName" : "Collaboration"
+          } ],
+          "useOverflowMenu" : true
+        }
+      },
+      "componentName" : "forceCommunity:tabLayout",
+      "id" : "23a9677b-373a-4e6d-886b-1b8f2e60e291",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "customTitle" : "",
+            "parentRecordId" : "{!recordId}",
+            "relatedListName" : "FundingAwardRequirements",
+            "showBreadCrumbs" : true,
+            "showCustomTitle" : false,
+            "showManualRefreshButton" : true,
+            "showRowNumbers" : true
+          },
+          "componentName" : "forceCommunity:relatedList",
+          "id" : "33061dbd-09db-47c5-8e32-74c7a511590e",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "c680c494-123b-4e47-adec-d54015ac7893",
+        "regionLabel" : "Reporting",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "forceCommunity:recordDetail",
+          "id" : "9ccd8719-a396-48ea-bcc7-70530f2ec1e1",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "customTitle" : "",
+            "parentRecordId" : "{!recordId}",
+            "relatedListName" : "FundingDisbursements",
+            "showBreadCrumbs" : true,
+            "showCustomTitle" : false,
+            "showManualRefreshButton" : true,
+            "showRowNumbers" : true
+          },
+          "componentName" : "forceCommunity:relatedList",
+          "id" : "f9ff862b-b0af-4dd7-9e56-d6bb744f5d38",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "customTitle" : "",
+            "parentRecordId" : "{!recordId}",
+            "relatedListName" : "FundingAwardAmendments",
+            "showBreadCrumbs" : true,
+            "showCustomTitle" : false,
+            "showManualRefreshButton" : true,
+            "showRowNumbers" : true
+          },
+          "componentName" : "forceCommunity:relatedList",
+          "id" : "9290ef61-17db-428b-a535-4c59134c4235",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "10cfd7d2-a475-4b18-a5f8-6151a884a5a4",
+        "regionLabel" : "Project Detail",
+        "regionName" : "2",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "budgetState" : "budgetReporting",
+            "hideSubmit" : false,
+            "recordId" : "{!recordId}"
+          },
+          "componentName" : "runtime_industries_budget:budget",
+          "id" : "fc5075c0-88cc-443f-923e-1725387b97e8",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "f72a0b53-802a-4f94-88c0-b1dbd8842d2c",
+        "regionLabel" : "Budget",
+        "regionName" : "c368a",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "03c441c6-dc34-4a2f-82f4-5f530ebdc1d0",
+        "regionLabel" : "Related Info",
+        "regionName" : "3",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "id" : "a9adcb81-27c3-420c-a89e-fd1829e107f6",
+        "regionLabel" : "Collaboration",
+        "regionName" : "8e6f3",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "customTitle" : "",
+        "parentRecordId" : "{!recordId}",
+        "relatedListName" : "FundingAwardAmendments",
+        "showBreadCrumbs" : true,
+        "showCustomTitle" : false,
+        "showManualRefreshButton" : true,
+        "showRowNumbers" : true
+      },
+      "componentName" : "forceCommunity:relatedList",
+      "id" : "08310239-0094-465e-90f7-002e85aa98d8",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "d97edf6b-1530-433d-9c2c-cf1e070dc07f",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "8ab23a20-f8e7-4e5a-9c69-f6ba21d76ed0",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "{!Record._Object}: {!Record._Title}"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "533ac672-436e-413a-b7ca-682e35c73257",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "22a00c9d-3ae8-4bbf-a063-c4a3b4d1c868",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "detail-121"
+}

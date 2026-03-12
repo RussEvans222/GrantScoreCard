@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "d2a10d31-2611-4e8f-9d54-f55d47d1d192",
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "configurationTags" : [ ],
+  "devName" : "Grantmaking_Application_Form__c",
+  "id" : "867235f8-b6a1-47b8-849e-8bee04683f23",
+  "label" : "Grantmaking Application Form",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-grantmaking-application-form",
+  "type" : "route",
+  "urlPrefix" : "grantmaking-application-form"
+}

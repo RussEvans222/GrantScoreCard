@@ -1,0 +1,251 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "58c08345-994e-4f11-a8bb-36a904af0c63",
+  "label" : "My Dashboard",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "601c56b7-cf1e-437f-808c-edf9f148e8a6",
+          "columns" : [ {
+            "UUID" : "a4d42243-7370-429d-b633-ecc9e87d87a0",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "601c56b7-cf1e-437f-808c-edf9f148e8a6",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "tabsetConfig" : {
+              "UUID" : "0b0173d5-99ec-48bc-b3bc-fe5e8860d311",
+              "activeTab" : "",
+              "tabs" : [ {
+                "UUID" : "b9bf35ca-6bb4-465a-afed-893c740a8e4c",
+                "allowGuestUser" : false,
+                "locked" : false,
+                "seedComponents" : [ ],
+                "tabKey" : "1",
+                "tabName" : "Applications"
+              }, {
+                "UUID" : "42464afd-82c1-41c5-a15e-dbfe8edb93d5",
+                "allowGuestUser" : false,
+                "locked" : false,
+                "seedComponents" : [ ],
+                "tabKey" : "2",
+                "tabName" : "Funding Awards"
+              }, {
+                "UUID" : "7c9fb78a-066d-4282-b12c-6315a396c466",
+                "allowGuestUser" : false,
+                "locked" : false,
+                "seedComponents" : [ ],
+                "tabKey" : "3",
+                "tabName" : "Requirements"
+              }, {
+                "UUID" : "c722ff3f-e91e-4e9a-9df7-af3ea29c6e85",
+                "allowGuestUser" : false,
+                "locked" : false,
+                "seedComponents" : [ ],
+                "tabKey" : "efba1",
+                "tabName" : "Disbursements"
+              }, {
+                "UUID" : "f167e7d8-0d3e-4b03-9e8c-04ab31d97b30",
+                "allowGuestUser" : false,
+                "locked" : false,
+                "seedComponents" : [ ],
+                "tabKey" : "24dac",
+                "tabName" : "Indicator Results"
+              } ],
+              "useOverflowMenu" : false
+            }
+          },
+          "componentName" : "forceCommunity:tabset",
+          "id" : "0b0173d5-99ec-48bc-b3bc-fe5e8860d311",
+          "regions" : [ {
+            "components" : [ {
+              "componentAttributes" : {
+                "enableInlineEdit" : false,
+                "filterName" : "My_Individual_Applications",
+                "layout" : "FULL",
+                "pageSize" : 25,
+                "scope" : "IndividualApplication",
+                "showActionBar" : false,
+                "showChartsPanel" : true,
+                "showDisplay" : "showall",
+                "showFilterPanel" : true,
+                "showImageIcon" : true,
+                "showManualRefreshButton" : true,
+                "showObjectName" : true,
+                "showPinnedList" : true,
+                "showSearchBar" : true
+              },
+              "componentName" : "forceCommunity:objectHome",
+              "id" : "9b689830-4e35-496b-9686-87b048ac3e73",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "b9bf35ca-6bb4-465a-afed-893c740a8e4c",
+            "regionLabel" : "Applications",
+            "regionName" : "1",
+            "renditionMap" : { },
+            "type" : "region"
+          }, {
+            "components" : [ {
+              "componentAttributes" : {
+                "enableInlineEdit" : false,
+                "filterName" : "All_FundingAwards",
+                "layout" : "FULL",
+                "pageSize" : 25,
+                "scope" : "FundingAward",
+                "showActionBar" : true,
+                "showChartsPanel" : true,
+                "showDisplay" : "showall",
+                "showFilterPanel" : true,
+                "showImageIcon" : true,
+                "showManualRefreshButton" : true,
+                "showObjectName" : true,
+                "showPinnedList" : true,
+                "showSearchBar" : true
+              },
+              "componentName" : "forceCommunity:objectHome",
+              "id" : "ad8e5086-4dc1-472d-9146-3ae9224d3c5b",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "42464afd-82c1-41c5-a15e-dbfe8edb93d5",
+            "regionLabel" : "Funding Awards",
+            "regionName" : "2",
+            "renditionMap" : { },
+            "type" : "region"
+          }, {
+            "components" : [ {
+              "componentAttributes" : {
+                "enableInlineEdit" : true,
+                "filterName" : "All_FundingAwardRequirements",
+                "layout" : "FULL",
+                "pageSize" : 25,
+                "scope" : "FundingAwardRequirement",
+                "showActionBar" : true,
+                "showChartsPanel" : true,
+                "showDisplay" : "showall",
+                "showFilterPanel" : true,
+                "showImageIcon" : true,
+                "showManualRefreshButton" : true,
+                "showObjectName" : true,
+                "showPinnedList" : true,
+                "showSearchBar" : true
+              },
+              "componentName" : "forceCommunity:objectHome",
+              "id" : "53e72880-40d8-4f19-b0a6-7da1817ebb02",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "7c9fb78a-066d-4282-b12c-6315a396c466",
+            "regionLabel" : "Requirements",
+            "regionName" : "3",
+            "renditionMap" : { },
+            "type" : "region"
+          }, {
+            "components" : [ {
+              "componentAttributes" : {
+                "enableInlineEdit" : true,
+                "filterName" : "All_FundingDisbursements",
+                "layout" : "FULL",
+                "pageSize" : 25,
+                "scope" : "FundingDisbursement",
+                "showActionBar" : true,
+                "showChartsPanel" : true,
+                "showDisplay" : "showall",
+                "showFilterPanel" : true,
+                "showImageIcon" : true,
+                "showManualRefreshButton" : true,
+                "showObjectName" : true,
+                "showPinnedList" : true,
+                "showSearchBar" : true
+              },
+              "componentName" : "forceCommunity:objectHome",
+              "id" : "4c17cd13-df24-4044-a573-7a6a7410b483",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "c722ff3f-e91e-4e9a-9df7-af3ea29c6e85",
+            "regionLabel" : "Disbursements",
+            "regionName" : "efba1",
+            "renditionMap" : { },
+            "type" : "region"
+          }, {
+            "components" : [ {
+              "componentAttributes" : {
+                "enableInlineEdit" : true,
+                "filterName" : "All_IndicatorResult",
+                "layout" : "FULL",
+                "pageSize" : 25,
+                "scope" : "IndicatorResult",
+                "showActionBar" : true,
+                "showChartsPanel" : true,
+                "showDisplay" : "showall",
+                "showFilterPanel" : true,
+                "showImageIcon" : true,
+                "showManualRefreshButton" : true,
+                "showObjectName" : true,
+                "showPinnedList" : true,
+                "showSearchBar" : true
+              },
+              "componentName" : "forceCommunity:objectHome",
+              "id" : "a9cb2c7c-aff5-47dd-929a-b2ca99ee5a32",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "f167e7d8-0d3e-4b03-9e8c-04ab31d97b30",
+            "regionLabel" : "Indicator Results",
+            "regionName" : "24dac",
+            "renditionMap" : { },
+            "type" : "region"
+          } ],
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "a4d42243-7370-429d-b633-ecc9e87d87a0",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "65ff40bb-950c-48e0-a301-5d364df460ee",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "My Dashboard"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "f9ea00c7-03e2-486c-b4fa-9521591127e6",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "73b0dfe3-415a-40a0-82c8-ca10c1414d1e",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-my-dashboard"
+}

@@ -1,0 +1,46 @@
+{
+  "appPageId" : "7fe97e67-1ab0-4fe3-8497-ddfeb8bcee4b",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "45881d4d-38d4-4e02-96de-ef73b2b3b9c4",
+  "label" : "Funding Opportunity List",
+  "regions" : [ {
+    "id" : "7594b7a1-1757-49aa-95c6-661bcf50e2a1",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "enableInlineEdit" : true,
+        "filterName" : "All_FundingOpportunities",
+        "layout" : "COMPACT",
+        "pageSize" : 25,
+        "scope" : "FundingOpportunity",
+        "showActionBar" : true,
+        "showChartsPanel" : true,
+        "showDisplay" : "showall",
+        "showFilterPanel" : true,
+        "showImageIcon" : true,
+        "showManualRefreshButton" : true,
+        "showObjectName" : true,
+        "showPinnedList" : true,
+        "showSearchBar" : true
+      },
+      "componentName" : "forceCommunity:objectHome",
+      "id" : "d5e7df49-fa90-43b1-b2fb-1c0aecfb55e9",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0bf5f884-f1ab-44ce-9ce2-9853205c636a",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "e13ee232-27d9-4a1e-88b1-ca2a421815fb",
+    "regionName" : "footer",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "list-119"
+}
