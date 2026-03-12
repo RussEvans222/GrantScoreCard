@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Txt_FundingFinderSummary",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "Step_FundingFinder",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Step_FundingFinder",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "Step_FundingFinder",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "Txt_FundingFinderSummary",
+        "sanitize": false,
+        "show": null,
+        "text": "<style>.gs-results-shell{width:min(1200px,94vw);margin:1.2rem auto 1rem;animation:gsResultsIn .55s ease both;}.gs-results-card{padding:2rem 2rem 1.35rem;background:rgba(255,255,255,0.96);border:1px solid #d6dfec;border-radius:20px;box-shadow:0 18px 40px rgba(12,24,45,0.2);}.gs-results-card h2{margin:0;color:#1E2A4A;font-size:1.55rem;}.gs-results-card p{margin:.9rem 0 0;color:#33415C;line-height:1.65;}@keyframes gsResultsIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}</style><div class=\"gs-results-shell\"><div class=\"gs-results-card\"><h2>Funding Finder Results</h2><p>%context:aiSummary%</p><p><strong>Recommended Funding Types:</strong> %context:recommendedFundingTypes%</p></div></div>",
+        "textKey": ""
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Txt_FundingFinderSummary"
+}

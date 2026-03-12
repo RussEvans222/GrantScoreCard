@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>Public_Sector_Grantmaking</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>Ensures visibility of the Public Sector Grantmaking Lightning app.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Public Sector Grantmaking App Access</label>
+</PermissionSet>

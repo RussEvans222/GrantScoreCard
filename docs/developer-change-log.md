@@ -1,5 +1,38 @@
 # Developer Change Log
 
+## Latest Update News (March 12, 2026)
+
+### OmniStudio Intake Completion Progress
+- Aligned Grant Intake analysis path to the existing Prompt Builder template:
+  - label: `Grant Project Funding Analysis`
+  - developer name: `Grant_Project_Funding_Analysis`
+- Standardized response mapping into OmniScript `context.*` nodes:
+  - `context.aiSummary`
+  - `context.recommendedFundingTypes`
+  - `context.keywords`
+  - `context.confidenceScore`
+  - `context.fundingOpportunities[]`
+- Extended Experience Cloud-facing intake presentation with scoped gradient/button/card styling while preserving OmniScript structure and bindings.
+- Added full-screen wrapper LWC `grantIntakeFullPage` for flexible page composition and future side-panel expansion.
+
+### Deployment and Sync
+- Full source deployment to org alias `GRANTS` completed successfully:
+  - Deploy ID: `0AfHp00003ni0kJKAQ`
+  - Status: `Succeeded`
+  - Components deployed: `566`
+- Wrapper-only deployment validation also completed:
+  - Deploy ID: `0AfHp00003ni0k4KAA`
+  - Status: `Succeeded`
+
+### Feature Walkthrough (Today’s OmniStudio Changes)
+1. User opens Experience Cloud Grant Discovery page.
+2. `Step_ProjectDiscovery` captures `context.projectDescription`.
+3. Analyze action runs `GrantIntake_AnalyzeProject`.
+4. IP calls `GrantIntakeOrchestrationGateway.analyzeProject`.
+5. Apex invokes Prompt Builder template `Grant_Project_Funding_Analysis`.
+6. Structured JSON response is normalized into `context.*`.
+7. OmniScript transitions to results rendering step and displays recommended funding opportunities.
+
 ## March 12, 2026
 
 ### Major Enhancements

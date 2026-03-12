@@ -1,0 +1,11 @@
+{
+    "projectPath": "./datapacks",
+    "customJobOptionsYaml": "./vlocity-job.yaml",
+    "deploymentMode": "direct",
+    "deploy": {
+        "standardRuntime": true
+    },
+    "salesforce": {
+        "apiVersion": "66.0"
+    }
+}

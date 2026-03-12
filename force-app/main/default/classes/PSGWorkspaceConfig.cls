@@ -74,7 +74,7 @@ public with sharing class PSGWorkspaceConfig {
             'Name',
             'Status',
             'StartDate',
-            'GrantType',
+            'MaximumFundingAmount',
             'Description'
         );
     }

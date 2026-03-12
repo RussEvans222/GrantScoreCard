@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Txt_ProjectDiscoveryIntro",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "Step_ProjectDiscovery",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Step_ProjectDiscovery",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "Step_ProjectDiscovery",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "Txt_ProjectDiscoveryIntro",
+        "sanitize": false,
+        "show": null,
+        "text": "<style>.gs-fullscreen-bg{position:fixed;inset:0;z-index:-1;background:linear-gradient(160deg,#0f1f3f 0%,#1e2a4a 42%,#0176d3 100%);}.gs-discovery-shell{min-height:46vh;display:flex;align-items:flex-end;justify-content:center;padding:2.5rem 1rem 0.5rem;}.gs-discovery-card{width:min(1120px,94vw);background:rgba(247,249,252,0.96);border:1px solid #d9e1ed;border-radius:22px;box-shadow:0 28px 60px rgba(10,20,40,0.28);text-align:center;animation:gsFadeUp .55s ease-out both;}.gs-discovery-title{margin:0;color:#1E2A4A;font-size:2.25rem;line-height:1.2;font-weight:700;}.gs-discovery-subtitle{margin:1rem auto 0;color:#33415C;font-size:1.08rem;line-height:1.65;max-width:860px;}@keyframes gsFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}.slds-form-element{width:min(1120px,94vw)!important;margin:1rem auto 1.25rem!important;}.slds-form-element__label{font-size:1rem!important;font-weight:700!important;color:#f7fbff!important;margin:.25rem 0 .7rem!important;}.slds-textarea{width:100%!important;min-height:390px!important;border-radius:18px!important;border:1px solid #bfd0e8!important;padding:1.1rem 1rem!important;background:#ffffff!important;box-shadow:0 14px 30px rgba(12,30,64,0.16)!important;font-size:1rem!important;line-height:1.6!important;}.slds-textarea:focus{border-color:#0176D3!important;box-shadow:0 0 0 3px rgba(1,118,211,0.18),0 14px 30px rgba(12,30,64,0.16)!important;}button.slds-button_brand{display:block!important;width:min(1120px,94vw)!important;min-height:54px!important;margin:1.5rem auto 0!important;border-radius:14px!important;padding:0 1.6rem!important;font-size:1rem!important;font-weight:700!important;box-shadow:0 12px 22px rgba(1,118,211,0.34)!important;}@media (max-width: 820px){.gs-discovery-shell{min-height:38vh;padding:1.5rem .75rem 0;}.gs-discovery-card{border-radius:16px;}.gs-discovery-title{font-size:1.7rem;}.gs-discovery-subtitle{font-size:.98rem;}.slds-textarea{min-height:320px!important;}}</style><div class=\"gs-fullscreen-bg\"></div><div class=\"gs-discovery-shell\"><div class=\"slds-card slds-p-around_large slds-m-around_x-large gs-discovery-card\"><h1 class=\"gs-discovery-title slds-m-bottom_medium\">AI-Powered Grant Discovery</h1><p class=\"gs-discovery-subtitle slds-m-top_medium slds-m-bottom_medium\">Describe your project and we'll recommend the best funding opportunities.</p></div></div>",
+        "textKey": ""
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Txt_ProjectDiscoveryIntro"
+}

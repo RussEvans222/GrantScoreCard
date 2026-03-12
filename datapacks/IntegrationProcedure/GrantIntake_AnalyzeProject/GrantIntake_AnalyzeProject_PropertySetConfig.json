@@ -1,0 +1,25 @@
+{
+    "additionalChainableResponse": {
+    },
+    "chainableCpuLimit": 2000,
+    "chainableQueriesLimit": 50,
+    "columnsPropertyMap": [
+    ],
+    "description": "",
+    "includeAllActionsInResponse": false,
+    "labelPlural": "",
+    "labelSingular": "",
+    "linkToExternalObject": "",
+    "mockResponseMap": {
+    },
+    "nameColumn": "",
+    "queueableChainableCpuLimit": 40000,
+    "queueableChainableHeapSizeLimit": 6,
+    "queueableChainableQueriesLimit": 120,
+    "relationshipFieldsMap": [
+    ],
+    "rollbackOnError": true,
+    "trackingCustomData": {
+    },
+    "ttlMinutes": 5
+}

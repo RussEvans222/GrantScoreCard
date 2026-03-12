@@ -1,0 +1,12 @@
+projectPath: .
+expansionPath: datapacks
+buildFile: datapacks/buildFile.yaml
+sfdxUsername: GRANTS
+autoUpdateSettings: false
+queries:
+  - VlocityDataPackType: OmniScript
+    query: SELECT Id, Name FROM OmniProcess WHERE OmniProcessType = 'OmniScript' AND Type = 'GrantIntake' AND SubType = 'MVP' AND Language = 'English'
+  - VlocityDataPackType: IntegrationProcedure
+    query: SELECT Id, Name FROM OmniProcess WHERE OmniProcessType = 'Integration Procedure' AND Type = 'GrantIntake' AND SubType = 'AnalyzeProject' AND Language = 'English'
+  - VlocityDataPackType: DataRaptor
+    query: SELECT Id, Name FROM OmniDataTransform WHERE Name = 'DRXFundingOpportunitySearch'

@@ -1,7 +1,8 @@
-import { LightningElement, api } from 'lwc';
+import { api } from 'lwc';
+import OmniscriptBaseMixin from 'omnistudio/omniscriptBaseMixin';
 
-export default class GrantDiscoveryIntakeStep extends LightningElement {
-    // Flow screen input/output field for step 1 discovery text.
+export default class GrantDiscoveryIntakeStep extends OmniscriptBaseMixin(class {}) {
+    // OmniScript node source for step 1 discovery text.
     @api projectDescription = '';
     @api analyzeRequested = false;
 
@@ -12,10 +13,12 @@ export default class GrantDiscoveryIntakeStep extends LightningElement {
     handleDescriptionChange(event) {
         this.projectDescription = event.detail.value;
         this.analyzeRequested = false;
+        this.syncOmniContext();
     }
 
     handleAnalyzeProject() {
         this.analyzeRequested = true;
+        this.syncOmniContext();
         this.dispatchEvent(
             new CustomEvent('analyzeproject', {
                 detail: {
@@ -25,5 +28,17 @@ export default class GrantDiscoveryIntakeStep extends LightningElement {
                 composed: true
             })
         );
+    }
+
+    syncOmniContext() {
+        // Keep OmniScript JSON aligned so IPs can read context.projectDescription.
+        this.omniApplyCallResp({
+            context: {
+                projectDescription: this.projectDescription
+            },
+            meta: {
+                analyzeRequested: this.analyzeRequested
+            }
+        });
     }
 }

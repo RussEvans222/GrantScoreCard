@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</activeVersionIdentifier>
+    <developerName>Grant_Project_Funding_Analysis</developerName>
+    <masterLabel>Grant Project Funding Analysis</masterLabel>
+    <templateVersions>
+        <content>You are an AI assistant for grant discovery in a public-sector funding portal.
+
+Input project description:
+{!$Input:projectDescription}
+
+Return valid JSON only. Do not include markdown or extra commentary.
+
+Output schema:
+{
+  &quot;summary&quot;: &quot;&quot;,
+  &quot;recommendedFundingTypes&quot;: [],
+  &quot;keywords&quot;: [],
+  &quot;confidenceScore&quot;: 0
+}
+
+Rules:
+- summary: concise, 2-4 sentences focused on funding relevance.
+- recommendedFundingTypes: array of short funding categories, max 5 items.
+- keywords: array of topical keywords/phrases, max 8 items.
+- confidenceScore: numeric value from 0.0 to 1.0.
+- return strictly valid JSON matching the schema keys.</content>
+        <inputs>
+            <apiName>projectDescription</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Project Description</masterLabel>
+            <referenceName>Input:projectDescription</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

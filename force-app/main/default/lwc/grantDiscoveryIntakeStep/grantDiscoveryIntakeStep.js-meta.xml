@@ -3,15 +3,9 @@
     <apiVersion>66.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>Grant Discovery Intake Step</masterLabel>
-    <description>Flow screen step for AI-powered funding discovery input.</description>
+    <description>OmniScript custom LWC for AI-powered funding discovery input.</description>
+    <runtimeNamespace>omnistudio</runtimeNamespace>
     <targets>
-        <target>lightning__FlowScreen</target>
         <target>lightning__AppPage</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__FlowScreen">
-            <property name="projectDescription" type="String" label="Project Description"/>
-            <property name="analyzeRequested" type="Boolean" label="Analyze Requested" role="outputOnly"/>
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>

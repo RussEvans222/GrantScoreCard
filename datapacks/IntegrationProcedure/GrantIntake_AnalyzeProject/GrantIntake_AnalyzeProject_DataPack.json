@@ -1,0 +1,32 @@
+{
+    "CurrencyIsoCode": "USD",
+    "CustomJavaScript": "{}",
+    "Description": "Analyze grant intake project text, summarize recommendation signals, and return matching funding opportunities.",
+    "ElementTypeComponentMapping": "{\"ElementTypeToHTMLTemplateList\":[]}",
+    "IsIntegProcdSignatureAvl": false,
+    "IsIntegrationProcedure": true,
+    "IsLocked": false,
+    "IsManagedUsingStdDesigner": false,
+    "IsMetadataCacheDisabled": false,
+    "IsOmniScriptEmbeddable": false,
+    "IsTestProcedure": false,
+    "IsWebCompEnabled": false,
+    "Language": "English",
+    "MayEdit": true,
+    "Name": "GrantIntakeAnalyzeProject",
+    "OmniProcessElement": [
+        "GrantIntake_AnalyzeProject_Element_TransformInput.json",
+        "GrantIntake_AnalyzeProject_Element_AnalyzeProjectApex.json",
+        "GrantIntake_AnalyzeProject_Element_FundingOpportunitySearch.json",
+        "GrantIntake_AnalyzeProject_Element_Response.json"
+    ],
+    "OmniProcessKey": "GrantIntake_AnalyzeProject",
+    "OmniProcessType": "Integration Procedure",
+    "PropertySetConfig": "GrantIntake_AnalyzeProject_PropertySetConfig.json",
+    "SubType": "AnalyzeProject",
+    "Type": "GrantIntake",
+    "UniqueName": "GrantIntake_AnalyzeProject_English_1",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcess",
+    "VlocityRecordSourceKey": "OmniProcess/GrantIntake/AnalyzeProject/English"
+}

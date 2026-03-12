@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{}</customJavaScript>
+    <description>Analyze grant intake project text, summarize recommendation signals, and return matching funding opportunities.</description>
+    <elementTypeComponentMapping>{"ElementTypeToHTMLTemplateList":[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegProcdSignatureAvl>false</isIntegProcdSignatureAvl>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>English</language>
+    <name>GrantIntakeAnalyzeProject</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>TransformInput</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  "actionMessage" : "",
+  "chainOnStep" : false,
+  "disOnTplt" : false,
+  "elementValueMap" : {
+    "searchText" : "=IF(ISBLANK(%context:projectDescription%),%projectDescription%,%context:projectDescription%)"
+  },
+  "executionConditionalFormula" : "",
+  "failOnStepError" : false,
+  "failureConditionalFormula" : "",
+  "label" : "TransformInput",
+  "responseJSONNode" : "",
+  "responseJSONPath" : "",
+  "show" : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>AnalyzeProjectApex</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  "actionMessage" : "",
+  "additionalChainableResponse" : { },
+  "additionalInput" : {
+    "searchText" : "=%searchText%"
+  },
+  "additionalOutput" : { },
+  "chainOnStep" : false,
+  "disOnTplt" : false,
+  "executionConditionalFormula" : "",
+  "failOnStepError" : true,
+  "failureConditionalFormula" : "",
+  "failureResponse" : { },
+  "label" : "AnalyzeProjectApex",
+  "remoteClass" : "GrantIntakeOrchestrationGateway",
+  "remoteMethod" : "analyzeProject",
+  "remoteOptions" : { },
+  "responseJSONNode" : "analysis",
+  "responseJSONPath" : "",
+  "returnOnlyAdditionalOutput" : false,
+  "returnOnlyFailureResponse" : false,
+  "sendJSONNode" : "",
+  "sendJSONPath" : "",
+  "sendOnlyAdditionalInput" : true,
+  "show" : null,
+  "useFormulas" : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>FundingOpportunitySearch</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  "actionMessage" : "",
+  "additionalInput" : { },
+  "additionalOutput" : { },
+  "bundle" : "DRXFundingOpportunitySearch",
+  "chainOnStep" : false,
+  "dataRaptor Input Parameters" : [ ],
+  "disOnTplt" : false,
+  "executionConditionalFormula" : "",
+  "failOnStepError" : true,
+  "failureConditionalFormula" : "",
+  "failureResponse" : { },
+  "ignoreCache" : true,
+  "label" : "FundingOpportunitySearch",
+  "responseJSONNode" : "fundingSearch",
+  "responseJSONPath" : "",
+  "returnOnlyAdditionalOutput" : false,
+  "returnOnlyFailureResponse" : false,
+  "sendJSONNode" : "",
+  "sendJSONPath" : "",
+  "sendOnlyAdditionalInput" : false,
+  "show" : null,
+  "useFormulas" : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>Response</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  "additionalOutput" : {
+    "aiSummary" : "=%analysis:aiSummary%",
+    "recommendedFundingTypes" : "=%analysis:recommendedFundingTypes%",
+    "keywords" : "=%analysis:keywords%",
+    "confidenceScore" : "=%analysis:confidenceScore%",
+    "fundingOpportunities" : "=%analysis:fundingOpportunities%",
+    "analysisSuccess" : "=IF(ISBLANK(%analysis:aiSummary%),false,true)",
+    "analysisErrorMessage" : "=IF(ISBLANK(%analysis:aiSummary%),'Unable to analyze project. Please try again.',null)",
+    "context" : {
+      "aiSummary" : "=%analysis:aiSummary%",
+      "recommendedFundingTypes" : "=%analysis:recommendedFundingTypes%",
+      "keywords" : "=%analysis:keywords%",
+      "confidenceScore" : "=%analysis:confidenceScore%",
+      "fundingOpportunities" : "=%analysis:fundingOpportunities%",
+      "analysisSuccess" : "=IF(ISBLANK(%analysis:aiSummary%),false,true)",
+      "analysisErrorMessage" : "=IF(ISBLANK(%analysis:aiSummary%),'Unable to analyze project. Please try again.',null)"
+    }
+  },
+  "disOnTplt" : false,
+  "executionConditionalFormula" : "",
+  "label" : "ResponseAction1",
+  "responseDefaultData" : { },
+  "responseFormat" : "JSON",
+  "responseJSONNode" : "",
+  "responseJSONPath" : "",
+  "returnFullDataJSON" : false,
+  "returnOnlyAdditionalOutput" : true,
+  "sendJSONNode" : "",
+  "sendJSONPath" : "",
+  "show" : null,
+  "useFormulas" : true,
+  "vlcResponseHeaders" : { }
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Response Action</type>
+    </omniProcessElements>
+    <omniProcessKey>GrantIntake_AnalyzeProject</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  "additionalChainableResponse" : { },
+  "chainableCpuLimit" : 2000,
+  "chainableQueriesLimit" : 50,
+  "columnsPropertyMap" : [ ],
+  "description" : "",
+  "includeAllActionsInResponse" : false,
+  "labelPlural" : "",
+  "labelSingular" : "",
+  "linkToExternalObject" : "",
+  "mockResponseMap" : { },
+  "nameColumn" : "",
+  "queueableChainableCpuLimit" : 40000,
+  "queueableChainableHeapSizeLimit" : 6,
+  "queueableChainableQueriesLimit" : 120,
+  "relationshipFieldsMap" : [ ],
+  "rollbackOnError" : true,
+  "trackingCustomData" : { },
+  "ttlMinutes" : 5
+}</propertySetConfig>
+    <subType>AnalyzeProject</subType>
+    <type>GrantIntake</type>
+    <uniqueName>GrantIntake_AnalyzeProject_English_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <webComponentKey>1f31e9ae-98c5-4c38-aad9-a5c8a7f72f80</webComponentKey>
+</OmniIntegrationProcedure>

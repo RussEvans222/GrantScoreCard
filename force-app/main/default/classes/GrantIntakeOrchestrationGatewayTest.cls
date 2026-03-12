@@ -178,4 +178,37 @@ private class GrantIntakeOrchestrationGatewayTest {
             'Initialization should require a valid application id.'
         );
     }
+
+    @IsTest
+    static void analyzeProject_returnsContractFields() {
+        Test.startTest();
+        GrantIntakeOrchestrationGateway.AnalyzeProjectResponse response =
+            GrantIntakeOrchestrationGateway.analyzeProject('child care workforce expansion');
+        Test.stopTest();
+
+        System.assertNotEquals(null, response, 'Analyze response should be initialized.');
+        System.assertNotEquals(null, response.aiSummary, 'Summary should be populated.');
+        System.assertNotEquals(null, response.recommendedFundingTypes, 'Recommended types should be present.');
+        System.assertNotEquals(null, response.keywords, 'Keywords should be present.');
+        System.assertNotEquals(null, response.confidenceScore, 'Confidence should be set.');
+        System.assertNotEquals(null, response.fundingOpportunities, 'Funding opportunities should be initialized.');
+    }
+
+    @IsTest
+    static void callableDispatch_routesAnalyzeProjectAction() {
+        GrantIntakeOrchestrationGateway callableGateway = new GrantIntakeOrchestrationGateway();
+        Map<String, Object> args = new Map<String, Object>{
+            'searchText' => 'community broadband expansion'
+        };
+
+        Test.startTest();
+        Object rawResult = callableGateway.call('analyzeProject', args);
+        Test.stopTest();
+
+        GrantIntakeOrchestrationGateway.AnalyzeProjectResponse response =
+            (GrantIntakeOrchestrationGateway.AnalyzeProjectResponse) rawResult;
+        System.assertNotEquals(null, response, 'Callable should return analysis DTO.');
+        System.assertNotEquals(null, response.aiSummary, 'Summary should be populated from callable route.');
+        System.assertNotEquals(null, response.fundingOpportunities, 'Callable should return funding opportunity rows.');
+    }
 }

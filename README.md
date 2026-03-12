@@ -6,6 +6,24 @@ GrantScoreCard is a Salesforce DX starter project for a complete grant review li
 
 It covers applicant intake, rubric setup, reviewer assignment, AI-assisted scoring, and application status tracking.
 
+## Latest Update News (March 12, 2026)
+
+- OmniStudio Grant Intake analyze flow was aligned end-to-end to use Prompt Builder template `Grant Project Funding Analysis` (developer name `Grant_Project_Funding_Analysis`) through `GrantIntakeOrchestrationGateway`.
+- Analyze response normalization now targets OmniScript context bindings for:
+  - `context.aiSummary`
+  - `context.recommendedFundingTypes`
+  - `context.keywords`
+  - `context.confidenceScore`
+  - `context.fundingOpportunities[]`
+- Discovery UI theme was refined with scoped gradient accents, white card surfaces, and centered 1080px layout behavior for Experience Cloud runtime.
+- Added full-page Experience Cloud wrapper component:
+  - `force-app/main/default/lwc/grantIntakeFullPage`
+  - delivers full-screen gradient shell + centered container with embedded intake route support.
+- OmniStudio standards documentation was added for canonical architecture, naming, UI rules, and export workflow:
+  - `docs/standards/omnistudio-framework.md`
+- Deployment status:
+  - Full metadata deployment to `GRANTS` succeeded (`0AfHp00003ni0kJKAQ`).
+
 ## One-Click Deploy
 
 <a href="https://githubsfdeploy.herokuapp.com?owner=RussEvans222&repo=GrantScoreCard&ref=main">
@@ -209,6 +227,27 @@ Core: `applicationStatusTracker`
 - Purpose-built workspace to manage reusable criteria, bundle assignments, and template usage from one app.
 - Includes Criteria Insights actions to analyze framework quality and open related template records.
 - Supports inline editing of user-facing template display names (when configured fields and FLS allow updates).
+
+### 8) OmniStudio Grant Discovery Intake (Experience Cloud)
+- Entry point: Experience Cloud route `grantDiscovery`.
+- Runtime component: `runtime_omnistudio:omniscript` configured for `Type=GrantIntake`, `Subtype=MVP`, `Language=English`, `Version=1`.
+- Analyze flow:
+  - `Step_ProjectDiscovery` collects project description.
+  - IP `GrantIntake_AnalyzeProject` calls Apex gateway.
+  - Apex invokes Prompt Builder template `Grant_Project_Funding_Analysis`.
+  - Response populates `context.*` analysis fields and funding opportunities.
+- Results flow:
+  - `Step_FundingFinder` renders recommended opportunities from `context.fundingOpportunities`.
+  - Relevance and analysis output are prepared for user selection and downstream intake continuation.
+
+### 9) Full-Page Intake Wrapper (New)
+- New LWC: `grantIntakeFullPage` provides a full-screen host shell for Experience layouts.
+- Styling includes:
+  - soft blue/purple gradient page background
+  - centered max-width intake surface
+  - responsive behavior for desktop/mobile.
+- Configurable property:
+  - `omniScriptPageUrl` (default: `/grantmaking1/s/grantDiscovery`).
 
 ## Prerequisites
 
