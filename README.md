@@ -8,6 +8,8 @@ It covers applicant intake, rubric setup, reviewer assignment, AI-assisted scori
 
 ## Latest Update News (March 12, 2026)
 
+- Resume checkpoint file for next session:
+  - `docs/checkpoints/latest-checkpoint.md`
 - OmniStudio Grant Intake analyze flow was aligned end-to-end to use Prompt Builder template `Grant Project Funding Analysis` (developer name `Grant_Project_Funding_Analysis`) through `GrantIntakeOrchestrationGateway`.
 - Analyze response normalization now targets OmniScript context bindings for:
   - `context.aiSummary`
