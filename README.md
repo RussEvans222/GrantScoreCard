@@ -115,6 +115,18 @@ to enhance evaluation workflows.
 
 ## Changelog
 
+### March 12, 2026
+
+- Added a new **🤖 AI Capabilities** section near the top of this README with Einstein callouts for:
+  - Evaluation Framework Review (`EvaluationFrameworkReview`)
+  - AI Scorecard Suggestions (`AFE_Criterion_Scoring_Suggestion`, `AFE_Scorecard`)
+  - Evaluation Template Display Name Generator (`ETDisplayName`)
+- Added an **AI Architecture** summary covering Prompt Builder, Einstein Trust Layer, Apex orchestration, and LWC integration.
+- Added Einstein icon asset reference path for AI capability visuals:
+  - `docs/images/icons/einstein-ai.png`
+- Expanded developer log references and prompt documentation alignment for template display-name generation.
+- Updated template label handling to support cleaner display names in admin experiences when `Display_Name__c` is populated.
+
 ### March 11, 2026
 
 - Refactored README feature documentation into a clearer, user-friendly walkthrough for all core grantmaking capabilities.
