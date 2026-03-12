@@ -45,6 +45,14 @@ Funding Opportunity
   - helper text clarifies reviewer final authority
 - AI prompt guidance improved for evidence-based rationale quality and balanced 1-5 scoring.
 
+## Developer Change Log (Top Highlights - March 12, 2026)
+
+- **Evaluation Criteria Manager app delivered** with admin-focused tabs for Home, Criteria Library, Evaluation Templates, AI Tools, Criteria Insights, and Template Usage.
+- **AI Framework Review integrated** through the `EvaluationFrameworkReview` prompt path, including structured insights for issues, recommendations, and improvements.
+- **Inline template display-name editing enabled** in Evaluation Templates workspace with dynamic field detection and FLS-safe save handling.
+- **Template navigation improved in Insights** so admins can open the selected Evaluation Template record directly from results.
+- **AI evidence persistence enabled** on criterion score records using `Evaluation_Criterion_Score__c.AI_Evidence__c` and `Evaluation_Rubric_Admin` FLS updates.
+
 ## Changelog
 
 ### March 11, 2026
@@ -124,6 +132,11 @@ Core: `applicationStatusTracker`
 - Displays current application progress directly on the application record.
 - Pulls status from record context so users see live state after submission.
 - Provides a simple, reassuring status view for applicants and staff.
+
+### 7) Evaluation Criteria Manager (Admin Workspace)
+- Purpose-built workspace to manage reusable criteria, bundle assignments, and template usage from one app.
+- Includes Criteria Insights actions to analyze framework quality and open related template records.
+- Supports inline editing of user-facing template display names (when configured fields and FLS allow updates).
 
 ## Prerequisites
 
@@ -244,6 +257,8 @@ This section tracks major development changes so new developers can understand h
 - Lightning Web Component workspace development
 - evaluation template management
 - developer debugging improvements
+
+Detailed daily entries: [`docs/developer-change-log.md`](docs/developer-change-log.md)
 
 ## Repo Structure
 

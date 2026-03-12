@@ -2,6 +2,12 @@
 
 ## March 12, 2026
 
+### Major Enhancements
+- Added the **Evaluation Criteria Manager** app shell with admin workspaces for criteria governance, template usage, and AI review operations.
+- Integrated **Evaluation Framework Review** AI orchestration and structured results rendering in Criteria Insights.
+- Added **inline editing for template display names** with dynamic field selection and FLS-aware save behavior.
+- Enabled **AI evidence storage** on criterion score records via `Evaluation_Criterion_Score__c.AI_Evidence__c` and updated permission access.
+
 ### AI Framework Review Engine
 A new service layer was added to support AI-based framework analysis using Salesforce Prompt Builder.
 
