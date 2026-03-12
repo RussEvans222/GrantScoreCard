@@ -185,6 +185,32 @@ Required templates used by scorecard Apex:
 
 - `AFE_Criterion_Scoring_Suggestion` (single criterion AI)
 - `AFE_Scorecard` (bulk AI)
+- `EvaluationFrameworkReview` (framework quality analysis)
+- `ETDisplayName` (evaluation template display-name generation)
+
+## AI Features
+
+### AI Display Name Generation
+
+Evaluation templates can now generate a concise, human-friendly display name using AI.
+
+Administrators can trigger an Einstein Action on an `Evaluation_Template__c` record that invokes prompt template `ETDisplayName`.
+
+The prompt analyzes:
+
+- Template name
+- Template description
+- Selected evaluation criteria
+
+It returns a short display name that summarizes the evaluation framework.
+
+Example outputs:
+
+- `Community Impact Grant Review`
+- `Innovation Grant Evaluation`
+- `Economic Development Project Scoring`
+
+This improves usability when managing many templates because admins can scan and select templates by meaningful names instead of auto-number values.
 
 Bulk expected response contract:
 

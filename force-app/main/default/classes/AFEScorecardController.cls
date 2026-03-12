@@ -1,3 +1,20 @@
+/*
+AI PROMPT INTEGRATION
+
+This controller powers reviewer-facing scorecard AI features.
+It invokes Prompt Builder templates for both single-row and bulk suggestions.
+
+Prompt examples used here:
+- AFE_Criterion_Scoring_Suggestion
+- AFE_Scorecard
+
+Other manager-focused prompts (for template governance) include:
+- EvaluationFrameworkReview
+- ETDisplayName
+
+These prompts keep AI generation logic configurable in Salesforce Prompt Builder
+while Apex handles validation, parsing, and safe persistence.
+*/
 public with sharing class AFEScorecardController {
     private static final String SCORE_VALIDATION_MESSAGE = 'Score must be a whole number between 0 and 5.';
     private static final String AI_FAILURE_MESSAGE = 'AI suggestion failed. Please try again.';

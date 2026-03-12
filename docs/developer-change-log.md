@@ -8,6 +8,23 @@
 - Added **inline editing for template display names** with dynamic field selection and FLS-aware save behavior.
 - Enabled **AI evidence storage** on criterion score records via `Evaluation_Criterion_Score__c.AI_Evidence__c` and updated permission access.
 
+### Evaluation Template Display Name Generator
+A new AI prompt template was introduced to automatically generate meaningful display names for evaluation templates.
+
+Prompt API Name:
+- `ETDisplayName`
+
+Input Objects:
+- `Evaluation_Template__c`
+- `Evaluation_Template_Criterion__c` (related snapshot)
+
+Output:
+- Short human-readable template title (target: 3-5 words)
+
+Why this matters:
+- Helps administrators quickly identify rubric purpose when many templates exist.
+- Improves template dropdown usability across manager workspaces and insights screens.
+
 ### AI Framework Review Engine
 A new service layer was added to support AI-based framework analysis using Salesforce Prompt Builder.
 

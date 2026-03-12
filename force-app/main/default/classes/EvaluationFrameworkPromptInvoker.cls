@@ -7,6 +7,17 @@ Why this exists:
 - Keeps AI call details in one place.
 - Makes service classes simpler and easier to read.
 */
+/*
+AI PROMPT INTEGRATION NOTES
+
+This invoker is shared infrastructure for Prompt Builder templates.
+Current examples in GrantScoreCard include:
+- EvaluationFrameworkReview
+- ETDisplayName
+
+When a service needs AI output, it prepares record-based inputs,
+calls this invoker, and receives generated text for parsing or storage.
+*/
 public with sharing class EvaluationFrameworkPromptInvoker {
     public static String invokeTemplate(String templateApiName, Map<String, Object> inputParams) {
         // Prompt Builder expects each input in a WrappedValue object.
