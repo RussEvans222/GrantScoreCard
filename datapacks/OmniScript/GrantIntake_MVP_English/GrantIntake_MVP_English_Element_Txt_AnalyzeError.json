@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Txt_AnalyzeError",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "Step_ProjectDiscovery",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Step_ProjectDiscovery",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "Step_ProjectDiscovery",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "Txt_AnalyzeError",
+        "sanitize": false,
+        "show": "=AND(%context:analysisSuccess%=false,NOT(ISBLANK(%context:analysisErrorMessage%)))",
+        "text": "<div style=\"width:min(1120px,94vw);margin:0.5rem auto 0;color:#A61E24;font-weight:600;\">%context:analysisErrorMessage%</div>",
+        "textKey": ""
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Txt_AnalyzeError"
+}

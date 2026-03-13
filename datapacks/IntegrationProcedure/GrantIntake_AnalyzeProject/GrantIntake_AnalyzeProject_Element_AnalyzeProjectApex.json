@@ -29,7 +29,7 @@
         },
         "label": "AnalyzeProjectApex",
         "remoteClass": "GrantIntakeOrchestrationGateway",
-        "remoteMethod": "analyzeProjectForFunding",
+        "remoteMethod": "analyzeProject",
         "remoteOptions": {
         },
         "responseJSONNode": "analysis",

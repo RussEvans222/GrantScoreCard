@@ -57,7 +57,7 @@
         "pubsub": false,
         "redirectNextLabel": "Next",
         "redirectNextWidth": 3,
-        "redirectPageName": "",
+        "redirectPageName": "Step_FundingFinder",
         "redirectPreviousLabel": "Previous",
         "redirectPreviousWidth": 3,
         "redirectTemplateUrl": "vlcAcknowledge.html",

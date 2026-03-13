@@ -47,6 +47,57 @@ Funding Opportunity
 -> Criteria Library Governance  
 -> Funding Decision Insights
 
+## Data Model
+
+Canonical grantmaking model (unchanged):
+
+```text
+FundingOpportunity
+  -> Evaluation_Template__c
+    -> Evaluation_Template_Criterion__c
+```
+
+Application evaluation flow:
+
+```text
+ApplicationForm
+  -> ApplicationFormEvaluation
+    -> Evaluation_Criterion_Score__c
+```
+
+## OmniStudio Platform Stack
+
+```text
+Experience Cloud
+  -> OmniScripts
+  -> FlexCards
+  -> Integration Procedures
+  -> Data Mappers
+```
+
+OmniStudio assets in this repo are source-tracked under `force-app/main/default/` via:
+- `omniScripts`
+- `omniIntegrationProcedures`
+- `omniDataTransforms`
+- `omniUiCard`
+
+## Evaluation Architecture
+
+- Evaluation templates and criteria remain the authoritative rubric source.
+- Reviewer scoring continues through `ApplicationFormEvaluation` and `Evaluation_Criterion_Score__c`.
+- Intake modernization does not alter evaluator assignment/scoring data contracts.
+
+## AI Integration Layer
+
+```text
+Integration Procedures
+  -> Prompt Builder
+  -> Agentforce
+```
+
+AI guardrail:
+- AI outputs are advisory and must never auto-populate `Evaluation_Criterion_Score__c`.
+
 ## 🤖 AI Capabilities
 
 Icon placeholder/reference: `docs/images/icons/einstein-ai.png`
@@ -257,6 +308,12 @@ Core: `applicationStatusTracker`
 - Access to a target org (alias examples use `GRANTS`)
 - Einstein Prompt Builder enabled for AI features
 - User permissions to deploy metadata and assign permission sets
+
+## Deployment Instructions
+
+Use the curated manifest and setup runbook for repeatable deployment:
+- `config/deploy-manifest-accelerator-curated.xml`
+- `docs/setup/accelerator-deployment-readiness.md`
 
 ## Quick Start
 

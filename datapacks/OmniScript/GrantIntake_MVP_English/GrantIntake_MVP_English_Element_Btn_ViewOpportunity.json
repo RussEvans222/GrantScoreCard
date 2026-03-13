@@ -48,7 +48,7 @@
         "targetLWCLayout": "lightning",
         "targetName": "",
         "targetType": "Web Page",
-        "targetUrl": "/grantmaking1/s/funding-opportunity/%fundingOpportunities:Id%",
+        "targetUrl": "/grantmaking1/s/funding-opportunity/%fundingOpportunities:id%",
         "validationRequired": "Submit",
         "variant": "brand",
         "wpm": false

@@ -14,10 +14,15 @@
     "PropertySetConfig": {
         "additionalOutput": {
             "aiSummary": "=%analysis:aiSummary%",
+            "analysisErrorMessage": "=IF(ISBLANK(%analysis:aiSummary%),'Unable to analyze project. Please try again.',null)",
+            "analysisSuccess": "=IF(ISBLANK(%analysis:aiSummary%),false,true)",
             "confidenceScore": "=%analysis:confidenceScore%",
             "context": {
                 "aiSummary": "=%analysis:aiSummary%",
+                "analysisErrorMessage": "=IF(ISBLANK(%analysis:aiSummary%),'Unable to analyze project. Please try again.',null)",
+                "analysisSuccess": "=IF(ISBLANK(%analysis:aiSummary%),false,true)",
                 "confidenceScore": "=%analysis:confidenceScore%",
+                "fundingOpportunities": "=%analysis:fundingOpportunities%",
                 "keywords": "=%analysis:keywords%",
                 "recommendedFundingTypes": "=%analysis:recommendedFundingTypes%"
             },

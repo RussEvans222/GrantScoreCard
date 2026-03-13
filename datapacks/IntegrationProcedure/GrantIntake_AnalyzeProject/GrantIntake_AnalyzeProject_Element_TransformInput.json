@@ -19,7 +19,7 @@
             "searchText": "=IF(ISBLANK(%context:projectDescription%),%projectDescription%,%context:projectDescription%)"
         },
         "executionConditionalFormula": "",
-        "failOnStepError": true,
+        "failOnStepError": false,
         "failureConditionalFormula": "",
         "label": "TransformInput",
         "responseJSONNode": "",
