@@ -6,25 +6,23 @@ GrantScoreCard is a Salesforce DX starter project for a complete grant review li
 
 It covers applicant intake, rubric setup, reviewer assignment, AI-assisted scoring, and application status tracking.
 
-## Latest Update News (March 12, 2026)
+## Latest Update News (March 13, 2026)
 
-- Resume checkpoint file for next session:
-  - `docs/checkpoints/latest-checkpoint.md`
-- OmniStudio Grant Intake analyze flow was aligned end-to-end to use Prompt Builder template `Grant Project Funding Analysis` (developer name `Grant_Project_Funding_Analysis`) through `GrantIntakeOrchestrationGateway`.
-- Analyze response normalization now targets OmniScript context bindings for:
-  - `context.aiSummary`
-  - `context.recommendedFundingTypes`
-  - `context.keywords`
-  - `context.confidenceScore`
-  - `context.fundingOpportunities[]`
-- Discovery UI theme was refined with scoped gradient accents, white card surfaces, and centered 1080px layout behavior for Experience Cloud runtime.
-- Added full-page Experience Cloud wrapper component:
-  - `force-app/main/default/lwc/grantIntakeFullPage`
-  - delivers full-screen gradient shell + centered container with embedded intake route support.
-- OmniStudio standards documentation was added for canonical architecture, naming, UI rules, and export workflow:
-  - `docs/standards/omnistudio-framework.md`
-- Deployment status:
-  - Full metadata deployment to `GRANTS` succeeded (`0AfHp00003ni0kJKAQ`).
+- OmniStudio intake framework release is now stabilized in Experience Cloud:
+  - OmniScript `GrantIntake_MVP_English_1`
+  - Integration Procedure `GrantIntake_AnalyzeProject_English_1`
+  - Data Mapper/DataRaptor `DRXFundingOpportunitySearch_1`
+- AI response mapping is aligned to Prompt Builder output contract:
+  - `summary -> aiSummary`
+  - `recommendedFundingTypes -> recommendedFundingTypes`
+  - `keywords -> keywords`
+  - `confidenceScore -> confidenceScore`
+- Intake UI cleanup completed:
+  - temporary debug blocks removed from discovery step
+  - wrapper callout refreshed with native `utility:einstein` icon rendering
+  - results step restyled as `AI Funding Analysis` with confidence/category/topic panels
+- Latest deployment to org alias `GRANTS`:
+  - `0AfHp00003ni0wyKAA` (OmniScript + Integration Procedure) - Succeeded
 
 ## One-Click Deploy
 
@@ -176,17 +174,29 @@ to enhance evaluation workflows.
 
 ![Developer Logs Banner](docs/images/headers/Gemini_Generated_Image_dfhslbdfhslbdfhs.png )
 
-## Developer Change Log (Top Highlights - March 12, 2026)
+## Developer Change Log (Synced)
 
-- **Evaluation Criteria Manager app delivered** with admin-focused tabs for Home, Criteria Library, Evaluation Templates, AI Tools, Criteria Insights, and Template Usage.
-- **AI Framework Review integrated** through the `EvaluationFrameworkReview` prompt path, including structured insights for issues, recommendations, and improvements.
-- **Inline template display-name editing enabled** in Evaluation Templates workspace with dynamic field detection and FLS-safe save handling.
-- **Template navigation improved in Insights** so admins can open the selected Evaluation Template record directly from results.
-- **AI evidence persistence enabled** on criterion score records using `Evaluation_Criterion_Score__c.AI_Evidence__c` and `Evaluation_Rubric_Admin` FLS updates.
+Primary developer log is maintained in:
+- `docs/developer-change-log.md`
+
+Top highlights from the latest OmniStudio release pass:
+- Removed temporary intake debug instrumentation from `GrantIntake_MVP_English_1` to restore clean UX.
+- Fixed Experience wrapper callout to use native SLDS Einstein icon rendering.
+- Refined AI results presentation into a structured `AI Funding Analysis` step.
+- Published updated OmniScript/UI metadata to org `GRANTS`.
 
 ## Changelog
 
 ### March 12, 2026
+
+- Released first OmniStudio intake framework milestone:
+  - `GrantIntake_MVP_English_1` (OmniScript)
+  - `GrantIntake_AnalyzeProject` (Integration Procedure)
+  - `DRXFundingOpportunitySearch` (Data Mapper/DataRaptor)
+  - Experience Cloud runtime discovery flow with AI analysis + funding recommendations
+- Added roadmap + release documentation:
+  - `docs/product-roadmap.md`
+  - `docs/CHANGELOG.md`
 
 - Added a new **🤖 AI Capabilities** section near the top of this README with Einstein callouts for:
   - Evaluation Framework Review (`EvaluationFrameworkReview`)

@@ -77,6 +77,34 @@
         <isActive>true</isActive>
         <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
         <level>0.0</level>
+        <name>NormalizeAiResponse</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  "actionMessage" : "",
+  "chainOnStep" : false,
+  "disOnTplt" : false,
+  "elementValueMap" : {
+    "analysisMapped:aiSummary" : "=IF(ISBLANK(%analysis:summary%),%analysis:aiSummary%,%analysis:summary%)",
+    "analysisMapped:recommendedFundingTypes" : "=%analysis:recommendedFundingTypes%",
+    "analysisMapped:keywords" : "=%analysis:keywords%",
+    "analysisMapped:confidenceScore" : "=%analysis:confidenceScore%",
+    "analysisMapped:fundingOpportunities" : "=%analysis:fundingOpportunities%"
+  },
+  "executionConditionalFormula" : "",
+  "failOnStepError" : false,
+  "failureConditionalFormula" : "",
+  "label" : "NormalizeAiResponse",
+  "responseJSONNode" : "",
+  "responseJSONPath" : "",
+  "show" : null
+}</propertySetConfig>
+        <sequenceNumber>2.5</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
         <name>FundingOpportunitySearch</name>
         <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
         <propertySetConfig>{
@@ -114,21 +142,21 @@
         <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
         <propertySetConfig>{
   "additionalOutput" : {
-    "aiSummary" : "=%analysis:aiSummary%",
-    "recommendedFundingTypes" : "=%analysis:recommendedFundingTypes%",
-    "keywords" : "=%analysis:keywords%",
-    "confidenceScore" : "=%analysis:confidenceScore%",
-    "fundingOpportunities" : "=%analysis:fundingOpportunities%",
-    "analysisSuccess" : "=IF(ISBLANK(%analysis:aiSummary%),false,true)",
-    "analysisErrorMessage" : "=IF(ISBLANK(%analysis:aiSummary%),'Unable to analyze project. Please try again.',null)",
+    "aiSummary" : "=%analysisMapped:aiSummary%",
+    "recommendedFundingTypes" : "=%analysisMapped:recommendedFundingTypes%",
+    "keywords" : "=%analysisMapped:keywords%",
+    "confidenceScore" : "=%analysisMapped:confidenceScore%",
+    "fundingOpportunities" : "=%analysisMapped:fundingOpportunities%",
+    "analysisSuccess" : "=IF(ISBLANK(%analysisMapped:aiSummary%),false,true)",
+    "analysisErrorMessage" : "=IF(ISBLANK(%analysisMapped:aiSummary%),null,null)",
     "context" : {
-      "aiSummary" : "=%analysis:aiSummary%",
-      "recommendedFundingTypes" : "=%analysis:recommendedFundingTypes%",
-      "keywords" : "=%analysis:keywords%",
-      "confidenceScore" : "=%analysis:confidenceScore%",
-      "fundingOpportunities" : "=%analysis:fundingOpportunities%",
-      "analysisSuccess" : "=IF(ISBLANK(%analysis:aiSummary%),false,true)",
-      "analysisErrorMessage" : "=IF(ISBLANK(%analysis:aiSummary%),'Unable to analyze project. Please try again.',null)"
+      "aiSummary" : "=%analysisMapped:aiSummary%",
+      "recommendedFundingTypes" : "=%analysisMapped:recommendedFundingTypes%",
+      "keywords" : "=%analysisMapped:keywords%",
+      "confidenceScore" : "=%analysisMapped:confidenceScore%",
+      "fundingOpportunities" : "=%analysisMapped:fundingOpportunities%",
+      "analysisSuccess" : "=IF(ISBLANK(%analysisMapped:aiSummary%),false,true)",
+      "analysisErrorMessage" : "=IF(ISBLANK(%analysisMapped:aiSummary%),null,null)"
     }
   },
   "disOnTplt" : false,

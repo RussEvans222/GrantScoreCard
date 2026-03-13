@@ -27,7 +27,45 @@
   font-size: 18px;
   line-height: 1.5;
   color: #5f6f86;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+
+.einstein-callout {
+  margin: 0 auto 24px;
+  width: min(720px, 100%);
+  background: #eef5ff;
+  border: 1px solid #cddfff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.einstein-icon {
+  --slds-c-icon-color-foreground-default: #2556a2;
+  background: #dce9ff;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  flex: 0 0 auto;
+}
+
+.einstein-text strong {
+  color: #1e3f74;
+  font-size: 14px;
+}
+
+.einstein-text p {
+  margin: 4px 0 0;
+  color: #4f6482;
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .search-card {
@@ -63,6 +101,11 @@
   .hero-subtitle {
     font-size: 16px;
     margin-bottom: 28px;
+  }
+
+  .einstein-callout {
+    margin-bottom: 18px;
+    padding: 10px 12px;
   }
 
   .search-card {

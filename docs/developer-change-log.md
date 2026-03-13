@@ -2,6 +2,14 @@
 
 ## Latest Update News (March 12, 2026)
 
+### OmniStudio Intake Framework Release 1
+- First operational OmniStudio intake framework released with:
+  - `GrantIntake_MVP_English_1`
+  - `GrantIntake_AnalyzeProject` (roadmap alias: `IP_AnalyzeProjectFunding`)
+  - `DRXFundingOpportunitySearch`
+- Experience Cloud discovery runtime now supports project intake, AI analysis, and funding recommendation rendering in a native OmniStudio flow.
+- AI outputs remain advisory and mapped through `context.*` nodes only.
+
 ### OmniStudio Intake Completion Progress
 - Aligned Grant Intake analysis path to the existing Prompt Builder template:
   - label: `Grant Project Funding Analysis`

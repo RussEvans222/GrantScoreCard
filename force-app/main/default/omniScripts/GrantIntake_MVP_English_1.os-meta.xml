@@ -61,7 +61,7 @@
   &quot;label&quot; : &quot;Txt_OpportunityCard&quot;,
   &quot;sanitize&quot; : false,
   &quot;show&quot; : null,
-  &quot;text&quot; : &quot;&lt;div class=\&quot;gs-opportunity-card\&quot; style=\&quot;max-width: 1000px; margin: 0.9rem auto; padding: 1.5rem; background:#FFFFFF; border:1px solid #E6EAF0; border-radius:16px; box-shadow:0 8px 20px rgba(30,42,74,0.06);\&quot;&gt;&lt;div style=\&quot;display:flex; align-items:flex-start; justify-content:space-between; gap:0.8rem; flex-wrap:wrap;\&quot;&gt;&lt;h3 style=\&quot;margin:0; color:#1E2A4A; font-size:1.2rem;\&quot;&gt;%fundingOpportunities:name%&lt;/h3&gt;&lt;span style=\&quot;display:inline-flex; align-items:center; gap:.45rem; padding:.32rem .7rem; border-radius:999px; color:#fff; background:%fundingOpportunities:RelevanceColor%; font-size:.84rem; font-weight:600;\&quot;&gt;%fundingOpportunities:RelevanceLabel% (%fundingOpportunities:relevanceScore%)&lt;/span&gt;&lt;/div&gt;&lt;p style=\&quot;margin:0.6rem 0 0; color:#33415C;\&quot;&gt;&lt;strong&gt;Program Area:&lt;/strong&gt; %fundingOpportunities:ProgramArea%&lt;/p&gt;&lt;p style=\&quot;margin:0.5rem 0 0; color:#33415C;\&quot;&gt;&lt;strong&gt;Eligibility Summary:&lt;/strong&gt; %fundingOpportunities:EligibilitySummary%&lt;/p&gt;&lt;p style=\&quot;margin:0.5rem 0 0; color:#33415C;\&quot;&gt;&lt;strong&gt;Max Award Amount:&lt;/strong&gt; %fundingOpportunities:MaxAwardAmount%&lt;/p&gt;&lt;p style=\&quot;margin:0.5rem 0 0; color:#33415C;\&quot;&gt;&lt;strong&gt;Open Date:&lt;/strong&gt; %fundingOpportunities:OpenDate% &lt;strong style=\&quot;margin-left:1rem;\&quot;&gt;Close Date:&lt;/strong&gt; %fundingOpportunities:CloseDate%&lt;/p&gt;&lt;/div&gt;&quot;,
+  &quot;text&quot; : &quot;&lt;div style=\&quot;width:min(1080px,94vw);margin:0.5rem auto 0;padding:1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-radius:12px;color:#2f4568;\&quot;&gt;Matching funding programs will appear here once the funding opportunity matching engine is enabled.&lt;/div&gt;&quot;,
   &quot;textKey&quot; : &quot;&quot;
 }</propertySetConfig>
                 <sequenceNumber>1.0</sequenceNumber>
@@ -83,7 +83,7 @@
   &quot;repeat&quot; : true,
   &quot;repeatClone&quot; : false,
   &quot;repeatLimit&quot; : null,
-  &quot;show&quot; : null
+  &quot;show&quot; : &quot;false&quot;
 }</propertySetConfig>
             <sequenceNumber>2.0</sequenceNumber>
             <type>Block</type>
@@ -101,11 +101,93 @@
   &quot;label&quot; : &quot;Txt_FundingFinderSummary&quot;,
   &quot;sanitize&quot; : false,
   &quot;show&quot; : null,
-  &quot;text&quot; : &quot;&lt;style&gt;.gs-results-shell{width:min(1200px,94vw);margin:1.2rem auto 1rem;animation:gsResultsIn .55s ease both;}.gs-results-card{padding:2rem 2rem 1.35rem;background:rgba(255,255,255,0.96);border:1px solid #d6dfec;border-radius:20px;box-shadow:0 18px 40px rgba(12,24,45,0.2);}.gs-results-card h2{margin:0;color:#1E2A4A;font-size:1.55rem;}.gs-results-card p{margin:.9rem 0 0;color:#33415C;line-height:1.65;}@keyframes gsResultsIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}&lt;/style&gt;&lt;div class=\&quot;gs-results-shell\&quot;&gt;&lt;div class=\&quot;gs-results-card\&quot;&gt;&lt;h2&gt;Funding Finder Results&lt;/h2&gt;&lt;p&gt;%context:aiSummary%&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Recommended Funding Types:&lt;/strong&gt; %context:recommendedFundingTypes%&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
+  &quot;text&quot; : &quot;&lt;style&gt;.gs-ai-shell{width:min(1080px,94vw);margin:1.2rem auto 0.8rem;animation:gsAiIn .5s ease both;}.gs-ai-card{background:#ffffff;border:1px solid #DDE7F6;border-radius:18px;box-shadow:0 12px 32px rgba(17,40,77,.12);padding:1.6rem 1.5rem;}.gs-ai-title{display:flex;align-items:center;justify-content:center;gap:.4rem;color:#0176D3;font-size:1.55rem;font-weight:700;margin:0;}.gs-ai-sub{margin:.55rem auto 1.15rem;color:#33415C;line-height:1.55;text-align:center;max-width:760px;}.gs-panel{margin-top:1rem;background:#F7FAFF;border:1px solid #D8E4F7;border-radius:12px;padding:1rem;}.gs-panel h3{margin:0 0 .55rem;color:#1E2A4A;font-size:1rem;}.gs-summary{margin:0;color:#33415C;line-height:1.6;}.gs-progress-track{height:10px;border-radius:999px;background:#E8EEF9;overflow:hidden;margin-top:.5rem;}.gs-progress-fill{height:100%;background:linear-gradient(90deg,#0176D3,#1EA7FD);}.gs-badge-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.45rem;}@keyframes gsAiIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}&lt;/style&gt;&lt;div class=\&quot;gs-ai-shell\&quot;&gt;&lt;div class=\&quot;gs-ai-card\&quot;&gt;&lt;h2 class=\&quot;gs-ai-title\&quot;&gt;&lt;span class=\&quot;slds-icon_container slds-icon-utility-einstein\&quot; title=\&quot;Einstein\&quot;&gt;&lt;svg class=\&quot;slds-icon slds-icon_small\&quot; aria-hidden=\&quot;true\&quot;&gt;&lt;use xlink:href=\&quot;/assets/icons/utility-sprite/svg/symbols.svg#einstein\&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;Powered by Einstein AI&lt;/h2&gt;&lt;p class=\&quot;gs-ai-sub\&quot;&gt;Einstein analyzed your project and identified potential grant funding opportunities.&lt;/p&gt;&lt;div class=\&quot;gs-panel\&quot;&gt;&lt;h3&gt;Project Analysis&lt;/h3&gt;&lt;p class=\&quot;gs-summary\&quot;&gt;%context:aiSummary%&lt;/p&gt;&lt;/div&gt;&lt;div class=\&quot;gs-panel\&quot;&gt;&lt;h3&gt;Einstein Confidence Score&lt;/h3&gt;&lt;div style=\&quot;display:flex;justify-content:space-between;align-items:center;\&quot;&gt;&lt;span style=\&quot;color:#4B5E82;\&quot;&gt;Match Confidence&lt;/span&gt;&lt;strong style=\&quot;color:#0176D3;\&quot;&gt;%=IF(%context:confidenceScore%&lt;1,ROUND(%context:confidenceScore%*100,0),%context:confidenceScore%)%% Match&lt;/strong&gt;&lt;/div&gt;&lt;div class=\&quot;gs-progress-track\&quot;&gt;&lt;div class=\&quot;gs-progress-fill\&quot; style=\&quot;width:%=IF(%context:confidenceScore%&lt;1,ROUND(%context:confidenceScore%*100,0),%context:confidenceScore%)%%;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=\&quot;gs-panel\&quot;&gt;&lt;h3&gt;Recommended Funding Categories&lt;/h3&gt;&lt;div class=\&quot;gs-badge-row\&quot;&gt;Categories shown below&lt;/div&gt;&lt;/div&gt;&lt;div class=\&quot;gs-panel\&quot;&gt;&lt;h3&gt;Key Topics Identified&lt;/h3&gt;&lt;div class=\&quot;gs-badge-row\&quot;&gt;Topics shown below&lt;/div&gt;&lt;/div&gt;&lt;div class=\&quot;gs-panel\&quot;&gt;&lt;h3&gt;Matching Funding Opportunities&lt;/h3&gt;&lt;p class=\&quot;gs-summary\&quot;&gt;Matching funding programs will appear here once the funding opportunity matching engine is enabled.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
   &quot;textKey&quot; : &quot;&quot;
 }</propertySetConfig>
             <sequenceNumber>1.0</sequenceNumber>
             <type>Text Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Txt_RecommendedFundingTypeBadge</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;label&quot; : &quot;Txt_RecommendedFundingTypeBadge&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&lt;div style=\&quot;width:min(1080px,94vw);margin:0 auto;\&quot;&gt;&lt;span class=\&quot;slds-badge\&quot; style=\&quot;background:#e9f2ff;color:#194f8b;padding:.35rem .7rem;border-radius:999px;\&quot;&gt;%recommendedFundingTypes%&lt;/span&gt;&lt;/div&gt;&quot;,
+  &quot;textKey&quot; : &quot;&quot;
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Text Block</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>recommendedFundingTypes</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Recommended Funding Categories&quot;,
+  &quot;repeat&quot; : true,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>3.0</sequenceNumber>
+            <type>Block</type>
+        </childElements>
+        <childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>Txt_KeywordBadge</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;dataJSON&quot; : false,
+  &quot;label&quot; : &quot;Txt_KeywordBadge&quot;,
+  &quot;sanitize&quot; : false,
+  &quot;show&quot; : null,
+  &quot;text&quot; : &quot;&lt;div style=\&quot;width:min(1080px,94vw);margin:0 auto;\&quot;&gt;&lt;span class=\&quot;slds-badge\&quot; style=\&quot;background:#f3f6fb;color:#304A6E;padding:.25rem .6rem;border-radius:999px;font-size:.75rem;\&quot;&gt;%keywords%&lt;/span&gt;&lt;/div&gt;&quot;,
+  &quot;textKey&quot; : &quot;&quot;
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Text Block</type>
+            </childElements>
+            <isActive>true</isActive>
+            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+            <level>1.0</level>
+            <name>keywords</name>
+            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+            <propertySetConfig>{
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;collapse&quot; : false,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;controlWidth&quot; : 12,
+  &quot;hide&quot; : false,
+  &quot;label&quot; : &quot;Key Topics Identified&quot;,
+  &quot;repeat&quot; : true,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;show&quot; : null
+}</propertySetConfig>
+            <sequenceNumber>4.0</sequenceNumber>
+            <type>Block</type>
         </childElements>
         <isActive>true</isActive>
         <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
@@ -119,7 +201,7 @@
   &quot;businessEvent&quot; : &quot;&quot;,
   &quot;cancelLabel&quot; : &quot;Cancel&quot;,
   &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
-  &quot;chartLabel&quot; : &quot;Funding Finder&quot;,
+  &quot;chartLabel&quot; : &quot;AI Funding Analysis&quot;,
   &quot;completeLabel&quot; : &quot;Complete&quot;,
   &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
   &quot;conditionType&quot; : &quot;Hide if False&quot;,
@@ -137,7 +219,7 @@
     &quot;remoteTimeout&quot; : 30000,
     &quot;typeFilter&quot; : &quot;&quot;
   },
-  &quot;label&quot; : &quot;Funding Finder&quot;,
+  &quot;label&quot; : &quot;AI Funding Analysis&quot;,
   &quot;message&quot; : { },
   &quot;nextLabel&quot; : &quot;Next&quot;,
   &quot;nextWidth&quot; : 3,
@@ -171,7 +253,7 @@
   &quot;businessCategory&quot; : &quot;&quot;,
   &quot;businessEvent&quot; : &quot;&quot;,
   &quot;controlWidth&quot; : 12,
-  &quot;enableActionMessage&quot; : false,
+  &quot;enableActionMessage&quot; : true,
   &quot;enableDefaultAbort&quot; : false,
   &quot;errorMessage&quot; : {
     &quot;custom&quot; : [ ],
@@ -186,11 +268,11 @@
   &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
   &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
   &quot;failureNextLabel&quot; : &quot;Continue&quot;,
-  &quot;inProgressMessage&quot; : &quot;Analyzing project...&quot;,
+  &quot;inProgressMessage&quot; : &quot;Einstein is analyzing your project...&quot;,
   &quot;integrationProcedureKey&quot; : &quot;GrantIntake_AnalyzeProject&quot;,
-  &quot;label&quot; : &quot;Analyze Project&quot;,
+  &quot;label&quot; : &quot;Analyze with Einstein&quot;,
   &quot;message&quot; : { },
-  &quot;postMessage&quot; : &quot;Analysis complete&quot;,
+  &quot;postMessage&quot; : &quot;Debug: Integration Procedure response received.&quot;,
   &quot;postTransformBundle&quot; : &quot;&quot;,
   &quot;preTransformBundle&quot; : &quot;&quot;,
   &quot;pubsub&quot; : false,
@@ -215,8 +297,8 @@
   &quot;show&quot; : null,
   &quot;showPersistentComponent&quot; : [ true, false ],
   &quot;ssm&quot; : false,
-  &quot;svgIcon&quot; : &quot;&quot;,
-  &quot;svgSprite&quot; : &quot;&quot;,
+  &quot;svgIcon&quot; : &quot;einstein&quot;,
+  &quot;svgSprite&quot; : &quot;utility&quot;,
   &quot;useContinuation&quot; : false,
   &quot;validationRequired&quot; : &quot;Submit&quot;,
   &quot;wpm&quot; : false
