@@ -1,12 +1,18 @@
 <template>
-  <div class="gs-intake-page">
-    <div class="gs-intake-container">
-      <iframe
-        class="gs-intake-frame"
-        src={omniScriptPageUrl}
-        title="Grant Intake OmniScript"
-        loading="eager"
-      ></iframe>
+  <div class="grant-hero">
+    <div class="hero-content">
+      <h1 class="hero-title">How can we help you find funding?</h1>
+      <p class="hero-subtitle">
+        Describe your project and we'll recommend the best funding opportunities.
+      </p>
+      <div class="search-card">
+        <lightning-omnistudio-omniscript
+          type="GrantIntake"
+          sub-type="MVP"
+          language="English"
+        >
+        </lightning-omnistudio-omniscript>
+      </div>
     </div>
   </div>
 </template>
