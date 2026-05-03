@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Demographics&quot; : {
+    &quot;Authorized assistant&quot; : null,
+    &quot;Communication&quot; : {
+      &quot;LanguageSpoken&quot; : null,
+      &quot;OtherLang&quot; : null,
+      &quot;RequiresInterpreter&quot; : null
+    },
+    &quot;DOB&quot; : null,
+    &quot;Email&quot; : null,
+    &quot;FirstName&quot; : null,
+    &quot;Gender&quot; : null,
+    &quot;HomeAddress-Block&quot; : {
+      &quot;City&quot; : null,
+      &quot;Country&quot; : null,
+      &quot;HomeAddress&quot; : null,
+      &quot;State&quot; : null,
+      &quot;Street&quot; : null,
+      &quot;ZIPCode&quot; : null
+    },
+    &quot;HouseholdName&quot; : null,
+    &quot;LastName&quot; : null,
+    &quot;MaritalStatus&quot; : null,
+    &quot;NeedAssistance&quot; : null,
+    &quot;Phone&quot; : null,
+    &quot;SSN&quot; : null
+  },
+  &quot;Documentation&quot; : { },
+  &quot;Employment Income&quot; : {
+    &quot;Current Employment&quot; : [ {
+      &quot;Employer&quot; : null,
+      &quot;Hours Worked / Week&quot; : null,
+      &quot;Weekly Income&quot; : null
+    }, {
+      &quot;Employer&quot; : null,
+      &quot;Hours Worked / Week&quot; : null,
+      &quot;Weekly Income&quot; : null
+    } ],
+    &quot;Total Monthly Income&quot; : null,
+    &quot;Total Weekly Income&quot; : null
+  },
+  &quot;Estimated Benefits&quot; : { },
+  &quot;FamilyCaregiver&quot; : null,
+  &quot;Household Expenses&quot; : {
+    &quot;GrandTotal&quot; : null,
+    &quot;ParkingBlock&quot; : {
+      &quot;NumberofParkingperYear&quot; : null,
+      &quot;ParkingCost&quot; : null,
+      &quot;TotalParking&quot; : null
+    },
+    &quot;PrivateTransport&quot; : [ {
+      &quot;NumberTrips&quot; : null,
+      &quot;TotalKMs&quot; : null,
+      &quot;TotalKMsPerTrip&quot; : null,
+      &quot;TreatmentLocation&quot; : null
+    }, {
+      &quot;NumberTrips&quot; : null,
+      &quot;TotalKMs&quot; : null,
+      &quot;TotalKMsPerTrip&quot; : null,
+      &quot;TreatmentLocation&quot; : null
+    } ],
+    &quot;PublicTransport&quot; : {
+      &quot;CostperTrip&quot; : null,
+      &quot;OtherNumberofTrips&quot; : null,
+      &quot;TotalOtherTransport&quot; : null
+    },
+    &quot;SpecializedCareBlock&quot; : {
+      &quot;SpecializedCostperYear&quot; : null,
+      &quot;SpecializedCostperhour&quot; : null,
+      &quot;SpecializedHoursperMonth&quot; : null
+    },
+    &quot;TotalChildCareCosts&quot; : null,
+    &quot;TotalTransportCosts&quot; : null
+  },
+  &quot;HouseholdDetails&quot; : {
+    &quot;DependantChild&quot; : {
+      &quot;DependantDOB&quot; : null,
+      &quot;DependantFirst&quot; : null,
+      &quot;DependantLast&quot; : null,
+      &quot;DependantMiddle&quot; : null,
+      &quot;HealthCard&quot; : null,
+      &quot;Sex&quot; : null
+    },
+    &quot;SpousalInfoBlock&quot; : {
+      &quot;SpousalConsent&quot; : null
+    }
+  },
+  &quot;Not Eligible&quot; : null,
+  &quot;Programs&quot; : {
+    &quot;ACSD&quot; : null,
+    &quot;ER&quot; : null,
+    &quot;SSAH&quot; : null
+  },
+  &quot;Self Disclosure&quot; : {
+    &quot;HaveDisability&quot; : null,
+    &quot;IntensiveCare&quot; : null,
+    &quot;OntarioResident&quot; : null,
+    &quot;PassesScreening&quot; : null,
+    &quot;Under18&quot; : null
+  },
+  &quot;Thank you&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userCurrencyCode&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRCreateCaseAndParticipants</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Demographics:FirstName &quot;/\/\/&quot; var:Demographics:LastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(Demographics:FirstName,&quot; &quot;,Demographics:LastName)</formulaExpression>
+        <formulaResultPath>Name</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>High</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item8</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Priority</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Case</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>DeveloperName</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>New</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Integrated Eligibility</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Sub_Type__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item10</globalKey>
+        <inputFieldName>CaseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Services &amp; Benefits</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item9</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Type</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Demographics:LastName &quot;/\/\/-/\/\/Integrated/\/\/Eligibility/\/\/Case&quot; CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(Demographics:LastName,&quot; - Integrated Eligibility Case&quot;)</formulaExpression>
+        <formulaResultPath>CaseName</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:HouseholdDetails:DependantChild:DependantFirst &quot;/\/\/&quot; var:HouseholdDetails:DependantChild:DependantLast CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(HouseholdDetails:DependantChild:DependantFirst, &quot; &quot;, HouseholdDetails:DependantChild:DependantLast)</formulaExpression>
+        <formulaResultPath>DependantName</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>DRCreateCaseAndParticipantsCustom771</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:HouseholdDetails:OtherChildren:OtherChildFirst &quot;/\/\/&quot; var:HouseholdDetails:OtherChildren:OtherChildLast CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(HouseholdDetails:OtherChildren:OtherChildFirst, &quot; &quot;, HouseholdDetails:OtherChildren:OtherChildLast)</formulaExpression>
+        <formulaResultPath>OtherChildName</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>DRCreateCaseAndParticipantsCustom5276</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item11</globalKey>
+        <inputFieldName>Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>Contact</lookupObjectName>
+        <lookupReturnedFieldName>AccountId</lookupReturnedFieldName>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item2</globalKey>
+        <inputFieldName>Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>Contact</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Integrated Eligibility Case</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item7</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Web</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateCaseAndParticipantsCustom0jI4S000000GySSUA0Item12</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateCaseAndParticipants</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Origin</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;Demographics&quot; : {
+    &quot;Authorized assistant&quot; : null,
+    &quot;Communication&quot; : {
+      &quot;LanguageSpoken&quot; : &quot;English&quot;,
+      &quot;OtherLang&quot; : null,
+      &quot;RequiresInterpreter&quot; : false
+    },
+    &quot;DOB&quot; : &quot;7/31/1987&quot;,
+    &quot;Email&quot; : &quot;jsimmonsgrants062021@gmail.com&quot;,
+    &quot;FirstName&quot; : &quot;Jennifer&quot;,
+    &quot;Gender&quot; : &quot;Female&quot;,
+    &quot;HomeAddress-Block&quot; : {
+      &quot;City&quot; : &quot;Mississauga&quot;,
+      &quot;Country&quot; : &quot;Canada&quot;,
+      &quot;HomeAddress&quot; : &quot;1143 Brooks Dr, Mississauga, ON, Canada&quot;,
+      &quot;State&quot; : &quot;ON&quot;,
+      &quot;Street&quot; : &quot;1143 Brooks Drive&quot;,
+      &quot;ZIPCode&quot; : &quot;L5E 1T4&quot;
+    },
+    &quot;HouseholdName&quot; : &quot;Simmons Household&quot;,
+    &quot;LastName&quot; : &quot;Simmons&quot;,
+    &quot;MaritalStatus&quot; : &quot;Married&quot;,
+    &quot;NeedAssistance&quot; : false,
+    &quot;Phone&quot; : &quot;9052222222&quot;,
+    &quot;SSN&quot; : &quot;123456789&quot;
+  },
+  &quot;Documentation&quot; : { },
+  &quot;Employment Income&quot; : {
+    &quot;Current Employment&quot; : [ {
+      &quot;Employer&quot; : &quot;Subway&quot;,
+      &quot;Hours Worked / Week&quot; : 40,
+      &quot;Weekly Income&quot; : 380
+    }, {
+      &quot;Employer&quot; : &quot;Uber&quot;,
+      &quot;Hours Worked / Week&quot; : 10,
+      &quot;Weekly Income&quot; : 100
+    } ],
+    &quot;Total Monthly Income&quot; : 0,
+    &quot;Total Weekly Income&quot; : 480
+  },
+  &quot;Estimated Benefits&quot; : { },
+  &quot;FamilyCaregiver&quot; : &quot;Yes&quot;,
+  &quot;Household Expenses&quot; : {
+    &quot;GrandTotal&quot; : 0,
+    &quot;ParkingBlock&quot; : {
+      &quot;NumberofParkingperYear&quot; : 104,
+      &quot;ParkingCost&quot; : 5,
+      &quot;TotalParking&quot; : 520
+    },
+    &quot;PrivateTransport&quot; : [ {
+      &quot;NumberTrips&quot; : 10,
+      &quot;TotalKMs&quot; : 500,
+      &quot;TotalKMsPerTrip&quot; : 50,
+      &quot;TreatmentLocation&quot; : &quot;Sick Kids Hospital&quot;
+    }, {
+      &quot;NumberTrips&quot; : 104,
+      &quot;TotalKMs&quot; : 2080,
+      &quot;TotalKMsPerTrip&quot; : 20,
+      &quot;TreatmentLocation&quot; : &quot;Peel Dialysis Unit&quot;
+    } ],
+    &quot;PublicTransport&quot; : {
+      &quot;CostperTrip&quot; : 5,
+      &quot;OtherNumberofTrips&quot; : 10,
+      &quot;TotalOtherTransport&quot; : 50
+    },
+    &quot;SpecializedCareBlock&quot; : {
+      &quot;SpecializedCostperYear&quot; : 0,
+      &quot;SpecializedCostperhour&quot; : 40,
+      &quot;SpecializedHoursperMonth&quot; : 20
+    },
+    &quot;TotalChildCareCosts&quot; : 0,
+    &quot;TotalTransportCosts&quot; : 0
+  },
+  &quot;HouseholdDetails&quot; : {
+    &quot;DependantChild&quot; : {
+      &quot;DependantDOB&quot; : &quot;2015-07-06&quot;,
+      &quot;DependantFirst&quot; : &quot;Hannah&quot;,
+      &quot;DependantLast&quot; : &quot;Simmons&quot;,
+      &quot;DependantMiddle&quot; : null,
+      &quot;HealthCard&quot; : &quot;123456789-NP&quot;,
+      &quot;Sex&quot; : &quot;Female&quot;
+    },
+    &quot;SpousalInfoBlock&quot; : {
+      &quot;SpousalConsent&quot; : false
+    }
+  },
+  &quot;Not Eligible&quot; : null,
+  &quot;Programs&quot; : {
+    &quot;ACSD&quot; : true,
+    &quot;ER&quot; : true,
+    &quot;SSAH&quot; : true
+  },
+  &quot;Self Disclosure&quot; : {
+    &quot;HaveDisability&quot; : &quot;Yes&quot;,
+    &quot;IntensiveCare&quot; : &quot;Yes&quot;,
+    &quot;OntarioResident&quot; : &quot;Yes&quot;,
+    &quot;PassesScreening&quot; : &quot;Yes&quot;,
+    &quot;Under18&quot; : &quot;Yes&quot;
+  },
+  &quot;Thank you&quot; : { },
+  &quot;timeStamp&quot; : &quot;2021-11-01T15:35:39.608Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055f000004aCNDAA2&quot;,
+  &quot;userName&quot; : &quot;aru@grants-2-ido.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRCreateCaseAndParticipants_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

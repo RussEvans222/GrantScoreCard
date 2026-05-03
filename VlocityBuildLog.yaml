@@ -1,0 +1,19 @@
+Org: storm.afbb6a02e3e356@salesforce.com
+Version: 1.17.20
+Node: v20.20.1
+PackageVersion: '260.10'
+Namespace: omnistudio
+Job: VDX
+Action: Deploy
+ProjectPath: .
+TotalTime: 0m 38s
+Count:
+  Success: {}
+Errors: []
+Status:
+  Success: {}
+StatusCount:
+  Remaining: 0
+  Success: 7
+  Error: 0
+id: !<tag:yaml.org,2002:js/undefined> ''

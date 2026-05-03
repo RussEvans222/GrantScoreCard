@@ -1,1039 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OmniScript xmlns="http://soap.sforce.com/2006/04/metadata">
-    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+  <elementTypeComponentMapping>{"ElementTypeToHTMLTemplateList":[]}</elementTypeComponentMapping>
+  <isActive>false</isActive>
+  <isIntegrationProcedure>false</isIntegrationProcedure>
+  <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+  <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+  <isOmniScriptEmbeddable>true</isOmniScriptEmbeddable>
+  <isTestProcedure>false</isTestProcedure>
+  <isWebCompEnabled>true</isWebCompEnabled>
+  <language>English</language>
+  <name>GrantIntakeMVP</name>
+  <omniProcessElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Txt_ProjectDiscoveryIntro</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","controlWidth":12,"dataJSON":false,"label":"Txt_ProjectDiscoveryIntro","sanitize":false,"show":null,"text":"&lt;div style=\"width:100%;max-width:100%;box-sizing:border-box;margin:0 auto .75rem;color:#16325C;\"&gt;&lt;h2 style=\"margin:0 0 .25rem;\"&gt;Project Funding Finder&lt;/h2&gt;&lt;p style=\"margin:0;color:#33415C;\"&gt;Describe your project to find relevant funding opportunities.&lt;/p&gt;&lt;/div&gt;","textKey":""}</propertySetConfig>
+      <sequenceNumber>1.0</sequenceNumber>
+      <type>Text Block</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Project_Description__c</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","accessibleInFutureSteps":true,"conditionType":"Hide if False","controlWidth":12,"debounceValue":0,"defaultValue":null,"disOnTplt":false,"help":true,"helpText":"Provide a brief summary of your project goals, location, and intended impact.","hide":false,"inputWidth":12,"label":"Describe your project","maxLength":5000,"minLength":0,"pattern":"","placeholder":"","ptrnErrText":"","readOnly":false,"repeat":false,"repeatClone":false,"repeatLimit":null,"required":true,"rows":10,"show":null,"showInputWidth":false}</propertySetConfig>
+      <sequenceNumber>2.0</sequenceNumber>
+      <type>Text Area</type>
+    </childElements>
     <isActive>true</isActive>
-    <isIntegrationProcedure>false</isIntegrationProcedure>
-    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
-    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
-    <isOmniScriptEmbeddable>true</isOmniScriptEmbeddable>
-    <isTestProcedure>false</isTestProcedure>
-    <isWebCompEnabled>true</isWebCompEnabled>
-    <language>English</language>
-    <name>GrantIntakeMVP</name>
-    <omniProcessElements>
-        <childElements>
-            <childElements>
-                <isActive>true</isActive>
-                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-                <level>2.0</level>
-                <name>Btn_ViewOpportunity</name>
-                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-                <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;businessCategory&quot; : &quot;&quot;,
-  &quot;businessEvent&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;iconName&quot; : &quot;&quot;,
-  &quot;iconPosition&quot; : &quot;left&quot;,
-  &quot;iconVariant&quot; : &quot;&quot;,
-  &quot;label&quot; : &quot;View Opportunity&quot;,
-  &quot;loginAction&quot; : &quot;login&quot;,
-  &quot;message&quot; : { },
-  &quot;objectAction&quot; : &quot;home&quot;,
-  &quot;pubsub&quot; : false,
-  &quot;recordAction&quot; : &quot;view&quot;,
-  &quot;replace&quot; : false,
-  &quot;show&quot; : null,
-  &quot;ssm&quot; : false,
-  &quot;targetFilter&quot; : &quot;Recent&quot;,
-  &quot;targetId&quot; : &quot;&quot;,
-  &quot;targetLWCLayout&quot; : &quot;lightning&quot;,
-  &quot;targetName&quot; : &quot;&quot;,
-  &quot;targetType&quot; : &quot;Web Page&quot;,
-  &quot;targetUrl&quot; : &quot;/grantmaking1/s/funding-opportunity/%aiSuggestedCards:id%&quot;,
-  &quot;validationRequired&quot; : &quot;Submit&quot;,
-  &quot;variant&quot; : &quot;brand&quot;,
-  &quot;wpm&quot; : false
-}</propertySetConfig>
-                <sequenceNumber>2.0</sequenceNumber>
-                <type>Navigate Action</type>
-            </childElements>
-            <childElements>
-                <isActive>true</isActive>
-                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-                <level>2.0</level>
-                <name>isSelectedAvailable</name>
-                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-                <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;defaultValue&quot; : false,
-  &quot;disOnTplt&quot; : false,
-  &quot;help&quot; : false,
-  &quot;helpText&quot; : &quot;&quot;,
-  &quot;hide&quot; : false,
-  &quot;label&quot; : &quot;Select this funding program&quot;,
-  &quot;readOnly&quot; : false,
-  &quot;repeat&quot; : false,
-  &quot;repeatClone&quot; : false,
-  &quot;repeatLimit&quot; : null,
-  &quot;required&quot; : false,
-  &quot;show&quot; : null
-}</propertySetConfig>
-                <sequenceNumber>3.0</sequenceNumber>
-                <type>Checkbox</type>
-            </childElements>
-            <childElements>
-                <isActive>true</isActive>
-                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-                <level>2.0</level>
-                <name>Txt_OpportunityCard</name>
-                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-                <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_OpportunityCard&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : null,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.45rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid %aiSuggestedCards:RelevanceColor%;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;div style=\&quot;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:.6rem;align-items:start;\&quot;&gt;&lt;div&gt;&lt;div style=\&quot;font-size:.76rem;font-weight:700;color:#0176D3;text-transform:uppercase;\&quot;&gt;Einstein Suggested&lt;/div&gt;&lt;h3 style=\&quot;margin:.1rem 0 .2rem;color:#16325C;font-size:1rem;\&quot;&gt;%aiSuggestedCards:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;line-height:1.35;max-height:3.5rem;overflow:hidden;\&quot;&gt;%aiSuggestedCards:EligibilitySummary%&lt;/div&gt;&lt;/div&gt;&lt;div style=\&quot;font-size:.82rem;color:#33415C;\&quot;&gt;&lt;strong&gt;Open&lt;/strong&gt;&lt;br/&gt;%aiSuggestedCards:OpenDate%&lt;/div&gt;&lt;div style=\&quot;font-size:.82rem;color:#33415C;\&quot;&gt;&lt;strong&gt;Close&lt;/strong&gt;&lt;br/&gt;%aiSuggestedCards:CloseDate%&lt;/div&gt;&lt;div style=\&quot;font-size:.82rem;color:#33415C;\&quot;&gt;&lt;strong&gt;Max Award&lt;/strong&gt;&lt;br/&gt;$%aiSuggestedCards:MaxAwardAmount%&lt;br/&gt;&lt;span style=\&quot;background:%aiSuggestedCards:RelevanceColor%;color:#fff;border-radius:999px;padding:.15rem .5rem;font-size:.72rem;display:inline-block;margin-top:.25rem;\&quot;&gt;%aiSuggestedCards:RelevanceLabel% (%aiSuggestedCards:relevanceScore%)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style=\&quot;margin-top:.45rem;color:#6b7f9f;font-size:.74rem;\&quot;&gt;FundingOpportunity Id: %aiSuggestedCards:id%&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-                <sequenceNumber>1.0</sequenceNumber>
-                <type>Text Block</type>
-            </childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>aiSuggestedCards</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;collapse&quot; : false,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;hide&quot; : false,
-  &quot;label&quot; : &quot;Recommended Opportunities&quot;,
-  &quot;repeat&quot; : true,
-  &quot;repeatClone&quot; : false,
-  &quot;repeatLimit&quot; : null,
-  &quot;show&quot; : &quot;false&quot;
-}</propertySetConfig>
-            <sequenceNumber>2.0</sequenceNumber>
-            <type>Block</type>
-        </childElements>
-        <childElements>
-            <childElements>
-                <isActive>true</isActive>
-                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-                <level>2.0</level>
-                <name>isSelected</name>
-                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-                <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;defaultValue&quot; : false,
-  &quot;disOnTplt&quot; : false,
-  &quot;help&quot; : false,
-  &quot;helpText&quot; : &quot;&quot;,
-  &quot;hide&quot; : false,
-  &quot;label&quot; : &quot;Select this funding program&quot;,
-  &quot;readOnly&quot; : false,
-  &quot;repeat&quot; : false,
-  &quot;repeatClone&quot; : false,
-  &quot;repeatLimit&quot; : null,
-  &quot;required&quot; : false,
-  &quot;show&quot; : null
-}</propertySetConfig>
-                <sequenceNumber>2.0</sequenceNumber>
-                <type>Checkbox</type>
-            </childElements>
-            <childElements>
-                <isActive>true</isActive>
-                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-                <level>2.0</level>
-                <name>Txt_AvailableOpportunityRow</name>
-                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-                <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_AvailableOpportunityRow&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : null,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.35rem auto 0;padding:.75rem .9rem;border:1px solid #E2E8F4;background:#FFFFFF;border-left:6px solid %resultFundingList:RelevanceColor%;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;div style=\&quot;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:.6rem;align-items:start;\&quot;&gt;&lt;div&gt;&lt;div style=\&quot;font-size:.76rem;font-weight:700;color:#0176D3;text-transform:uppercase;\&quot;&gt;Einstein Suggested&lt;/div&gt;&lt;h3 style=\&quot;margin:0 0 .25rem;color:#16325C;font-size:.98rem;\&quot;&gt;%resultFundingList:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;line-height:1.35;max-height:3.3rem;overflow:hidden;\&quot;&gt;%resultFundingList:EligibilitySummary%&lt;/div&gt;&lt;/div&gt;&lt;div style=\&quot;font-size:.82rem;color:#33415C;\&quot;&gt;&lt;strong&gt;Open&lt;/strong&gt;&lt;br/&gt;%resultFundingList:OpenDate%&lt;/div&gt;&lt;div style=\&quot;font-size:.82rem;color:#33415C;\&quot;&gt;&lt;strong&gt;Close&lt;/strong&gt;&lt;br/&gt;%resultFundingList:CloseDate%&lt;/div&gt;&lt;div style=\&quot;font-size:.82rem;color:#33415C;\&quot;&gt;&lt;strong&gt;Max Award&lt;/strong&gt;&lt;br/&gt;$%resultFundingList:MaxAwardAmount%&lt;br/&gt;&lt;span style=\&quot;background:%resultFundingList:RelevanceColor%;color:#fff;border-radius:999px;padding:.15rem .5rem;font-size:.72rem;display:inline-block;margin-top:.25rem;\&quot;&gt;%resultFundingList:RelevanceTier% - %resultFundingList:RelevanceLabel% (%resultFundingList:relevanceScore%)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-                <sequenceNumber>1.0</sequenceNumber>
-                <type>Text Block</type>
-            </childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>resultFundingList</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;collapse&quot; : false,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;hide&quot; : false,
-  &quot;label&quot; : &quot;All Available Funding Opportunities&quot;,
-  &quot;repeat&quot; : true,
-  &quot;repeatClone&quot; : false,
-  &quot;repeatLimit&quot; : null,
-  &quot;show&quot; : &quot;=NOT(ISBLANK(%resultFundingList%))&quot;
-}</propertySetConfig>
-            <sequenceNumber>2.5</sequenceNumber>
-            <type>Block</type>
-        </childElements>
-        <childElements>
-            <childElements>
-                <isActive>true</isActive>
-                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-                <level>2.0</level>
-                <name>Txt_KeywordBadge</name>
-                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-                <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_KeywordBadge&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0 auto;\&quot;&gt;&lt;span class=\&quot;slds-badge\&quot; style=\&quot;background:#f3f6fb;color:#304A6E;padding:.25rem .6rem;border-radius:999px;font-size:.75rem;\&quot;&gt;%keywordItems%&lt;/span&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-                <sequenceNumber>1.0</sequenceNumber>
-                <type>Text Block</type>
-            </childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>keywordItems</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;collapse&quot; : false,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;hide&quot; : false,
-  &quot;label&quot; : &quot;Key Topics Identified&quot;,
-  &quot;repeat&quot; : true,
-  &quot;repeatClone&quot; : false,
-  &quot;repeatLimit&quot; : null,
-  &quot;show&quot; : &quot;=NOT(ISBLANK(%keywordItems%))&quot;
-}</propertySetConfig>
-            <sequenceNumber>4.0</sequenceNumber>
-            <type>Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>PrepareFundingFinderData</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;responseJSONPath&quot; : &quot;&quot;,
-  &quot;responseJSONNode&quot; : &quot;&quot;,
-  &quot;executionConditionalFormula&quot; : &quot;&quot;,
-  &quot;actionMessage&quot; : &quot;&quot;,
-  &quot;elementValueMap&quot; : {
-    &quot;Step_FundingFinder:resultFundingList&quot; : &quot;=%initialAiAssessment:fundingOpportunities%&quot;,
-    &quot;Step_FundingFinder:keywordItems&quot; : &quot;=%initialAiAssessment:keywords%&quot;,
-    &quot;Step_FundingFinder:recommendedFundingTypeItems&quot; : &quot;=%initialAiAssessment:recommendedFundingTypes%&quot;,
-    &quot;Step_FundingFinder:selectedFundingOpportunityIds&quot; : &quot;=[]&quot;,
-    &quot;debug_resultCount&quot; : &quot;=COUNT(%Step_FundingFinder:resultFundingList%)&quot;,
-    &quot;debug_firstName&quot; : &quot;=%Step_FundingFinder:resultFundingList:0:name%&quot;,
-    &quot;aiSummary&quot; : &quot;=IF(NOT(ISBLANK(%aiSummary%)),%aiSummary%,IF(NOT(ISBLANK(%initialAiAssessment:aiSummary%)),%initialAiAssessment:aiSummary%,IF(NOT(ISBLANK(%analysisResult:aiSummary%)),%analysisResult:aiSummary%,%AnalyzeProjectApex:aiSummary%)))&quot;,
-    &quot;confidenceScore&quot; : &quot;=IF(NOT(ISBLANK(%confidenceScore%)),%confidenceScore%,IF(NOT(ISBLANK(%initialAiAssessment:confidenceScore%)),%initialAiAssessment:confidenceScore%,IF(NOT(ISBLANK(%analysisResult:confidenceScore%)),%analysisResult:confidenceScore%,%AnalyzeProjectApex:confidenceScore%)))&quot;,
-    &quot;projectPurposeText&quot; : &quot;=IF(NOT(ISBLANK(%Step_ProjectDiscovery:Inp_ProjectDescription%)),%Step_ProjectDiscovery:Inp_ProjectDescription%,IF(NOT(ISBLANK(%initialAiAssessment:projectDescription%)),%initialAiAssessment:projectDescription%,%context:projectDescription%))&quot;,
-    &quot;applicationIntakeContext:initialAiAssessment&quot; : &quot;=IF(NOT(ISBLANK(%initialAiAssessment%)),%initialAiAssessment%,%analysisResult%)&quot;
-  },
-  &quot;disOnTplt&quot; : false,
-  &quot;failureConditionalFormula&quot; : &quot;&quot;,
-  &quot;failOnStepError&quot; : false,
-  &quot;isActive&quot; : true,
-  &quot;chainOnStep&quot; : true
-}</propertySetConfig>
-            <sequenceNumber>0.5</sequenceNumber>
-            <type>Set Values</type>
-        </childElements>
-        <childElements>
-            <childElements>
-                <isActive>true</isActive>
-                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-                <level>2.0</level>
-                <name>Txt_RecommendedFundingTypeBadge</name>
-                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-                <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_RecommendedFundingTypeBadge&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0 auto;\&quot;&gt;&lt;span class=\&quot;slds-badge\&quot; style=\&quot;background:#e9f2ff;color:#194f8b;padding:.35rem .7rem;border-radius:999px;\&quot;&gt;%recommendedFundingTypeItems%&lt;/span&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-                <sequenceNumber>1.0</sequenceNumber>
-                <type>Text Block</type>
-            </childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>recommendedFundingTypeItems</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;collapse&quot; : false,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;hide&quot; : false,
-  &quot;label&quot; : &quot;Recommended Funding Categories&quot;,
-  &quot;repeat&quot; : true,
-  &quot;repeatClone&quot; : false,
-  &quot;repeatLimit&quot; : null,
-  &quot;show&quot; : &quot;=NOT(ISBLANK(%recommendedFundingTypeItems%))&quot;
-}</propertySetConfig>
-            <sequenceNumber>3.0</sequenceNumber>
-            <type>Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_AiOpportunity_1</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_AiOpportunity_1&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.45rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid %fundingOpportunities:0:RelevanceColor%%initialAiAssessment:fundingOpportunities:0:RelevanceColor%;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;h3 style=\&quot;margin:.1rem 0 .2rem;color:#16325C;font-size:1rem;\&quot;&gt;%fundingOpportunities:0:name%%initialAiAssessment:fundingOpportunities:0:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;\&quot;&gt;Open: %fundingOpportunities:0:OpenDate%%initialAiAssessment:fundingOpportunities:0:OpenDate% | Close: %fundingOpportunities:0:CloseDate%%initialAiAssessment:fundingOpportunities:0:CloseDate% | Max Award: $%fundingOpportunities:0:MaxAwardAmount%%initialAiAssessment:fundingOpportunities:0:MaxAwardAmount% | Tier: %fundingOpportunities:0:RelevanceTier%%initialAiAssessment:fundingOpportunities:0:RelevanceTier% | Relevance: &lt;span style=\&quot;display:inline-block;padding:.12rem .45rem;border-radius:999px;background:%fundingOpportunities:0:RelevanceColor%%initialAiAssessment:fundingOpportunities:0:RelevanceColor%;color:#fff;font-size:.72rem;\&quot;&gt;%fundingOpportunities:0:RelevanceLabel%%initialAiAssessment:fundingOpportunities:0:RelevanceLabel% (%fundingOpportunities:0:relevanceScore%%initialAiAssessment:fundingOpportunities:0:relevanceScore%)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.1</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_AiOpportunity_2</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_AiOpportunity_2&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.35rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid %fundingOpportunities:1:RelevanceColor%%initialAiAssessment:fundingOpportunities:1:RelevanceColor%;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;h3 style=\&quot;margin:.1rem 0 .2rem;color:#16325C;font-size:1rem;\&quot;&gt;%fundingOpportunities:1:name%%initialAiAssessment:fundingOpportunities:1:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;\&quot;&gt;Open: %fundingOpportunities:1:OpenDate%%initialAiAssessment:fundingOpportunities:1:OpenDate% | Close: %fundingOpportunities:1:CloseDate%%initialAiAssessment:fundingOpportunities:1:CloseDate% | Max Award: $%fundingOpportunities:1:MaxAwardAmount%%initialAiAssessment:fundingOpportunities:1:MaxAwardAmount% | Tier: %fundingOpportunities:1:RelevanceTier%%initialAiAssessment:fundingOpportunities:1:RelevanceTier% | Relevance: &lt;span style=\&quot;display:inline-block;padding:.12rem .45rem;border-radius:999px;background:%fundingOpportunities:1:RelevanceColor%%initialAiAssessment:fundingOpportunities:1:RelevanceColor%;color:#fff;font-size:.72rem;\&quot;&gt;%fundingOpportunities:1:RelevanceLabel%%initialAiAssessment:fundingOpportunities:1:RelevanceLabel% (%fundingOpportunities:1:relevanceScore%%initialAiAssessment:fundingOpportunities:1:relevanceScore%)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.12</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_AiOpportunity_3</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_AiOpportunity_3&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.35rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid %fundingOpportunities:2:RelevanceColor%;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;h3 style=\&quot;margin:.1rem 0 .2rem;color:#16325C;font-size:1rem;\&quot;&gt;%fundingOpportunities:2:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;\&quot;&gt;Open: %fundingOpportunities:2:OpenDate% | Close: %fundingOpportunities:2:CloseDate% | Max Award: $%fundingOpportunities:2:MaxAwardAmount% | Tier: %fundingOpportunities:2:RelevanceTier% | Relevance: &lt;span style=\&quot;display:inline-block;padding:.12rem .45rem;border-radius:999px;background:%fundingOpportunities:2:RelevanceColor%;color:#fff;font-size:.72rem;\&quot;&gt;%fundingOpportunities:2:RelevanceLabel% (%fundingOpportunities:2:relevanceScore%)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.14</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_AiOpportunity_4</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_AiOpportunity_4&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.35rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid %fundingOpportunities:3:RelevanceColor%;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;h3 style=\&quot;margin:.1rem 0 .2rem;color:#16325C;font-size:1rem;\&quot;&gt;%fundingOpportunities:3:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;\&quot;&gt;Open: %fundingOpportunities:3:OpenDate% | Close: %fundingOpportunities:3:CloseDate% | Max Award: $%fundingOpportunities:3:MaxAwardAmount% | Tier: %fundingOpportunities:3:RelevanceTier% | Relevance: &lt;span style=\&quot;display:inline-block;padding:.12rem .45rem;border-radius:999px;background:%fundingOpportunities:3:RelevanceColor%;color:#fff;font-size:.72rem;\&quot;&gt;%fundingOpportunities:3:RelevanceLabel% (%fundingOpportunities:3:relevanceScore%)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.16</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_AiOpportunity_5</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_AiOpportunity_5&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.35rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid %fundingOpportunities:4:RelevanceColor%;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;h3 style=\&quot;margin:.1rem 0 .2rem;color:#16325C;font-size:1rem;\&quot;&gt;%fundingOpportunities:4:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;\&quot;&gt;Open: %fundingOpportunities:4:OpenDate% | Close: %fundingOpportunities:4:CloseDate% | Max Award: $%fundingOpportunities:4:MaxAwardAmount% | Tier: %fundingOpportunities:4:RelevanceTier% | Relevance: &lt;span style=\&quot;display:inline-block;padding:.12rem .45rem;border-radius:999px;background:%fundingOpportunities:4:RelevanceColor%;color:#fff;font-size:.72rem;\&quot;&gt;%fundingOpportunities:4:RelevanceLabel% (%fundingOpportunities:4:relevanceScore%)&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.18</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_AnalysisResultDebug</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_AnalysisResultDebug&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:.6rem auto 0;padding:.65rem .8rem;border:1px dashed #f59e0b;background:#fff7e6;border-radius:8px;color:#6b4f00;font-size:.78rem;line-height:1.35;\&quot;&gt;&lt;strong&gt;TEMP DEBUG (remove before release)&lt;/strong&gt;&lt;br/&gt;root funding[0].name: %initialAiAssessment:fundingOpportunities:0:name%%fundingOpportunities:0:name%&lt;br/&gt;step aiSuggested[0].name: %aiSuggestedCards:0:name%&lt;br/&gt;step available[0].name: %availableFundingCards:0:name%&lt;br/&gt;initial assessment[0].name: %initialAiAssessment:fundingOpportunities:0:name%&lt;br/&gt;keywords[0]: %keywords:0% | step keywords[0]: %keywordItems:0%&lt;br/&gt;recommendedTypes[0]: %recommendedFundingTypes:0% | step recommendedTypes[0]: %recommendedFundingTypeItems:0%&lt;br/&gt;confidenceScore: %confidenceScore% | aiSummary length check: %aiSummary%&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>5.0</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_BuildStampResults</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_BuildStampResults&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:1rem 0 0;background:transparent;border:0;border-radius:0;padding:0;color:#5f7293;font-size:0.76rem;font-weight:500;letter-spacing:0;line-height:1.2;font-family:Arial,Helvetica,sans-serif;box-shadow:none;text-align:right;white-space:normal;\&quot;&gt;Build GSC-INTAKE-B1034 | Updated 2026-03-16 21:52 ET&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.5</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_FundingFinderSummary</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_FundingFinderSummary&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : null,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:1rem auto 0.6rem;background:#fff;border:1px solid #DDE7F6;border-radius:12px;padding:1rem;\&quot;&gt;&lt;h2 style=\&quot;margin:0 0 .35rem;color:#16325C;\&quot;&gt;Powered by Einstein AI&lt;/h2&gt;&lt;p style=\&quot;margin:.2rem 0 .55rem;color:#33415C;\&quot;&gt;Project Purpose: %Step_ProjectDiscovery:Inp_ProjectDescription%&lt;/p&gt;&lt;p style=\&quot;margin:.2rem 0 .55rem;color:#33415C;\&quot;&gt;AI Summary: %aiSummary%&lt;/p&gt;&lt;p style=\&quot;margin:.2rem 0;color:#33415C;\&quot;&gt;Confidence: %confidenceScore%&lt;/p&gt;&lt;/div&gt;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:.6rem auto 0;color:#16325C;font-size:1.02rem;font-weight:700;\&quot;&gt;Einstein Suggested Opportunities&lt;/div&gt;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:.2rem auto 0;color:#16325C;font-size:1.02rem;font-weight:700;\&quot;&gt;All Available Funding Opportunities&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.0</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_ResultProbe</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_ResultProbe&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:.4rem 0 .2rem;padding:.45rem .6rem;border:1px dashed #A1B8DE;background:#F8FBFF;border-radius:6px;color:#36527A;font-size:.74rem;\&quot;&gt;Probe - funding[0] root: %fundingOpportunities:0:name% | initial: %initialAiAssessment:fundingOpportunities:0:name% | mapped: %aiSuggestedCards:0:name%&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.05</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_SingleAiOpportunityFallback</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_SingleAiOpportunityFallback&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.45rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid #1E8449;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;div style=\&quot;font-size:.76rem;font-weight:700;color:#0176D3;text-transform:uppercase;\&quot;&gt;Einstein Suggested&lt;/div&gt;&lt;h3 style=\&quot;margin:.15rem 0 .25rem;color:#16325C;font-size:1rem;\&quot;&gt;%initialAiAssessment:fundingOpportunities:0:name%%initialAiAssessment:fundingOpportunities:name%%initialAiAssessment:fundingOpportunities:0:name%%fundingOpportunities:0:name%%fundingOpportunities:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;\&quot;&gt;Open: %initialAiAssessment:fundingOpportunities:0:OpenDate%%initialAiAssessment:fundingOpportunities:OpenDate%%initialAiAssessment:fundingOpportunities:0:OpenDate%%fundingOpportunities:0:OpenDate%%fundingOpportunities:OpenDate% | Close: %initialAiAssessment:fundingOpportunities:0:CloseDate%%initialAiAssessment:fundingOpportunities:CloseDate%%initialAiAssessment:fundingOpportunities:0:CloseDate%%fundingOpportunities:0:CloseDate%%fundingOpportunities:CloseDate% | Max Award: $%initialAiAssessment:fundingOpportunities:0:MaxAwardAmount%%initialAiAssessment:fundingOpportunities:MaxAwardAmount%%initialAiAssessment:fundingOpportunities:0:MaxAwardAmount%%fundingOpportunities:0:MaxAwardAmount%%fundingOpportunities:MaxAwardAmount%&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>2.2</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_SingleAvailableOpportunityFallback</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_SingleAvailableOpportunityFallback&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.35rem auto 0;padding:.75rem .9rem;border:1px solid #E2E8F4;background:#FFFFFF;border-radius:10px;color:#2f4568;\&quot;&gt;&lt;h3 style=\&quot;margin:0 0 .25rem;color:#16325C;font-size:.98rem;\&quot;&gt;%availableFundingOpportunities:0:name%%availableFundingOpportunities:name%%initialAiAssessment:fundingOpportunities:0:name%%fundingOpportunities:0:name%%fundingOpportunities:name%%initialAiAssessment:fundingOpportunities:0:name%%initialAiAssessment:fundingOpportunities:name%&lt;/h3&gt;&lt;div style=\&quot;color:#4B5E82;font-size:.82rem;\&quot;&gt;Open: %availableFundingOpportunities:0:OpenDate%%availableFundingOpportunities:OpenDate%%initialAiAssessment:fundingOpportunities:0:OpenDate%%fundingOpportunities:0:OpenDate%%fundingOpportunities:OpenDate%%initialAiAssessment:fundingOpportunities:0:OpenDate%%initialAiAssessment:fundingOpportunities:OpenDate% | Close: %availableFundingOpportunities:0:CloseDate%%availableFundingOpportunities:CloseDate%%initialAiAssessment:fundingOpportunities:0:CloseDate%%fundingOpportunities:0:CloseDate%%fundingOpportunities:CloseDate%%initialAiAssessment:fundingOpportunities:0:CloseDate%%initialAiAssessment:fundingOpportunities:CloseDate% | Max Award: $%availableFundingOpportunities:0:MaxAwardAmount%%availableFundingOpportunities:MaxAwardAmount%%initialAiAssessment:fundingOpportunities:0:MaxAwardAmount%%fundingOpportunities:0:MaxAwardAmount%%fundingOpportunities:MaxAwardAmount%%initialAiAssessment:fundingOpportunities:0:MaxAwardAmount%%initialAiAssessment:fundingOpportunities:MaxAwardAmount%&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>2.6</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <level>0.0</level>
+    <name>Step_ProjectDiscovery</name>
+    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+    <propertySetConfig>{"HTMLTemplateId":"","allowSaveForLater":false,"businessCategory":"","businessEvent":"","cancelLabel":"Cancel","cancelMessage":"Are you sure?","chartLabel":"Project Discovery","completeLabel":"Complete","completeMessage":"Are you sure you want to complete the script?","conditionType":"Hide if False","errorMessage":{"custom":[],"default":null},"instruction":"","instructionKey":"","knowledgeOptions":{"dataCategoryCriteria":"","keyword":"","language":"English","publishStatus":"Online","remoteTimeout":30000,"typeFilter":""},"label":"Project Discovery","message":{},"nextLabel":"Next","nextWidth":3,"previousLabel":"Previous","previousWidth":3,"pubsub":false,"remoteClass":"","remoteMethod":"","remoteOptions":{},"remoteTimeout":30000,"saveLabel":"Save for later","saveMessage":"Are you sure you want to save it for later?","show":null,"showPersistentComponent":[true,false],"ssm":false,"validationRequired":true,"wpm":false}</propertySetConfig>
+    <sequenceNumber>1.0</sequenceNumber>
+    <type>Step</type>
+  </omniProcessElements>
+  <omniProcessElements>
+    <isActive>true</isActive>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <level>0.0</level>
+    <name>AnalyzeProject</name>
+    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+    <propertySetConfig>{"HTMLTemplateId":"","businessCategory":"","businessEvent":"","controlWidth":12,"enableActionMessage":true,"enableDefaultAbort":false,"errorMessage":{"custom":[],"default":null},"extraPayload":{"keyword":"%Step_ProjectDiscovery:Project_Description__c%"},"failureAbortLabel":"Abort","failureAbortMessage":"Are you sure?","failureGoBackLabel":"Go Back","failureNextLabel":"Continue","inProgressMessage":"Finding matching funding opportunities...","integrationProcedureKey":"Data_FundingOpportunitySearch","invokeMode":"Default","label":"AnalyzeProject","message":{},"postMessage":"","postTransformBundle":"","preTransformBundle":"","pubsub":false,"redirectNextLabel":"","redirectNextWidth":0,"redirectPageName":"","redirectPreviousLabel":"","redirectPreviousWidth":0,"redirectTemplateUrl":"","remoteOptions":{"chainable":false,"postTransformBundle":"","preTransformBundle":"","useFuture":false},"remoteTimeout":30000,"responseJSONNode":"Step_FundingFinder:FundingResults","responseJSONPath":"IPResult:DataMapperExtract","sendJSONNode":"","sendJSONPath":"","sendOnlyExtraPayload":true,"show":null,"showPersistentComponent":[true,false],"ssm":false,"svgIcon":"","svgSprite":"","useContinuation":false,"validationRequired":"Submit","wpm":false,"chainOnStep":false,"executionConditionalFormula":""}</propertySetConfig>
+    <sequenceNumber>1.5</sequenceNumber>
+    <type>Integration Procedure Action</type>
+  </omniProcessElements>
+  <omniProcessElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Txt_ResultsHeader</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","controlWidth":12,"dataJSON":false,"label":"Txt_ResultsHeader","sanitize":false,"show":null,"text":"Recommended Funding Opportunities","textKey":""}</propertySetConfig>
+      <sequenceNumber>1.0</sequenceNumber>
+      <type>Text Block</type>
+    </childElements>
+    
+    <childElements>
+      <childElements>
         <isActive>true</isActive>
         <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-        <level>0.0</level>
-        <name>Step_FundingFinder</name>
+        <level>2.0</level>
+        <name>Txt_FundingCard</name>
         <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-        <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;allowSaveForLater&quot; : false,
-  &quot;businessCategory&quot; : &quot;&quot;,
-  &quot;businessEvent&quot; : &quot;&quot;,
-  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
-  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
-  &quot;chartLabel&quot; : &quot;AI Funding Analysis&quot;,
-  &quot;completeLabel&quot; : &quot;Complete&quot;,
-  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;errorMessage&quot; : {
-    &quot;custom&quot; : [ ],
-    &quot;default&quot; : null
-  },
-  &quot;instruction&quot; : &quot;&quot;,
-  &quot;instructionKey&quot; : &quot;&quot;,
-  &quot;knowledgeOptions&quot; : {
-    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
-    &quot;keyword&quot; : &quot;&quot;,
-    &quot;language&quot; : &quot;English&quot;,
-    &quot;publishStatus&quot; : &quot;Online&quot;,
-    &quot;remoteTimeout&quot; : 30000,
-    &quot;typeFilter&quot; : &quot;&quot;
-  },
-  &quot;label&quot; : &quot;AI Funding Analysis&quot;,
-  &quot;message&quot; : { },
-  &quot;nextLabel&quot; : &quot;Start Application Intake&quot;,
-  &quot;nextWidth&quot; : 3,
-  &quot;previousLabel&quot; : &quot;Previous&quot;,
-  &quot;previousWidth&quot; : 3,
-  &quot;pubsub&quot; : false,
-  &quot;remoteClass&quot; : &quot;&quot;,
-  &quot;remoteMethod&quot; : &quot;&quot;,
-  &quot;remoteOptions&quot; : { },
-  &quot;remoteTimeout&quot; : 30000,
-  &quot;saveLabel&quot; : &quot;Save for later&quot;,
-  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
-  &quot;show&quot; : null,
-  &quot;showPersistentComponent&quot; : [ true, false ],
-  &quot;ssm&quot; : false,
-  &quot;validationRequired&quot; : true,
-  &quot;wpm&quot; : false
-}</propertySetConfig>
-        <sequenceNumber>2.0</sequenceNumber>
-        <type>Step</type>
-    </omniProcessElements>
-    <omniProcessElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Inp_ApplicantEmail</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;disOnTplt&quot; : false,
-  &quot;hide&quot; : false,
-  &quot;inputWidth&quot; : 12,
-  &quot;label&quot; : &quot;Applicant Email&quot;,
-  &quot;maxLength&quot; : 120,
-  &quot;minLength&quot; : 0,
-  &quot;placeholder&quot; : &quot;name@organization.org&quot;,
-  &quot;readOnly&quot; : false,
-  &quot;required&quot; : true,
-  &quot;show&quot; : null,
-  &quot;showInputWidth&quot; : false
-}</propertySetConfig>
-            <sequenceNumber>4.0</sequenceNumber>
-            <type>Email</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Inp_ApplicantFullName</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;disOnTplt&quot; : false,
-  &quot;hide&quot; : false,
-  &quot;inputWidth&quot; : 12,
-  &quot;label&quot; : &quot;Applicant Full Name&quot;,
-  &quot;maxLength&quot; : 120,
-  &quot;minLength&quot; : 0,
-  &quot;placeholder&quot; : &quot;Enter applicant full name&quot;,
-  &quot;readOnly&quot; : false,
-  &quot;required&quot; : true,
-  &quot;show&quot; : null,
-  &quot;showInputWidth&quot; : false
-}</propertySetConfig>
-            <sequenceNumber>3.0</sequenceNumber>
-            <type>Text</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Inp_OrganizationName</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;disOnTplt&quot; : false,
-  &quot;hide&quot; : false,
-  &quot;inputWidth&quot; : 12,
-  &quot;label&quot; : &quot;Organization Name&quot;,
-  &quot;maxLength&quot; : 160,
-  &quot;minLength&quot; : 0,
-  &quot;placeholder&quot; : &quot;Enter organization or agency name&quot;,
-  &quot;readOnly&quot; : false,
-  &quot;required&quot; : true,
-  &quot;show&quot; : null,
-  &quot;showInputWidth&quot; : false
-}</propertySetConfig>
-            <sequenceNumber>5.0</sequenceNumber>
-            <type>Text</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Inp_UseOfFunds</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;defaultValue&quot; : null,
-  &quot;disOnTplt&quot; : false,
-  &quot;hide&quot; : false,
-  &quot;inputWidth&quot; : 12,
-  &quot;label&quot; : &quot;How will you use the requested funds?&quot;,
-  &quot;maxLength&quot; : 4000,
-  &quot;minLength&quot; : 0,
-  &quot;placeholder&quot; : &quot;Describe planned fund usage, timeline, and expected outcomes.&quot;,
-  &quot;readOnly&quot; : false,
-  &quot;required&quot; : true,
-  &quot;rows&quot; : 8,
-  &quot;show&quot; : null,
-  &quot;showInputWidth&quot; : false
-}</propertySetConfig>
-            <sequenceNumber>6.0</sequenceNumber>
-            <type>Text Area</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>PrepareSelectedFundingForApplication</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;responseJSONPath&quot; : &quot;&quot;,
-  &quot;responseJSONNode&quot; : &quot;&quot;,
-  &quot;executionConditionalFormula&quot; : &quot;&quot;,
-  &quot;actionMessage&quot; : &quot;&quot;,
-  &quot;elementValueMap&quot; : {
-    &quot;selectedFundingCards&quot; : &quot;=%Step_FundingFinder:resultFundingList%&quot;
-  },
-  &quot;disOnTplt&quot; : false,
-  &quot;failureConditionalFormula&quot; : &quot;&quot;,
-  &quot;failOnStepError&quot; : false,
-  &quot;isActive&quot; : true,
-  &quot;chainOnStep&quot; : false
-}</propertySetConfig>
-            <sequenceNumber>0.5</sequenceNumber>
-            <type>Set Values</type>
-        </childElements>
-        <childElements>
-            <childElements>
-                <isActive>true</isActive>
-                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-                <level>2.0</level>
-                <name>Txt_SelectedFundingCard</name>
-                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-                <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_SelectedFundingCard&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;=OR(%selectedFundingCards:isSelected%=true,%selectedFundingCards:isSelectedAvailable%=true)&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:min(980px,94vw);margin:.3rem auto;padding:.65rem .85rem;border:1px solid #dbe6f7;background:#f6faff;border-radius:10px;\&quot;&gt;&lt;strong style=\&quot;color:#173f69;\&quot;&gt;%selectedFundingCards:name%&lt;/strong&gt; &lt;span style=\&quot;color:#5b6f8f;font-size:.84rem;\&quot;&gt;| Close: %selectedFundingCards:CloseDate%&lt;/span&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-                <sequenceNumber>1.0</sequenceNumber>
-                <type>Text Block</type>
-            </childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>selectedFundingCards</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;collapse&quot; : false,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;hide&quot; : false,
-  &quot;label&quot; : &quot;Selected Funding Programs&quot;,
-  &quot;repeat&quot; : true,
-  &quot;repeatClone&quot; : false,
-  &quot;repeatLimit&quot; : null,
-  &quot;show&quot; : &quot;=NOT(ISBLANK(%selectedFundingCards%))&quot;
-}</propertySetConfig>
-            <sequenceNumber>2.0</sequenceNumber>
-            <type>Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_ApplicationIntakeIntro</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_ApplicationIntakeIntro&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : null,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:min(980px,94vw);margin:0 auto 0.75rem;background:#fff;border:1px solid #dbe6f7;border-radius:12px;padding:1rem;color:#1E2A4A;\&quot;&gt;&lt;h2 style=\&quot;margin:0 0 .5rem;\&quot;&gt;Grant Application Intake&lt;/h2&gt;&lt;p style=\&quot;margin:0;color:#3f5170;line-height:1.5;\&quot;&gt;Complete this intake for the funding programs you selected. Your AI assessment and project purpose are already attached for reviewer context.&lt;/p&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.0</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <isActive>true</isActive>
-        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-        <level>0.0</level>
-        <name>Step_GrantApplicationIntake</name>
-        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-        <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;allowSaveForLater&quot; : false,
-  &quot;businessCategory&quot; : &quot;&quot;,
-  &quot;businessEvent&quot; : &quot;&quot;,
-  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
-  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
-  &quot;chartLabel&quot; : &quot;Grant Application Intake&quot;,
-  &quot;completeLabel&quot; : &quot;Submit Intake&quot;,
-  &quot;completeMessage&quot; : &quot;Submit this application intake?&quot;,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;errorMessage&quot; : {
-    &quot;custom&quot; : [ ],
-    &quot;default&quot; : null
-  },
-  &quot;instruction&quot; : &quot;&quot;,
-  &quot;instructionKey&quot; : &quot;&quot;,
-  &quot;knowledgeOptions&quot; : {
-    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
-    &quot;keyword&quot; : &quot;&quot;,
-    &quot;language&quot; : &quot;English&quot;,
-    &quot;publishStatus&quot; : &quot;Online&quot;,
-    &quot;remoteTimeout&quot; : 30000,
-    &quot;typeFilter&quot; : &quot;&quot;
-  },
-  &quot;label&quot; : &quot;Grant Application Intake&quot;,
-  &quot;message&quot; : { },
-  &quot;nextLabel&quot; : &quot;Next&quot;,
-  &quot;nextWidth&quot; : 3,
-  &quot;previousLabel&quot; : &quot;Previous&quot;,
-  &quot;previousWidth&quot; : 3,
-  &quot;pubsub&quot; : false,
-  &quot;remoteClass&quot; : &quot;&quot;,
-  &quot;remoteMethod&quot; : &quot;&quot;,
-  &quot;remoteOptions&quot; : { },
-  &quot;remoteTimeout&quot; : 30000,
-  &quot;saveLabel&quot; : &quot;Save for later&quot;,
-  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
-  &quot;show&quot; : null,
-  &quot;showPersistentComponent&quot; : [ true, false ],
-  &quot;ssm&quot; : false,
-  &quot;validationRequired&quot; : true,
-  &quot;wpm&quot; : false
-}</propertySetConfig>
-        <sequenceNumber>3.0</sequenceNumber>
-        <type>Step</type>
-    </omniProcessElements>
-    <omniProcessElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>AnalyzeProject</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;businessCategory&quot; : &quot;&quot;,
-  &quot;businessEvent&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;enableActionMessage&quot; : true,
-  &quot;enableDefaultAbort&quot; : false,
-  &quot;errorMessage&quot; : {
-    &quot;custom&quot; : [ ],
-    &quot;default&quot; : null
-  },
-  &quot;extraPayload&quot; : {
-    &quot;context&quot; : {
-      &quot;projectDescription&quot; : &quot;%Inp_ProjectDescription%&quot;
-    }
-  },
-  &quot;failureAbortLabel&quot; : &quot;Abort&quot;,
-  &quot;failureAbortMessage&quot; : &quot;Are you sure?&quot;,
-  &quot;failureGoBackLabel&quot; : &quot;Go Back&quot;,
-  &quot;failureNextLabel&quot; : &quot;Continue&quot;,
-  &quot;inProgressMessage&quot; : &quot;Einstein is analyzing your project...&quot;,
-  &quot;integrationProcedureKey&quot; : &quot;GrantIntake_AnalyzeProjectV3&quot;,
-  &quot;label&quot; : &quot;Next&quot;,
-  &quot;message&quot; : { },
-  &quot;postMessage&quot; : &quot;&quot;,
-  &quot;postTransformBundle&quot; : &quot;&quot;,
-  &quot;preTransformBundle&quot; : &quot;&quot;,
-  &quot;pubsub&quot; : false,
-  &quot;redirectNextLabel&quot; : &quot;&quot;,
-  &quot;redirectNextWidth&quot; : 0,
-  &quot;redirectPageName&quot; : &quot;Step_FundingFinder&quot;,
-  &quot;redirectPreviousLabel&quot; : &quot;&quot;,
-  &quot;redirectPreviousWidth&quot; : 0,
-  &quot;redirectTemplateUrl&quot; : &quot;&quot;,
-  &quot;remoteOptions&quot; : {
-    &quot;chainable&quot; : false,
-    &quot;postTransformBundle&quot; : &quot;&quot;,
-    &quot;preTransformBundle&quot; : &quot;&quot;,
-    &quot;useFuture&quot; : false
-  },
-  &quot;remoteTimeout&quot; : 30000,
-  &quot;responseJSONNode&quot; : &quot;&quot;,
-  &quot;responseJSONPath&quot; : &quot;&quot;,
-  &quot;sendJSONNode&quot; : &quot;&quot;,
-  &quot;sendJSONPath&quot; : &quot;&quot;,
-  &quot;sendOnlyExtraPayload&quot; : true,
-  &quot;show&quot; : null,
-  &quot;showPersistentComponent&quot; : [ true, false ],
-  &quot;ssm&quot; : false,
-  &quot;svgIcon&quot; : &quot;einstein&quot;,
-  &quot;svgSprite&quot; : &quot;utility&quot;,
-  &quot;useContinuation&quot; : false,
-  &quot;validationRequired&quot; : &quot;Submit&quot;,
-  &quot;wpm&quot; : false
-}</propertySetConfig>
-            <sequenceNumber>3.0</sequenceNumber>
-            <type>Integration Procedure Action</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Inp_ProjectDescription</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;accessibleInFutureSteps&quot; : true,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;debounceValue&quot; : 0,
-  &quot;defaultValue&quot; : null,
-  &quot;disOnTplt&quot; : false,
-  &quot;help&quot; : false,
-  &quot;helpText&quot; : &quot;&quot;,
-  &quot;hide&quot; : false,
-  &quot;inputWidth&quot; : 12,
-  &quot;label&quot; : &quot;Describe your project&quot;,
-  &quot;maxLength&quot; : 5000,
-  &quot;minLength&quot; : 0,
-  &quot;pattern&quot; : &quot;&quot;,
-  &quot;placeholder&quot; : &quot;Explain your project goals, the community impact, and what type of funding you are seeking.&quot;,
-  &quot;ptrnErrText&quot; : &quot;&quot;,
-  &quot;readOnly&quot; : false,
-  &quot;repeat&quot; : false,
-  &quot;repeatClone&quot; : false,
-  &quot;repeatLimit&quot; : null,
-  &quot;required&quot; : true,
-  &quot;rows&quot; : 14,
-  &quot;show&quot; : null,
-  &quot;showInputWidth&quot; : false
-}</propertySetConfig>
-            <sequenceNumber>2.0</sequenceNumber>
-            <type>Text Area</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_AnalyzeError</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_AnalyzeError&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;=AND(%context:analysisSuccess%=false,NOT(ISBLANK(%context:analysisErrorMessage%)))&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:0.5rem auto 0;color:#A61E24;font-weight:600;\&quot;&gt;%context:analysisErrorMessage%&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>4.0</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_BuildStampDiscovery</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_BuildStampDiscovery&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : null,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:1rem 0 0;background:transparent;border:0;border-radius:0;padding:0;color:#5f7293;font-size:0.76rem;font-weight:500;letter-spacing:0;line-height:1.2;font-family:Arial,Helvetica,sans-serif;box-shadow:none;text-align:right;white-space:normal;\&quot;&gt;Build GSC-INTAKE-B1032 | Updated 2026-03-16 21:56 ET&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.1</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_DiscoveryDebug</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_DiscoveryDebug&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : &quot;false&quot;,
-  &quot;text&quot; : &quot;&lt;div style=\&quot;width:100%;max-width:100%;box-sizing:border-box;margin:.45rem auto 0;padding:.6rem .75rem;border:1px dashed #f59e0b;background:#fff7e6;border-radius:8px;color:#6b4f00;font-size:.78rem;line-height:1.35;\&quot;&gt;&lt;strong&gt;TEMP DEBUG (Discovery)&lt;/strong&gt;&lt;br/&gt;Inp_ProjectDescription: %Inp_ProjectDescription%&lt;br/&gt;root funding[0].id: %fundingOpportunities:0:id%&lt;br/&gt;root funding[0].name: %initialAiAssessment:fundingOpportunities:0:name%%fundingOpportunities:0:name%&lt;br/&gt;initial assessment funding[0].id: %initialAiAssessment:fundingOpportunities:0:id%&lt;br/&gt;analysisSuccess: %analysisSuccess% | analysisErrorMessage: %analysisErrorMessage%&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>4.1</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <childElements>
-            <isActive>true</isActive>
-            <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-            <level>1.0</level>
-            <name>Txt_ProjectDiscoveryIntro</name>
-            <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-            <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;controlWidth&quot; : 12,
-  &quot;dataJSON&quot; : false,
-  &quot;label&quot; : &quot;Txt_ProjectDiscoveryIntro&quot;,
-  &quot;sanitize&quot; : false,
-  &quot;show&quot; : null,
-  &quot;text&quot; : &quot;&lt;style&gt;.gs-theme{--gs-grad:linear-gradient(135deg,#6FA8FF 0%,#7C5CFF 50%,#9B6CFF 100%);--gs-card-bg:#ffffff;--gs-radius:16px;--gs-shadow:0 10px 30px rgba(0,0,0,0.08);}.gs-container{max-width:780px;margin:0 auto;padding:20px;}.gs-card{background:var(--gs-card-bg);border-radius:var(--gs-radius);box-shadow:var(--gs-shadow);padding:24px;}.gs-textarea{border-radius:12px;padding:16px;width:100%;}.gs-button-primary{background:var(--gs-grad);color:#ffffff;border-radius:10px;}.gs-fullscreen-bg{position:fixed;inset:0;z-index:-1;background:#eef3ff;}.gs-theme .gs-discovery-shell{display:flex;align-items:center;justify-content:center;padding:.75rem 1rem 0;}.gs-theme .gs-discovery-card{text-align:center;animation:gsFadeUp .4s ease-out both;}@keyframes gsFadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.gs-theme .gs-discovery-title{margin:0;color:#1E2A4A;font-size:2rem;line-height:1.18;font-weight:700;letter-spacing:-.01em;}.gs-theme .gs-discovery-subtitle{margin:.7rem auto 0;color:#526584;font-size:1rem;line-height:1.55;max-width:680px;}.gs-theme .slds-form-element{width:min(780px,92vw)!important;margin:.7rem auto 1rem!important;}.gs-theme .slds-form-element__label{font-size:1rem!important;font-weight:700!important;color:#2a3760!important;margin:.2rem 0 .55rem!important;}.gs-theme .slds-card{background:var(--gs-card-bg)!important;border-radius:var(--gs-radius)!important;box-shadow:var(--gs-shadow)!important;}.gs-theme .slds-textarea{border-radius:12px!important;padding:16px!important;width:100%!important;min-height:260px!important;border:1px solid #d3d8ea!important;background:#ffffff!important;box-shadow:0 6px 18px rgba(27,45,94,.08)!important;font-size:1rem!important;line-height:1.55!important;}.gs-theme .slds-textarea::placeholder{color:#74839f!important;}.gs-theme .slds-textarea:focus{border-color:#7C5CFF!important;box-shadow:0 0 0 3px rgba(124,92,255,.18)!important;}.gs-theme .slds-button,.gs-theme .slds-button_brand{border-radius:10px!important;}.gs-theme .slds-button_brand{background:#0176D3!important;color:#ffffff!important;border:0!important;box-shadow:0 8px 20px rgba(1,118,211,.28)!important;}.gs-theme button.slds-button_brand{display:block!important;width:min(780px,92vw)!important;min-height:56px!important;margin:1rem auto 0!important;padding:0 1.4rem!important;font-size:1.02rem!important;font-weight:700!important;}@media (max-width:820px){.gs-theme .gs-discovery-shell{padding:.35rem .6rem 0;}.gs-theme .gs-discovery-title{font-size:1.55rem;}.gs-theme .gs-discovery-subtitle{font-size:.95rem;}.gs-theme .slds-textarea{min-height:220px!important;}.gs-container{padding:14px;}.gs-card{padding:16px;}}&lt;/style&gt;&lt;div class=\&quot;gs-fullscreen-bg\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;gs-theme gs-discovery-shell\&quot;&gt;&lt;div class=\&quot;slds-card gs-container gs-card gs-discovery-card\&quot;&gt;&lt;h1 class=\&quot;gs-discovery-title slds-m-bottom_small\&quot;&gt;AI-Powered Grant Discovery&lt;/h1&gt;&lt;p class=\&quot;gs-discovery-subtitle slds-m-top_x-small slds-m-bottom_small\&quot;&gt;Describe your project and we&apos;ll recommend the best funding opportunities.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&quot;,
-  &quot;textKey&quot; : &quot;&quot;
-}</propertySetConfig>
-            <sequenceNumber>1.0</sequenceNumber>
-            <type>Text Block</type>
-        </childElements>
-        <isActive>true</isActive>
-        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
-        <level>0.0</level>
-        <name>Step_ProjectDiscovery</name>
-        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
-        <propertySetConfig>{
-  &quot;HTMLTemplateId&quot; : &quot;&quot;,
-  &quot;allowSaveForLater&quot; : false,
-  &quot;businessCategory&quot; : &quot;&quot;,
-  &quot;businessEvent&quot; : &quot;&quot;,
-  &quot;cancelLabel&quot; : &quot;Cancel&quot;,
-  &quot;cancelMessage&quot; : &quot;Are you sure?&quot;,
-  &quot;chartLabel&quot; : &quot;Project Discovery&quot;,
-  &quot;completeLabel&quot; : &quot;Complete&quot;,
-  &quot;completeMessage&quot; : &quot;Are you sure you want to complete the script?&quot;,
-  &quot;conditionType&quot; : &quot;Hide if False&quot;,
-  &quot;errorMessage&quot; : {
-    &quot;custom&quot; : [ ],
-    &quot;default&quot; : null
-  },
-  &quot;instruction&quot; : &quot;&quot;,
-  &quot;instructionKey&quot; : &quot;&quot;,
-  &quot;knowledgeOptions&quot; : {
-    &quot;dataCategoryCriteria&quot; : &quot;&quot;,
-    &quot;keyword&quot; : &quot;&quot;,
-    &quot;language&quot; : &quot;English&quot;,
-    &quot;publishStatus&quot; : &quot;Online&quot;,
-    &quot;remoteTimeout&quot; : 30000,
-    &quot;typeFilter&quot; : &quot;&quot;
-  },
-  &quot;label&quot; : &quot;Project Discovery&quot;,
-  &quot;message&quot; : { },
-  &quot;nextLabel&quot; : &quot;&quot;,
-  &quot;nextWidth&quot; : 3,
-  &quot;previousLabel&quot; : &quot;Previous&quot;,
-  &quot;previousWidth&quot; : 3,
-  &quot;pubsub&quot; : false,
-  &quot;remoteClass&quot; : &quot;&quot;,
-  &quot;remoteMethod&quot; : &quot;&quot;,
-  &quot;remoteOptions&quot; : { },
-  &quot;remoteTimeout&quot; : 30000,
-  &quot;saveLabel&quot; : &quot;Save for later&quot;,
-  &quot;saveMessage&quot; : &quot;Are you sure you want to save it for later?&quot;,
-  &quot;show&quot; : null,
-  &quot;showPersistentComponent&quot; : [ true, false ],
-  &quot;ssm&quot; : false,
-  &quot;validationRequired&quot; : true,
-  &quot;wpm&quot; : false
-}</propertySetConfig>
+        <propertySetConfig>{"HTMLTemplateId":"","controlWidth":12,"dataJSON":false,"label":"Txt_FundingCard","sanitize":false,"show":"=NOT(ISBLANK(%Name%))","text":"&lt;div style=\"background:#FFFFFF;border:1px solid #E6EAF0;border-radius:12px;padding:16px;margin-bottom:12px;\"&gt;&lt;div style=\"font-weight:700;color:#1E2A4A;margin-bottom:8px;\"&gt;%Name%&lt;/div&gt;&lt;div style=\"color:#33415C;\"&gt;%Description%&lt;/div&gt;&lt;/div&gt;","textKey":""}</propertySetConfig>
         <sequenceNumber>1.0</sequenceNumber>
-        <type>Step</type>
-    </omniProcessElements>
-    <omniProcessType>OmniScript</omniProcessType>
-    <propertySetConfig>{&quot;allowCancel&quot;:true,&quot;allowSaveForLater&quot;:false,&quot;autoFocus&quot;:false,&quot;autoSaveOnStepNext&quot;:false,&quot;bLK&quot;:false,&quot;cancelRedirectPageName&quot;:&quot;OmniScriptCancelled&quot;,&quot;cancelRedirectTemplateUrl&quot;:&quot;vlcCancelled.html&quot;,&quot;cancelSource&quot;:&quot;%ContextId%&quot;,&quot;cancelType&quot;:&quot;SObject&quot;,&quot;consoleTabIcon&quot;:&quot;custom:custom18&quot;,&quot;consoleTabLabel&quot;:&quot;New&quot;,&quot;consoleTabTitle&quot;:null,&quot;currencyCode&quot;:&quot;&quot;,&quot;currentLanguage&quot;:&quot;en_US&quot;,&quot;disableUnloadWarn&quot;:true,&quot;elementTypeToHTMLTemplateMapping&quot;:{},&quot;enableKnowledge&quot;:false,&quot;errorMessage&quot;:{&quot;custom&quot;:[]},&quot;hideStepChart&quot;:true,&quot;knowledgeArticleTypeQueryFieldsMap&quot;:{},&quot;lkObjName&quot;:null,&quot;mergeSavedData&quot;:false,&quot;message&quot;:{},&quot;persistentComponent&quot;:[{&quot;id&quot;:&quot;vlcCart&quot;,&quot;itemsKey&quot;:&quot;cartItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;ModalProductCtrl&quot;,&quot;modalHTMLTemplateId&quot;:&quot;vlcProductConfig.html&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false,&quot;responseJSONNode&quot;:&quot;&quot;,&quot;responseJSONPath&quot;:&quot;&quot;,&quot;sendJSONNode&quot;:&quot;&quot;,&quot;sendJSONPath&quot;:&quot;&quot;},{&quot;dispOutsideOmni&quot;:false,&quot;id&quot;:&quot;vlcKnowledge&quot;,&quot;itemsKey&quot;:&quot;knowledgeItems&quot;,&quot;label&quot;:&quot;&quot;,&quot;modalConfigurationSetting&quot;:{&quot;modalController&quot;:&quot;&quot;,&quot;modalHTMLTemplateId&quot;:&quot;&quot;,&quot;modalSize&quot;:&quot;lg&quot;},&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;,&quot;remoteClass&quot;:&quot;&quot;,&quot;remoteMethod&quot;:&quot;&quot;,&quot;remoteOptions&quot;:{&quot;postTransformBundle&quot;:&quot;&quot;,&quot;preTransformBundle&quot;:&quot;&quot;},&quot;remoteTimeout&quot;:30000,&quot;render&quot;:false}],&quot;pubsub&quot;:false,&quot;rtpSeed&quot;:false,&quot;saveContentEncoded&quot;:false,&quot;saveExpireInDays&quot;:null,&quot;saveForLaterRedirectPageName&quot;:&quot;sflRedirect&quot;,&quot;saveForLaterRedirectTemplateUrl&quot;:&quot;vlcSaveForLaterAcknowledge.html&quot;,&quot;saveNameTemplate&quot;:null,&quot;saveObjectId&quot;:&quot;%ContextId%&quot;,&quot;saveURLPatterns&quot;:{},&quot;scrollBehavior&quot;:&quot;auto&quot;,&quot;seedDataJSON&quot;:{},&quot;showInputWidth&quot;:false,&quot;ssm&quot;:false,&quot;stepChartPlacement&quot;:&quot;right&quot;,&quot;stylesheet&quot;:{&quot;lightning&quot;:&quot;&quot;,&quot;lightningRtl&quot;:&quot;&quot;,&quot;newport&quot;:&quot;&quot;,&quot;newportRtl&quot;:&quot;&quot;},&quot;timeTracking&quot;:false,&quot;trackingCustomData&quot;:{},&quot;visualforcePagesAvailableInPreview&quot;:{},&quot;wpm&quot;:false}</propertySetConfig>
-    <subType>MVP</subType>
-    <type>GrantIntake</type>
-    <uniqueName>GrantIntake_MVP_English_2</uniqueName>
-    <versionNumber>2.0</versionNumber>
-    <webComponentKey>b9555379-25f6-4d7d-8b88-a46e8a423ec6</webComponentKey>
+        <type>Text Block</type>
+      </childElements>
+      <childElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>2.0</level>
+        <name>selectedFundingId</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{"label":"Use this funding opportunity","value":"%Id%","required":true,"show":"=NOT(ISBLANK(%Id%))"}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Radio</type>
+      </childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>FundingResults</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","accessibleInFutureSteps":true,"collapse":false,"conditionType":"Hide if False","controlWidth":12,"hide":false,"label":"Recommended Matches","repeat":true,"repeatClone":false,"repeatLimit":null,"repeatSource":"","show":"=OR(NOT(ISBLANK(%FundingResults:0:Id%)),NOT(ISBLANK(%FundingResults:Id%)))"}</propertySetConfig>
+      <sequenceNumber>2.0</sequenceNumber>
+      <type>Block</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Txt_SingleFundingCard</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","controlWidth":12,"dataJSON":false,"label":"Txt_SingleFundingCard","sanitize":false,"show":"=AND(ISBLANK(%FundingResults:0:Id%),NOT(ISBLANK(%FundingResults:Id%)))","text":"&lt;div style=\"background:#FFFFFF;border:1px solid #E6EAF0;border-radius:12px;padding:16px;margin-bottom:12px;\"&gt;&lt;div style=\"font-weight:700;color:#1E2A4A;margin-bottom:8px;\"&gt;%FundingResults:Name%&lt;/div&gt;&lt;div style=\"color:#33415C;\"&gt;%FundingResults:Description%&lt;/div&gt;&lt;/div&gt;","textKey":""}</propertySetConfig>
+      <sequenceNumber>2.5</sequenceNumber>
+      <type>Text Block</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Txt_EmptyState</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","controlWidth":12,"dataJSON":false,"label":"Txt_EmptyState","sanitize":false,"show":"=AND(ISBLANK(%FundingResults:Id%),ISBLANK(%FundingResults:0:Id%))","text":"No funding opportunities found.","textKey":""}</propertySetConfig>
+      <sequenceNumber>3.0</sequenceNumber>
+      <type>Text Block</type>
+    </childElements>
+    <isActive>true</isActive>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <level>0.0</level>
+    <name>Step_FundingFinder</name>
+    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+    <propertySetConfig>{"HTMLTemplateId":"","allowSaveForLater":false,"businessCategory":"","businessEvent":"","cancelLabel":"Cancel","cancelMessage":"Are you sure?","chartLabel":"Funding Opportunities","completeLabel":"Complete","completeMessage":"Are you sure you want to complete the script?","conditionType":"Hide if False","errorMessage":{"custom":[],"default":null},"instruction":"","instructionKey":"","knowledgeOptions":{"dataCategoryCriteria":"","keyword":"","language":"English","publishStatus":"Online","remoteTimeout":30000,"typeFilter":""},"label":"Funding Opportunities","message":{},"nextLabel":"Next","nextWidth":3,"previousLabel":"Previous","previousWidth":3,"pubsub":false,"remoteClass":"","remoteMethod":"","remoteOptions":{},"remoteTimeout":30000,"saveLabel":"Save for later","saveMessage":"Are you sure you want to save it for later?","show":null,"showPersistentComponent":[true,false],"ssm":false,"validationRequired":true,"wpm":false}</propertySetConfig>
+    <sequenceNumber>2.0</sequenceNumber>
+    <type>Step</type>
+  </omniProcessElements>
+  <omniProcessElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>SetSelectedFunding</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"responseJSONPath":"","responseJSONNode":"","executionConditionalFormula":"","actionMessage":"","elementValueMap":{"FundingOpportunityId":"=IF(ISBLANK(%selectedFundingId%),IF(NOT(ISBLANK(%Step_FundingFinder:FundingResults:0:Id%)),%Step_FundingFinder:FundingResults:0:Id%,IF(NOT(ISBLANK(%Step_FundingFinder:FundingResults:Id%)),%Step_FundingFinder:FundingResults:Id%,%SetValues:result:Id%)),%selectedFundingId%)"},"disOnTplt":false,"failureConditionalFormula":"","failOnStepError":false,"isActive":true,"chainOnStep":true}</propertySetConfig>
+      <sequenceNumber>0.5</sequenceNumber>
+      <type>Set Values</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Applicant_Name</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","accessibleInFutureSteps":true,"conditionType":"Hide if False","controlWidth":12,"disOnTplt":false,"hide":false,"inputWidth":12,"label":"Applicant Name","maxLength":120,"minLength":0,"placeholder":"","readOnly":false,"required":true,"show":null,"showInputWidth":false}</propertySetConfig>
+      <sequenceNumber>1.0</sequenceNumber>
+      <type>Text</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Organization</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","accessibleInFutureSteps":true,"conditionType":"Hide if False","controlWidth":12,"disOnTplt":false,"hide":false,"inputWidth":12,"label":"Organization","maxLength":160,"minLength":0,"placeholder":"","readOnly":false,"required":true,"show":null,"showInputWidth":false}</propertySetConfig>
+      <sequenceNumber>2.0</sequenceNumber>
+      <type>Text</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Requested_Amount</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","accessibleInFutureSteps":true,"allowNegative":false,"conditionType":"Hide if False","controlWidth":12,"debounceValue":0,"defaultValue":null,"disOnTplt":false,"displayCurrencyCode":false,"help":false,"helpText":"","hide":false,"hideGroupSep":false,"inputWidth":12,"label":"Requested Amount","mask":2,"max":null,"min":1,"placeholder":"","readOnly":false,"repeat":false,"repeatClone":false,"repeatLimit":null,"required":true,"show":null,"showInputWidth":false}</propertySetConfig>
+      <sequenceNumber>3.0</sequenceNumber>
+      <type>Currency</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Project_Timeline</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","accessibleInFutureSteps":true,"conditionType":"Hide if False","controlWidth":12,"dateFormat":"MM-dd-yyyy","dateType":"string","defaultValue":null,"disOnTplt":false,"help":false,"helpText":"","hide":false,"inputWidth":12,"label":"Project Timeline","maxDate":"","minDate":"","modelDateFormat":"yyyy-MM-dd","placeholder":"","readOnly":false,"repeat":false,"repeatClone":false,"repeatLimit":null,"required":true,"show":null,"showInputWidth":false}</propertySetConfig>
+      <sequenceNumber>4.0</sequenceNumber>
+      <type>Date</type>
+    </childElements>
+    <childElements>
+      <isActive>true</isActive>
+      <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+      <level>1.0</level>
+      <name>Additional_Details</name>
+      <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+      <propertySetConfig>{"HTMLTemplateId":"","accessibleInFutureSteps":true,"conditionType":"Hide if False","controlWidth":12,"defaultValue":null,"disOnTplt":false,"hide":false,"inputWidth":12,"label":"Additional Details","maxLength":4000,"minLength":0,"placeholder":"","readOnly":false,"required":false,"rows":8,"show":null,"showInputWidth":false}</propertySetConfig>
+      <sequenceNumber>5.0</sequenceNumber>
+      <type>Text Area</type>
+    </childElements>
+    <isActive>true</isActive>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <level>0.0</level>
+    <name>Step_ApplicationDetails</name>
+    <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+    <propertySetConfig>{"HTMLTemplateId":"","allowSaveForLater":false,"businessCategory":"","businessEvent":"","cancelLabel":"Cancel","cancelMessage":"Are you sure?","chartLabel":"Application Details","completeLabel":"Submit Intake","completeMessage":"Submit this application intake?","conditionType":"Hide if False","errorMessage":{"custom":[],"default":null},"instruction":"","instructionKey":"","knowledgeOptions":{"dataCategoryCriteria":"","keyword":"","language":"English","publishStatus":"Online","remoteTimeout":30000,"typeFilter":""},"label":"Application Details","message":{},"nextLabel":"Next","nextWidth":3,"previousLabel":"Previous","previousWidth":3,"pubsub":false,"remoteClass":"","remoteMethod":"","remoteOptions":{},"remoteTimeout":30000,"saveLabel":"Save for later","saveMessage":"Are you sure you want to save it for later?","show":null,"showPersistentComponent":[true,false],"ssm":false,"validationRequired":true,"wpm":false}</propertySetConfig>
+    <sequenceNumber>3.0</sequenceNumber>
+    <type>Step</type>
+  </omniProcessElements>
+  <omniProcessType>OmniScript</omniProcessType>
+  <propertySetConfig>{"allowCancel":true,"allowSaveForLater":false,"autoFocus":false,"autoSaveOnStepNext":false,"bLK":false,"cancelRedirectPageName":"OmniScriptCancelled","cancelRedirectTemplateUrl":"vlcCancelled.html","cancelSource":"%ContextId%","cancelType":"SObject","consoleTabIcon":"custom:custom18","consoleTabLabel":"New","consoleTabTitle":null,"currencyCode":"","currentLanguage":"en_US","disableUnloadWarn":true,"elementTypeToHTMLTemplateMapping":{},"enableKnowledge":false,"errorMessage":{"custom":[]},"hideStepChart":true,"knowledgeArticleTypeQueryFieldsMap":{},"lkObjName":null,"mergeSavedData":false,"message":{},"persistentComponent":[{"id":"vlcCart","itemsKey":"cartItems","label":"","modalConfigurationSetting":{"modalController":"ModalProductCtrl","modalHTMLTemplateId":"vlcProductConfig.html","modalSize":"lg"},"postTransformBundle":"","preTransformBundle":"","remoteClass":"","remoteMethod":"","remoteOptions":{"postTransformBundle":"","preTransformBundle":""},"remoteTimeout":30000,"render":false,"responseJSONNode":"","responseJSONPath":"","sendJSONNode":"","sendJSONPath":""},{"dispOutsideOmni":false,"id":"vlcKnowledge","itemsKey":"knowledgeItems","label":"","modalConfigurationSetting":{"modalController":"","modalHTMLTemplateId":"","modalSize":"lg"},"postTransformBundle":"","preTransformBundle":"","remoteClass":"","remoteMethod":"","remoteOptions":{"postTransformBundle":"","preTransformBundle":""},"remoteTimeout":30000,"render":false}],"pubsub":false,"rtpSeed":false,"saveContentEncoded":false,"saveExpireInDays":null,"saveForLaterRedirectPageName":"sflRedirect","saveForLaterRedirectTemplateUrl":"vlcSaveForLaterAcknowledge.html","saveNameTemplate":null,"saveObjectId":"%ContextId%","saveURLPatterns":{},"scrollBehavior":"auto","seedDataJSON":{},"showInputWidth":false,"ssm":false,"stepChartPlacement":"right","stylesheet":{"lightning":"","lightningRtl":"","newport":"","newportRtl":""},"timeTracking":false,"trackingCustomData":{},"visualforcePagesAvailableInPreview":{},"wpm":false}</propertySetConfig>
+  <subType>MVP</subType>
+  <type>GrantIntake</type>
+  <uniqueName>GrantIntake_MVP_English_2</uniqueName>
+  <versionNumber>2.0</versionNumber>
+  <webComponentKey>b9555379-25f6-4d7d-8b88-a46e8a423ec6</webComponentKey>
 </OmniScript>

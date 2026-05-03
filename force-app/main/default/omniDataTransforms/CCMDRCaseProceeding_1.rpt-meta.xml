@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;CaseProceedingDetails&quot; : {
+    &quot;NewCaseDetails&quot; : {
+      &quot;CaseProceedingUpdate&quot; : {
+        &quot;Description&quot; : null,
+        &quot;Name&quot; : null
+      },
+      &quot;GeneralCaseProceedingInformation&quot; : {
+        &quot;CaseFilingDateTime&quot; : null,
+        &quot;EndDateTime&quot; : null,
+        &quot;StartDateTime&quot; : null,
+        &quot;Status&quot; : null,
+        &quot;SubType&quot; : null,
+        &quot;Type&quot; : null
+      }
+    }
+  },
+  &quot;Confirmation&quot; : { },
+  &quot;ContextId&quot; : null,
+  &quot;Participants&quot; : {
+    &quot;addNewParticipants&quot; : {
+      &quot;city&quot; : null,
+      &quot;cityFormula&quot; : null,
+      &quot;firstName&quot; : null,
+      &quot;firstNameFormula&quot; : null,
+      &quot;lastName&quot; : null,
+      &quot;lastNameFormula&quot; : null,
+      &quot;limitationFlexCard&quot; : null,
+      &quot;selectAndBuildList&quot; : null
+    },
+    &quot;complaintParticipants&quot; : {
+      &quot;SelectFromList&quot; : null
+    },
+    &quot;executeAddNewParticipantDR&quot; : null,
+    &quot;executeComplaintParticipantDR&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CaseProceedingDetails&quot; : null,
+    &quot;Confirmation&quot; : null,
+    &quot;DRGetCaseDetails&quot; : null,
+    &quot;GetCaseDetails&quot; : null,
+    &quot;GetComplaintCaseDetails&quot; : null,
+    &quot;Participants&quot; : null,
+    &quot;SaveCaseParticipantsFromPublicComplaint&quot; : null,
+    &quot;SaveCaseParticipantsWhenNewCaseCreated&quot; : null,
+    &quot;SaveWhenNewCaseProceedingCreated&quot; : null,
+    &quot;SetCaseID&quot; : null,
+    &quot;SetCaseProceedingValues&quot; : null,
+    &quot;getCaseParticipants&quot; : null,
+    &quot;setCaseProceedingValues&quot; : null,
+    &quot;setEmptyResults&quot; : null,
+    &quot;setObjectsToRetrieve&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>CCMDRCaseProceeding</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom873</globalKey>
+        <inputFieldName>CaseProceedingDetails:NewCaseDetails:GeneralCaseProceedingInformation:CaseFilingDateTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CaseFilingDateTime</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom7127</globalKey>
+        <inputFieldName>CaseProceedingDetails:NewCaseDetails:GeneralCaseProceedingInformation:Type</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Type</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom694</globalKey>
+        <inputFieldName>Case:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CaseId</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom9341</globalKey>
+        <inputFieldName>CaseProceedingDetails:NewCaseDetails:CaseProceedingUpdate:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom2884</globalKey>
+        <inputFieldName>CaseProceedingDetails:NewCaseDetails:GeneralCaseProceedingInformation:EndDateTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EndDateTime</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CCMDRCaseProceedingCustom6418</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom9327</globalKey>
+        <inputFieldName>CaseProceedingDetails:NewCaseDetails:CaseProceedingUpdate:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom7949</globalKey>
+        <inputFieldName>CaseProceedingDetails:NewCaseDetails:GeneralCaseProceedingInformation:StartDateTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StartDateTime</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom3499</globalKey>
+        <inputFieldName>CaseProceedingDetails:NewCaseDetails:GeneralCaseProceedingInformation:Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCaseProceedingCustom1810</globalKey>
+        <inputFieldName>CaseProceedingDetails:NewCaseDetails:GeneralCaseProceedingInformation:SubType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCaseProceeding</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubType</outputFieldName>
+        <outputObjectName>CaseProceeding</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;CaseProceedingDetails&quot; : {
+    &quot;NewCaseDetails&quot; : {
+      &quot;CaseProceedingUpdate&quot; : {
+        &quot;Description&quot; : null,
+        &quot;Name&quot; : null
+      },
+      &quot;GeneralCaseProceedingInformation&quot; : {
+        &quot;CaseFilingDateTime&quot; : null,
+        &quot;EndDateTime&quot; : null,
+        &quot;StartDateTime&quot; : null,
+        &quot;Status&quot; : null,
+        &quot;SubType&quot; : null,
+        &quot;Type&quot; : null
+      }
+    }
+  },
+  &quot;Confirmation&quot; : { },
+  &quot;ContextId&quot; : null,
+  &quot;Participants&quot; : {
+    &quot;addNewParticipants&quot; : {
+      &quot;city&quot; : null,
+      &quot;cityFormula&quot; : null,
+      &quot;firstName&quot; : null,
+      &quot;firstNameFormula&quot; : null,
+      &quot;lastName&quot; : null,
+      &quot;lastNameFormula&quot; : null,
+      &quot;limitationFlexCard&quot; : null,
+      &quot;selectAndBuildList&quot; : null
+    },
+    &quot;complaintParticipants&quot; : {
+      &quot;SelectFromList&quot; : null
+    },
+    &quot;executeAddNewParticipantDR&quot; : null,
+    &quot;executeComplaintParticipantDR&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CaseProceedingDetails&quot; : null,
+    &quot;Confirmation&quot; : null,
+    &quot;DRGetCaseDetails&quot; : null,
+    &quot;GetCaseDetails&quot; : null,
+    &quot;GetComplaintCaseDetails&quot; : null,
+    &quot;Participants&quot; : null,
+    &quot;SaveCaseParticipantsFromPublicComplaint&quot; : null,
+    &quot;SaveCaseParticipantsWhenNewCaseCreated&quot; : null,
+    &quot;SaveWhenNewCaseProceedingCreated&quot; : null,
+    &quot;SetCaseID&quot; : null,
+    &quot;SetCaseProceedingValues&quot; : null,
+    &quot;getCaseParticipants&quot; : null,
+    &quot;setCaseProceedingValues&quot; : null,
+    &quot;setEmptyResults&quot; : null,
+    &quot;setObjectsToRetrieve&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CCMDRCaseProceeding_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

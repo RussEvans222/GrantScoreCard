@@ -10,6 +10,8 @@ Business logic for persistence/orchestration will be added in future phases.
 */
 public with sharing class GrantIntakeOrchestrationGateway implements System.Callable {
     private static final String FUNDING_ANALYSIS_TEMPLATE = 'Grant_Project_Funding_Analysis';
+    private static final Boolean DEBUG_ENABLED = true;
+    private static final String MOCK_PREFIX = '[mock]';
 
     public interface GatewayDelegate {
         FundingFinderResponse getFundingFinderResults(FundingFinderRequest requestData);
@@ -55,21 +57,47 @@ public with sharing class GrantIntakeOrchestrationGateway implements System.Call
         @AuraEnabled public List<String> keywords;
         @AuraEnabled public Decimal confidenceScore;
         @AuraEnabled public List<FundingOpportunityRecommendation> fundingOpportunities;
+        @AuraEnabled public List<FundingOpportunityRecommendation> filteredFundingOpportunities;
+        @AuraEnabled public List<FundingOpportunityRecommendation> topFundingOpportunities;
+        @AuraEnabled public List<FundingOpportunityRecommendation> fundingOpportunityTableRows;
     }
 
-    public class FundingOpportunityRecommendation {
+    public class FundingOpportunityRecommendation implements Comparable {
         @AuraEnabled public Id id;
         @AuraEnabled public String name;
         @AuraEnabled public Id evaluationTemplateId;
         @AuraEnabled public Decimal relevanceScore;
         @AuraEnabled public String ProgramArea;
         @AuraEnabled public String EligibilitySummary;
+        @AuraEnabled public String EligibilitySummaryText;
         @AuraEnabled public Decimal MaxAwardAmount;
         @AuraEnabled public Date OpenDate;
         @AuraEnabled public Date CloseDate;
         @AuraEnabled public String RelevanceTier;
         @AuraEnabled public String RelevanceLabel;
         @AuraEnabled public String RelevanceColor;
+
+        public Integer compareTo(Object otherObject) {
+            FundingOpportunityRecommendation other = (FundingOpportunityRecommendation) otherObject;
+            Decimal leftScore = relevanceScore == null ? 0 : relevanceScore;
+            Decimal rightScore = other == null || other.relevanceScore == null ? 0 : other.relevanceScore;
+            if (leftScore != rightScore) {
+                return leftScore > rightScore ? -1 : 1;
+            }
+
+            Date leftDate = OpenDate;
+            Date rightDate = other == null ? null : other.OpenDate;
+            if (leftDate == rightDate) {
+                return 0;
+            }
+            if (leftDate == null) {
+                return 1;
+            }
+            if (rightDate == null) {
+                return -1;
+            }
+            return leftDate > rightDate ? -1 : 1;
+        }
     }
 
     public class GrantApplicationDraftRequest {
@@ -142,36 +170,117 @@ public with sharing class GrantIntakeOrchestrationGateway implements System.Call
     }
 
     @AuraEnabled
-    public static AnalyzeProjectResponse analyzeProject(String searchText) {
+    public static Map<String, Object> analyzeProject(String searchText) {
         AnalyzeProjectResponse response = new AnalyzeProjectResponse();
         String normalizedSearchText = String.isBlank(searchText) ? '' : searchText.trim();
+        logInfo('analyzeProject start. searchText length=' + normalizedSearchText.length());
 
         try {
-            response = invokePromptBuilderAnalysis(normalizedSearchText);
+            if (isMockRequest(normalizedSearchText)) {
+                logInfo('Mock request detected. Using mock analysis response.');
+                response = buildMockAnalysis(normalizedSearchText);
+            } else {
+                response = invokePromptBuilderAnalysis(normalizedSearchText);
+            }
         } catch (Exception ex) {
-            response = buildFallbackAnalysis(normalizedSearchText);
+            logError('analyzeProject invoke failed. Falling back.', ex);
+            try {
+                response = buildFallbackAnalysis(normalizedSearchText);
+            } catch (Exception fallbackEx) {
+                logError('Fallback analysis failed. Returning minimal response.', fallbackEx);
+                response = buildMinimalAnalysis(normalizedSearchText);
+            }
         }
 
-        return response;
+        Map<String, Object> contractResponse = toAnalysisResponseMap(response);
+        logInfo('analyzeProject completed. response=' + safeSerialize(contractResponse));
+        return contractResponse;
     }
 
     @AuraEnabled
-    public static AnalyzeProjectResponse analyzeProjectForFunding(String searchText) {
+    public static Map<String, Object> analyzeProjectForFunding(String searchText) {
         return analyzeProject(searchText);
+    }
+
+    private static Map<String, Object> toAnalysisResponseMap(AnalyzeProjectResponse response) {
+        AnalyzeProjectResponse safeResponse = response == null ? new AnalyzeProjectResponse() : response;
+        Map<String, Object> result = new Map<String, Object>();
+        result.put('aiSummary', safeResponse.aiSummary);
+        result.put('recommendedFundingTypes', toObjectList(safeResponse.recommendedFundingTypes));
+        result.put('keywords', toObjectList(safeResponse.keywords));
+        result.put('confidenceScore', safeResponse.confidenceScore);
+        result.put('fundingOpportunities', toRecommendationList(safeResponse.fundingOpportunities));
+        result.put('filteredFundingOpportunities', toRecommendationList(safeResponse.filteredFundingOpportunities));
+        result.put('topFundingOpportunities', toRecommendationList(safeResponse.topFundingOpportunities));
+        result.put('fundingOpportunityTableRows', toRecommendationList(safeResponse.fundingOpportunityTableRows));
+        return result;
+    }
+
+    private static List<Object> toObjectList(List<String> values) {
+        List<Object> result = new List<Object>();
+        if (values == null) {
+            return result;
+        }
+        for (String value : values) {
+            result.add(value);
+        }
+        return result;
+    }
+
+    private static List<Object> toRecommendationList(List<FundingOpportunityRecommendation> recommendations) {
+        List<Object> result = new List<Object>();
+        if (recommendations == null) {
+            return result;
+        }
+        for (FundingOpportunityRecommendation recommendation : recommendations) {
+            result.add(toRecommendationMap(recommendation));
+        }
+        return result;
+    }
+
+    private static Map<String, Object> toRecommendationMap(FundingOpportunityRecommendation recommendation) {
+        Map<String, Object> result = new Map<String, Object>();
+        if (recommendation == null) {
+            return result;
+        }
+        result.put('id', recommendation.id);
+        result.put('name', recommendation.name);
+        result.put('evaluationTemplateId', recommendation.evaluationTemplateId);
+        result.put('relevanceScore', recommendation.relevanceScore);
+        result.put('ProgramArea', recommendation.ProgramArea);
+        result.put('EligibilitySummary', recommendation.EligibilitySummary);
+        result.put('EligibilitySummaryText', recommendation.EligibilitySummaryText);
+        result.put('MaxAwardAmount', recommendation.MaxAwardAmount);
+        result.put('OpenDate', recommendation.OpenDate);
+        result.put('CloseDate', recommendation.CloseDate);
+        result.put('RelevanceTier', recommendation.RelevanceTier);
+        result.put('RelevanceLabel', recommendation.RelevanceLabel);
+        result.put('RelevanceColor', recommendation.RelevanceColor);
+        return result;
     }
 
     private static AnalyzeProjectResponse invokePromptBuilderAnalysis(String searchText) {
         String rawOutput = invokeFundingPromptTemplate(searchText);
+        logInfo('AI raw output length=' + (rawOutput == null ? 0 : rawOutput.length()));
         if (String.isBlank(rawOutput)) {
+            logInfo('AI raw output blank. Using fallback analysis.');
             return buildFallbackAnalysis(searchText);
         }
-        Map<String, Object> parsed = (Map<String, Object>) JSON.deserializeUntyped(rawOutput);
+        Map<String, Object> parsed;
+        try {
+            parsed = (Map<String, Object>) JSON.deserializeUntyped(rawOutput);
+        } catch (Exception ex) {
+            logError('AI output JSON parse failed. Using fallback analysis.', ex);
+            return buildFallbackAnalysis(searchText);
+        }
+        logInfo('AI parsed keys=' + String.valueOf(parsed == null ? null : parsed.keySet()));
 
         AnalyzeProjectResponse response = new AnalyzeProjectResponse();
-        response.aiSummary = normalizeString(parsed.get('summary'));
+        response.aiSummary = normalizeString(parsed.get('aiSummary'));
         response.recommendedFundingTypes = toStringList(parsed.get('recommendedFundingTypes'));
         response.keywords = toStringList(parsed.get('keywords'));
         response.confidenceScore = toDecimalValue(parsed.get('confidenceScore'));
+        logInfo('AI parsed summary=' + response.aiSummary);
 
         if (String.isBlank(response.aiSummary)) {
             response.aiSummary = 'Analysis completed. Add more detail to improve funding recommendations.';
@@ -190,15 +299,18 @@ public with sharing class GrantIntakeOrchestrationGateway implements System.Call
             response.recommendedFundingTypes,
             response.keywords
         );
+        populateDerivedFundingLists(response);
         return response;
     }
 
     private static String invokeFundingPromptTemplate(String projectDescription) {
         try {
+            logInfo('Invoking Prompt Builder template=' + FUNDING_ANALYSIS_TEMPLATE
+                + ' projectDescription length=' + (projectDescription == null ? 0 : projectDescription.length()));
             Map<String, ConnectApi.WrappedValue> wrappedInputParams = new Map<String, ConnectApi.WrappedValue>();
             ConnectApi.WrappedValue wrappedDescription = new ConnectApi.WrappedValue();
             wrappedDescription.value = projectDescription;
-            wrappedInputParams.put('projectDescription', wrappedDescription);
+            wrappedInputParams.put('Input:projectDescription', wrappedDescription);
 
             ConnectApi.EinsteinPromptTemplateGenerationsInput generationInput =
                 new ConnectApi.EinsteinPromptTemplateGenerationsInput();
@@ -210,18 +322,28 @@ public with sharing class GrantIntakeOrchestrationGateway implements System.Call
             ConnectApi.EinsteinPromptTemplateGenerationsRepresentation generationOutput =
                 ConnectApi.EinsteinLLM.generateMessagesForPromptTemplate(FUNDING_ANALYSIS_TEMPLATE, generationInput);
             if (generationOutput == null || generationOutput.generations == null || generationOutput.generations.isEmpty()) {
+                logInfo('Prompt Builder returned no generations.');
                 return null;
             }
 
             ConnectApi.EinsteinLLMGenerationItemOutput firstGeneration = generationOutput.generations[0];
-            return firstGeneration == null ? null : normalizeString(firstGeneration.text);
+            String outputText = firstGeneration == null ? null : normalizeString(firstGeneration.text);
+            logInfo('Prompt Builder output preview=' + safePreview(outputText));
+            return outputText;
         } catch (Exception ex) {
+            logError('Prompt Builder invocation failed.', ex);
             return null;
         }
     }
 
     private static AnalyzeProjectResponse buildFallbackAnalysis(String searchText) {
-        FundingFinderResponse finderResponse = getFundingFinderResults(searchText);
+        FundingFinderResponse finderResponse;
+        try {
+            finderResponse = getFundingFinderResults(searchText);
+        } catch (Exception ex) {
+            logError('Funding Finder fallback failed.', ex);
+            finderResponse = null;
+        }
         AnalyzeProjectResponse response = new AnalyzeProjectResponse();
 
         Integer recommendationCount = finderResponse == null || finderResponse.rows == null
@@ -248,7 +370,69 @@ public with sharing class GrantIntakeOrchestrationGateway implements System.Call
             response.recommendedFundingTypes,
             response.keywords
         );
+        populateDerivedFundingLists(response);
         return response;
+    }
+
+    private static AnalyzeProjectResponse buildMockAnalysis(String searchText) {
+        AnalyzeProjectResponse response = new AnalyzeProjectResponse();
+        response.aiSummary = 'Mock analysis: funding opportunities identified for testing.';
+        response.recommendedFundingTypes = new List<String>{ 'STEM Grants', 'Education Grants' };
+        response.keywords = extractKeywordFallback(searchText);
+        response.confidenceScore = 0.85;
+        response.fundingOpportunities = getRelatedFundingOpportunities(
+            searchText,
+            response.recommendedFundingTypes,
+            response.keywords
+        );
+        populateDerivedFundingLists(response);
+        return response;
+    }
+
+    private static AnalyzeProjectResponse buildMinimalAnalysis(String searchText) {
+        AnalyzeProjectResponse response = new AnalyzeProjectResponse();
+        response.aiSummary = 'Analysis completed. Add more detail to improve funding recommendations.';
+        response.recommendedFundingTypes = new List<String>();
+        response.keywords = extractKeywordFallback(searchText);
+        response.confidenceScore = 0.55;
+        response.fundingOpportunities = new List<FundingOpportunityRecommendation>();
+        populateDerivedFundingLists(response);
+        return response;
+    }
+
+    private static Boolean isMockRequest(String searchText) {
+        return !String.isBlank(searchText) && searchText.toLowerCase().startsWith(MOCK_PREFIX);
+    }
+
+    private static String safePreview(String text) {
+        if (String.isBlank(text)) {
+            return null;
+        }
+        Integer maxLen = Math.min(200, text.length());
+        return text.substring(0, maxLen);
+    }
+
+    private static String safeSerialize(Object value) {
+        try {
+            return JSON.serialize(value);
+        } catch (Exception ex) {
+            return String.valueOf(value);
+        }
+    }
+
+    private static void logInfo(String message) {
+        if (!DEBUG_ENABLED) {
+            return;
+        }
+        System.debug(LoggingLevel.INFO, message);
+    }
+
+    private static void logError(String message, Exception ex) {
+        if (!DEBUG_ENABLED) {
+            return;
+        }
+        System.debug(LoggingLevel.ERROR, message + ' :: ' + ex.getMessage());
+        System.debug(LoggingLevel.ERROR, ex.getStackTraceString());
     }
 
     @AuraEnabled
@@ -435,6 +619,64 @@ public with sharing class GrantIntakeOrchestrationGateway implements System.Call
         return output;
     }
 
+    private static void populateDerivedFundingLists(AnalyzeProjectResponse response) {
+        if (response == null) {
+            return;
+        }
+
+        List<FundingOpportunityRecommendation> normalized = normalizeOpportunities(response.fundingOpportunities);
+        response.fundingOpportunities = normalized;
+
+        List<FundingOpportunityRecommendation> filtered = new List<FundingOpportunityRecommendation>();
+        for (FundingOpportunityRecommendation recommendation : normalized) {
+            if (recommendation == null) {
+                continue;
+            }
+            if (recommendation.RelevanceTier == 'High' || recommendation.RelevanceTier == 'Medium') {
+                filtered.add(recommendation);
+            }
+        }
+        filtered.sort();
+
+        response.filteredFundingOpportunities = filtered;
+        response.fundingOpportunityTableRows = filtered;
+
+        List<FundingOpportunityRecommendation> top = new List<FundingOpportunityRecommendation>();
+        Integer limitSize = Math.min(4, filtered.size());
+        for (Integer idx = 0; idx < limitSize; idx++) {
+            top.add(filtered[idx]);
+        }
+        response.topFundingOpportunities = top;
+    }
+
+    private static List<FundingOpportunityRecommendation> normalizeOpportunities(
+        List<FundingOpportunityRecommendation> input
+    ) {
+        List<FundingOpportunityRecommendation> output =
+            input == null ? new List<FundingOpportunityRecommendation>() : input;
+
+        for (FundingOpportunityRecommendation recommendation : output) {
+            if (recommendation == null) {
+                continue;
+            }
+            recommendation.EligibilitySummaryText = buildEligibilitySummaryText(recommendation.EligibilitySummary);
+        }
+        return output;
+    }
+
+    private static String buildEligibilitySummaryText(String rawSummary) {
+        if (String.isBlank(rawSummary)) {
+            return null;
+        }
+        String cleaned = rawSummary.replaceAll('<[^>]*>', ' ');
+        cleaned = cleaned.replaceAll('&nbsp;', ' ');
+        cleaned = cleaned.replaceAll('\\s+', ' ').trim();
+        if (cleaned.length() > 200) {
+            cleaned = cleaned.substring(0, 197) + '...';
+        }
+        return cleaned;
+    }
+
     private static FundingOpportunityRecommendation toOpportunityRecommendation(
         FundingOpportunity source,
         Integer rawScore,
@@ -479,6 +721,7 @@ public with sharing class GrantIntakeOrchestrationGateway implements System.Call
             row.RelevanceColor = '#A63A3A';
         }
     }
+
 
     private static Integer scoreOpportunity(FundingOpportunity source, List<String> searchTerms) {
         if (source == null || searchTerms == null || searchTerms.isEmpty()) {

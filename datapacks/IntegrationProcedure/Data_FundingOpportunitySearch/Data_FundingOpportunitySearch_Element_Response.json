@@ -1,0 +1,35 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Response Action",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "Response",
+    "OmniProcessId": {
+        "Name": "IP_FundingOpportunitySearch",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Data/FundingOpportunitySearch/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "elementValueMap": {
+        },
+        "executionConditionalFormula": "",
+        "id": "",
+        "isActive": true,
+        "responseFormat": "",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "restOptions": {
+        },
+        "returnFullDataJSON": true,
+        "returnOnlyAdditionalOutput": false,
+        "sendJSONNode": "",
+        "sendJSONPath": ""
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Data/FundingOpportunitySearch/English/Response"
+}

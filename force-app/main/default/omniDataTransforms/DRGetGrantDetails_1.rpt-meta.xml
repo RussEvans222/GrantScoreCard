@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;RecipientInformation&quot; : {
+    &quot;BlkRecipients&quot; : {
+      &quot;RecipientCountry-Block&quot; : {
+        &quot;Country&quot; : &quot;United States of America&quot;,
+        &quot;CountryCode&quot; : &quot;US&quot;,
+        &quot;RecipientCountry&quot; : &quot;United States of America&quot;
+      },
+      &quot;RecipientName&quot; : &quot;Acme Corp&quot;,
+      &quot;RecipientState&quot; : &quot;MD&quot;,
+      &quot;RecipientStreet1&quot; : &quot;sdfsdf&quot;,
+      &quot;RecipientStreet2&quot; : &quot;sdfsdf&quot;,
+      &quot;RecipientZip&quot; : &quot;20934&quot;,
+      &quot;RecpientCity&quot; : &quot;sdfsd&quot;
+    },
+    &quot;RecipientEIN&quot; : &quot;45454&quot;,
+    &quot;RecipientUEI&quot; : &quot;5454&quot;
+  },
+  &quot;ReportInfo&quot; : {
+    &quot;BlkMultipleGrants&quot; : null,
+    &quot;BlkSingleGrant&quot; : null
+  },
+  &quot;timeStamp&quot; : &quot;2021-11-19T19:58:54.950Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055f000005Z6eOAAS&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@grants.gps&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;Consent&quot; : null,
+  &quot;ReportInfo&quot; : {
+    &quot;AccountingBasis&quot; : &quot;Cash&quot;,
+    &quot;BlkGrantPeriod&quot; : {
+      &quot;GrantPeriodFrom&quot; : &quot;2021-07-01&quot;,
+      &quot;GrantPeriodTo&quot; : &quot;2021-09-30&quot;
+    },
+    &quot;ProjectName&quot; : &quot;Test&quot;,
+    &quot;RecipientAccountNumber&quot; : &quot;WIDOT2345&quot;,
+    &quot;ReportType&quot; : &quot;Quarterly&quot;,
+    &quot;ReportingEndDate&quot; : &quot;2021-09-30&quot;
+  },
+  &quot;Transactions&quot; : {
+    &quot;BlkFedCash&quot; : {
+      &quot;TransCash_CalcCashOnHand&quot; : 6993,
+      &quot;TransCash_CashDisbursements&quot; : 53000,
+      &quot;TransCash_CashReceipts&quot; : 59993
+    },
+    &quot;BlkFedExpend&quot; : {
+      &quot;TransExpend_Authorized&quot; : 34343,
+      &quot;TransExpend_CalcBalance&quot; : 26566,
+      &quot;TransExpend_CalcTotalFedShare&quot; : 7777,
+      &quot;TransExpend_ShareExpenditures&quot; : 4343,
+      &quot;TransExpend_Shareobligations&quot; : 3434
+    },
+    &quot;BlkProgramIncome&quot; : {
+      &quot;TransIncome_CalcUnexpendedIncome&quot; : 54536,
+      &quot;TransIncome_IncomeEarned&quot; : 54545,
+      &quot;TransIncome_IncomeExpended&quot; : 51454,
+      &quot;TransIncome_IncomeExpendedAddition&quot; : 51445
+    },
+    &quot;BlkRecipientShare&quot; : {
+      &quot;TransRecipient_CalcRecipientShare&quot; : 902,
+      &quot;TransRecipient_ShareExpenditures&quot; : 23432,
+      &quot;TransRecipient_Sharerequired&quot; : 24334
+    }
+  },
+  &quot;UserEmail&quot; : &quot;kwinderlich@salesforce.com&quot;,
+  &quot;UserFirstName&quot; : &quot;Keith&quot;,
+  &quot;UserLastName&quot; : &quot;Winderlich&quot;,
+  &quot;Welcome&quot; : {
+    &quot;FedAgency&quot; : &quot;Federal Railroad Administration&quot;,
+    &quot;ProjectidDebug&quot; : &quot;a9q5f000000sd7OAAQ&quot;,
+    &quot;Text1&quot; : &quot;0035f000004ZvUCAA0&quot;,
+    &quot;UseridDebug&quot; : &quot;0055f000002kmuGAAQ&quot;
+  },
+  &quot;timeStamp&quot; : &quot;2021-12-09T16:04:14.663Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055f000005Z6eOAAS&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@grants.gps&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRGetGrantDetails</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>ProjectId</filterValue>
+        <globalKey>80a1c59d-f6f1-4041-8232-8e31287b7002</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Milestone1_Project__c</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantDetails</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Project</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3b7336c2-bffa-4043-b27e-8c8dbf295f78</globalKey>
+        <inputFieldName>Project:GPSGAccount__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>dad24c1f-3d46-4915-b9cc-9f1089b877c9</globalKey>
+        <inputFieldName>Contact:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f6b32924-0608-496f-a959-591703d223a7</globalKey>
+        <inputFieldName>Project:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ProjectId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>25bc2611-6f2f-4468-83cd-b58dc7237499</globalKey>
+        <inputFieldName>Project:GPSGGrant_Number__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ReportInfo:FedGrantNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>609ee5ee-58e4-46fc-a0e7-5c2038edf110</globalKey>
+        <inputFieldName>Project:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantDetails</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ReportInfo:ProjectName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ProjectId&quot; : &quot;a0E4S000000mTynUAE&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>DRGetGrantDetails_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

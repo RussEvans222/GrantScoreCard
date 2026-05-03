@@ -1,0 +1,32 @@
+{
+    "CurrencyIsoCode": "USD",
+    "CustomJavaScript": "GrantIntake_AnalyzeProjectV3_SampleInput.json",
+    "Description": "Return matching funding opportunities based on the project description.",
+    "ElementTypeComponentMapping": "{\"ElementTypeToHTMLTemplateList\":[]}",
+    "IsIntegProcdSignatureAvl": false,
+    "IsIntegrationProcedure": true,
+    "IsLocked": false,
+    "IsManagedUsingStdDesigner": true,
+    "IsMetadataCacheDisabled": true,
+    "IsOmniScriptEmbeddable": false,
+    "IsTestProcedure": false,
+    "IsWebCompEnabled": false,
+    "Language": "English",
+    "MayEdit": true,
+    "Name": "GrantIntakeAnalyzeProject",
+    "OmniProcessElement": [
+        "GrantIntake_AnalyzeProjectV3_Element_TransformInput.json",
+        "GrantIntake_AnalyzeProjectV3_Element_FundingOpportunitySearch.json",
+        "GrantIntake_AnalyzeProjectV3_Element_NormalizeAiResponse.json",
+        "GrantIntake_AnalyzeProjectV3_Element_Response.json"
+    ],
+    "OmniProcessKey": "GrantIntake_AnalyzeProjectV3",
+    "OmniProcessType": "Integration Procedure",
+    "PropertySetConfig": "GrantIntake_AnalyzeProjectV3_PropertySetConfig.json",
+    "SubType": "AnalyzeProjectV3",
+    "Type": "GrantIntake",
+    "UniqueName": "GrantIntake_AnalyzeProjectV3_English_1",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcess",
+    "VlocityRecordSourceKey": "OmniProcess/GrantIntake/AnalyzeProjectV3/English"
+}

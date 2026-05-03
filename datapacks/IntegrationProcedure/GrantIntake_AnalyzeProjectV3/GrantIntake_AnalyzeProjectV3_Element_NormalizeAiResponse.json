@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Build baseline assessment from the project description and search results.",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "NormalizeAiResponse",
+    "OmniProcessId": {
+        "Name": "GrantIntakeAnalyzeProject",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/AnalyzeProjectV3/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "aiSummary": "",
+            "confidenceScore": "",
+            "fundingOpportunities": "=%fundingSearch%",
+            "keywords": "=[]",
+            "projectDescription": "%TransformInput:searchText%",
+            "recommendedFundingTypes": "=[]"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": false,
+        "failureConditionalFormula": "",
+        "id": "",
+        "isActive": true,
+        "responseJSONNode": "initialAiAssessment",
+        "responseJSONPath": "",
+        "restOptions": {
+        },
+        "useFormulas": true
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/AnalyzeProjectV3/English/NormalizeAiResponse"
+}

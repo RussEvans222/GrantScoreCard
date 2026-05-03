@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountId&quot; : &quot;0014S00000DbliVQAR&quot;,
+  &quot;AccountName&quot; : &quot;Aerospace Services&quot;,
+  &quot;AdditonalInfo&quot; : null,
+  &quot;Assessment&quot; : { },
+  &quot;ClassificationDetails&quot; : null,
+  &quot;Completion&quot; : null,
+  &quot;Consent&quot; : null,
+  &quot;ContactId&quot; : &quot;0034S00000BnZj5QAF&quot;,
+  &quot;ContactName&quot; : &quot;Paula Partner&quot;,
+  &quot;ContextId&quot; : &quot;0054S0000042YpuQAE&quot;,
+  &quot;CurrentDay&quot; : &quot;Monday&quot;,
+  &quot;CurrentSobjectType&quot; : &quot;HealthcareFacility&quot;,
+  &quot;DRId_Address&quot; : &quot;1304S000000QnQAQA0&quot;,
+  &quot;DRId_Contact&quot; : &quot;0034S00000C5XK0QAN&quot;,
+  &quot;DRId_HealthcareFacility&quot; : &quot;0kl4S000000bmenQAA&quot;,
+  &quot;DRId_Location&quot; : &quot;1314S000000VCZZQA4&quot;,
+  &quot;DRId_OperatingHours&quot; : &quot;0OH4S000000q1txWAA&quot;,
+  &quot;Disclosure&quot; : {
+    &quot;Disclosure1&quot; : true
+  },
+  &quot;General&quot; : null,
+  &quot;IPOutput&quot; : &quot;&quot;,
+  &quot;Order&quot; : 1,
+  &quot;ParentLocationId&quot; : &quot;1314S000000VCZZQA4&quot;,
+  &quot;RecordType&quot; : {
+    &quot;DeveloperName&quot; : &quot;SiteFacility&quot;,
+    &quot;Id&quot; : &quot;0124S000000xYr0QAE&quot;
+  },
+  &quot;RecordTypeName&quot; : &quot;SiteFacility&quot;,
+  &quot;SiteCityOrig&quot; : &quot; San Francisco&quot;,
+  &quot;SiteContact&quot; : {
+    &quot;BestTimetoCall&quot; : {
+      &quot;SiteContactBestTimeCallEnd&quot; : &quot;12:00:00.000Z&quot;,
+      &quot;SiteContactBestTimeCallStart&quot; : &quot;09:00:00.000Z&quot;
+    },
+    &quot;BlkSiteContactNew&quot; : {
+      &quot;SiteContactFirstName&quot; : &quot;Frank&quot;,
+      &quot;SiteContactLastName&quot; : &quot;Facility&quot;,
+      &quot;SiteContactPhoneNumber&quot; : &quot;29243434343&quot;,
+      &quot;SiteContactTitle&quot; : &quot;Facility Manager&quot;
+    },
+    &quot;MyselfSiteContact&quot; : false
+  },
+  &quot;SiteContactId&quot; : &quot;0034S00000C5XK0QAN&quot;,
+  &quot;SiteContactPhone__c&quot; : &quot;(415)443-9822&quot;,
+  &quot;SiteFacilityId&quot; : &quot;0kl4S000000bmenQAA&quot;,
+  &quot;SiteInfo&quot; : {
+    &quot;Description&quot; : &quot;This is the HQ for various administration and services. This is also includes a warehouse for various materials&quot;,
+    &quot;NumberofStaff&quot; : 200,
+    &quot;SIDN__c&quot; : &quot;S12344567&quot;,
+    &quot;SiteAddress-Block&quot; : {
+      &quot;SiteAddress&quot; : &quot;415 Mission St, San Francisco, CA 94105, USA&quot;,
+      &quot;SiteCity&quot; : &quot;San Francisco&quot;,
+      &quot;SiteCountry&quot; : &quot;United States&quot;,
+      &quot;SiteCounty&quot; : &quot;San Francisco County&quot;,
+      &quot;SiteState&quot; : &quot;CA&quot;,
+      &quot;SiteStreet&quot; : &quot;415 Mission St&quot;,
+      &quot;SiteZipcode&quot; : &quot;94105&quot;,
+      &quot;place_id&quot; : &quot;ChIJVVUVamOAhYARqZJ1H2ETsm0&quot;
+    },
+    &quot;SiteName&quot; : &quot;Aerospace Services - HQ&quot;,
+    &quot;SiteOperatingHoursAdd&quot; : &quot;Yes&quot;
+  },
+  &quot;SiteNameDefault&quot; : &quot;Aerospace Services - HQ&quot;,
+  &quot;SiteOperatingHours&quot; : { },
+  &quot;SiteStateOrig&quot; : &quot;CA&quot;,
+  &quot;SiteStreetOrig&quot; : &quot;415 Mission St&quot;,
+  &quot;SiteZipcodeOrig&quot; : &quot;94105&quot;,
+  &quot;UserId&quot; : &quot;0054S0000042YpuQAE&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/New_York&quot;,
+  &quot;omniProcessId&quot; : &quot;0jN4S000000LVI0UAO&quot;,
+  &quot;timeStamp&quot; : &quot;2023-10-10T14:32:11.427Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0054S0000042YpuQAE&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@gpswinter24.dev3&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/Los_Angeles&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRCreateSiteHourDayofWeek</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:SiteInfo:SiteName &quot;-/\/\/&quot; var:CurrentDay CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%SiteInfo:SiteName%, &quot;- &quot;, %CurrentDay% )</formulaExpression>
+        <formulaResultPath>CalcSiteHoursName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DRCreateSiteHourDayofWeekCustom7570</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteHourDayofWeek</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteHourDayofWeekCustom8930</globalKey>
+        <inputFieldName>CurrentDay</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteHourDayofWeek</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>DayOfWeek</outputFieldName>
+        <outputObjectName>TimeSlot</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>17:00:00.000Z</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteHourDayofWeekCustom5243</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteHourDayofWeek</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EndTime</outputFieldName>
+        <outputObjectName>TimeSlot</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteHourDayofWeekCustom0jI5e000000PB12EAGItem0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteHourDayofWeek</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>TimeSlot</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteHourDayofWeekCustom1403</globalKey>
+        <inputFieldName>DRId_OperatingHours</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteHourDayofWeek</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>OperatingHoursId</outputFieldName>
+        <outputObjectName>TimeSlot</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteHourDayofWeekCustom3316</globalKey>
+        <inputFieldName>Order</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteHourDayofWeek</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Order__c</outputFieldName>
+        <outputObjectName>TimeSlot</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>09:00:00.000Z</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteHourDayofWeekCustom9047</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteHourDayofWeek</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StartTime</outputFieldName>
+        <outputObjectName>TimeSlot</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Normal</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteHourDayofWeekCustom9123</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteHourDayofWeek</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Type</outputFieldName>
+        <outputObjectName>TimeSlot</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;0014S00000DbliVQAR&quot;,
+  &quot;AccountName&quot; : &quot;Aerospace Services&quot;,
+  &quot;AdditonalInfo&quot; : null,
+  &quot;Assessment&quot; : { },
+  &quot;ClassificationDetails&quot; : null,
+  &quot;Completion&quot; : null,
+  &quot;Consent&quot; : null,
+  &quot;ContactId&quot; : &quot;0034S00000BnZj5QAF&quot;,
+  &quot;ContactName&quot; : &quot;Paula Partner&quot;,
+  &quot;ContextId&quot; : &quot;0054S0000042YpuQAE&quot;,
+  &quot;CurrentDay&quot; : &quot;Tuesday&quot;,
+  &quot;CurrentSobjectType&quot; : &quot;HealthcareFacility&quot;,
+  &quot;DRId_Address&quot; : &quot;1304S000000QnQAQA0&quot;,
+  &quot;DRId_Contact&quot; : &quot;0034S00000C5XK0QAN&quot;,
+  &quot;DRId_HealthcareFacility&quot; : &quot;0kl4S000000bmenQAA&quot;,
+  &quot;DRId_Location&quot; : &quot;1314S000000VCZZQA4&quot;,
+  &quot;DRId_OperatingHours&quot; : &quot;0OH4S000000q1ldWAA&quot;,
+  &quot;Disclosure&quot; : {
+    &quot;Disclosure1&quot; : true
+  },
+  &quot;General&quot; : null,
+  &quot;IPOutput&quot; : &quot;&quot;,
+  &quot;Order&quot; : 1,
+  &quot;ParentLocationId&quot; : &quot;1314S000000VCZZQA4&quot;,
+  &quot;RecordType&quot; : {
+    &quot;DeveloperName&quot; : &quot;SiteFacility&quot;,
+    &quot;Id&quot; : &quot;0124S000000xYr0QAE&quot;
+  },
+  &quot;RecordTypeName&quot; : &quot;SiteFacility&quot;,
+  &quot;SiteCityOrig&quot; : &quot; San Francisco&quot;,
+  &quot;SiteContact&quot; : {
+    &quot;BestTimetoCall&quot; : {
+      &quot;SiteContactBestTimeCallEnd&quot; : &quot;12:00:00.000Z&quot;,
+      &quot;SiteContactBestTimeCallStart&quot; : &quot;09:00:00.000Z&quot;
+    },
+    &quot;BlkSiteContactNew&quot; : {
+      &quot;SiteContactFirstName&quot; : &quot;Frank&quot;,
+      &quot;SiteContactLastName&quot; : &quot;Facility&quot;,
+      &quot;SiteContactPhoneNumber&quot; : &quot;29243434343&quot;,
+      &quot;SiteContactTitle&quot; : &quot;Facility Manager&quot;
+    },
+    &quot;MyselfSiteContact&quot; : false
+  },
+  &quot;SiteContactId&quot; : &quot;0034S00000C5XK0QAN&quot;,
+  &quot;SiteContactPhone__c&quot; : &quot;(415)443-9822&quot;,
+  &quot;SiteFacilityId&quot; : &quot;0kl4S000000bmenQAA&quot;,
+  &quot;SiteInfo&quot; : {
+    &quot;Description&quot; : &quot;This is the HQ for various administration and services. This is also includes a warehouse for various materials&quot;,
+    &quot;NumberofStaff&quot; : 200,
+    &quot;SIDN__c&quot; : &quot;S12344567&quot;,
+    &quot;SiteAddress-Block&quot; : {
+      &quot;SiteAddress&quot; : &quot;415 Mission St, San Francisco, CA 94105, USA&quot;,
+      &quot;SiteCity&quot; : &quot;San Francisco&quot;,
+      &quot;SiteCountry&quot; : &quot;United States&quot;,
+      &quot;SiteCounty&quot; : &quot;San Francisco County&quot;,
+      &quot;SiteState&quot; : &quot;CA&quot;,
+      &quot;SiteStreet&quot; : &quot;415 Mission St&quot;,
+      &quot;SiteZipcode&quot; : &quot;94105&quot;,
+      &quot;place_id&quot; : &quot;ChIJVVUVamOAhYARqZJ1H2ETsm0&quot;
+    },
+    &quot;SiteName&quot; : &quot;Aerospace Services - HQ&quot;,
+    &quot;SiteOperatingHoursAdd&quot; : &quot;Yes&quot;
+  },
+  &quot;SiteNameDefault&quot; : &quot;Aerospace Services - HQ&quot;,
+  &quot;SiteOperatingHours&quot; : { },
+  &quot;SiteStateOrig&quot; : &quot;CA&quot;,
+  &quot;SiteStreetOrig&quot; : &quot;415 Mission St&quot;,
+  &quot;SiteZipcodeOrig&quot; : &quot;94105&quot;,
+  &quot;UserId&quot; : &quot;0054S0000042YpuQAE&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/New_York&quot;,
+  &quot;omniProcessId&quot; : &quot;0jN4S000000LVI0UAO&quot;,
+  &quot;timeStamp&quot; : &quot;2023-10-10T14:32:11.427Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0054S0000042YpuQAE&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@gpswinter24.dev3&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/Los_Angeles&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRCreateSiteHourDayofWeek_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

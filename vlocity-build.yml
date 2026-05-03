@@ -1,0 +1,13 @@
+vlocityBuildStatus: "Ready"
+projectPath: "."
+autoUpdateAtom: true
+rollbackOnError: false
+disableLookupRollback: false
+verbose: true
+autoFixReferences: false
+defaultManagingOrg: "storm.afbb6a02e3e356@salesforce.com"
+displayManagingOrg: false
+dataPacksPath: "datapacks"
+buildCacheFolder: ".cache"
+manifest:
+  - IntegrationProcedure

@@ -60,7 +60,7 @@
         "redirectPageName": "Step_FundingFinder",
         "redirectPreviousLabel": "Previous",
         "redirectPreviousWidth": 3,
-        "redirectTemplateUrl": "vlcAcknowledge.html",
+        "redirectTemplateUrl": "",
         "remoteOptions": {
             "chainable": false,
             "postTransformBundle": "",

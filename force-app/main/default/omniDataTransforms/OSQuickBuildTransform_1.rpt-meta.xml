@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;DRId_omnistudio__Element__c&quot; : &quot;a4O4x000000ZxMHEA0&quot;,
+  &quot;DRId_omnistudio__OmniScript__c&quot; : &quot;a5y4x0000004PnWAAU&quot;,
+  &quot;Details&quot; : {
+    &quot;LWCEnabled&quot; : true,
+    &quot;OmniscriptName&quot; : &quot;Test&quot;,
+    &quot;SubType&quot; : &quot;Test&quot;,
+    &quot;Type&quot; : &quot;Test&quot;
+  },
+  &quot;Elements&quot; : {
+    &quot;ElementDetails&quot; : [ {
+      &quot;ElementLabel&quot; : &quot;Name of person assessed: &quot;,
+      &quot;ElementName&quot; : &quot;NamePersonAssessed&quot;,
+      &quot;ElementOrder&quot; : &quot;1&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Lives alone &quot;,
+      &quot;ElementName&quot; : &quot;LivesAlone&quot;,
+      &quot;ElementOrder&quot; : &quot;2&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Other (describe): &quot;,
+      &quot;ElementName&quot; : &quot;Other&quot;,
+      &quot;ElementOrder&quot; : &quot;3&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Date&quot;
+    } ],
+    &quot;ElementFile&quot; : null,
+    &quot;FileCount&quot; : 0
+  },
+  &quot;id&quot; : &quot;a5y4x0000004PmOAAU&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://rentassist-20210129-demo--vlocity-ins.visualforce.com&quot;,
+  &quot;timeStamp&quot; : &quot;2021-02-23T15:39:17.531Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0054x000003dns8AAA&quot;,
+  &quot;userName&quot; : &quot;jblankenship@rentassistance01292021.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -480,
+  &quot;vlcPersistentComponent&quot; : { }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>OSQuickBuildTransform</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 2 &gt; &quot;Step3&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;2,&quot;Step3&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step3Data:StepName</formulaResultPath>
+        <formulaSequence>13.0</formulaSequence>
+        <globalKey>0f9d0d37-1c18-4f8a-b583-734d68aea91c</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 3 &gt; &quot;Step4&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;3,&quot;Step4&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step4Data:StepName</formulaResultPath>
+        <formulaSequence>14.0</formulaSequence>
+        <globalKey>c27a9494-b1fd-47df-a06b-41851087e2bb</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 4 &gt; &quot;Step5&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;4,&quot;Step5&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step5Data:StepName</formulaResultPath>
+        <formulaSequence>15.0</formulaSequence>
+        <globalKey>bd41e6e3-4474-4c2b-a0d6-cf5ae522822b</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 5 &gt; &quot;Step6&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;5,&quot;Step6&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step6Data:StepName</formulaResultPath>
+        <formulaSequence>16.0</formulaSequence>
+        <globalKey>96f2b674-f16e-4821-9463-eb9079239014</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 6 &gt; &quot;Step7&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;6,&quot;Step7&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step7Data:StepName</formulaResultPath>
+        <formulaSequence>17.0</formulaSequence>
+        <globalKey>b6c1d424-d25e-4d94-87e0-4618dcee468b</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 7 &gt; &quot;Step8&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;7,&quot;Step8&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step8Data:StepName</formulaResultPath>
+        <formulaSequence>18.0</formulaSequence>
+        <globalKey>f9f3df36-30a9-4e86-beb8-8d594e6fcb0f</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 8 &gt; &quot;Step9&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;8,&quot;Step9&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step9Data:StepName</formulaResultPath>
+        <formulaSequence>19.0</formulaSequence>
+        <globalKey>3b5cf9ec-32c6-4d23-9cb2-a2635033b90b</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;1&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;1&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step1Data:Elements</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>ca189ee9-6f1e-4309-9a7f-4c8d6f31d3e3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 9 &gt; &quot;Step10&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;9,&quot;Step10&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step10Data:StepName</formulaResultPath>
+        <formulaSequence>20.0</formulaSequence>
+        <globalKey>99f81ab6-b8bf-446f-b233-d8e32b2b4d8f</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:Step1Data var:Step2Data var:Step3Data var:Step4Data var:Step5Data var:Step6Data var:Step7Data var:Step8Data var:Step9Data var:Step10Data</formulaConverted>
+        <formulaExpression>Step1Data,Step2Data,Step3Data,Step4Data,Step5Data,Step6Data,Step7Data,Step8Data,Step9Data,Step10Data</formulaExpression>
+        <formulaResultPath>PreStepData</formulaResultPath>
+        <formulaSequence>21.0</formulaSequence>
+        <globalKey>8bbd80fa-aa3e-434a-88ac-3cdeff7857c5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>&quot;Step1&quot;</formulaConverted>
+        <formulaExpression>&quot;Step1&quot;</formulaExpression>
+        <formulaResultPath>Step1Data:StepName</formulaResultPath>
+        <formulaSequence>11.0</formulaSequence>
+        <globalKey>7ac9ff1b-bb29-4e52-998c-89b48a77587c</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>fe4a5a7a-030e-4d67-877e-2fa7323f4e94</globalKey>
+        <inputFieldName>StepData</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StepData</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;2&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;2&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step2Data:Elements</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>4facace7-19a6-4e0d-9fc2-8406ae36ee31</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;3&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;3&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step3Data:Elements</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>028da3c1-e882-426a-83ea-c0c247a405bd</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;4&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;4&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step4Data:Elements</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>1e2eb91a-d00f-4a71-8b12-8eac3b0a5e5b</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;5&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;5&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step5Data:Elements</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>59c853a9-b4b5-416d-8c5f-2c364336cdb0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;6&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;6&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step6Data:Elements</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>8ab4bba2-383c-4d94-9833-0d50907e34f3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;7&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;7&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step7Data:Elements</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>44c7f374-cb00-4f21-905e-69a61de2a82c</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;8&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;8&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step8Data:Elements</formulaResultPath>
+        <formulaSequence>8.0</formulaSequence>
+        <globalKey>9ac78f4b-060d-4b0a-a4e9-c3b8074ac756</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;10&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;10&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step10Data:Elements</formulaResultPath>
+        <formulaSequence>10.0</formulaSequence>
+        <globalKey>4f2b8538-4d74-4f9b-b2fa-9b414080dcdd</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:Elements:ElementDetails LIST &apos;ElementStep/\/\/==/\/\/&quot;9&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(Elements:ElementDetails),&apos;ElementStep == &quot;9&quot;&apos;)</formulaExpression>
+        <formulaResultPath>Step9Data:Elements</formulaResultPath>
+        <formulaSequence>9.0</formulaSequence>
+        <globalKey>c39f9b13-98c7-4d1e-88c0-600a6aaf596f</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:PreStepData LIST &apos;StepName/\/\/!=/\/\/&quot;&quot;&apos; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(PreStepData),&apos;StepName != &quot;&quot;&apos;)</formulaExpression>
+        <formulaResultPath>StepData</formulaResultPath>
+        <formulaSequence>22.0</formulaSequence>
+        <globalKey>a169d21f-6fe8-4c1d-aa0d-1ca142a581f4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Details:NumSteps 1 &gt; &quot;Step2&quot; &quot;&quot; IF</formulaConverted>
+        <formulaExpression>IF(Details:NumSteps&gt;1,&quot;Step2&quot;,&quot;&quot;)</formulaExpression>
+        <formulaResultPath>Step2Data:StepName</formulaResultPath>
+        <formulaSequence>12.0</formulaSequence>
+        <globalKey>145aecfa-a0bf-46ca-a10c-7fde10a55e19</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>OSQuickBuildTransform</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : &quot;&quot;,
+  &quot;Details&quot; : {
+    &quot;LWCEnabled&quot; : true,
+    &quot;NumSteps&quot; : 2,
+    &quot;OmniscriptName&quot; : &quot;Test&quot;,
+    &quot;SubType&quot; : &quot;Test&quot;,
+    &quot;Type&quot; : &quot;Test&quot;
+  },
+  &quot;Elements&quot; : {
+    &quot;ElementDetails&quot; : [ {
+      &quot;ElementLabel&quot; : &quot;Application Type&quot;,
+      &quot;ElementName&quot; : &quot;ApplicationType&quot;,
+      &quot;ElementOrder&quot; : &quot;1&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Registration Number&quot;,
+      &quot;ElementName&quot; : &quot;RegistrationNumber&quot;,
+      &quot;ElementOrder&quot; : &quot;2&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Number&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Registration Use&quot;,
+      &quot;ElementName&quot; : &quot;RegistrationUse&quot;,
+      &quot;ElementOrder&quot; : &quot;3&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Primary Principal Required for all applications. Business fax and mobile telephone are optional.&quot;,
+      &quot;ElementName&quot; : &quot;PrimaryPrincipal&quot;,
+      &quot;ElementOrder&quot; : &quot;4&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text Block&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Last Name&quot;,
+      &quot;ElementName&quot; : &quot;LastName&quot;,
+      &quot;ElementOrder&quot; : &quot;5&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;First Name&quot;,
+      &quot;ElementName&quot; : &quot;FirstName&quot;,
+      &quot;ElementOrder&quot; : &quot;6&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Middle Initial&quot;,
+      &quot;ElementName&quot; : &quot;MiddleInitial&quot;,
+      &quot;ElementOrder&quot; : &quot;7&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Social Security No&quot;,
+      &quot;ElementName&quot; : &quot;SSN&quot;,
+      &quot;ElementOrder&quot; : &quot;8&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;% Control&quot;,
+      &quot;ElementName&quot; : &quot;PercentControl&quot;,
+      &quot;ElementOrder&quot; : &quot;9&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Number&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Date of Birth (m/d/y)&quot;,
+      &quot;ElementName&quot; : &quot;DOB&quot;,
+      &quot;ElementOrder&quot; : &quot;10&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Date&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Home Address&quot;,
+      &quot;ElementName&quot; : &quot;HomeAddress&quot;,
+      &quot;ElementOrder&quot; : &quot;11&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Home Telephone&quot;,
+      &quot;ElementName&quot; : &quot;HomeTelephone&quot;,
+      &quot;ElementOrder&quot; : &quot;12&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Telephone&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;City&quot;,
+      &quot;ElementName&quot; : &quot;City&quot;,
+      &quot;ElementOrder&quot; : &quot;13&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;State &quot;,
+      &quot;ElementName&quot; : &quot;State&quot;,
+      &quot;ElementOrder&quot; : &quot;14&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Zip&quot;,
+      &quot;ElementName&quot; : &quot;Zip&quot;,
+      &quot;ElementOrder&quot; : &quot;15&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Mobile Telephone&quot;,
+      &quot;ElementName&quot; : &quot;MobilePhone&quot;,
+      &quot;ElementOrder&quot; : &quot;16&quot;,
+      &quot;ElementStep&quot; : &quot;1&quot;,
+      &quot;ElementType&quot; : &quot;Telephone&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Business Name&quot;,
+      &quot;ElementName&quot; : &quot;BusinessName&quot;,
+      &quot;ElementOrder&quot; : &quot;1&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Business Telephone&quot;,
+      &quot;ElementName&quot; : &quot;BusienssTelephone&quot;,
+      &quot;ElementOrder&quot; : &quot;2&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Telephone&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Business Address&quot;,
+      &quot;ElementName&quot; : &quot;BusinessAddress&quot;,
+      &quot;ElementOrder&quot; : &quot;3&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Business Fax&quot;,
+      &quot;ElementName&quot; : &quot;BusinessFax&quot;,
+      &quot;ElementOrder&quot; : &quot;4&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Telephone&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;City&quot;,
+      &quot;ElementName&quot; : &quot;BusinessCity&quot;,
+      &quot;ElementOrder&quot; : &quot;5&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;State &quot;,
+      &quot;ElementName&quot; : &quot;BusinessState&quot;,
+      &quot;ElementOrder&quot; : &quot;6&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Zip&quot;,
+      &quot;ElementName&quot; : &quot;BusinessZip&quot;,
+      &quot;ElementOrder&quot; : &quot;7&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;EIN&quot;,
+      &quot;ElementName&quot; : &quot;EIN&quot;,
+      &quot;ElementOrder&quot; : &quot;8&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Text&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;E-Mail&quot;,
+      &quot;ElementName&quot; : &quot;Email&quot;,
+      &quot;ElementOrder&quot; : &quot;9&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Email&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Is the operating capital for your business at least twenty-five thousand dollars?&quot;,
+      &quot;ElementName&quot; : &quot;OperatingCaptial&quot;,
+      &quot;ElementOrder&quot; : &quot;10&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Checkbox&quot;
+    }, {
+      &quot;ElementLabel&quot; : &quot;Corporate Officers, Partners and Any Stakeholders (Include Stakeholders that own ten percent or more and primary applicant)&quot;,
+      &quot;ElementName&quot; : &quot;CorporateOfficers&quot;,
+      &quot;ElementOrder&quot; : &quot;11&quot;,
+      &quot;ElementStep&quot; : &quot;2&quot;,
+      &quot;ElementType&quot; : &quot;Text Block&quot;
+    } ],
+    &quot;ElementFile&quot; : [ {
+      &quot;$$hashKey&quot; : &quot;object:162&quot;,
+      &quot;contentDocumentId&quot; : &quot;0694x000000dm0tAAA&quot;,
+      &quot;data&quot; : &quot;3e1f98ec-9183-4654-8a6c-f4a22776904d&quot;,
+      &quot;filename&quot; : &quot;NYCContractorExample.csv&quot;,
+      &quot;size&quot; : 1334,
+      &quot;vId&quot; : &quot;0684x000000dt1AAAQ&quot;
+    } ],
+    &quot;FileCount&quot; : 1
+  },
+  &quot;id&quot; : &quot;a5y4x0000004Pp8AAE&quot;,
+  &quot;isdtp&quot; : &quot;p1&quot;,
+  &quot;layout&quot; : &quot;lightning&quot;,
+  &quot;sfdcIFrameHost&quot; : &quot;web&quot;,
+  &quot;sfdcIFrameOrigin&quot; : &quot;https://rentassist-20210129-demo--vlocity-ins.visualforce.com&quot;,
+  &quot;timeStamp&quot; : &quot;2021-03-01T20:09:23.722Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0054x000003dns8AAA&quot;,
+  &quot;userName&quot; : &quot;jblankenship@rentassistance01292021.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : -480,
+  &quot;vlcPersistentComponent&quot; : { }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>OSQuickBuildTransform_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

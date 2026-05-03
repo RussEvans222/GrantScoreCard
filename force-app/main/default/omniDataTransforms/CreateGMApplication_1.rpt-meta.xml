@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ApplicationInformation&quot; : {
+    &quot;DateBusinessEstablished&quot; : null,
+    &quot;Eligible&quot; : null,
+    &quot;FundingRequestAmount&quot; : null,
+    &quot;FundsUsage&quot; : null,
+    &quot;Industry&quot; : null,
+    &quot;OtherDescription&quot; : null
+  },
+  &quot;BusinessInformation&quot; : {
+    &quot;Account&quot; : {
+      &quot;City&quot; : null,
+      &quot;Name&quot; : null,
+      &quot;PostalCode&quot; : null,
+      &quot;State&quot; : null,
+      &quot;Street&quot; : null,
+      &quot;Website&quot; : null
+    },
+    &quot;BusinessProfile&quot; : {
+      &quot;BusinessOperatingName&quot; : null,
+      &quot;BusinessStructure&quot; : null,
+      &quot;BusinessTaxIdentifier&quot; : null
+    },
+    &quot;Contact&quot; : {
+      &quot;Email&quot; : null,
+      &quot;FirstName&quot; : null,
+      &quot;LastName&quot; : null,
+      &quot;Phone&quot; : null,
+      &quot;Title&quot; : null
+    }
+  },
+  &quot;ContextId&quot; : null,
+  &quot;Ineligible&quot; : { },
+  &quot;RequiredDocumentation&quot; : {
+    &quot;IncomeTaxReturn&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ],
+    &quot;MortgageRentDocumentation&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ],
+    &quot;PayrollDocumentation&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ],
+    &quot;UtilitiesDocumentation&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ]
+  },
+  &quot;ThankYou&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;ApplicationInformation&quot; : null,
+    &quot;BackToHome&quot; : null,
+    &quot;BusinessInformation&quot; : null,
+    &quot;CreateGrantApplication&quot; : null,
+    &quot;DRContactAndAccountForUser&quot; : null,
+    &quot;DRGetDemoUserId&quot; : null,
+    &quot;Ineligible&quot; : null,
+    &quot;NavigateToApplication&quot; : null,
+    &quot;RequiredDocumentation&quot; : null,
+    &quot;SetInitialState&quot; : null,
+    &quot;ThankYou&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>CreateGMApplication</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | TODAY 1 ADDDAY</formulaConverted>
+        <formulaExpression>ADDDAY(TODAY(),1)</formulaExpression>
+        <formulaResultPath>AppliedDate</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>CreateGMApplicationCustom6707</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom1336</globalKey>
+        <inputFieldName>ApplicationInformation:FundsUsage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FundingRequestPurpose</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateGMApplicationCustom7044</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Submitted</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom7446</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>InternalStatus</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Grantmaking</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom7081</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom8704</globalKey>
+        <inputFieldName>ApplicationInformation:FundingRequestAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RequestedAmount</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Submitted</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom6736</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateGMApplicationCustom1476</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ApplicationId</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Award</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom4186</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ApplicationRecommendation</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Recommended based on review of submitted documents.</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom5662</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Comment</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>$Vlocity.TODAY</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom5117</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>DueDate</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | TODAY 7 ADDDAY</formulaConverted>
+        <formulaExpression>ADDDAY(TODAY(),7)</formulaExpression>
+        <formulaResultPath>DueDate</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>CreateGMApplicationCustom9754</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>$Vlocity.TODAY</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom8600</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>EndDate</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateGMApplicationCustom4940</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>true</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom561</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>IsSubmitted</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>$Vlocity.TODAY</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom2863</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>StartDate</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Completed</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom545</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>4</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom8808</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>gps_Application_Score__c</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateGMApplicationCustom4323</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>ApplicationId</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>$Vlocity.TODAY</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom4617</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>AssignedDate</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom9837</globalKey>
+        <inputFieldName>DueDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>DueDate</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateGMApplicationCustom4209</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:BusinessInformation:Account:Name &quot;/\/\/-/\/\/Relief/\/\/&amp;/\/\/Reinvestment/\/\/Grant&quot; CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(BusinessInformation:Account:Name, &quot; - Relief &amp; Reinvestment Grant&quot;)</formulaExpression>
+        <formulaResultPath>FundingRequestName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>CreateGMApplicationCustom0jI4S000000Gy4ZUASItem0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Not Started</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom6351</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom7277</globalKey>
+        <inputFieldName>BusinessInformation:Account:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom5372</globalKey>
+        <inputFieldName>FundingRequestName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationName</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom4911</globalKey>
+        <inputFieldName>AppliedDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AppliedDate</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Grant Application</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom2295</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom5300</globalKey>
+        <inputFieldName>BusinessInformation:Contact:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>2023-2024 Relief &amp; Reinvestment Grant</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMApplicationCustom8733</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>FundingOpportunity</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>CreateGMApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FundingOpportunityId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;ApplicationInformation&quot; : {
+    &quot;AppliedDate&quot; : null,
+    &quot;DateBusinessEstablished&quot; : null,
+    &quot;Eligible&quot; : null,
+    &quot;FundingRequestAmount&quot; : null,
+    &quot;FundsUsage&quot; : null,
+    &quot;Industry&quot; : null,
+    &quot;OtherDescription&quot; : null
+  },
+  &quot;BusinessInformation&quot; : {
+    &quot;Account&quot; : {
+      &quot;City&quot; : null,
+      &quot;Name&quot; : null,
+      &quot;PostalCode&quot; : null,
+      &quot;State&quot; : null,
+      &quot;Street&quot; : null,
+      &quot;Website&quot; : null
+    },
+    &quot;BusinessProfile&quot; : {
+      &quot;BusinessOperatingName&quot; : null,
+      &quot;BusinessStructure&quot; : null,
+      &quot;BusinessTaxIdentifier&quot; : null
+    },
+    &quot;Contact&quot; : {
+      &quot;Email&quot; : null,
+      &quot;FirstName&quot; : null,
+      &quot;LastName&quot; : null,
+      &quot;Phone&quot; : null,
+      &quot;Title&quot; : null
+    }
+  },
+  &quot;ContextId&quot; : null,
+  &quot;Ineligible&quot; : { },
+  &quot;RequiredDocumentation&quot; : {
+    &quot;IncomeTaxReturn&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ],
+    &quot;MortgageRentDocumentation&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ],
+    &quot;PayrollDocumentation&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ],
+    &quot;UtilitiesDocumentation&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ]
+  },
+  &quot;ThankYou&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;ApplicationInformation&quot; : null,
+    &quot;BackToHome&quot; : null,
+    &quot;BusinessInformation&quot; : null,
+    &quot;CreateGrantApplication&quot; : null,
+    &quot;DRContactAndAccountForUser&quot; : null,
+    &quot;DRGetDemoUserId&quot; : null,
+    &quot;Ineligible&quot; : null,
+    &quot;NavigateToApplication&quot; : null,
+    &quot;RequiredDocumentation&quot; : null,
+    &quot;SetInitialState&quot; : null,
+    &quot;ThankYou&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateGMApplication_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

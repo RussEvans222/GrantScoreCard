@@ -1,0 +1,36 @@
+{
+    "CurrencyIsoCode": "USD",
+    "Description": "Set Values Action",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "SetValues",
+    "OmniProcessId": {
+        "Name": "IP_FundingOpportunitySearch",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/Data/FundingOpportunitySearch/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "elementValueMap": {
+            "result": "%DataMapperExtract%"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": false,
+        "failureConditionalFormula": "",
+        "id": "",
+        "internalNotes": "",
+        "isActive": true,
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "restOptions": {
+        }
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/Data/FundingOpportunitySearch/English/SetValues"
+}

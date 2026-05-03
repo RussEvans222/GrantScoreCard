@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;Account&quot;:{&quot;City&quot;:&quot;Salt Lake City&quot;,&quot;PostalCode&quot;:&quot;84119&quot;,&quot;State&quot;:&quot;UT&quot;,&quot;Street&quot;:&quot;2305 South 1070 West&quot;},&quot;AccountName&quot;:&quot;Accusage, Inc.&quot;,&quot;ArticlesLength&quot;:0,&quot;ContextId&quot;:&quot;a53Hp000000wlrBIAQ&quot;,&quot;CountTemplateSelected&quot;:1,&quot;FileFormat&quot;:&quot;pdf&quot;,&quot;Files&quot;:&quot;&quot;,&quot;FilesLength&quot;:0,&quot;Opportunity Name&quot;:&quot;Test&quot;,&quot;QuoteLineItems&quot;:{&quot;DiscountAmount&quot;:&quot;$0.00&quot;,&quot;ListPrice&quot;:&quot;$89,999.00&quot;,&quot;Name&quot;:&quot;2023 Electra Beam&quot;,&quot;NetPrice&quot;:&quot;$89,999.00&quot;,&quot;Quantity&quot;:1,&quot;Total&quot;:&quot;$89,999.00&quot;},&quot;QuoteName&quot;:&quot;Q-00000&quot;,&quot;SObjectId&quot;:&quot;a53Hp000000wlrBIAQ&quot;,&quot;SalesRepCity&quot;:&quot;San Francisco&quot;,&quot;SalesRepCompany&quot;:&quot;Bay Area Electra Dealership&quot;,&quot;SalesRepPostalCode&quot;:&quot;94105&quot;,&quot;SalesRepStreet&quot;:&quot;123 Main Street&quot;,&quot;attachFileFormat&quot;:&quot;pdf&quot;,&quot;countTemplates&quot;:1,&quot;docGenerationMechanism&quot;:&quot;VlocityClientSide&quot;,&quot;docTitle&quot;:&quot;Automotive Quote Proposal&quot;,&quot;documentTitle&quot;:&quot;Automotive Quote Proposal&quot;,&quot;documentViewer&quot;:&quot;VlocityClientSideViewer&quot;,&quot;downloadFileFormat&quot;:&quot;all&quot;,&quot;elementName&quot;:&quot;ResusableDocuSignSendEnvelope&quot;,&quot;generateDocument&quot;:{&quot;GenerateDocumentWord&quot;:[{&quot;Id&quot;:&quot;2dtHp000000CbN0IAK&quot;,&quot;LoopBlockIterationIndex&quot;:1,&quot;LoopBlockIterationStatus&quot;:true,&quot;Name&quot;:&quot;Automotive Quote Proposal&quot;,&quot;OmniStudioExtractDocumentTemplateByNameStatus&quot;:true,&quot;TemplateType&quot;:&quot;MicrosoftWord&quot;,&quot;VersionNumber&quot;:1,&quot;distributionPublicUrl&quot;:&quot;&quot;,&quot;documentTitle&quot;:&quot;Automotive Quote Proposal.docx&quot;,&quot;initiatePDFGeneration&quot;:true,&quot;isOmniStudio&quot;:true,&quot;pdfContentVersionId&quot;:&quot;068Hp00000ekkatIAA&quot;,&quot;pdfDocumentTitle&quot;:&quot;Automotive Quote Proposal&quot;,&quot;wordContentVersionId&quot;:&quot;068Hp00000ekkaoIAA&quot;}],&quot;SendViaDocuSIgn&quot;:true,&quot;recipientEmail&quot;:&quot;sivaji.kandimalla@salesforce.com&quot;,&quot;recipientName&quot;:&quot;sivaji&quot;},&quot;generateMergeDocument&quot;:null,&quot;generatePdfDocument&quot;:true,&quot;hideDocusign&quot;:false,&quot;isNewObject&quot;:&quot;&quot;,&quot;language&quot;:&quot;English&quot;,&quot;localTimeZoneName&quot;:&quot;America/Los_Angeles&quot;,&quot;omniProcessId&quot;:&quot;0jNHp000000PGCRMA4&quot;,&quot;omniScriptId&quot;:&quot;0jNHp000000PGCRMA4&quot;,&quot;omniscriptId&quot;:&quot;0jNHp000000PGCRMA4&quot;,&quot;pdfContentVersionIds&quot;:[&quot;068Hp00000ekkatIAA&quot;],&quot;pdfGenerationCompleted&quot;:true,&quot;pdfGenerationSource&quot;:&quot;VlocityClientSide&quot;,&quot;runMode&quot;:&quot;preview&quot;,&quot;sId&quot;:&quot;0jNHp000000PGCRMA4&quot;,&quot;selectedTemplate&quot;:[{&quot;Id&quot;:&quot;2dtHp000000CbN0IAK&quot;,&quot;LoopBlockIterationIndex&quot;:1,&quot;LoopBlockIterationStatus&quot;:true,&quot;Name&quot;:&quot;Automotive Quote Proposal&quot;,&quot;OmniStudioExtractDocumentTemplateByNameStatus&quot;:true,&quot;TemplateType&quot;:&quot;MicrosoftWord&quot;,&quot;VersionNumber&quot;:1,&quot;isOmniStudio&quot;:true}],&quot;signerEmail&quot;:&quot;sivaji.kandimalla@salesforce.com&quot;,&quot;signerName&quot;:&quot;sivaji&quot;,&quot;subType&quot;:&quot;Proposal&quot;,&quot;templateNames&quot;:[{&quot;VlocityDocumentTemplate&quot;:&quot;Automotive Quote Proposal&quot;}],&quot;templateType&quot;:&quot;Microsoft Word .DOCX Template&quot;,&quot;theme&quot;:&quot;lightning&quot;,&quot;timeStamp&quot;:&quot;2023-09-01T19:12:53.224Z&quot;,&quot;timeTaken&quot;:14,&quot;type&quot;:&quot;Automotive&quot;,&quot;useTemplateDRExtract&quot;:&quot;No&quot;,&quot;userCurrencyCode&quot;:&quot;USD&quot;,&quot;userId&quot;:&quot;005Hp00000fdViYIAU&quot;,&quot;userName&quot;:&quot;vtamatam@autoidonew.demo&quot;,&quot;userProfile&quot;:&quot;System Administrator&quot;,&quot;userTimeZone&quot;:&quot;-420&quot;,&quot;userTimeZoneName&quot;:&quot;America/Los_Angeles&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>false</isActive>
+    <isIntegProcdSignatureAvl>false</isIntegProcdSignatureAvl>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>sfiArchResusableDocuSignSendEnvelope</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DetermineDocumentToSend</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;myDocument&quot; : &quot;=IF(ISNOTBLANK(%mergedPdfContentVersionId%),%mergedPdfContentVersionId%,%generateDocument:GenerateDocumentWord:pdfContentVersionId%)&quot;
+  },
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>false</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>OmniStudioDocuSignApi</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%isOmniStudio% == &apos;true&apos;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;HTTPAction1&quot;,
+  &quot;namedCredential&quot; : &quot;AUTOSCHEDULER&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;%endpoint%&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;POST&quot;,
+  &quot;restOptions&quot; : {
+    &quot;clientCertificateName&quot; : &quot;&quot;,
+    &quot;headers&quot; : { },
+    &quot;isCompressed&quot; : false,
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : 0,
+    &quot;xmlEscapeResponse&quot; : false
+  },
+  &quot;restPath&quot; : &quot;/services/data/v56.0/connect/e-sign/signature-requests/%SObjectId%/envelope/send&quot;,
+  &quot;retryCount&quot; : 0,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;SetVlocityEnvelopeDetails:Envelope&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;type&quot; : &quot;Integration&quot;,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>6.0</sequenceNumber>
+        <type>Rest Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SendDocuSignEnvelope</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;envelope&quot; : &quot;%SetVlocityEnvelopeDetails:Envelope%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%isOmniStudio% &lt;&gt; &apos;true&apos;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction1&quot;,
+  &quot;remoteClass&quot; : &quot;GenericDocuSignIntegrationService&quot;,
+  &quot;remoteMethod&quot; : &quot;sendEnvelope&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>4.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>sendEnvelopeForESign</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;additionalInput&quot; : {
+    &quot;documentName&quot; : &quot;%docTitle%&quot;,
+    &quot;email&quot; : &quot;%generateDocument:recipientEmail%&quot;,
+    &quot;name&quot; : &quot;%generateDocument:recipientName%&quot;,
+    &quot;namedcred&quot; : &quot;EDocuSign&quot;,
+    &quot;parentId&quot; : &quot;%SObjectId%&quot;,
+    &quot;sourceId&quot; : &quot;%DetermineDocumentToSend:myDocument%&quot;
+  },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;%isOmniStudio% == &apos;true&apos;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;RemoteAction2&quot;,
+  &quot;remoteClass&quot; : &quot;DocumentESigner&quot;,
+  &quot;remoteMethod&quot; : &quot;sendSignatureRequest&quot;,
+  &quot;remoteOptions&quot; : { },
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : true,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>5.0</sequenceNumber>
+        <type>Remote Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetOmniStudioEnvelopeDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;myEnvelope&quot; : {
+      &quot;documents&quot; : [ {
+        &quot;documentId&quot; : &quot;1&quot;,
+        &quot;fileExtension&quot; : &quot;docx&quot;,
+        &quot;name&quot; : &quot;%docTitle%&quot;,
+        &quot;sourceId&quot; : &quot;%DetermineDocumentToSend:myDocument%&quot;,
+        &quot;sourceType&quot; : &quot;Content&quot;
+      } ],
+      &quot;emailSettings&quot; : {
+        &quot;emailBody&quot; : &quot;%docTitle%-Sent Via DocuSign Envelope&quot;,
+        &quot;emailSubject&quot; : &quot;Please sign this %docTitle%&quot;
+      },
+      &quot;parentId&quot; : &quot;%SObjectId%&quot;,
+      &quot;recipients&quot; : {
+        &quot;signers&quot; : [ {
+          &quot;email&quot; : &quot;%generateDocument:recipientEmail%&quot;,
+          &quot;name&quot; : &quot;%generateDocument:recipientName%&quot;,
+          &quot;recipientId&quot; : &quot;1&quot;,
+          &quot;routingOrder&quot; : &quot;1&quot;,
+          &quot;signerRole&quot; : &quot;1&quot;
+        } ]
+      },
+      &quot;vendor&quot; : &quot;Docusign&quot;
+    }
+  },
+  &quot;executionConditionalFormula&quot; : &quot;%isOmniStudio% == &apos;true&apos;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SetVlocityEnvelopeDetails</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;elementValueMap&quot; : {
+    &quot;Envelope&quot; : {
+      &quot;documents&quot; : [ {
+        &quot;documentId&quot; : &quot;1&quot;,
+        &quot;fileExtension&quot; : &quot;docx&quot;,
+        &quot;name&quot; : &quot;%docTitle%&quot;,
+        &quot;sourceId&quot; : &quot;%DetermineDocumentToSend:myDocument%&quot;,
+        &quot;sourceType&quot; : &quot;Content&quot;
+      } ],
+      &quot;emailSettings&quot; : {
+        &quot;emailBody&quot; : &quot;Automotive Quote Proposal-Sent Via DocuSign Envelope&quot;,
+        &quot;emailSubject&quot; : &quot;Please sign this Automotive Quote Proposal&quot;
+      },
+      &quot;parentId&quot; : &quot;%SObjectId%&quot;,
+      &quot;recipients&quot; : {
+        &quot;signers&quot; : [ {
+          &quot;email&quot; : &quot;%generateDocument:recipientEmail%&quot;,
+          &quot;name&quot; : &quot;%generateDocument:recipientName%&quot;,
+          &quot;recipientId&quot; : &quot;1&quot;,
+          &quot;recipientLocale&quot; : &quot;EN&quot;,
+          &quot;recipientType&quot; : &quot;signer&quot;,
+          &quot;routingNumber&quot; : &quot;1&quot;,
+          &quot;routingOrder&quot; : &quot;1&quot;,
+          &quot;signerRole&quot; : &quot;1&quot;
+        } ]
+      }
+    }
+  },
+  &quot;executionConditionalFormula&quot; : &quot;%isOmniStudio% &lt;&gt; &apos;true&apos;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;label&quot; : &quot;SetValues1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;show&quot; : null
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>Set Values</type>
+    </omniProcessElements>
+    <omniProcessKey>sfriArch_ResusableDocuSignSendEnvelope</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>ResusableDocuSignSendEnvelope</subType>
+    <type>sfriArch</type>
+    <uniqueName>sfriArch_ResusableDocuSignSendEnvelope_Procedure_5</uniqueName>
+    <versionNumber>5.0</versionNumber>
+    <webComponentKey>10bbc688-7e4c-96b3-8ec0-139bdf598ac9</webComponentKey>
+</OmniIntegrationProcedure>

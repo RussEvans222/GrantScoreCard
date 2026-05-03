@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Txt_KeywordBadge",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "keywordItems",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/keywordItems",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "keywordItems",
+    "ParentElementType": "Block",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "Txt_KeywordBadge",
+        "sanitize": false,
+        "show": "false",
+        "text": "<div style=\"width:100%;max-width:100%;box-sizing:border-box;margin:0 auto;\"><span class=\"slds-badge\" style=\"background:#f3f6fb;color:#304A6E;padding:.25rem .6rem;border-radius:999px;font-size:.75rem;\">%keywordItems%</span></div>",
+        "textKey": ""
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Txt_KeywordBadge"
+}

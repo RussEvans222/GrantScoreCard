@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;executionId&quot; : &quot;9QM4S000000bp3tWAA_20230118_173604_98fe9a8e&quot;,
+  &quot;output&quot; : {
+    &quot;aggregationResults&quot; : { },
+    &quot;calculationResults&quot; : [ {
+      &quot;Score&quot; : 12,
+      &quot;score_label&quot; : &quot;High risk for future opioid abuse&quot;
+    } ]
+  },
+  &quot;simulationResults&quot; : [ {
+    &quot;datatype&quot; : &quot;Number&quot;,
+    &quot;name&quot; : &quot;Score&quot;,
+    &quot;precision&quot; : 0,
+    &quot;value&quot; : &quot;12&quot;
+  }, {
+    &quot;datatype&quot; : &quot;Text&quot;,
+    &quot;name&quot; : &quot;score_label&quot;,
+    &quot;precision&quot; : 0,
+    &quot;value&quot; : &quot;High risk for future opioid abuse&quot;
+  } ],
+  &quot;simulationStepResults&quot; : {
+    &quot;Calculation&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Family_History_Alcohol&quot;
+      } ]
+    },
+    &quot;Calculation10&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Family_History_Rx_drugs&quot;
+      } ]
+    },
+    &quot;Calculation12&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;4&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHRX_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;4&quot;
+      } ]
+    },
+    &quot;Calculation22&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Personal_History_Rx_drugs&quot;
+      } ]
+    },
+    &quot;Calculation24&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;5.000000000&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;PHRX_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;5&quot;
+      } ]
+    },
+    &quot;Calculation26&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Psychological_disease_ADD_OCD_bipolar_schizophrenia&quot;
+      } ]
+    },
+    &quot;Calculation28&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;2.000000000&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;psy_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;2&quot;
+      } ]
+    },
+    &quot;Calculation39&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;history_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHRX_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;4&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;age_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;psy_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;2&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHID_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;PHA_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;PHRX_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;5&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;dep_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHA_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;1&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;PHID_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;12&quot;
+      } ]
+    },
+    &quot;Calculation4&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;1&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHA_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;1&quot;
+      } ]
+    },
+    &quot;Calculation46&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;score_label&quot;,
+        &quot;value&quot; : &quot;High risk for future opioid abuse&quot;
+      } ]
+    },
+    &quot;Calculation47&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;score_label&quot;,
+        &quot;value&quot; : &quot;High risk for future opioid abuse&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;score_label&quot;,
+        &quot;value&quot; : &quot;High risk for future opioid abuse&quot;
+      } ]
+    },
+    &quot;Condition&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Family_History_Alcohol&quot;,
+        &quot;value&quot; : &quot;Yes&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__3&quot;,
+        &quot;value&quot; : &quot;true&quot;
+      } ]
+    },
+    &quot;Condition33&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;History_of_preadolescent_sexual_abuse&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__14&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;Condition37&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;patient_age&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;15&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__15&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;Condition41&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;12&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__16&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;Condition43&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;12&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__17&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;LookupTable&quot; : {
+      &quot;additionalInfo&quot; : {
+        &quot;startDate&quot; : &quot;2023-01-13T22:50:37Z&quot;,
+        &quot;stepType&quot; : &quot;DecisionMatrix&quot;,
+        &quot;versionName&quot; : &quot;Opioid Assessment Scores V1&quot;,
+        &quot;versionNumber&quot; : &quot;1&quot;
+      },
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Family_History_Alcohol&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Gender&quot;,
+        &quot;value&quot; : &quot;Female&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;1&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Family_History_Rx_drugs&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__4&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores11&quot; : {
+      &quot;additionalInfo&quot; : {
+        &quot;startDate&quot; : &quot;2023-01-13T22:50:37Z&quot;,
+        &quot;stepType&quot; : &quot;DecisionMatrix&quot;,
+        &quot;versionName&quot; : &quot;Opioid Assessment Scores V1&quot;,
+        &quot;versionNumber&quot; : &quot;1&quot;
+      },
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Family_History_Rx_drugs&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Gender&quot;,
+        &quot;value&quot; : &quot;Female&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;4&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores13&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Personal_History_Illegal_drugs&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__9&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores17&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Personal_History_Alcohol&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__10&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores21&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Personal_History_Rx_drugs&quot;,
+        &quot;value&quot; : &quot;Yes&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__11&quot;,
+        &quot;value&quot; : &quot;true&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores23&quot; : {
+      &quot;additionalInfo&quot; : {
+        &quot;startDate&quot; : &quot;2023-01-13T22:50:37Z&quot;,
+        &quot;stepType&quot; : &quot;DecisionMatrix&quot;,
+        &quot;versionName&quot; : &quot;Opioid Assessment Scores V1&quot;,
+        &quot;versionNumber&quot; : &quot;1&quot;
+      },
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Personal_History_Rx_drugs&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Gender&quot;,
+        &quot;value&quot; : &quot;Female&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;5&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores25&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Psychological_disease_ADD_OCD_bipolar_schizophrenia&quot;,
+        &quot;value&quot; : &quot;Yes&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__12&quot;,
+        &quot;value&quot; : &quot;true&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores27&quot; : {
+      &quot;additionalInfo&quot; : {
+        &quot;startDate&quot; : &quot;2023-01-13T22:50:37Z&quot;,
+        &quot;stepType&quot; : &quot;DecisionMatrix&quot;,
+        &quot;versionName&quot; : &quot;Opioid Assessment Scores V1&quot;,
+        &quot;versionNumber&quot; : &quot;1&quot;
+      },
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Psychological_disease_ADD_OCD_bipolar_schizophrenia&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Gender&quot;,
+        &quot;value&quot; : &quot;Female&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;2&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores29&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Psychological_Disease_Depression&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__13&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores9&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Family_History_Illegal_Drugs&quot;,
+        &quot;value&quot; : &quot;Yes&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__8&quot;,
+        &quot;value&quot; : &quot;true&quot;
+      } ]
+    }
+  }
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;Opioid_Risk_Score&quot; : 5,
+  &quot;Opioid_Risk_Score_Label&quot; : &quot;Low Risk&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRXOpioidOutput</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRXOpioidOutputCustom2997</globalKey>
+        <inputFieldName>output:calculationResults:Score</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRXOpioidOutput</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Opioid_Risk_Score</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRXOpioidOutputCustom5429</globalKey>
+        <inputFieldName>output:calculationResults:score_label</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRXOpioidOutput</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Opioid_Risk_Score_Label</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;executionId&quot; : &quot;9QM4S000000bp3tWAA_20230118_173604_98fe9a8e&quot;,
+  &quot;output&quot; : {
+    &quot;aggregationResults&quot; : { },
+    &quot;calculationResults&quot; : [ {
+      &quot;Score&quot; : 12,
+      &quot;score_label&quot; : &quot;High risk for future opioid abuse&quot;
+    } ]
+  },
+  &quot;simulationResults&quot; : [ {
+    &quot;datatype&quot; : &quot;Number&quot;,
+    &quot;name&quot; : &quot;Score&quot;,
+    &quot;precision&quot; : 0,
+    &quot;value&quot; : &quot;12&quot;
+  }, {
+    &quot;datatype&quot; : &quot;Text&quot;,
+    &quot;name&quot; : &quot;score_label&quot;,
+    &quot;precision&quot; : 0,
+    &quot;value&quot; : &quot;High risk for future opioid abuse&quot;
+  } ],
+  &quot;simulationStepResults&quot; : {
+    &quot;Calculation&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Family_History_Alcohol&quot;
+      } ]
+    },
+    &quot;Calculation10&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Family_History_Rx_drugs&quot;
+      } ]
+    },
+    &quot;Calculation12&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;4&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHRX_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;4&quot;
+      } ]
+    },
+    &quot;Calculation22&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Personal_History_Rx_drugs&quot;
+      } ]
+    },
+    &quot;Calculation24&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;5.000000000&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;PHRX_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;5&quot;
+      } ]
+    },
+    &quot;Calculation26&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Psychological_disease_ADD_OCD_bipolar_schizophrenia&quot;
+      } ]
+    },
+    &quot;Calculation28&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;2.000000000&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;psy_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;2&quot;
+      } ]
+    },
+    &quot;Calculation39&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;history_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHRX_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;4&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;age_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;psy_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;2&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHID_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;PHA_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;PHRX_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;5&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;dep_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHA_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;1&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;PHID_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;0&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;12&quot;
+      } ]
+    },
+    &quot;Calculation4&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;1&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;FHA_score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;1&quot;
+      } ]
+    },
+    &quot;Calculation46&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;score_label&quot;,
+        &quot;value&quot; : &quot;High risk for future opioid abuse&quot;
+      } ]
+    },
+    &quot;Calculation47&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;score_label&quot;,
+        &quot;value&quot; : &quot;High risk for future opioid abuse&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;score_label&quot;,
+        &quot;value&quot; : &quot;High risk for future opioid abuse&quot;
+      } ]
+    },
+    &quot;Condition&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Family_History_Alcohol&quot;,
+        &quot;value&quot; : &quot;Yes&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__3&quot;,
+        &quot;value&quot; : &quot;true&quot;
+      } ]
+    },
+    &quot;Condition33&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;History_of_preadolescent_sexual_abuse&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__14&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;Condition37&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;patient_age&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;15&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__15&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;Condition41&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;12&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__16&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;Condition43&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Score&quot;,
+        &quot;precision&quot; : 0,
+        &quot;value&quot; : &quot;12&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__17&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;LookupTable&quot; : {
+      &quot;additionalInfo&quot; : {
+        &quot;startDate&quot; : &quot;2023-01-13T22:50:37Z&quot;,
+        &quot;stepType&quot; : &quot;DecisionMatrix&quot;,
+        &quot;versionName&quot; : &quot;Opioid Assessment Scores V1&quot;,
+        &quot;versionNumber&quot; : &quot;1&quot;
+      },
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Family_History_Alcohol&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Gender&quot;,
+        &quot;value&quot; : &quot;Female&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;1&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Family_History_Rx_drugs&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__4&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores11&quot; : {
+      &quot;additionalInfo&quot; : {
+        &quot;startDate&quot; : &quot;2023-01-13T22:50:37Z&quot;,
+        &quot;stepType&quot; : &quot;DecisionMatrix&quot;,
+        &quot;versionName&quot; : &quot;Opioid Assessment Scores V1&quot;,
+        &quot;versionNumber&quot; : &quot;1&quot;
+      },
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Family_History_Rx_drugs&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Gender&quot;,
+        &quot;value&quot; : &quot;Female&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;4&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores13&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Personal_History_Illegal_drugs&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__9&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores17&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Personal_History_Alcohol&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__10&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores21&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Personal_History_Rx_drugs&quot;,
+        &quot;value&quot; : &quot;Yes&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__11&quot;,
+        &quot;value&quot; : &quot;true&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores23&quot; : {
+      &quot;additionalInfo&quot; : {
+        &quot;startDate&quot; : &quot;2023-01-13T22:50:37Z&quot;,
+        &quot;stepType&quot; : &quot;DecisionMatrix&quot;,
+        &quot;versionName&quot; : &quot;Opioid Assessment Scores V1&quot;,
+        &quot;versionNumber&quot; : &quot;1&quot;
+      },
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Personal_History_Rx_drugs&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Gender&quot;,
+        &quot;value&quot; : &quot;Female&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;5&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores25&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Psychological_disease_ADD_OCD_bipolar_schizophrenia&quot;,
+        &quot;value&quot; : &quot;Yes&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__12&quot;,
+        &quot;value&quot; : &quot;true&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores27&quot; : {
+      &quot;additionalInfo&quot; : {
+        &quot;startDate&quot; : &quot;2023-01-13T22:50:37Z&quot;,
+        &quot;stepType&quot; : &quot;DecisionMatrix&quot;,
+        &quot;versionName&quot; : &quot;Opioid Assessment Scores V1&quot;,
+        &quot;versionNumber&quot; : &quot;1&quot;
+      },
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Question&quot;,
+        &quot;value&quot; : &quot;Psychological_disease_ADD_OCD_bipolar_schizophrenia&quot;
+      }, {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Gender&quot;,
+        &quot;value&quot; : &quot;Female&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Number&quot;,
+        &quot;name&quot; : &quot;Opioid_Assessment_Scores__Score&quot;,
+        &quot;precision&quot; : 9,
+        &quot;value&quot; : &quot;2&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores29&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Psychological_Disease_Depression&quot;,
+        &quot;value&quot; : &quot;No&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__13&quot;,
+        &quot;value&quot; : &quot;false&quot;
+      } ]
+    },
+    &quot;OpioidAssessmentScores9&quot; : {
+      &quot;isDefaulted&quot; : false,
+      &quot;stepErrors&quot; : { },
+      &quot;stepInputs&quot; : [ {
+        &quot;datatype&quot; : &quot;Text&quot;,
+        &quot;name&quot; : &quot;Family_History_Illegal_Drugs&quot;,
+        &quot;value&quot; : &quot;Yes&quot;
+      } ],
+      &quot;stepResults&quot; : [ {
+        &quot;datatype&quot; : &quot;Boolean&quot;,
+        &quot;name&quot; : &quot;condition_output__8&quot;,
+        &quot;value&quot; : &quot;true&quot;
+      } ]
+    }
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>DRXOpioidOutput_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

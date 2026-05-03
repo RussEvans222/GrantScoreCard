@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;Overview&quot; : {
+    &quot;CleanFacility_block&quot; : {
+      &quot;CleanFacility&quot; : null,
+      &quot;CleanFacility_assessmentresult&quot; : null,
+      &quot;CleanFacility_uploadfile&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    },
+    &quot;X1_Condition_block&quot; : {
+      &quot;X1_Condition&quot; : null,
+      &quot;X1_Condition_assessmentresult&quot; : null,
+      &quot;X1_Condition_uploadfile&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    }
+  },
+  &quot;Thank You&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRGetCurrentSiteById&quot; : null,
+    &quot;DataRaptorPostAction1&quot; : null,
+    &quot;Overview&quot; : null,
+    &quot;Save-Responses&quot; : null,
+    &quot;SetValueAssessData&quot; : null,
+    &quot;SetValuesContextId&quot; : null,
+    &quot;Thank You&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRUpdateCurrentFacilityInspection</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateCurrentFacilityInspectionCustom7512</globalKey>
+        <inputFieldName>SiteFacilityId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateCurrentFacilityInspection</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRUpdateCurrentFacilityInspectionCustom7999</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRUpdateCurrentFacilityInspection</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateCurrentFacilityInspectionCustom1116</globalKey>
+        <inputFieldName>InspectionStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateCurrentFacilityInspection</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Inspection_Status__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateCurrentFacilityInspectionCustom9067</globalKey>
+        <inputFieldName>Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateCurrentFacilityInspection</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : null,
+  &quot;Overview&quot; : {
+    &quot;CleanFacility_block&quot; : {
+      &quot;CleanFacility&quot; : null,
+      &quot;CleanFacility_assessmentresult&quot; : null,
+      &quot;CleanFacility_uploadfile&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    },
+    &quot;X1_Condition_block&quot; : {
+      &quot;X1_Condition&quot; : null,
+      &quot;X1_Condition_assessmentresult&quot; : null,
+      &quot;X1_Condition_uploadfile&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    }
+  },
+  &quot;Thank You&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRGetCurrentSiteById&quot; : null,
+    &quot;DataRaptorPostAction1&quot; : null,
+    &quot;Overview&quot; : null,
+    &quot;Save-Responses&quot; : null,
+    &quot;SetValueAssessData&quot; : null,
+    &quot;SetValuesContextId&quot; : null,
+    &quot;Thank You&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRUpdateCurrentFacilityInspection_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

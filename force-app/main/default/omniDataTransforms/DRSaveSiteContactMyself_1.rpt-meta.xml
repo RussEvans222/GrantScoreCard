@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountId&quot; : &quot;0015e00000H0OrkAAF&quot;,
+  &quot;AccountName&quot; : &quot;Atlanta Community Food Bank Inc.&quot;,
+  &quot;ContactId&quot; : &quot;0035e000014DXt3AAG&quot;,
+  &quot;ContactName&quot; : &quot;Ellen Jackson&quot;,
+  &quot;CurrentDay&quot; : &quot;SUN&quot;,
+  &quot;DRId_Address&quot; : &quot;1305e0000011GZhAAM&quot;,
+  &quot;DRId_Location&quot; : &quot;1315e0000011RTaAAM&quot;,
+  &quot;DRId_VolunteerSiteHours__c&quot; : &quot;a1k5e000003DlGIAA0&quot;,
+  &quot;DRId_VolunteerSite__c&quot; : &quot;a1l5e000002Brj5AAC&quot;,
+  &quot;Disclosure&quot; : {
+    &quot;Disclosure1&quot; : true
+  },
+  &quot;Order&quot; : 7,
+  &quot;ParentLocationId&quot; : &quot;1315e0000011RTaAAM&quot;,
+  &quot;SiteAppointmentContactInfo__c&quot; : &quot;John Smith 404-444-4321&quot;,
+  &quot;SiteContactPhone__c&quot; : &quot;(404)898-9822&quot;,
+  &quot;SiteId&quot; : &quot;a1l5e000002Brj5AAC&quot;,
+  &quot;SiteInfo&quot; : {
+    &quot;BlkFiling&quot; : {
+      &quot;FedeFile__c&quot; : &quot;Yes&quot;,
+      &quot;StateeFile__c&quot; : &quot;Yes&quot;
+    },
+    &quot;BlkQuestions&quot; : {
+      &quot;SiteFormTerritoryOffice__c&quot; : &quot;Yes&quot;,
+      &quot;SitePrepareForeign__c&quot; : &quot;No&quot;,
+      &quot;SiteVoterReg__c&quot; : &quot;Yes&quot;,
+      &quot;SiteofferFinancialServices__c&quot; : &quot;Yes&quot;
+    },
+    &quot;BlkSiteDetails&quot; : {
+      &quot;BlkSiteContact&quot; : null,
+      &quot;SiteApptOnly__c&quot; : &quot;No&quot;,
+      &quot;SiteMobileOnly__c&quot; : &quot;No&quot;,
+      &quot;SitePublic__c&quot; : &quot;Yes&quot;
+    },
+    &quot;Block1&quot; : {
+      &quot;BlkServiceSystems&quot; : {
+        &quot;ServiceSystemSelectionOtherSelected&quot; : false,
+        &quot;SiteOfferOtherServiceSystem__c&quot; : null,
+        &quot;SiteOfferServiceSystems__c&quot; : &quot;DocuSign;TaxSlayer Taxpayer Scanned Documents&quot;
+      },
+      &quot;Block2&quot; : {
+        &quot;SiteOfferAFMType__c&quot; : &quot;FSA Self-Prep Fusion&quot;
+      },
+      &quot;SiteOfferAFMReturns__c&quot; : &quot;Yes&quot;,
+      &quot;SiteOfferCAA__c&quot; : &quot;Yes&quot;,
+      &quot;SiteOfferPrepareLastYearReturns__c&quot; : &quot;Yes&quot;
+    },
+    &quot;Languages__c&quot; : &quot;English,Spanish&quot;,
+    &quot;ProgramType__c&quot; : &quot;VITA&quot;,
+    &quot;SIDN__c&quot; : &quot;S12344567&quot;,
+    &quot;SiteAddress__c-Block&quot; : {
+      &quot;SiteAddress__c&quot; : &quot;3400 N Desert Dr, East Point, GA 30344, USA&quot;,
+      &quot;SiteCity&quot; : &quot;East Point&quot;,
+      &quot;SiteState&quot; : &quot;GA&quot;,
+      &quot;SiteStreet&quot; : &quot;3400 North Desert Drive&quot;,
+      &quot;SiteZipcode&quot; : &quot;30344&quot;
+    },
+    &quot;SiteName&quot; : &quot;Financial Assistance Center 4&quot;
+  },
+  &quot;UserId&quot; : &quot;0055e000007jps9AAA&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/New_York&quot;,
+  &quot;omniProcessId&quot; : &quot;0jN5e0000010wX7EAI&quot;,
+  &quot;timeStamp&quot; : &quot;2023-06-30T15:38:22.780Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055e000007jps9AAA&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@irs-tfa.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-240&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/New_York&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRSaveSiteContactMyself</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveSiteContactMyself8378406651302024</globalKey>
+        <inputFieldName>DRId_VolunteerSite__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveSiteContactMyself</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>VolunteerSite__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRSaveSiteContactMyself19402792011990266</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRSaveSiteContactMyself</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>VolunteerSite__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveSiteContactMyself8061813680517496</globalKey>
+        <inputFieldName>ContactId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveSiteContactMyself</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SiteContact__c</outputFieldName>
+        <outputObjectName>VolunteerSite__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : null,
+  &quot;Disclosure&quot; : {
+    &quot;Disclosure1&quot; : null
+  },
+  &quot;SiteContact&quot; : {
+    &quot;Block3&quot; : {
+      &quot;SiteContactBestTimeCallEnd&quot; : null,
+      &quot;SiteContactBestTimeCallStart&quot; : null
+    },
+    &quot;Block4&quot; : {
+      &quot;SiteContactName&quot; : null,
+      &quot;SiteContactPhoneNumber&quot; : null
+    },
+    &quot;MyselfSiteContact&quot; : null,
+    &quot;SiteContactAddress-Block&quot; : {
+      &quot;ContactCity&quot; : null,
+      &quot;ContactState&quot; : null,
+      &quot;ContactStreet&quot; : null,
+      &quot;ContactZipcode&quot; : null,
+      &quot;SiteContactAddress&quot; : null
+    }
+  },
+  &quot;SiteInfo&quot; : {
+    &quot;BlkFiling&quot; : {
+      &quot;FedeFile__c&quot; : null,
+      &quot;StateeFile__c&quot; : null
+    },
+    &quot;BlkQuestions&quot; : {
+      &quot;SiteFormTerritoryOffice__c&quot; : null,
+      &quot;SitePrepareForeign__c&quot; : null,
+      &quot;SiteVoterReg__c&quot; : null,
+      &quot;SiteofferFinancialServices__c&quot; : null
+    },
+    &quot;BlkSiteDetails&quot; : {
+      &quot;BlkSiteContact&quot; : {
+        &quot;AddContact&quot; : null,
+        &quot;BlkNewContact&quot; : {
+          &quot;NewContactName&quot; : null,
+          &quot;SiteContactPhone&quot; : null
+        },
+        &quot;SiteContactId&quot; : null
+      },
+      &quot;SiteApptOnly__c&quot; : null,
+      &quot;SiteMobileOnly__c&quot; : null,
+      &quot;SitePublic__c&quot; : null
+    },
+    &quot;Block1&quot; : {
+      &quot;BlkServiceSystems&quot; : {
+        &quot;ServiceSystemSelectionOtherSelected&quot; : null,
+        &quot;SiteOfferOtherServiceSystem__c&quot; : null,
+        &quot;SiteOfferServiceSystems__c&quot; : null
+      },
+      &quot;Block2&quot; : {
+        &quot;SiteOfferAFMType__c&quot; : null
+      },
+      &quot;SiteOfferAFMReturns__c&quot; : null,
+      &quot;SiteOfferCAA__c&quot; : null,
+      &quot;SiteOfferPrepareLastYearReturns__c&quot; : null
+    },
+    &quot;Languages__c&quot; : null,
+    &quot;ProgramType__c&quot; : null,
+    &quot;SIDN__c&quot; : null,
+    &quot;SiteAddress__c-Block&quot; : {
+      &quot;SiteAddress__c&quot; : null,
+      &quot;SiteCity&quot; : null,
+      &quot;SiteState&quot; : null,
+      &quot;SiteStreet&quot; : null,
+      &quot;SiteZipcode&quot; : null
+    },
+    &quot;SiteName&quot; : null
+  },
+  &quot;SiteOperatingHours&quot; : {
+    &quot;CustomLWC1&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRCreateLocationAddressFromSite&quot; : null,
+    &quot;DRGetCurrentUserasContact&quot; : null,
+    &quot;DRUpdateParentLocationwithAddress&quot; : null,
+    &quot;DataRaptorCreateSite&quot; : null,
+    &quot;DataRaptorCreateSiteHourDayFRI&quot; : null,
+    &quot;DataRaptorCreateSiteHourDayMon&quot; : null,
+    &quot;DataRaptorCreateSiteHourDaySAT&quot; : null,
+    &quot;DataRaptorCreateSiteHourDaySUN&quot; : null,
+    &quot;DataRaptorCreateSiteHourDayThurs&quot; : null,
+    &quot;DataRaptorCreateSiteHourDayTues&quot; : null,
+    &quot;DataRaptorCreateSiteHourDayWed&quot; : null,
+    &quot;DataRaptorSaveSiteContact&quot; : null,
+    &quot;Disclosure&quot; : null,
+    &quot;NavigateAction1&quot; : null,
+    &quot;SetLocationIdasParentLocationId&quot; : null,
+    &quot;SetValueFRI&quot; : null,
+    &quot;SetValueMon&quot; : null,
+    &quot;SetValueSAT&quot; : null,
+    &quot;SetValueSUN&quot; : null,
+    &quot;SetValueSiteId&quot; : null,
+    &quot;SetValueThurs&quot; : null,
+    &quot;SetValueTues&quot; : null,
+    &quot;SetValueWed&quot; : null,
+    &quot;SetValuesSiteContactfromUser&quot; : null,
+    &quot;SetValuesTEST&quot; : null,
+    &quot;SiteContact&quot; : null,
+    &quot;SiteInfo&quot; : null,
+    &quot;SiteOperatingHours&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRSaveSiteContactMyself_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

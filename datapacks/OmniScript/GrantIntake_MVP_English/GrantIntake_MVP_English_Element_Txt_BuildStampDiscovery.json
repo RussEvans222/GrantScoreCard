@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": false,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Txt_BuildStampDiscovery",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "Step_ProjectDiscovery",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Step_ProjectDiscovery",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "Step_ProjectDiscovery",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "Txt_BuildStampDiscovery",
+        "sanitize": false,
+        "show": null,
+        "text": "<div style=\"width:min(1080px,94vw);margin:1.25rem auto .75rem;background:rgba(255,255,255,0.96);border:1px solid #c9d8f5;border-radius:999px;padding:0.4rem 0.85rem;color:#1f3f70;font-size:0.9rem;font-weight:600;letter-spacing:0.01em;line-height:1.2;font-family:Arial,Helvetica,sans-serif;box-shadow:0 6px 18px rgba(14,36,74,0.12);text-align:center;white-space:nowrap;\">Build GSC-INTAKE-B1018 | Updated 2026-03-16 18:03 ET</div>",
+        "textKey": ""
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Txt_BuildStampDiscovery"
+}

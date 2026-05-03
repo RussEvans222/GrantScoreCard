@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <description>Create ApplicationForm from Grants OmniScript payload.</description>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ApplicationInformation&quot; : {
+    &quot;FundingRequestAmount&quot; : null,
+    &quot;FundsUsage&quot; : null,
+    &quot;OtherDescription&quot; : null
+  },
+  &quot;BusinessInformation&quot; : {
+    &quot;Account&quot; : {
+      &quot;Id&quot; : null,
+      &quot;Name&quot; : null
+    },
+    &quot;Contact&quot; : {
+      &quot;Id&quot; : null
+    }
+  },
+  &quot;ContextId&quot; : null
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>GrantsCreateApplicationForm</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_AccountId</globalKey>
+        <inputFieldName>BusinessInformation:Account:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:ApplicationFormName ISBLANK | var:BusinessInformation:Account:Name &quot;/\/\/-/\/\/Grant/\/\/Application&quot; CONCAT var:ApplicationFormName IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(ApplicationFormName),CONCAT(BusinessInformation:Account:Name, &quot; - Grant Application&quot;),ApplicationFormName)</formulaExpression>
+        <formulaResultPath>ApplicationFormName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>GrantsCreateApplicationForm_Formula_Name</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_ContactId</globalKey>
+        <inputFieldName>BusinessInformation:Contact:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_Purpose</globalKey>
+        <inputFieldName>ApplicationInformation:FundsUsage</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Purpose</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_RequestedAmount</globalKey>
+        <inputFieldName>ApplicationInformation:FundingRequestAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RequestedAmount</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_ApplicationSummary</globalKey>
+        <inputFieldName>ApplicationInformation:OtherDescription</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationSummary</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| TODAY</formulaConverted>
+        <formulaExpression>TODAY()</formulaExpression>
+        <formulaResultPath>SubmissionDateValue</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>GrantsCreateApplicationForm_Formula_SubmissionDateTime</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_Name</globalKey>
+        <inputFieldName>ApplicationFormName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_Title</globalKey>
+        <inputFieldName>ApplicationFormName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Title</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Submitted</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_Stage</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Stage</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GrantsCreateApplicationForm_Field_SubmissionDate</globalKey>
+        <inputFieldName>SubmissionDateValue</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GrantsCreateApplicationForm</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SubmissionDate</outputFieldName>
+        <outputObjectName>ApplicationForm</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ApplicationInformation&quot; : {
+    &quot;FundingRequestAmount&quot; : 125000,
+    &quot;FundsUsage&quot; : &quot;Utilities&quot;,
+    &quot;OtherDescription&quot; : &quot;Additional weatherization support&quot;
+  },
+  &quot;BusinessInformation&quot; : {
+    &quot;Account&quot; : {
+      &quot;Id&quot; : &quot;001000000000001AAA&quot;,
+      &quot;Name&quot; : &quot;Sample Org&quot;
+    },
+    &quot;Contact&quot; : {
+      &quot;Id&quot; : &quot;003000000000001AAA&quot;
+    }
+  },
+  &quot;ContextId&quot; : &quot;119000000000001AAA&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>GrantsCreateApplicationForm_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

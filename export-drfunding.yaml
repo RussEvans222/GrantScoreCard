@@ -1,0 +1,6 @@
+projectPath: .
+expansionPath: datapacks-check
+sfdx.username: GRANTS
+queries:
+  - VlocityDataPackType: DataRaptor
+    query: SELECT Id, Name FROM OmniDataTransform WHERE Name = 'DRFundingList'

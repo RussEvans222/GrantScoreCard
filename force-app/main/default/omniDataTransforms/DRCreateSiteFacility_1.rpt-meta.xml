@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountId&quot; : &quot;001Hr00001s7dedIAA&quot;,
+  &quot;AccountName&quot; : &quot;Acme Consulting Services&quot;,
+  &quot;AdditonalInfo&quot; : {
+    &quot;FacilityAssetEditBlock&quot; : [ {
+      &quot;FacilityAssetName&quot; : &quot;Item 1&quot;,
+      &quot;FacilityAssetValue&quot; : 14500
+    }, {
+      &quot;FacilityAssetName&quot; : &quot;Item 2&quot;,
+      &quot;FacilityAssetValue&quot; : 54775
+    } ],
+    &quot;FacilityAssetValueTotal&quot; : 69275,
+    &quot;FacilityComments&quot; : &quot;Facility is in great shape and well maintained.&quot;,
+    &quot;FacilityRG_Condition&quot; : {
+      &quot;RGFacilityCondition_FacilityBuilding&quot; : &quot;Excellent&quot;,
+      &quot;RGFacilityCondition_FacilityEquipment&quot; : &quot;Good&quot;,
+      &quot;RGFacilityCondition_FacilityGrounds&quot; : &quot;Good&quot;
+    }
+  },
+  &quot;AssessEffectiveDate&quot; : &quot;2023-12-05T20:28:18.000Z&quot;,
+  &quot;AssessName&quot; : &quot;Acme Consulting Services - HQ Facility Intake Assessment 122023&quot;,
+  &quot;Assessment&quot; : {
+    &quot;AssessmentExecute&quot; : &quot;Yes&quot;
+  },
+  &quot;AssessmentSignature&quot; : [ {
+    &quot;DateTime&quot; : &quot;2023-12-05T20:28:15.243Z&quot;,
+    &quot;OmniscriptIdentifier&quot; : &quot;MySignature&quot;,
+    &quot;SignedBy&quot; : &quot;Kevin Wind&quot;,
+    &quot;SignedInitial&quot; : &quot;KW&quot;
+  } ],
+  &quot;CanvasChosen&quot; : &quot;draw&quot;,
+  &quot;ClassificationDetails&quot; : {
+    &quot;FacilityClassifiedTypes&quot; : {
+      &quot;ClassifiedUsageAdmin&quot; : &quot;FOU&quot;,
+      &quot;ClassifiedUsageEngineering&quot; : &quot;Secret&quot;,
+      &quot;ClassifiedUsageExec&quot; : &quot;Confidential&quot;
+    }
+  },
+  &quot;Completion&quot; : { },
+  &quot;Consent&quot; : { },
+  &quot;ContactId&quot; : &quot;003Hr00002XkUdFIAV&quot;,
+  &quot;ContactName&quot; : &quot;Keith Winderlich&quot;,
+  &quot;ContextId&quot; : &quot;0klHr000000wr4WIAQ&quot;,
+  &quot;CurrentDay&quot; : &quot;Sunday&quot;,
+  &quot;CurrentSobjectType&quot; : &quot;HealthcareFacility&quot;,
+  &quot;DRId_Address&quot; : &quot;130Hr0000000iv8IAA&quot;,
+  &quot;DRId_HealthcareFacility&quot; : &quot;0klHr000000wr4WIAQ&quot;,
+  &quot;DRId_Location&quot; : &quot;131Hr0000000rxeIAA&quot;,
+  &quot;DRId_OperatingHours&quot; : &quot;0OHHr0000009FiQOAU&quot;,
+  &quot;DRId_TimeSlot&quot; : &quot;0GjHr0000009UhjKAE&quot;,
+  &quot;Disclosure&quot; : {
+    &quot;Disclosure1&quot; : true
+  },
+  &quot;DocumentContentType&quot; : &quot;image/png&quot;,
+  &quot;FontChosen&quot; : 0,
+  &quot;General&quot; : {
+    &quot;FacilityAge&quot; : 15,
+    &quot;FacilityClassified&quot; : &quot;Yes&quot;,
+    &quot;FacilityPrevCert&quot; : &quot;2020-03-10&quot;,
+    &quot;FacilityUsage&quot; : &quot;HQ;Administrative;Warehouse&quot;
+  },
+  &quot;LocationIdDeleted&quot; : &quot;&quot;,
+  &quot;OperatingHoursIdDeleted&quot; : &quot;&quot;,
+  &quot;Order&quot; : 7,
+  &quot;OrganizationName&quot; : &quot;Acme Consulting Services&quot;,
+  &quot;RecordType&quot; : {
+    &quot;DeveloperName&quot; : &quot;SiteFacility&quot;,
+    &quot;Id&quot; : &quot;012Hr0000008SfxIAE&quot;
+  },
+  &quot;RecordTypeName&quot; : &quot;SiteFacility&quot;,
+  &quot;SignedBy&quot; : &quot;Kevin Wind&quot;,
+  &quot;SignedDate&quot; : &quot;2023-12-05T20:28:15.241Z&quot;,
+  &quot;SignedElements&quot; : [ &quot;MySignature&quot; ],
+  &quot;SiteContact&quot; : {
+    &quot;BestTimetoCall&quot; : {
+      &quot;SiteContactBestTimeCallEnd&quot; : &quot;12:00:00.000Z&quot;,
+      &quot;SiteContactBestTimeCallStart&quot; : &quot;09:00:00.000Z&quot;
+    },
+    &quot;BlkSiteContactNew&quot; : null,
+    &quot;MyselfSiteContact&quot; : true,
+    &quot;SiteContactPhone&quot; : &quot;2405553883&quot;,
+    &quot;SiteOperatingHoursAdd&quot; : &quot;No&quot;
+  },
+  &quot;SiteContactId&quot; : &quot;003Hr00002XkUdFIAV&quot;,
+  &quot;SiteContactPhone__c&quot; : &quot;(415)443-9822&quot;,
+  &quot;SiteFacilityId&quot; : &quot;0klHr000000wr4WIAQ&quot;,
+  &quot;SiteFacilityIdDeleted&quot; : &quot;&quot;,
+  &quot;SiteFacilityName&quot; : &quot;Acme Consulting Services - HQ&quot;,
+  &quot;SiteInfo&quot; : {
+    &quot;Description&quot; : &quot;This is the HQ for various administration and services. This is also includes a warehouse for various materials&quot;,
+    &quot;NumberofStaff&quot; : 200,
+    &quot;SIDN__c&quot; : &quot;S12344567&quot;,
+    &quot;SiteAddress-Block&quot; : {
+      &quot;SiteAddress&quot; : &quot;415 Mission St, San Francisco, CA 94105 USA&quot;,
+      &quot;SiteCity&quot; : &quot; San Francisco&quot;,
+      &quot;SiteCountry&quot; : &quot;United States&quot;,
+      &quot;SiteState&quot; : &quot;CA&quot;,
+      &quot;SiteStreet&quot; : &quot;415 Mission St&quot;,
+      &quot;SiteZipcode&quot; : &quot;94105&quot;
+    },
+    &quot;SiteFacilityType&quot; : &quot;HQ&quot;,
+    &quot;SiteName&quot; : &quot;Acme Consulting Services - HQ&quot;
+  },
+  &quot;SiteNameDefault&quot; : &quot;Acme Consulting Services - HQ&quot;,
+  &quot;SiteNameIP&quot; : &quot;&quot;,
+  &quot;SiteOperatingHours&quot; : null,
+  &quot;UserId&quot; : &quot;005Hr00000FOMbWIAX&quot;,
+  &quot;assessmentId&quot; : &quot;0U3Hr000000wwD9KAI&quot;,
+  &quot;language&quot; : &quot;English&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/New_York&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNHr0000004mVrMAI&quot;,
+  &quot;omniscriptId&quot; : &quot;0jNHr0000004mVrMAI&quot;,
+  &quot;runMode&quot; : &quot;preview&quot;,
+  &quot;sId&quot; : &quot;0jNHr0000004mVrMAI&quot;,
+  &quot;subType&quot; : &quot;NewSiteFacility&quot;,
+  &quot;theme&quot; : &quot;lightning&quot;,
+  &quot;timeStamp&quot; : &quot;2023-12-05T20:23:27.311Z&quot;,
+  &quot;type&quot; : &quot;SiteFacility&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;005Hr00000FOMbWIAX&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@1123winter24.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-300&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/New_York&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRCreateSiteFacility</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom5332</globalKey>
+        <inputFieldName>SiteInfo:SiteAddress-Block:SiteCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Country</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacilityCustom4436</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:SiteInfo:SiteName &quot;/\/\/-/\/\/&quot; &apos;Regular&apos; CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(%SiteInfo:SiteName% ,&quot; - &quot;, &apos;Regular&apos;)</formulaExpression>
+        <formulaResultPath>CalcOperatingHoursName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DRCreateSiteFacilityCustom9835</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Site</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom7113</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>LocationType</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacilityCustom3378</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ParentId</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom1665</globalKey>
+        <inputFieldName>SiteInfo:SiteAddress-Block:SiteZipcode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>PostalCode</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom1061</globalKey>
+        <inputFieldName>SiteInfo:SiteAddress-Block:SiteState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>State</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom9168</globalKey>
+        <inputFieldName>SiteInfo:SiteAddress-Block:SiteStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Street</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacility009892430094755822</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom885</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>AccountRel__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom8026</globalKey>
+        <inputFieldName>SiteContactId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Contact__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacility5586712596281804</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>To Be Scheduled</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom705</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Inspection_Status__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacility8506413056072384</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Location</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacility22783011919129392</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>LocationId</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Business Site</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom2920</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>LocationType</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacility5312328845842094</globalKey>
+        <inputFieldName>SiteInfo:SiteName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom4000</globalKey>
+        <inputFieldName>SiteInfo:NumberofStaff</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>NumberofStaff__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom7877</globalKey>
+        <inputFieldName>RecordType:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacility9620063881358278</globalKey>
+        <inputFieldName>SiteInfo:SIDN__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>SIDN__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>HQ</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom7706</globalKey>
+        <inputFieldName>SiteInfo:SiteFacilityType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>SiteFacilityType__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>New</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom9816</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Status__c</outputFieldName>
+        <outputObjectName>HealthcareFacility</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacilityCustom7996</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>OperatingHours</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom5276</globalKey>
+        <inputFieldName>CalcOperatingHoursName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>OperatingHours</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Business Site</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacility555927175891733</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>LocationType</outputFieldName>
+        <outputObjectName>Location</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacilityCustom2453</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>3.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>SiteFacility__c</outputFieldName>
+        <outputObjectName>OperatingHours</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom9764</globalKey>
+        <inputFieldName>userTimeZoneName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>TimeZone</outputFieldName>
+        <outputObjectName>OperatingHours</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacilityCustom5005</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Location</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacilityCustom9925</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Location</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRCreateSiteFacilityCustom5973</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>2.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>VisitorAddressId</outputFieldName>
+        <outputObjectName>Location</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacility1985109323926051</globalKey>
+        <inputFieldName>SiteInfo:SiteName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Location</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom6739</globalKey>
+        <inputFieldName>SiteInfo:SiteAddress-Block:SiteAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Address</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Office</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom8024</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AddressType</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRCreateSiteFacilityCustom606</globalKey>
+        <inputFieldName>SiteInfo:SiteAddress-Block:SiteCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRCreateSiteFacility</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>City</outputFieldName>
+        <outputObjectName>Address</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;001Hr00001s7dedIAA&quot;,
+  &quot;AccountName&quot; : &quot;Acme Consulting Services&quot;,
+  &quot;AdditonalInfo&quot; : null,
+  &quot;Assessment&quot; : { },
+  &quot;ClassificationDetails&quot; : null,
+  &quot;Completion&quot; : null,
+  &quot;Consent&quot; : null,
+  &quot;ContactId&quot; : &quot;003Hr00002XkUdFIAV&quot;,
+  &quot;ContactName&quot; : &quot;Keith Winderlich&quot;,
+  &quot;CurrentSobjectType&quot; : &quot;HealthcareFacility&quot;,
+  &quot;Disclosure&quot; : {
+    &quot;Disclosure1&quot; : true
+  },
+  &quot;General&quot; : null,
+  &quot;LocationIdDeleted&quot; : &quot;&quot;,
+  &quot;OperatingHoursIdDeleted&quot; : &quot;&quot;,
+  &quot;SiteContact&quot; : {
+    &quot;BestTimetoCall&quot; : {
+      &quot;SiteContactBestTimeCallEnd&quot; : &quot;12:00:00.000Z&quot;,
+      &quot;SiteContactBestTimeCallStart&quot; : &quot;09:00:00.000Z&quot;
+    },
+    &quot;BlkSiteContactNew&quot; : null,
+    &quot;MyselfSiteContact&quot; : true,
+    &quot;SiteContactPhone&quot; : &quot;2405553883&quot;,
+    &quot;SiteOperatingHoursAdd&quot; : &quot;No&quot;
+  },
+  &quot;SiteContactId&quot; : &quot;003Hr00002XkUdFIAV&quot;,
+  &quot;SiteContactPhone__c&quot; : &quot;(415)443-9822&quot;,
+  &quot;SiteFacilityId&quot; : null,
+  &quot;SiteFacilityIdDeleted&quot; : &quot;&quot;,
+  &quot;SiteInfo&quot; : {
+    &quot;Description&quot; : &quot;This is the HQ for various administration and services. This is also includes a warehouse for various materials&quot;,
+    &quot;NumberofStaff&quot; : 200,
+    &quot;SIDN__c&quot; : &quot;S12344567&quot;,
+    &quot;SiteAddress-Block&quot; : {
+      &quot;SiteAddress&quot; : &quot;415 Mission St, San Francisco, CA 94105 USA&quot;,
+      &quot;SiteCity&quot; : &quot; San Francisco&quot;,
+      &quot;SiteCountry&quot; : &quot;United States&quot;,
+      &quot;SiteState&quot; : &quot;CA&quot;,
+      &quot;SiteStreet&quot; : &quot;415 Mission St&quot;,
+      &quot;SiteZipcode&quot; : &quot;94105&quot;
+    },
+    &quot;SiteFacilityType&quot; : &quot;HQ&quot;,
+    &quot;SiteName&quot; : &quot;Acme Consulting Services - HQ&quot;
+  },
+  &quot;SiteNameDefault&quot; : &quot;Acme Consulting Services - HQ&quot;,
+  &quot;SiteNameIP&quot; : &quot;Acme Consulting Services - HQ&quot;,
+  &quot;SiteOperatingHours&quot; : null,
+  &quot;UserId&quot; : &quot;005Hr00000FOMbWIAX&quot;,
+  &quot;language&quot; : &quot;English&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/New_York&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNHr0000004mVrMAI&quot;,
+  &quot;omniscriptId&quot; : &quot;0jNHr0000004mVrMAI&quot;,
+  &quot;runMode&quot; : &quot;preview&quot;,
+  &quot;sId&quot; : &quot;0jNHr0000004mVrMAI&quot;,
+  &quot;subType&quot; : &quot;NewSiteFacility&quot;,
+  &quot;theme&quot; : &quot;lightning&quot;,
+  &quot;timeStamp&quot; : &quot;2023-12-05T17:32:05.233Z&quot;,
+  &quot;type&quot; : &quot;SiteFacility&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;005Hr00000FOMbWIAX&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@1123winter24.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-300&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/New_York&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRCreateSiteFacility_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;RecipientInformation&quot; : {
+    &quot;BlkRecipients&quot; : {
+      &quot;RecipientCountry-Block&quot; : {
+        &quot;Country&quot; : &quot;United States of America&quot;,
+        &quot;CountryCode&quot; : &quot;US&quot;,
+        &quot;RecipientCountry&quot; : &quot;United States of America&quot;
+      },
+      &quot;RecipientName&quot; : &quot;Acme Corp&quot;,
+      &quot;RecipientState&quot; : &quot;MD&quot;,
+      &quot;RecipientStreet1&quot; : &quot;sdfsdf&quot;,
+      &quot;RecipientStreet2&quot; : &quot;sdfsdf&quot;,
+      &quot;RecipientZip&quot; : &quot;20934&quot;,
+      &quot;RecpientCity&quot; : &quot;sdfsd&quot;
+    },
+    &quot;RecipientEIN&quot; : &quot;45454&quot;,
+    &quot;RecipientUEI&quot; : &quot;5454&quot;
+  },
+  &quot;ReportInfo&quot; : {
+    &quot;BlkMultipleGrants&quot; : null,
+    &quot;BlkSingleGrant&quot; : null
+  },
+  &quot;timeStamp&quot; : &quot;2021-11-19T19:58:54.950Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055f000005Z6eOAAS&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@grants.gps&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;
+}</expectedInputJson>
+    <expectedOutputJson>{
+  &quot;RecipientInformation&quot; : {
+    &quot;BlkRecipients&quot; : {
+      &quot;RecipientCountry-Block&quot; : {
+        &quot;Country&quot; : &quot;United States of America&quot;,
+        &quot;CountryCode&quot; : &quot;US&quot;,
+        &quot;RecipientCountry&quot; : &quot;United States of America&quot;
+      },
+      &quot;RecipientName&quot; : &quot;Acme Corp&quot;,
+      &quot;RecipientState&quot; : &quot;MD&quot;,
+      &quot;RecipientStreet1&quot; : &quot;sdfsdf&quot;,
+      &quot;RecipientStreet2&quot; : &quot;sdfsdf&quot;,
+      &quot;RecipientZip&quot; : &quot;20934&quot;,
+      &quot;RecpientCity&quot; : &quot;sdfsd&quot;
+    },
+    &quot;RecipientEIN&quot; : &quot;45454&quot;,
+    &quot;RecipientUEI&quot; : &quot;5454&quot;
+  },
+  &quot;ReportInfo&quot; : {
+    &quot;BlkMultipleGrants&quot; : null,
+    &quot;BlkSingleGrant&quot; : null
+  },
+  &quot;timeStamp&quot; : &quot;2021-11-19T19:58:54.950Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055f000005Z6eOAAS&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@grants.gps&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRGetGrantRecipientAccountForUser</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>userId</filterValue>
+        <globalKey>5c62bfdd-88e3-4719-8079-7407026eb2ec</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>User</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>User</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f0fd6806-5eb1-4910-927b-374d69b6e1e9</globalKey>
+        <inputFieldName>Account:BillingStreet</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:BlkRecipients:RecipientStreet1</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ec2f7d89-7655-433f-85f6-f496a632ae35</globalKey>
+        <inputFieldName>Account:UEI__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:BlkRecipients:RecipientUEI</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2d02b808-4558-42ec-bcdf-45258eb2b253</globalKey>
+        <inputFieldName>Account:BillingPostalCode</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:BlkRecipients:RecipientZip</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8de48021-8cd7-4422-81f7-d422364972c1</globalKey>
+        <inputFieldName>Account:BillingCity</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:BlkRecipients:RecpientCity</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>987ba213-925e-4bf2-a3b4-0e0705f74ddb</globalKey>
+        <inputFieldName>Account:DUNS_Number__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:RecipientDUNS</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0cd5d612-1034-40d1-9c0f-de67b220b078</globalKey>
+        <inputFieldName>User:Email</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldFormat>UserEmail</outputFieldFormat>
+        <outputFieldName>UserEmail</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>48648f31-42e5-4fa2-82c2-015cba3d04c1</globalKey>
+        <inputFieldName>User:FirstName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UserFirstName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c892923b-6f88-434d-a0ab-4505b01a9607</globalKey>
+        <inputFieldName>User:LastName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UserLastName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>658d148e-24c0-4ef0-a598-45050148e5e6</globalKey>
+        <inputFieldName>User:Phone</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UserPhone</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>97e9e3a0-c260-4cd3-aea9-843c4b8f4c9c</globalKey>
+        <inputFieldName>User:Title</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UserTitle</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>User:Id</filterValue>
+        <globalKey>f834024d-de41-4221-820d-a76bcc571ccd</globalKey>
+        <inputFieldName>omnistudio__UserId__c</inputFieldName>
+        <inputObjectName>Contact</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Contact</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>Contact:AccountId</filterValue>
+        <globalKey>5cddbb1f-0fca-439c-a3b2-d570063a6492</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Account</inputObjectName>
+        <inputObjectQuerySequence>3.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Account</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>251e809a-b38a-4609-baa5-0f76d68935b9</globalKey>
+        <inputFieldName>Account:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e762ae5c-134e-48a7-b81a-714496d899c8</globalKey>
+        <inputFieldName>Contact:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d3e185d8-db7a-4bf7-a802-3f17091094c7</globalKey>
+        <inputFieldName>Account:BillingCountry</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:BlkRecipients:RecipientCountry-Block:RecipientCountry</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5cac3396-bf4a-412c-8a2a-3685af9147ea</globalKey>
+        <inputFieldName>Account:EIN__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:BlkRecipients:RecipientEIN</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>75ba99c1-452b-401a-8cd6-db8dded4a481</globalKey>
+        <inputFieldName>Account:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:BlkRecipients:RecipientName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e5ef37b9-68b0-4fc4-aa76-29ad3e8ad917</globalKey>
+        <inputFieldName>Account:BillingState</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetGrantRecipientAccountForUser</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecipientInformation:BlkRecipients:RecipientState</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Contact&quot; : &quot;0034S000005LSL9&quot;,
+  &quot;userId&quot; : &quot;0054S000000e7KW&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>DRGetGrantRecipientAccountForUser_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;BusinessLicense&quot; : { },
+  &quot;ContextId&quot; : null,
+  &quot;IndividualLicense&quot; : { },
+  &quot;LicenseNumber&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;BusinessLicense&quot; : null,
+    &quot;IndividualLicense&quot; : null,
+    &quot;LicenseNumber&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRGetLicenseByNo</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>LIMIT</filterOperator>
+        <filterValue>1</filterValue>
+        <globalKey>d1a8f0a2-b9b9-4b54-974e-ffb4f7919bb9</globalKey>
+        <inputObjectName>BusinessProfile</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>businessLicense:businessProfile</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:businessLicense:Account.BillingStreet ISBLANK &apos;&apos; | var:businessLicense:Account.BillingStreet &apos;,/\/\/&apos; var:businessLicense:Account.BillingCity &apos;,/\/\/&apos; var:businessLicense:Account.BillingState var:businessLicense:Account.BillingPostalCode &apos;,/\/\/&apos; var:businessLicense:Account.BillingCountry CONCAT IF</formulaConverted>
+        <formulaExpression>IF(ISBLANK(businessLicense:Account.BillingStreet), &apos;&apos; , CONCAT(businessLicense:Account.BillingStreet, &apos;, &apos;,businessLicense:Account.BillingCity, &apos;, &apos;,businessLicense:Account.BillingState,businessLicense:Account.BillingPostalCode, &apos;, &apos;,businessLicense:Account.BillingCountry))</formulaExpression>
+        <formulaResultPath>businessLicense:FullAddress</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>0ffe9b7d-98a9-449d-bfa5-fce104f92cb3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a9eeb233-f033-4908-bfe7-4ddb68811291</globalKey>
+        <inputFieldName>businessLicense:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>92d2635c-0911-4f2e-ae35-88ecae1427e2</globalKey>
+        <inputFieldName>businessLicense:Account.Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>fad8c9c8-c473-4f3a-a488-02f9f59bb001</globalKey>
+        <inputFieldName>businessLicense:FullAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Address</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>395e2698-28d9-4946-8526-4530fc272697</globalKey>
+        <inputFieldName>businessLicense:businessProfile:BusinessOperatingName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BusinessOperatingName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>searchTerm</filterValue>
+        <globalKey>fa7d0996-5826-4ac8-acc5-065dd5523d9f</globalKey>
+        <inputFieldName>Identifier</inputFieldName>
+        <inputObjectName>BusinessLicense</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>businessLicense</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>59e966eb-0ecf-4e8e-92bc-3246dfb4b99c</globalKey>
+        <inputFieldName>businessLicense:BusinessType.Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>BusinessTypeName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ff0d755e-530b-42d0-a87a-fc47e5f784a1</globalKey>
+        <inputFieldName>businessLicense:Account.IsPersonAccount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>IsPersonAccount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>LIMIT</filterOperator>
+        <filterValue>1</filterValue>
+        <globalKey>e06a2a3b-c0fa-4c9b-ace8-5e7e25974df7</globalKey>
+        <inputObjectName>BusinessLicense</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>businessLicense</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>businessLicense:AccountId</filterValue>
+        <globalKey>072d301d-bcd1-42f4-ba4a-e24e2de6abdf</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectName>BusinessProfile</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRGetLicenseByNo</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>businessLicense:businessProfile</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;searchTerm&quot; : &quot;ABCD12345&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>DRGetLicenseByNo_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Txt_AiOpportunity_1",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "Step_FundingFinder",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Step_FundingFinder",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "Step_FundingFinder",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "Txt_AiOpportunity_1",
+        "sanitize": false,
+        "show": "false",
+        "text": "<div style=\"width:100%;max-width:100%;box-sizing:border-box;margin:0.45rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid %fundingOpportunities:0:RelevanceColor%%initialAiAssessment:fundingOpportunities:0:RelevanceColor%;border-radius:10px;color:#2f4568;\"><h3 style=\"margin:.1rem 0 .2rem;color:#16325C;font-size:1rem;\">%fundingOpportunities:0:name%%initialAiAssessment:fundingOpportunities:0:name%</h3><div style=\"color:#4B5E82;font-size:.82rem;\">Open: %fundingOpportunities:0:OpenDate%%initialAiAssessment:fundingOpportunities:0:OpenDate% | Close: %fundingOpportunities:0:CloseDate%%initialAiAssessment:fundingOpportunities:0:CloseDate% | Max Award: $%fundingOpportunities:0:MaxAwardAmount%%initialAiAssessment:fundingOpportunities:0:MaxAwardAmount% | Tier: %fundingOpportunities:0:RelevanceTier%%initialAiAssessment:fundingOpportunities:0:RelevanceTier% | Relevance: <span style=\"display:inline-block;padding:.12rem .45rem;border-radius:999px;background:%fundingOpportunities:0:RelevanceColor%%initialAiAssessment:fundingOpportunities:0:RelevanceColor%;color:#fff;font-size:.72rem;\">%fundingOpportunities:0:RelevanceLabel%%initialAiAssessment:fundingOpportunities:0:RelevanceLabel% (%fundingOpportunities:0:relevanceScore%%initialAiAssessment:fundingOpportunities:0:relevanceScore%)</span></div></div>",
+        "textKey": ""
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Txt_AiOpportunity_1"
+}

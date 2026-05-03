@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</activeVersionIdentifier>
+    <activeVersionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_2</activeVersionIdentifier>
     <developerName>Grant_Project_Funding_Analysis</developerName>
     <masterLabel>Grant Project Funding Analysis</masterLabel>
     <templateVersions>
@@ -9,6 +9,11 @@
 Input project description:
 {!$Input:projectDescription}
 
+Available Funding Opportunities:
+{!AvailableOpportunities}
+
+Analyze the project description and rank the available funding opportunities by relevance.
+
 Return valid JSON only. Do not include markdown or extra commentary.
 
 Output schema:
@@ -16,15 +21,23 @@ Output schema:
   &quot;summary&quot;: &quot;&quot;,
   &quot;recommendedFundingTypes&quot;: [],
   &quot;keywords&quot;: [],
-  &quot;confidenceScore&quot;: 0
+  &quot;confidenceScore&quot;: 0,
+  &quot;fundingOpportunities&quot;: []
 }
 
 Rules:
 - summary: concise, 2-4 sentences focused on funding relevance.
 - recommendedFundingTypes: array of short funding categories, max 5 items.
-- keywords: array of topical keywords/phrases, max 8 items.
-- confidenceScore: numeric value from 0.0 to 1.0.
-- return strictly valid JSON matching the schema keys.</content>
+- keywords: array of topical keywords/phrases from the project description, max 8 items.
+- confidenceScore: numeric value from 0.0 to 1.0 indicating overall match quality.
+- fundingOpportunities: array of opportunity objects ranked by relevance. Each object must include:
+  - Id: the opportunity Id from the available list
+  - name: the opportunity Name
+  - relevanceScore: 0.0 to 1.0 indicating how well it matches the project
+  - matchReason: brief explanation of why it matches (1-2 sentences)
+- return strictly valid JSON matching the schema keys.
+- only include opportunities with relevanceScore &gt;= 0.3
+- limit to top 10 most relevant opportunities</content>
         <inputs>
             <apiName>projectDescription</apiName>
             <definition>primitive://String</definition>
@@ -34,7 +47,18 @@ Rules:
         </inputs>
         <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
         <status>Published</status>
-        <versionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_1</versionIdentifier>
+        <templateDataProviders>
+            <definition>invocable://getOpportunitiesForGrounding</definition>
+            <label>Available Opportunities</label>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>recordLimit</parameterName>
+                <valueExpression>50</valueExpression>
+            </parameters>
+            <referenceName>AvailableOpportunities</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>TC2frqwvYZ+Uiv2dsi+5DGgoC5j6+XrDoYBtbxd4sSw=_2</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>

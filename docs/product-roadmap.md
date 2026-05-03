@@ -2,6 +2,26 @@
 
 This document defines a forward-looking product + engineering roadmap for GrantScoreCard, aligned to Spring '26 Salesforce platform direction and an OmniStudio-first delivery model.
 
+### Strategic Feedback from Keegan (Training Session - April 2026)
+
+**Key Insight:** Position this as a generalized scorecard and intake-to-application framework, not exclusively a grant making tool.
+
+**Strategic Direction:**
+- Primary value proposition: Help organizations transition from manual individual applications to structured, guided application forms with consistent evaluation frameworks
+- Broader applicability: While grant making is the reference implementation, the scorecard functionality should remain flexible enough for:
+  - Vendor/RFP evaluations
+  - Scholarship applications
+  - Program admissions
+  - Permit/license reviews
+  - Any structured evaluation workflow with rubrics, reviewers, and scoring
+
+**Implementation Considerations:**
+- Maintain domain-neutral terminology in core components where possible
+- Use "Evaluation Framework" language vs. "Grant Rubric" in reusable artifacts
+- Design Integration Procedures and Data Mappers with configurable context contracts
+- Keep AI prompt templates parameterized for different evaluation domains
+- Ensure FlexCards and OmniScripts can be themed/rebranded for non-grant contexts
+
 The canonical evaluation data model remains unchanged:
 
 - `FundingOpportunity -> Evaluation_Template__c -> Evaluation_Template_Criterion__c`

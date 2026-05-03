@@ -1,6 +1,6 @@
 .grant-hero {
-  background: linear-gradient(180deg, #f6f9ff 0%, #eef3ff 45%, #ffffff 100%);
-  min-height: 80vh;
+  background: linear-gradient(180deg, #4A9FE8 0%, #7B8CFF 100%);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -19,14 +19,14 @@
   font-size: 44px;
   font-weight: 700;
   line-height: 1.15;
-  color: #1b3a6b;
+  color: #ffffff;
   margin-bottom: 12px;
 }
 
 .hero-subtitle {
   font-size: 18px;
   line-height: 1.5;
-  color: #5f6f86;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 20px;
 }
 

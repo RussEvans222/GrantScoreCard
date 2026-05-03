@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;html_attributions&quot; : [ ],
+  &quot;result&quot; : {
+    &quot;address_components&quot; : [ {
+      &quot;long_name&quot; : &quot;1911&quot;,
+      &quot;short_name&quot; : &quot;1911&quot;,
+      &quot;types&quot; : [ &quot;street_number&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;Boyer Road&quot;,
+      &quot;short_name&quot; : &quot;Boyer Rd&quot;,
+      &quot;types&quot; : [ &quot;route&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;Powhatan&quot;,
+      &quot;short_name&quot; : &quot;Powhatan&quot;,
+      &quot;types&quot; : [ &quot;locality&quot;, &quot;political&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;Powhatan County&quot;,
+      &quot;short_name&quot; : &quot;Powhatan County&quot;,
+      &quot;types&quot; : [ &quot;administrative_area_level_2&quot;, &quot;political&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;Virginia&quot;,
+      &quot;short_name&quot; : &quot;VA&quot;,
+      &quot;types&quot; : [ &quot;administrative_area_level_1&quot;, &quot;political&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;United States&quot;,
+      &quot;short_name&quot; : &quot;US&quot;,
+      &quot;types&quot; : [ &quot;country&quot;, &quot;political&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;23139&quot;,
+      &quot;short_name&quot; : &quot;23139&quot;,
+      &quot;types&quot; : [ &quot;postal_code&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;7621&quot;,
+      &quot;short_name&quot; : &quot;7621&quot;,
+      &quot;types&quot; : [ &quot;postal_code_suffix&quot; ]
+    } ],
+    &quot;adr_address&quot; : &quot;&lt;span class=\&quot;street-address\&quot;&gt;1911 Boyer Rd&lt;/span&gt;, &lt;span class=\&quot;locality\&quot;&gt;Powhatan&lt;/span&gt;, &lt;span class=\&quot;region\&quot;&gt;VA&lt;/span&gt; &lt;span class=\&quot;postal-code\&quot;&gt;23139-7621&lt;/span&gt;, &lt;span class=\&quot;country-name\&quot;&gt;USA&lt;/span&gt;&quot;,
+    &quot;formatted_address&quot; : &quot;1911 Boyer Rd, Powhatan, VA 23139, USA&quot;,
+    &quot;geometry&quot; : {
+      &quot;location&quot; : {
+        &quot;lat&quot; : 37.5232396,
+        &quot;lng&quot; : -77.7632902
+      },
+      &quot;viewport&quot; : {
+        &quot;northeast&quot; : {
+          &quot;lat&quot; : 37.5255019,
+          &quot;lng&quot; : -77.75936575000001
+        },
+        &quot;southwest&quot; : {
+          &quot;lat&quot; : 37.52248549999999,
+          &quot;lng&quot; : -77.76459835
+        }
+      }
+    },
+    &quot;icon&quot; : &quot;https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png&quot;,
+    &quot;icon_background_color&quot; : &quot;#7B9EB0&quot;,
+    &quot;icon_mask_base_uri&quot; : &quot;https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet&quot;,
+    &quot;name&quot; : &quot;1911 Boyer Rd&quot;,
+    &quot;place_id&quot; : &quot;ChIJr90ciUZlsYkRvjeOvDC4PkI&quot;,
+    &quot;reference&quot; : &quot;ChIJr90ciUZlsYkRvjeOvDC4PkI&quot;,
+    &quot;types&quot; : [ &quot;premise&quot; ],
+    &quot;url&quot; : &quot;https://maps.google.com/?q=1911+Boyer+Rd,+Powhatan,+VA+23139,+USA&amp;ftid=0x89b16546891cddaf:0x423eb830bc8e37be&quot;,
+    &quot;utc_offset&quot; : -240,
+    &quot;vicinity&quot; : &quot;Powhatan&quot;
+  },
+  &quot;status&quot; : &quot;OK&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>TransformGoogleGeocodeResults</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformGoogleGeocodeResultsCustom4162</globalKey>
+        <inputFieldName>StateValue:short_name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>State</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformGoogleGeocodeResultsCustom5143</globalKey>
+        <inputFieldName>StreetAddress</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StreetAddress</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformGoogleGeocodeResultsCustom79</globalKey>
+        <inputFieldName>result:formatted_address</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>formatted_address</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:result:address_components LIST &quot;OutputTypes==&apos;administrative_area_level_1&apos;&quot; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(result:address_components),&quot;OutputTypes==&apos;administrative_area_level_1&apos;&quot;)</formulaExpression>
+        <formulaResultPath>StateValue</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom2421</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:result:address_components LIST &quot;OutputTypes==&apos;administrative_area_level_2&apos;&quot; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(result:address_components),&quot;OutputTypes==&apos;administrative_area_level_2&apos;&quot;)</formulaExpression>
+        <formulaResultPath>CountyValue</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom3828</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:result:address_components LIST &quot;OutputTypes==&apos;country&apos;&quot; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(result:address_components),&quot;OutputTypes==&apos;country&apos;&quot;)</formulaExpression>
+        <formulaResultPath>CountryValue</formulaResultPath>
+        <formulaSequence>8.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom7057</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:result:address_components LIST &quot;OutputTypes==&apos;locality&apos;&quot; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(result:address_components),&quot;OutputTypes==&apos;locality&apos;&quot;)</formulaExpression>
+        <formulaResultPath>CityValue</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom1425</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:result:address_components LIST &quot;OutputTypes==&apos;postal_code&apos;&quot; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(result:address_components),&quot;OutputTypes==&apos;postal_code&apos;&quot;)</formulaExpression>
+        <formulaResultPath>PostalCode</formulaResultPath>
+        <formulaSequence>9.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom6594</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:result:address_components LIST &quot;OutputTypes==&apos;route&apos;&quot; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(result:address_components),&quot;OutputTypes==&apos;route&apos;&quot;)</formulaExpression>
+        <formulaResultPath>RouteValue</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom9507</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:result:address_components LIST &quot;OutputTypes==&apos;street_number&apos;&quot; FILTER</formulaConverted>
+        <formulaExpression>FILTER(LIST(result:address_components),&quot;OutputTypes==&apos;street_number&apos;&quot;)</formulaExpression>
+        <formulaResultPath>StreetNumberValue</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom9982</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:result:address_components:types|1</formulaConverted>
+        <formulaExpression>result:address_components:types|1</formulaExpression>
+        <formulaResultPath>result:address_components:OutputTypes</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom6236</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:StreetNumberValue:short_name &quot;/\/\/&quot; var:RouteValue:short_name CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(StreetNumberValue:short_name,&quot; &quot;,RouteValue:short_name)</formulaExpression>
+        <formulaResultPath>StreetAddress</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>TransformGoogleGeocodeResultsCustom4584</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformGoogleGeocodeResultsCustom7583</globalKey>
+        <inputFieldName>CityValue:long_name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>City</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformGoogleGeocodeResultsCustom3567</globalKey>
+        <inputFieldName>CountryValue:long_name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Country</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformGoogleGeocodeResultsCustom4247</globalKey>
+        <inputFieldName>CountyValue:long_name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>County</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>TransformGoogleGeocodeResultsCustom4786</globalKey>
+        <inputFieldName>PostalCode:long_name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>TransformGoogleGeocodeResults</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PostalCode</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;html_attributions&quot; : [ ],
+  &quot;result&quot; : {
+    &quot;address_components&quot; : [ {
+      &quot;long_name&quot; : &quot;1911&quot;,
+      &quot;short_name&quot; : &quot;1911&quot;,
+      &quot;types&quot; : [ &quot;street_number&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;Boyer Road&quot;,
+      &quot;short_name&quot; : &quot;Boyer Rd&quot;,
+      &quot;types&quot; : [ &quot;route&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;Powhatan&quot;,
+      &quot;short_name&quot; : &quot;Powhatan&quot;,
+      &quot;types&quot; : [ &quot;locality&quot;, &quot;political&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;Powhatan County&quot;,
+      &quot;short_name&quot; : &quot;Powhatan County&quot;,
+      &quot;types&quot; : [ &quot;administrative_area_level_2&quot;, &quot;political&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;Virginia&quot;,
+      &quot;short_name&quot; : &quot;VA&quot;,
+      &quot;types&quot; : [ &quot;administrative_area_level_1&quot;, &quot;political&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;United States&quot;,
+      &quot;short_name&quot; : &quot;US&quot;,
+      &quot;types&quot; : [ &quot;country&quot;, &quot;political&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;23139&quot;,
+      &quot;short_name&quot; : &quot;23139&quot;,
+      &quot;types&quot; : [ &quot;postal_code&quot; ]
+    }, {
+      &quot;long_name&quot; : &quot;7621&quot;,
+      &quot;short_name&quot; : &quot;7621&quot;,
+      &quot;types&quot; : [ &quot;postal_code_suffix&quot; ]
+    } ],
+    &quot;adr_address&quot; : &quot;&lt;span class=\&quot;street-address\&quot;&gt;1911 Boyer Rd&lt;/span&gt;, &lt;span class=\&quot;locality\&quot;&gt;Powhatan&lt;/span&gt;, &lt;span class=\&quot;region\&quot;&gt;VA&lt;/span&gt; &lt;span class=\&quot;postal-code\&quot;&gt;23139-7621&lt;/span&gt;, &lt;span class=\&quot;country-name\&quot;&gt;USA&lt;/span&gt;&quot;,
+    &quot;formatted_address&quot; : &quot;1911 Boyer Rd, Powhatan, VA 23139, USA&quot;,
+    &quot;geometry&quot; : {
+      &quot;location&quot; : {
+        &quot;lat&quot; : 37.5232396,
+        &quot;lng&quot; : -77.7632902
+      },
+      &quot;viewport&quot; : {
+        &quot;northeast&quot; : {
+          &quot;lat&quot; : 37.5255019,
+          &quot;lng&quot; : -77.75936575000001
+        },
+        &quot;southwest&quot; : {
+          &quot;lat&quot; : 37.52248549999999,
+          &quot;lng&quot; : -77.76459835
+        }
+      }
+    },
+    &quot;icon&quot; : &quot;https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png&quot;,
+    &quot;icon_background_color&quot; : &quot;#7B9EB0&quot;,
+    &quot;icon_mask_base_uri&quot; : &quot;https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet&quot;,
+    &quot;name&quot; : &quot;1911 Boyer Rd&quot;,
+    &quot;place_id&quot; : &quot;ChIJr90ciUZlsYkRvjeOvDC4PkI&quot;,
+    &quot;reference&quot; : &quot;ChIJr90ciUZlsYkRvjeOvDC4PkI&quot;,
+    &quot;types&quot; : [ &quot;premise&quot; ],
+    &quot;url&quot; : &quot;https://maps.google.com/?q=1911+Boyer+Rd,+Powhatan,+VA+23139,+USA&amp;ftid=0x89b16546891cddaf:0x423eb830bc8e37be&quot;,
+    &quot;utc_offset&quot; : -240,
+    &quot;vicinity&quot; : &quot;Powhatan&quot;
+  },
+  &quot;status&quot; : &quot;OK&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>TransformGoogleGeocodeResults_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -32,7 +32,7 @@
         "label": "Txt_FundingFinderSummary",
         "sanitize": false,
         "show": null,
-        "text": "<style>.gs-results-shell{width:min(1200px,94vw);margin:1.2rem auto 1rem;animation:gsResultsIn .55s ease both;}.gs-results-card{padding:2rem 2rem 1.35rem;background:rgba(255,255,255,0.96);border:1px solid #d6dfec;border-radius:20px;box-shadow:0 18px 40px rgba(12,24,45,0.2);}.gs-results-card h2{margin:0;color:#1E2A4A;font-size:1.55rem;}.gs-results-card p{margin:.9rem 0 0;color:#33415C;line-height:1.65;}@keyframes gsResultsIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}</style><div class=\"gs-results-shell\"><div class=\"gs-results-card\"><h2>Funding Finder Results</h2><p>%context:aiSummary%</p><p><strong>Recommended Funding Types:</strong> %context:recommendedFundingTypes%</p></div></div>",
+        "text": "<div style=\"width:min(1080px,94vw);margin:1rem auto 0.6rem;background:#fff;border:1px solid #DDE7F6;border-radius:12px;padding:1rem;\"><h2 style=\"margin:0 0 .35rem;color:#16325C;\">Powered by Einstein AI</h2><p style=\"margin:.2rem 0 .55rem;color:#33415C;\">Project Purpose: %Step_ProjectDiscovery:Inp_ProjectDescription%</p><p style=\"margin:.2rem 0 .55rem;color:#33415C;\">AI Summary: %aiSummary%</p><p style=\"margin:.2rem 0;color:#33415C;\">Confidence: %confidenceScore%</p></div><div style=\"width:min(1080px,94vw);margin:.6rem auto 0;color:#16325C;font-size:1.02rem;font-weight:700;\">Einstein Suggested Opportunities</div><div style=\"width:min(1080px,94vw);margin:.2rem auto 0;color:#16325C;font-size:1.02rem;font-weight:700;\">All Available Funding Opportunities</div>",
         "textKey": ""
     },
     "Type": "Text Block",

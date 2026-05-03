@@ -13,33 +13,22 @@
     },
     "PropertySetConfig": {
         "actionMessage": "",
-        "additionalInput": {
-        },
-        "additionalOutput": {
-        },
-        "bundle": "DRXFundingOpportunitySearch",
+        "apexClass": "GetFundingOpportunitiesCallable",
         "chainOnStep": false,
-        "dataRaptor Input Parameters": [
-        ],
-        "disOnTplt": false,
         "executionConditionalFormula": "",
         "failOnStepError": true,
         "failureConditionalFormula": "",
         "failureResponse": {
         },
-        "ignoreCache": true,
-        "label": "FundingOpportunitySearch",
+        "invokeType": "ApexRemote",
+        "isActive": true,
+        "methodName": "getFundingOpportunities",
         "responseJSONNode": "fundingSearch",
         "responseJSONPath": "",
-        "returnOnlyAdditionalOutput": false,
-        "returnOnlyFailureResponse": false,
         "sendJSONNode": "",
-        "sendJSONPath": "",
-        "sendOnlyAdditionalInput": false,
-        "show": null,
-        "useFormulas": true
+        "sendJSONPath": ""
     },
-    "Type": "DataRaptor Extract Action",
+    "Type": "Remote Action",
     "VlocityDataPackType": "SObject",
     "VlocityRecordSObjectType": "OmniProcessElement",
     "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/AnalyzeProject/English/FundingOpportunitySearch"

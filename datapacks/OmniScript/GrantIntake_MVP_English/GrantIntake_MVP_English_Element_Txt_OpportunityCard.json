@@ -12,7 +12,7 @@
         "VlocityRecordSObjectType": "OmniProcess"
     },
     "ParentElementId": {
-        "Name": "fundingOpportunities",
+        "Name": "aiSuggestedCards",
         "OmniProcessId": {
             "Name": "GrantIntakeMVP",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
@@ -20,10 +20,10 @@
             "VlocityRecordSObjectType": "OmniProcess"
         },
         "VlocityDataPackType": "VlocityMatchingKeyObject",
-        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/fundingOpportunities",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/aiSuggestedCards",
         "VlocityRecordSObjectType": "OmniProcessElement"
     },
-    "ParentElementName": "fundingOpportunities",
+    "ParentElementName": "aiSuggestedCards",
     "ParentElementType": "Block",
     "PropertySetConfig": {
         "HTMLTemplateId": "",
@@ -32,7 +32,7 @@
         "label": "Txt_OpportunityCard",
         "sanitize": false,
         "show": null,
-        "text": "<div class=\"gs-opportunity-card\" style=\"max-width: 1000px; margin: 0.9rem auto; padding: 1.5rem; background:#FFFFFF; border:1px solid #E6EAF0; border-radius:16px; box-shadow:0 8px 20px rgba(30,42,74,0.06);\"><div style=\"display:flex; align-items:flex-start; justify-content:space-between; gap:0.8rem; flex-wrap:wrap;\"><h3 style=\"margin:0; color:#1E2A4A; font-size:1.2rem;\">%fundingOpportunities:name%</h3><span style=\"display:inline-flex; align-items:center; gap:.45rem; padding:.32rem .7rem; border-radius:999px; color:#fff; background:%fundingOpportunities:RelevanceColor%; font-size:.84rem; font-weight:600;\">%fundingOpportunities:RelevanceLabel% (%fundingOpportunities:relevanceScore%)</span></div><p style=\"margin:0.6rem 0 0; color:#33415C;\"><strong>Program Area:</strong> %fundingOpportunities:ProgramArea%</p><p style=\"margin:0.5rem 0 0; color:#33415C;\"><strong>Eligibility Summary:</strong> %fundingOpportunities:EligibilitySummary%</p><p style=\"margin:0.5rem 0 0; color:#33415C;\"><strong>Max Award Amount:</strong> %fundingOpportunities:MaxAwardAmount%</p><p style=\"margin:0.5rem 0 0; color:#33415C;\"><strong>Open Date:</strong> %fundingOpportunities:OpenDate% <strong style=\"margin-left:1rem;\">Close Date:</strong> %fundingOpportunities:CloseDate%</p></div>",
+        "text": "<div style=\"width:min(1080px,94vw);margin:0.45rem auto 0;padding:0.9rem 1rem;border:1px solid #DBE7FB;background:#F6FAFF;border-left:6px solid %aiSuggestedCards:RelevanceColor%;border-radius:10px;color:#2f4568;\"><div style=\"display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:.6rem;align-items:start;\"><div><div style=\"font-size:.76rem;font-weight:700;color:#0176D3;text-transform:uppercase;\">Einstein Suggested</div><h3 style=\"margin:.1rem 0 .2rem;color:#16325C;font-size:1rem;\">%aiSuggestedCards:name%</h3><div style=\"color:#4B5E82;font-size:.82rem;line-height:1.35;max-height:3.5rem;overflow:hidden;\">%aiSuggestedCards:EligibilitySummary%</div></div><div style=\"font-size:.82rem;color:#33415C;\"><strong>Open</strong><br/>%aiSuggestedCards:OpenDate%</div><div style=\"font-size:.82rem;color:#33415C;\"><strong>Close</strong><br/>%aiSuggestedCards:CloseDate%</div><div style=\"font-size:.82rem;color:#33415C;\"><strong>Max Award</strong><br/>$%aiSuggestedCards:MaxAwardAmount%<br/><span style=\"background:%aiSuggestedCards:RelevanceColor%;color:#fff;border-radius:999px;padding:.15rem .5rem;font-size:.72rem;display:inline-block;margin-top:.25rem;\">%aiSuggestedCards:RelevanceLabel% (%aiSuggestedCards:relevanceScore%)</span></div></div><div style=\"margin-top:.45rem;color:#6b7f9f;font-size:.74rem;\">FundingOpportunity Id: %aiSuggestedCards:id%</div></div>",
         "textKey": ""
     },
     "Type": "Text Block",

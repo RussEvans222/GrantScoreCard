@@ -182,16 +182,17 @@ private class GrantIntakeOrchestrationGatewayTest {
     @IsTest
     static void analyzeProject_returnsContractFields() {
         Test.startTest();
-        GrantIntakeOrchestrationGateway.AnalyzeProjectResponse response =
+        Map<String, Object> response =
             GrantIntakeOrchestrationGateway.analyzeProject('child care workforce expansion');
         Test.stopTest();
 
         System.assertNotEquals(null, response, 'Analyze response should be initialized.');
-        System.assertNotEquals(null, response.aiSummary, 'Summary should be populated.');
-        System.assertNotEquals(null, response.recommendedFundingTypes, 'Recommended types should be present.');
-        System.assertNotEquals(null, response.keywords, 'Keywords should be present.');
-        System.assertNotEquals(null, response.confidenceScore, 'Confidence should be set.');
-        System.assertNotEquals(null, response.fundingOpportunities, 'Funding opportunities should be initialized.');
+        System.assertNotEquals(null, response.get('aiSummary'), 'Summary should be populated.');
+        System.assertNotEquals(null, response.get('recommendedFundingTypes'), 'Recommended types should be present.');
+        System.assertNotEquals(null, response.get('keywords'), 'Keywords should be present.');
+        System.assertNotEquals(null, response.get('confidenceScore'), 'Confidence should be set.');
+        System.assertNotEquals(null, response.get('fundingOpportunities'), 'Funding opportunities should be initialized.');
+        System.assert(response.containsKey('topFundingOpportunities'), 'Derived opportunity lists should be present.');
     }
 
     @IsTest
@@ -205,10 +206,9 @@ private class GrantIntakeOrchestrationGatewayTest {
         Object rawResult = callableGateway.call('analyzeProject', args);
         Test.stopTest();
 
-        GrantIntakeOrchestrationGateway.AnalyzeProjectResponse response =
-            (GrantIntakeOrchestrationGateway.AnalyzeProjectResponse) rawResult;
+        Map<String, Object> response = (Map<String, Object>) rawResult;
         System.assertNotEquals(null, response, 'Callable should return analysis DTO.');
-        System.assertNotEquals(null, response.aiSummary, 'Summary should be populated from callable route.');
-        System.assertNotEquals(null, response.fundingOpportunities, 'Callable should return funding opportunity rows.');
+        System.assertNotEquals(null, response.get('aiSummary'), 'Summary should be populated from callable route.');
+        System.assertNotEquals(null, response.get('fundingOpportunities'), 'Callable should return funding opportunity rows.');
     }
 }

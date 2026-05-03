@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;Step1&quot; : {
+    &quot;CellPhone&quot; : null,
+    &quot;CommunicationPreference&quot; : null,
+    &quot;County&quot; : null,
+    &quot;Email Address&quot; : null,
+    &quot;First Name&quot; : null,
+    &quot;GoogleMaps-Block&quot; : {
+      &quot;CityName&quot; : null,
+      &quot;Country&quot; : null,
+      &quot;GoogleMaps&quot; : null,
+      &quot;PostalCode&quot; : null,
+      &quot;State&quot; : null,
+      &quot;Street Address&quot; : null
+    },
+    &quot;Home Phone&quot; : null,
+    &quot;Last Name&quot; : null
+  },
+  &quot;Step2&quot; : {
+    &quot;Agency&quot; : null,
+    &quot;From fostered&quot; : null,
+    &quot;Have you been a foster parent before?&quot; : null,
+    &quot;How Did you hear&quot; : null,
+    &quot;Questions and Comments&quot; : null,
+    &quot;To Fostered&quot; : null,
+    &quot;Type of care&quot; : null,
+    &quot;Type of license&quot; : null,
+    &quot;Why are you interested&quot; : null
+  },
+  &quot;Step3&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRGetDemoData&quot; : null,
+    &quot;DRSaveInitialInterest&quot; : null,
+    &quot;Step1&quot; : null,
+    &quot;Step2&quot; : null,
+    &quot;Step3&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>FSSaveInitialInterest</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterest45178253547646907</globalKey>
+        <inputFieldName>CaseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom9280</globalKey>
+        <inputFieldName>ContactAccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>FSSaveInitialInterest9193063224568425</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ApplicationCaseId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterest10060858227655078</globalKey>
+        <inputFieldName>AppliedDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AppliedDate</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;Foster/\/\/Care/\/\/Application/\/\/-/\/\/&quot; var:FirstName &quot;/\/\/&quot; var:LastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;Foster Care Application - &quot;,FirstName,&quot; &quot;,LastName)</formulaExpression>
+        <formulaResultPath>CaseName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>FSSaveInitialInterest3716696095994172</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>License</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom6995</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Category</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterest6216485959779665</globalKey>
+        <inputFieldName>CaseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>FSSaveInitialInterest6920635061006393</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Foster Care Provider</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom7203</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RegulatoryAuthorizationType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>LicenseTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom5544</globalKey>
+        <inputFieldName>Step2:Agency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Previous_Agency__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom8445</globalKey>
+        <inputFieldName>Step2:To Fostered</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Previous_End__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom9202</globalKey>
+        <inputFieldName>Step2:Have you been a foster parent before?</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldFormat>Boolean</outputFieldFormat>
+        <outputFieldName>Previous_Foster_Parent__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{
+  &quot;Yes&quot; : &quot;true&quot;,
+  &quot;No&quot; : &quot;false&quot;
+}</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom3771</globalKey>
+        <inputFieldName>Step2:From fostered</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Previous_Start__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom2662</globalKey>
+        <inputFieldName>Step2:Questions and Comments</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Questions_Comments__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Foster Care Application</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom7521</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| NOW</formulaConverted>
+        <formulaExpression>NOW()</formulaExpression>
+        <formulaResultPath>AppliedDate</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>FSSaveInitialInterest9373549712238012</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom5659</globalKey>
+        <inputFieldName>Step2:How Did you hear</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Referral_Source__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Interest</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom6537</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom993</globalKey>
+        <inputFieldName>Step2:Type of care</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Type_of_Care__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom2639</globalKey>
+        <inputFieldName>Step2:Type of license</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Type_of_License__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterestCustom6674</globalKey>
+        <inputFieldName>Step2:Why are you interested</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Why_Interested__c</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterest09963581793875154</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactAccountId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>FSSaveInitialInterest7341085724712137</globalKey>
+        <inputFieldName>CaseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>FSSaveInitialInterest6284377327115183</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>FSSaveInitialInterest</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AgencyName&quot; : &quot;Indiana&quot;,
+  &quot;CellPhoneNumber&quot; : &quot;804-402-4733&quot;,
+  &quot;City&quot; : &quot;Indianapolis&quot;,
+  &quot;ContactId&quot; : &quot;0034x000001tFR5AAM&quot;,
+  &quot;CountyName&quot; : &quot;Decatur&quot;,
+  &quot;DemoDataId&quot; : &quot;0014x000007T59fAAC&quot;,
+  &quot;Email&quot; : &quot;jblankenship@salesforce.com&quot;,
+  &quot;FirstName&quot; : &quot;Kate&quot;,
+  &quot;Gender&quot; : &quot;Female&quot;,
+  &quot;LastName&quot; : &quot;Miller&quot;,
+  &quot;PartyId&quot; : &quot;a6W4x000000sowTEAQ&quot;,
+  &quot;ProgramEnrollmentId&quot; : &quot;a7C4x000000gECAEA2&quot;,
+  &quot;SMSMessage&quot; : &quot;Thank you for expressing interest in the Indiana Foster Care Program.  We have received your information and will have a Case worker reach out to you within 5 business days about your interest.&quot;,
+  &quot;Step1&quot; : {
+    &quot;CellPhone&quot; : &quot;804-402-4733&quot;,
+    &quot;CommunicationPreference&quot; : &quot;SMS&quot;,
+    &quot;County&quot; : &quot;Decatur&quot;,
+    &quot;Email Address&quot; : &quot;jblankenship@salesforce.com&quot;,
+    &quot;First Name&quot; : &quot;Kate&quot;,
+    &quot;GoogleMaps-Block&quot; : {
+      &quot;CityName&quot; : &quot;Indianapolis&quot;,
+      &quot;Country&quot; : &quot;United States&quot;,
+      &quot;GoogleMaps&quot; : &quot;810 North Dearborn Street, Indianapolis, IN, USA&quot;,
+      &quot;PostalCode&quot; : &quot;46201&quot;,
+      &quot;State&quot; : &quot;IN&quot;,
+      &quot;Street Address&quot; : &quot;810 North Dearborn Street&quot;
+    },
+    &quot;Home Phone&quot; : null,
+    &quot;Last Name&quot; : &quot;Miller&quot;
+  },
+  &quot;Step2&quot; : {
+    &quot;Agency&quot; : &quot;Colorado For Kids&quot;,
+    &quot;From fostered&quot; : &quot;2006-10-15&quot;,
+    &quot;Have you been a foster parent before?&quot; : &quot;Yes&quot;,
+    &quot;How Did you hear&quot; : &quot;Online&quot;,
+    &quot;Questions and Comments&quot; : &quot;Will I/my family be required to take any training as part of the application process?&quot;,
+    &quot;To Fostered&quot; : &quot;2012-06-01&quot;,
+    &quot;Type of care&quot; : &quot;Foster Care&quot;,
+    &quot;Type of license&quot; : &quot;Standard&quot;,
+    &quot;Why are you interested&quot; : &quot;I am interested in becoming a foster parent because I know there are many children in need of a stable home and proper guidance and mentoring.  Our family likes to volunteer and give back to the community.&quot;
+  },
+  &quot;StreetAddress&quot; : &quot;810 North Dearborn Street&quot;,
+  &quot;TrainingDate1&quot; : &quot;2021-08-27&quot;,
+  &quot;TrainingDate2&quot; : &quot;2021-08-30&quot;,
+  &quot;omnidesignerChannelId&quot; : &quot;omni-designer-channel-id-1628263922766&quot;,
+  &quot;timeStamp&quot; : &quot;2021-08-06T15:35:47.374Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0054x000002SCZoAAO&quot;,
+  &quot;userName&quot; : &quot;jblankenship@fostercare-lpi-2020.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRGetDemoData&quot; : 808,
+    &quot;DRSaveInitialInterest&quot; : 1957,
+    &quot;OmniScriptSessionToken&quot; : &quot;cd263bf9-0c34-4858-9e28-9388c37da4ec&quot;,
+    &quot;Step1&quot; : 9317,
+    &quot;Step2&quot; : 11253
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>FSSaveInitialInterest_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

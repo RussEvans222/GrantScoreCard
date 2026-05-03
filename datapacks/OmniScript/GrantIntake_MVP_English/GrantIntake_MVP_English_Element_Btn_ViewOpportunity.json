@@ -12,7 +12,7 @@
         "VlocityRecordSObjectType": "OmniProcess"
     },
     "ParentElementId": {
-        "Name": "fundingOpportunities",
+        "Name": "aiSuggestedCards",
         "OmniProcessId": {
             "Name": "GrantIntakeMVP",
             "VlocityDataPackType": "VlocityMatchingKeyObject",
@@ -20,10 +20,10 @@
             "VlocityRecordSObjectType": "OmniProcess"
         },
         "VlocityDataPackType": "VlocityMatchingKeyObject",
-        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/fundingOpportunities",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/aiSuggestedCards",
         "VlocityRecordSObjectType": "OmniProcessElement"
     },
-    "ParentElementName": "fundingOpportunities",
+    "ParentElementName": "aiSuggestedCards",
     "ParentElementType": "Block",
     "PropertySetConfig": {
         "HTMLTemplateId": "",
@@ -48,7 +48,7 @@
         "targetLWCLayout": "lightning",
         "targetName": "",
         "targetType": "Web Page",
-        "targetUrl": "/grantmaking1/s/funding-opportunity/%fundingOpportunities:id%",
+        "targetUrl": "/grantmaking1/s/funding-opportunity/%aiSuggestedCards:id%",
         "validationRequired": "Submit",
         "variant": "brand",
         "wpm": false

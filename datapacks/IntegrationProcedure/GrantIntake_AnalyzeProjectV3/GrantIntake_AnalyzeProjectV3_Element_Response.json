@@ -1,0 +1,61 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "Response",
+    "OmniProcessId": {
+        "Name": "GrantIntakeAnalyzeProject",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/AnalyzeProjectV3/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "additionalOutput": {
+            "analysisErrorMessage": null,
+            "analysisSuccess": "=true",
+            "context": {
+                "analysisErrorMessage": null,
+                "analysisSuccess": "=true",
+                "fundingOpportunities": "=%fundingSearch%",
+                "projectDescription": "=%TransformInput:searchText%"
+            },
+            "filteredFundingOpportunities": "=[]",
+            "fundingOpportunities": "=%fundingSearch%",
+            "fundingOpportunityTableRows": "=%fundingSearch%",
+            "initialAiAssessment": {
+                "aiSummary": "=%initialAiAssessment:aiSummary%",
+                "confidenceScore": "=%initialAiAssessment:confidenceScore%",
+                "fundingOpportunities": "=%fundingSearch%",
+                "keywords": "=IF(ISBLANK(%initialAiAssessment:keywords%),[],%initialAiAssessment:keywords%)",
+                "projectDescription": "=%initialAiAssessment:projectDescription%",
+                "recommendedFundingTypes": "=IF(ISBLANK(%initialAiAssessment:recommendedFundingTypes%),[],%initialAiAssessment:recommendedFundingTypes%)"
+            },
+            "searchText": "=%TransformInput:searchText%",
+            "topFundingOpportunities": "=[]"
+        },
+        "disOnTplt": false,
+        "elementValueMap": {
+        },
+        "executionConditionalFormula": "",
+        "id": "",
+        "isActive": true,
+        "responseFormat": "JSON",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "restOptions": {
+        },
+        "returnFullDataJSON": false,
+        "returnOnlyAdditionalOutput": true,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "useFormulas": true,
+        "vlcResponseHeaders": {
+        }
+    },
+    "Type": "Response Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/AnalyzeProjectV3/English/Response"
+}

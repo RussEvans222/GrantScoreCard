@@ -18,7 +18,7 @@
         "businessEvent": "",
         "cancelLabel": "Cancel",
         "cancelMessage": "Are you sure?",
-        "chartLabel": "Funding Finder",
+        "chartLabel": "AI Funding Analysis",
         "completeLabel": "Complete",
         "completeMessage": "Are you sure you want to complete the script?",
         "conditionType": "Hide if False",
@@ -37,10 +37,10 @@
             "remoteTimeout": 30000,
             "typeFilter": ""
         },
-        "label": "Funding Finder",
+        "label": "AI Funding Analysis",
         "message": {
         },
-        "nextLabel": "Next",
+        "nextLabel": "Start Application Intake",
         "nextWidth": 3,
         "previousLabel": "Previous",
         "previousWidth": 3,

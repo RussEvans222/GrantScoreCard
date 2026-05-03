@@ -1,0 +1,48 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": false,
+    "MayEdit": true,
+    "Name": "NormalizeAiResponse",
+    "OmniProcessId": {
+        "Name": "GrantIntakeAnalyzeProject",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/AnalyzeProject/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "analysisMapped:aiSummary": "=%AnalyzeProjectApex:aiSummary%",
+            "analysisMapped:confidenceScore": "=%AnalyzeProjectApex:confidenceScore%",
+            "analysisMapped:fundingOpportunities": "=IF(ISBLANK(%AnalyzeProjectApex:fundingOpportunities%),[],%AnalyzeProjectApex:fundingOpportunities%)",
+            "analysisMapped:keywords": "=%AnalyzeProjectApex:keywords%",
+            "analysisMapped:projectDescription": "=%TransformInput:searchText%",
+            "analysisMapped:recommendedFundingTypes": "=%AnalyzeProjectApex:recommendedFundingTypes%"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": false,
+        "failureConditionalFormula": "",
+        "id": "",
+        "isActive": true,
+        "remoteClass": "",
+        "remoteMethod": "",
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "restOptions": {
+        },
+        "returnOnlyAdditionalOutput": false,
+        "returnOnlyFailureResponse": false,
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyAdditionalInput": false,
+        "useFormulas": true
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/AnalyzeProject/English/NormalizeAiResponse"
+}

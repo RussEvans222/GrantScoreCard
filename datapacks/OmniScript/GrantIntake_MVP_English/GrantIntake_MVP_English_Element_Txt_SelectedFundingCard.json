@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Txt_SelectedFundingCard",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "selectedFundingCards",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/selectedFundingCards",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "selectedFundingCards",
+    "ParentElementType": "Block",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "Txt_SelectedFundingCard",
+        "sanitize": false,
+        "show": "=OR(%selectedFundingCards:isSelected%=true,%selectedFundingCards:isSelectedAvailable%=true)",
+        "text": "<div style=\"width:min(980px,94vw);margin:.3rem auto;padding:.65rem .85rem;border:1px solid #dbe6f7;background:#f6faff;border-radius:10px;\"><strong style=\"color:#173f69;\">%selectedFundingCards:name%</strong> <span style=\"color:#5b6f8f;font-size:.84rem;\">| Close: %selectedFundingCards:CloseDate%</span></div>",
+        "textKey": ""
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Txt_SelectedFundingCard"
+}

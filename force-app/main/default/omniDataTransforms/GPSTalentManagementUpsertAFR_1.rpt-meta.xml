@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ApplicationFormId&quot; : &quot;13XKX000000PAsD2AW&quot;,
+  &quot;EducationScore&quot; : 8,
+  &quot;EducationScoreExplanation&quot; : &quot;The applicant has a Bachelor of Science in Computer Science with a high GPA and relevant coursework, which aligns well with the technical nature of the job. However, the job seeks a Senior Software Engineer, potentially implying a preference for advanced degrees or more specialized education in IT systems management and security.&quot;,
+  &quot;ExperienceExplanation&quot; : &quot;The applicant has demonstrated experience in software engineering, including leading projects and developing applications. However, the job description emphasizes IT infrastructure management, security, and technical support, areas not directly covered in the applicant&apos;s work experience.&quot;,
+  &quot;ExperienceScore&quot; : 7,
+  &quot;RequisitionId&quot; : &quot;18AKX000000Gma92AC&quot;,
+  &quot;SkillsScore&quot; : 8,
+  &quot;SkillsScoreExplanation&quot; : &quot;The applicant possesses strong technical skills relevant to software development, including programming languages and technologies directly applicable to managing and optimizing IT infrastructure. However, there is a lack of explicit mention of experience with IT security measures and systems, which are crucial for the job.&quot;,
+  &quot;ValidLocation&quot; : &quot;No&quot;,
+  &quot;ValidLocationExplanation&quot; : &quot;The job is located in San Francisco, California, while the applicant&apos;s current address is in Fairfax, VA. Despite telework eligibility, the position does not indicate full remote work as an option, and the applicant&apos;s location does not meet the job&apos;s geographical requirements.&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>GPSTalentManagementUpsertAFR</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom5148</globalKey>
+        <inputFieldName>ValidLocationExplanation</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gps_Location_Explanation__c</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom3476</globalKey>
+        <inputFieldName>SkillsScoreExplanation</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gps_Skills_Score_Explanation__c</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom114</globalKey>
+        <inputFieldName>ApplicationFormId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationFormId</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom4262</globalKey>
+        <inputFieldName>SkillsScore</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gps_Skills_Score__c</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom7821</globalKey>
+        <inputFieldName>ValidLocation</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gps_Valid_Location__c</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{
+  &quot;Yes&quot; : &quot;true&quot;,
+  &quot;No&quot; : &quot;false&quot;
+}</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>GPSTalentManagementUpsertAFRCustom7268</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom5899</globalKey>
+        <inputFieldName>RequisitionId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ReferenceRecordId</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom6468</globalKey>
+        <inputFieldName>EducationScoreExplanation</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gps_Education_Score_Explanation__c</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom7479</globalKey>
+        <inputFieldName>EducationScore</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gps_Education_Score__c</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom3390</globalKey>
+        <inputFieldName>ExperienceExplanation</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gps_Experience_Score_Explanation__c</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>GPSTalentManagementUpsertAFRCustom9352</globalKey>
+        <inputFieldName>ExperienceScore</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>GPSTalentManagementUpsertAFR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>gps_Experience_Score__c</outputFieldName>
+        <outputObjectName>ApplicationFormRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ApplicationFormId&quot; : &quot;13XKX000000PAsD2AW&quot;,
+  &quot;EducationScore&quot; : 8,
+  &quot;EducationScoreExplanation&quot; : &quot;The applicant has a Bachelor of Science in Computer Science with a high GPA and relevant coursework, which aligns well with the technical requirements of the job. However, the position seeks a Senior Software Engineer, which may imply a preference for further education or more specialized training.&quot;,
+  &quot;ExperienceExplanation&quot; : &quot;The applicant has demonstrated experience in software engineering, including leading projects and developing software solutions. However, the job description emphasizes IT infrastructure, security, and technical support, areas not directly covered in the applicant&apos;s experience.&quot;,
+  &quot;ExperienceScore&quot; : 7,
+  &quot;RequisitionId&quot; : &quot;18AKX000000Gma92AC&quot;,
+  &quot;SkillsScore&quot; : 8,
+  &quot;SkillsScoreExplanation&quot; : &quot;The applicant possesses strong technical skills in software development, including experience with various programming languages and technologies relevant to the job. There is, however, a gap in explicitly mentioned IT infrastructure and security skills, which are crucial for the role.&quot;,
+  &quot;ValidLocation&quot; : &quot;No&quot;,
+  &quot;ValidLocationExplanation&quot; : &quot;The job is located in San Francisco, California, and the applicant is currently in Fairfax, VA, United States. The job posting does not indicate that it is a remote position, therefore the applicant does not meet the location requirements.&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>GPSTalentManagementUpsertAFR_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

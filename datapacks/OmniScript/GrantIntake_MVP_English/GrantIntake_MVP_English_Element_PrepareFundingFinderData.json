@@ -1,0 +1,65 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "PrepareFundingFinderData",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "Step_FundingFinder",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Step_FundingFinder",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "Step_FundingFinder",
+    "ParentElementType": "Step",
+    "PropertySetConfig": {
+        "actionMessage": "",
+        "chainOnStep": false,
+        "disOnTplt": false,
+        "elementValueMap": {
+            "aiSuggestedCards": "=IF(NOT(ISBLANK(%fundingOpportunities%)),%fundingOpportunities%,IF(NOT(ISBLANK(%initialAiAssessment:fundingOpportunities%)),%initialAiAssessment:fundingOpportunities%,IF(NOT(ISBLANK(%analysisResult:fundingOpportunities%)),%analysisResult:fundingOpportunities%,%AnalyzeProjectApex:fundingOpportunities%)))",
+            "aiSummary": "=IF(NOT(ISBLANK(%aiSummary%)),%aiSummary%,IF(NOT(ISBLANK(%initialAiAssessment:aiSummary%)),%initialAiAssessment:aiSummary%,IF(NOT(ISBLANK(%analysisResult:aiSummary%)),%analysisResult:aiSummary%,%AnalyzeProjectApex:aiSummary%)))",
+            "applicationIntakeContext:initialAiAssessment": "=IF(NOT(ISBLANK(%initialAiAssessment%)),%initialAiAssessment%,%analysisResult%)",
+            "availableFundingCards": "%AnalyzeProject:fundingOpportunities%",
+            "confidenceScore": "=IF(NOT(ISBLANK(%confidenceScore%)),%confidenceScore%,IF(NOT(ISBLANK(%initialAiAssessment:confidenceScore%)),%initialAiAssessment:confidenceScore%,IF(NOT(ISBLANK(%analysisResult:confidenceScore%)),%analysisResult:confidenceScore%,%AnalyzeProjectApex:confidenceScore%)))",
+            "keywordItems": "=IF(NOT(ISBLANK(%keywords%)),%keywords%,IF(NOT(ISBLANK(%initialAiAssessment:keywords%)),%initialAiAssessment:keywords%,IF(NOT(ISBLANK(%analysisResult:keywords%)),%analysisResult:keywords%,%AnalyzeProjectApex:keywords%)))",
+            "projectPurposeText": "=IF(NOT(ISBLANK(%Step_ProjectDiscovery:Inp_ProjectDescription%)),%Step_ProjectDiscovery:Inp_ProjectDescription%,IF(NOT(ISBLANK(%initialAiAssessment:projectDescription%)),%initialAiAssessment:projectDescription%,%context:projectDescription%))",
+            "recommendedFundingTypeItems": "=IF(NOT(ISBLANK(%recommendedFundingTypes%)),%recommendedFundingTypes%,IF(NOT(ISBLANK(%initialAiAssessment:recommendedFundingTypes%)),%initialAiAssessment:recommendedFundingTypes%,IF(NOT(ISBLANK(%analysisResult:recommendedFundingTypes%)),%analysisResult:recommendedFundingTypes%,%AnalyzeProjectApex:recommendedFundingTypes%)))",
+            "singleAiAward": "=IF(NOT(ISBLANK(%aiSuggestedCards:MaxAwardAmount%)),%aiSuggestedCards:MaxAwardAmount%,IF(NOT(ISBLANK(%fundingOpportunities:MaxAwardAmount%)),%fundingOpportunities:MaxAwardAmount%,%initialAiAssessment:fundingOpportunities:MaxAwardAmount%))",
+            "singleAiCloseDate": "=IF(NOT(ISBLANK(%aiSuggestedCards:CloseDate%)),%aiSuggestedCards:CloseDate%,IF(NOT(ISBLANK(%initialAiAssessment:fundingOpportunities:CloseDate%)),%initialAiAssessment:fundingOpportunities:CloseDate%,%fundingOpportunities:CloseDate%))",
+            "singleAiEligibility": "=IF(NOT(ISBLANK(%aiSuggestedCards:EligibilitySummary%)),%aiSuggestedCards:EligibilitySummary%,IF(NOT(ISBLANK(%fundingOpportunities:EligibilitySummary%)),%fundingOpportunities:EligibilitySummary%,%initialAiAssessment:fundingOpportunities:EligibilitySummary%))",
+            "singleAiName": "=IF(NOT(ISBLANK(%aiSuggestedCards:name%)),%aiSuggestedCards:name%,IF(NOT(ISBLANK(%initialAiAssessment:fundingOpportunities:name%)),%initialAiAssessment:fundingOpportunities:name%,%fundingOpportunities:name%))",
+            "singleAiOpenDate": "=IF(NOT(ISBLANK(%aiSuggestedCards:OpenDate%)),%aiSuggestedCards:OpenDate%,IF(NOT(ISBLANK(%initialAiAssessment:fundingOpportunities:OpenDate%)),%initialAiAssessment:fundingOpportunities:OpenDate%,%fundingOpportunities:OpenDate%))",
+            "singleAiRelevanceColor": "=IF(NOT(ISBLANK(%aiSuggestedCards:RelevanceColor%)),%aiSuggestedCards:RelevanceColor%,IF(NOT(ISBLANK(%fundingOpportunities:RelevanceColor%)),%fundingOpportunities:RelevanceColor%,%initialAiAssessment:fundingOpportunities:RelevanceColor%))",
+            "singleAiRelevanceLabel": "=IF(NOT(ISBLANK(%aiSuggestedCards:RelevanceLabel%)),%aiSuggestedCards:RelevanceLabel%,IF(NOT(ISBLANK(%fundingOpportunities:RelevanceLabel%)),%fundingOpportunities:RelevanceLabel%,%initialAiAssessment:fundingOpportunities:RelevanceLabel%))",
+            "singleAvailableAward": "=IF(NOT(ISBLANK(%availableFundingCards:MaxAwardAmount%)),%availableFundingCards:MaxAwardAmount%,IF(NOT(ISBLANK(%availableFundingOpportunities:MaxAwardAmount%)),%availableFundingOpportunities:MaxAwardAmount%,%singleAiAward%))",
+            "singleAvailableCloseDate": "=IF(NOT(ISBLANK(%availableFundingCards:CloseDate%)),%availableFundingCards:CloseDate%,IF(NOT(ISBLANK(%availableFundingOpportunities:CloseDate%)),%availableFundingOpportunities:CloseDate%,%singleAiCloseDate%))",
+            "singleAvailableEligibility": "=IF(NOT(ISBLANK(%availableFundingCards:EligibilitySummary%)),%availableFundingCards:EligibilitySummary%,IF(NOT(ISBLANK(%availableFundingOpportunities:EligibilitySummary%)),%availableFundingOpportunities:EligibilitySummary%,%singleAiEligibility%))",
+            "singleAvailableName": "=IF(NOT(ISBLANK(%availableFundingCards:name%)),%availableFundingCards:name%,IF(NOT(ISBLANK(%availableFundingOpportunities:name%)),%availableFundingOpportunities:name%,%singleAiName%))",
+            "singleAvailableOpenDate": "=IF(NOT(ISBLANK(%availableFundingCards:OpenDate%)),%availableFundingCards:OpenDate%,IF(NOT(ISBLANK(%availableFundingOpportunities:OpenDate%)),%availableFundingOpportunities:OpenDate%,%singleAiOpenDate%))"
+        },
+        "executionConditionalFormula": "",
+        "failOnStepError": false,
+        "failureConditionalFormula": "",
+        "isActive": true,
+        "responseJSONNode": "",
+        "responseJSONPath": ""
+    },
+    "Type": "Set Values",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/PrepareFundingFinderData"
+}

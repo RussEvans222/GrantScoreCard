@@ -16,7 +16,7 @@
         "additionalChainableResponse": {
         },
         "additionalInput": {
-            "searchText": "=%searchText%"
+            "searchText": "=%TransformInput:searchText%"
         },
         "additionalOutput": {
         },
@@ -32,7 +32,7 @@
         "remoteMethod": "analyzeProject",
         "remoteOptions": {
         },
-        "responseJSONNode": "analysis",
+        "responseJSONNode": "",
         "responseJSONPath": "",
         "returnOnlyAdditionalOutput": false,
         "returnOnlyFailureResponse": false,

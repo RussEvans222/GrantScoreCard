@@ -1,0 +1,30 @@
+{
+    "CurrencyIsoCode": "USD",
+    "CustomJavaScript": "Data_FundingOpportunitySearch_SampleInput.json",
+    "ElementTypeComponentMapping": "{\"ElementTypeToHTMLTemplateList\":[]}",
+    "IsIntegProcdSignatureAvl": false,
+    "IsIntegrationProcedure": true,
+    "IsLocked": false,
+    "IsManagedUsingStdDesigner": true,
+    "IsMetadataCacheDisabled": false,
+    "IsOmniScriptEmbeddable": false,
+    "IsTestProcedure": false,
+    "IsWebCompEnabled": false,
+    "Language": "English",
+    "MayEdit": true,
+    "Name": "IP_FundingOpportunitySearch",
+    "OmniProcessElement": [
+        "Data_FundingOpportunitySearch_Element_DataMapperExtract.json",
+        "Data_FundingOpportunitySearch_Element_SetValues.json",
+        "Data_FundingOpportunitySearch_Element_Response.json"
+    ],
+    "OmniProcessKey": "Data_FundingOpportunitySearch",
+    "OmniProcessType": "Integration Procedure",
+    "PropertySetConfig": "Data_FundingOpportunitySearch_PropertySetConfig.json",
+    "SubType": "FundingOpportunitySearch",
+    "Type": "Data",
+    "UniqueName": "Data_FundingOpportunitySearch_English_1",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcess",
+    "VlocityRecordSourceKey": "OmniProcess/Data/FundingOpportunitySearch/English"
+}

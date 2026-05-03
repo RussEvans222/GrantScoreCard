@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ApplicantAffirmation&quot; : {
+    &quot;CustomLWC2&quot; : null
+  },
+  &quot;ApplicantInformation&quot; : {
+    &quot;ApplicantAddress-Block&quot; : {
+      &quot;ApplicantAddress&quot; : null,
+      &quot;City&quot; : null,
+      &quot;State&quot; : null,
+      &quot;StreetAddress&quot; : null,
+      &quot;ZipCode&quot; : null
+    },
+    &quot;ApplyingAsABusinessOwner&quot; : null,
+    &quot;BusinessCity&quot; : null,
+    &quot;BusinessPostalCode&quot; : null,
+    &quot;BusinessState&quot; : null,
+    &quot;BusinessStreetAddress&quot; : null,
+    &quot;DateOfBirth&quot; : null,
+    &quot;DriversLicenseNumber&quot; : null,
+    &quot;EmailAddress&quot; : null,
+    &quot;EyeColor&quot; : null,
+    &quot;FirstName&quot; : null,
+    &quot;HairColor&quot; : null,
+    &quot;Height&quot; : null,
+    &quot;HomePhone&quot; : null,
+    &quot;LastName&quot; : null,
+    &quot;MiddleName&quot; : null,
+    &quot;OccupationNameOfBusiness&quot; : null,
+    &quot;PlaceOfBirth&quot; : null,
+    &quot;Race&quot; : null,
+    &quot;Sex&quot; : null,
+    &quot;SocialSecurityNumber&quot; : null,
+    &quot;Weight&quot; : null,
+    &quot;WorkPhone&quot; : null
+  },
+  &quot;Appointment&quot; : {
+    &quot;AppointmentSlot&quot; : null
+  },
+  &quot;Attachments&quot; : {
+    &quot;File1&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ],
+    &quot;File2&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ],
+    &quot;File3&quot; : [ {
+      &quot;data&quot; : null,
+      &quot;filename&quot; : null,
+      &quot;size&quot; : null
+    } ]
+  },
+  &quot;ContextId&quot; : null,
+  &quot;FeesPayments&quot; : {
+    &quot;CustomLWC1&quot; : null,
+    &quot;PayNow&quot; : null
+  },
+  &quot;FirearmRegistration&quot; : {
+    &quot;LicenseType&quot; : null
+  },
+  &quot;FirearmsRegistration&quot; : {
+    &quot;AddressHistory&quot; : {
+      &quot;AddressHistoryCity&quot; : null,
+      &quot;AddressHistoryState&quot; : null,
+      &quot;AddressHistoryStreet&quot; : null,
+      &quot;AddressHistoryZip&quot; : null,
+      &quot;AddressStart&quot; : null,
+      &quot;EndDate&quot; : null
+    },
+    &quot;BarrelLength&quot; : null,
+    &quot;BriefStatement&quot; : null,
+    &quot;Caliber&quot; : null,
+    &quot;Finish&quot; : null,
+    &quot;IdentifyingMarks&quot; : null,
+    &quot;MakeOfWeapon&quot; : null,
+    &quot;ManufacturerIdNo&quot; : null,
+    &quot;Model&quot; : null,
+    &quot;NewOrUsed&quot; : null,
+    &quot;NoOfBarrels&quot; : null,
+    &quot;NoOfShots&quot; : null,
+    &quot;SellerCity&quot; : null,
+    &quot;SellerName&quot; : null,
+    &quot;SellerState&quot; : null,
+    &quot;SellerStreetAddress&quot; : null,
+    &quot;SellerZipCode&quot; : null,
+    &quot;SerialNumber&quot; : null,
+    &quot;TypeOfAction&quot; : null
+  },
+  &quot;StatementOfEligibility&quot; : {
+    &quot;AlcoholicOrAddict&quot; : null,
+    &quot;AquitedInsane&quot; : null,
+    &quot;BonaFideAndConcealedAnotherState&quot; : null,
+    &quot;BonaFideBusiness&quot; : null,
+    &quot;BonaFideResidence&quot; : null,
+    &quot;CivilProtectionOrder&quot; : null,
+    &quot;CommittedMentalHospital&quot; : null,
+    &quot;ConvictedLast5YearsDrugs&quot; : null,
+    &quot;ConvictedViolentCrime&quot; : null,
+    &quot;DishonorablyDischarged&quot; : null,
+    &quot;LegallyBlind&quot; : null,
+    &quot;NegligentFirearm&quot; : null,
+    &quot;PhysicalDefect&quot; : null,
+    &quot;ProvidedAccurateAndTrue&quot; : null,
+    &quot;RegisterPistolConcurrently&quot; : null,
+    &quot;RenouncedCitizenship&quot; : null,
+    &quot;SufferMentalIllness&quot; : null,
+    &quot;TwoOrMoreDUIs&quot; : null,
+    &quot;UnderIndictment&quot; : null
+  },
+  &quot;Training&quot; : {
+    &quot;CompleteDCTraining&quot; : null,
+    &quot;Completed16HoursCertifiedInstructor&quot; : null,
+    &quot;Completed2HoursRangeTraining&quot; : null,
+    &quot;CompletedDCLawsTraining&quot; : null,
+    &quot;IntendToCompleted45Days&quot; : null,
+    &quot;RequestingExemption&quot; : null,
+    &quot;RequirementRequestingExemption&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;ApplicantAffirmation&quot; : null,
+    &quot;ApplicantInformation&quot; : null,
+    &quot;Appointment&quot; : null,
+    &quot;Attachments&quot; : null,
+    &quot;DEBUG-SETTOCHARLES&quot; : null,
+    &quot;DRGetContactForFirarmUser&quot; : null,
+    &quot;DRSaveFirearmApplication&quot; : null,
+    &quot;FeesPayments&quot; : null,
+    &quot;FirearmRegistration&quot; : null,
+    &quot;FirearmsRegistration&quot; : null,
+    &quot;GetAppointmentSlots&quot; : null,
+    &quot;SetUserId&quot; : null,
+    &quot;StatementOfEligibility&quot; : null,
+    &quot;Training&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>LPISaveFirearmApplication</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;Concealed/\/\/Carry/\/\/Background/\/\/Check/\/\/-/\/\/&quot; var:ApplicantInformation:FirstName &quot;/\/\/&quot; var:ApplicantInformation:LastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;Concealed Carry Background Check - &quot;,ApplicantInformation:FirstName,&quot; &quot;,ApplicantInformation:LastName)</formulaExpression>
+        <formulaResultPath>CaseName</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>LPISaveFirearmApplication2456814952502442</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication44368564591973425</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ApplicationCaseId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication2395405973149176</globalKey>
+        <inputFieldName>AppliedDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AppliedDate</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Permit</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication6407049471215454</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Category</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication697565731569926</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Firearm</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication006815710202777936</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RegulatoryAuthorizationType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>LicenseTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Firearm</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication43301093185110284</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>DeveloperName</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Submitted</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication9880021848441936</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication4809542486372067</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFee</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication4693499359333395</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFee</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication018264273606910963</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>2.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>ParentRecordId</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFee</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;Firearm/\/\/Asset/\/\/-/\/\/&quot; var:ApplicantInformation:FirstName &quot;/\/\/&quot; var:ApplicantInformation:LastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;Firearm Asset - &quot;,ApplicantInformation:FirstName,&quot; &quot;,ApplicantInformation:LastName)</formulaExpression>
+        <formulaResultPath>AssetName</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>LPISaveFirearmApplication04356213548887555</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Paid</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication6693512160204438</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>3.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFee</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>75</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication4718786919031799</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>FeeAmount</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFeeItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication43980413281608</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFeeItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Application Fee</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication014410553506322143</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFeeItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication3395039019213457</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>3.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>4.0</outputCreationSequence>
+        <outputFieldName>RegulatoryTrxnFeeId</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFeeItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>35</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication71658102976803</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>FeeAmount</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFeeItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication7165269350378263</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFeeItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Fingerprint Fee</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication1567605921279942</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFeeItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication35930162196671533</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>3.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>5.0</outputCreationSequence>
+        <outputFieldName>RegulatoryTrxnFeeId</outputFieldName>
+        <outputObjectName>RegulatoryTrxnFeeItem</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication7627203976429648</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Asset</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| NOW</formulaConverted>
+        <formulaExpression>NOW()</formulaExpression>
+        <formulaResultPath>AppliedDate</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>LPISaveFirearmApplication595217311607962</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication6182811265304</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Asset</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication7340790026668687</globalKey>
+        <inputFieldName>AssetName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Asset</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication08304248527979974</globalKey>
+        <inputFieldName>FirearmsRegistration:SerialNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>SerialNumber</outputFieldName>
+        <outputObjectName>Asset</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication3134733319043941</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>2.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>6.0</outputCreationSequence>
+        <outputFieldName>gps_Individual_Application__c</outputFieldName>
+        <outputObjectName>Asset</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication7019696569477705</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication5500516482343798</globalKey>
+        <inputFieldName>CaseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>LPISaveFirearmApplication1868492050923214</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication4719866345717081</globalKey>
+        <inputFieldName>CaseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication5209432738990867</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>110</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>LPISaveFirearmApplication14187403449848657</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>LPISaveFirearmApplication</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AmountPaid</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;0015f000005Cb5ZAAS&quot;,
+  &quot;ApplicantAffirmation&quot; : { },
+  &quot;ApplicantInformation&quot; : {
+    &quot;ApplicantAddress-Block&quot; : {
+      &quot;ApplicantAddress&quot; : &quot;1600 Pennsylvania Avenue Northwest, Washington, DC, USA&quot;,
+      &quot;City&quot; : &quot;Washington&quot;,
+      &quot;State&quot; : &quot;DC&quot;,
+      &quot;StreetAddress&quot; : &quot;1600 Pennsylvania Avenue Northwest&quot;,
+      &quot;ZipCode&quot; : &quot;20500&quot;
+    },
+    &quot;ApplyingAsABusinessOwner&quot; : false,
+    &quot;BusinessCity&quot; : null,
+    &quot;BusinessPostalCode&quot; : null,
+    &quot;BusinessState&quot; : null,
+    &quot;BusinessStreetAddress&quot; : null,
+    &quot;FirstName&quot; : &quot;Charles&quot;,
+    &quot;HomePhone&quot; : null,
+    &quot;LastName&quot; : &quot;Green&quot;,
+    &quot;OccupationNameOfBusiness&quot; : &quot;Acme Inc&quot;
+  },
+  &quot;Appointment&quot; : { },
+  &quot;Attachments&quot; : { },
+  &quot;ContactEmail&quot; : &quot;cgreen@mailinator.com&quot;,
+  &quot;ContactId&quot; : &quot;0035f000003tvaGAAQ&quot;,
+  &quot;ContactName&quot; : &quot;Charles Green&quot;,
+  &quot;FeesPayments&quot; : { },
+  &quot;FirearmRegistration&quot; : {
+    &quot;LicenseType&quot; : &quot;Concealed&quot;
+  },
+  &quot;FirearmsRegistration&quot; : { },
+  &quot;SampleUser&quot; : &quot;0055f000000P7pXAAS&quot;,
+  &quot;StatementOfEligibility&quot; : {
+    &quot;AlcoholicOrAddict&quot; : &quot;No&quot;,
+    &quot;AquitedInsane&quot; : &quot;No&quot;,
+    &quot;BonaFideAndConcealedAnotherState&quot; : &quot;No&quot;,
+    &quot;BonaFideBusiness&quot; : &quot;No&quot;,
+    &quot;BonaFideResidence&quot; : &quot;Yes&quot;,
+    &quot;CivilProtectionOrder&quot; : &quot;No&quot;,
+    &quot;CommittedMentalHospital&quot; : &quot;No&quot;,
+    &quot;ConvictedLast5YearsDrugs&quot; : &quot;No&quot;,
+    &quot;ConvictedViolentCrime&quot; : &quot;No&quot;,
+    &quot;DishonorablyDischarged&quot; : &quot;No&quot;,
+    &quot;LegallyBlind&quot; : &quot;No&quot;,
+    &quot;NegligentFirearm&quot; : &quot;No&quot;,
+    &quot;PhysicalDefect&quot; : &quot;No&quot;,
+    &quot;ProvidedAccurateAndTrue&quot; : &quot;Yes&quot;,
+    &quot;RegisterPistolConcurrently&quot; : &quot;Yes&quot;,
+    &quot;RenouncedCitizenship&quot; : &quot;No&quot;,
+    &quot;SufferMentalIllness&quot; : &quot;No&quot;,
+    &quot;TwoOrMoreDUIs&quot; : &quot;No&quot;,
+    &quot;UnderIndictment&quot; : &quot;No&quot;
+  },
+  &quot;Training&quot; : {
+    &quot;CompleteDCTraining&quot; : true,
+    &quot;Completed16HoursCertifiedInstructor&quot; : &quot;Yes&quot;,
+    &quot;Completed2HoursRangeTraining&quot; : &quot;Yes&quot;,
+    &quot;CompletedDCLawsTraining&quot; : &quot;Yes&quot;,
+    &quot;IntendToCompleted45Days&quot; : null,
+    &quot;RequestingExemption&quot; : null,
+    &quot;RequirementRequestingExemption&quot; : null
+  },
+  &quot;timeStamp&quot; : &quot;2021-09-13T18:15:16.701Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055f000000P7pMAAS&quot;,
+  &quot;userName&quot; : &quot;jblankenship@dc-mpd-gun2021.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>LPISaveFirearmApplication_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

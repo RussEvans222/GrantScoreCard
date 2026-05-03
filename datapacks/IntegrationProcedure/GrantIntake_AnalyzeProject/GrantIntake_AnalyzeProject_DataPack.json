@@ -1,13 +1,13 @@
 {
     "CurrencyIsoCode": "USD",
-    "CustomJavaScript": "{}",
-    "Description": "Analyze grant intake project text, summarize recommendation signals, and return matching funding opportunities.",
+    "CustomJavaScript": "GrantIntake_AnalyzeProject_SampleInput.json",
+    "Description": "Return matching funding opportunities based on the project description.",
     "ElementTypeComponentMapping": "{\"ElementTypeToHTMLTemplateList\":[]}",
     "IsIntegProcdSignatureAvl": false,
     "IsIntegrationProcedure": true,
     "IsLocked": false,
-    "IsManagedUsingStdDesigner": false,
-    "IsMetadataCacheDisabled": false,
+    "IsManagedUsingStdDesigner": true,
+    "IsMetadataCacheDisabled": true,
     "IsOmniScriptEmbeddable": false,
     "IsTestProcedure": false,
     "IsWebCompEnabled": false,
@@ -17,7 +17,7 @@
     "OmniProcessElement": [
         "GrantIntake_AnalyzeProject_Element_TransformInput.json",
         "GrantIntake_AnalyzeProject_Element_AnalyzeProjectApex.json",
-        "GrantIntake_AnalyzeProject_Element_FundingOpportunitySearch.json",
+        "GrantIntake_AnalyzeProject_Element_NormalizeAiResponse.json",
         "GrantIntake_AnalyzeProject_Element_Response.json"
     ],
     "OmniProcessKey": "GrantIntake_AnalyzeProject",

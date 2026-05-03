@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniIntegrationProcedure xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customJavaScript>{&quot;DemoType&quot;:&quot;LPI&quot;,&quot;ScenarioList&quot;:[{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/2x7GAJH6i9Qv&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2nMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Charles Green&quot;,&quot;ScenarioName&quot;:&quot;Security Guard&quot;,&quot;SubType&quot;:&quot;SecurityGuard&quot;,&quot;Type&quot;:&quot;Occupational&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/LMnjAu2a5AvP&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2jMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Charles Green&quot;,&quot;ScenarioName&quot;:&quot;Deck Permit&quot;,&quot;SubType&quot;:&quot;Deck&quot;,&quot;Type&quot;:&quot;Permit&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/kGnFAsGwTL8L&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2kMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Geoff Duckwall&quot;,&quot;ScenarioName&quot;:&quot;Restaurant&quot;,&quot;SubType&quot;:&quot;FoodEstablishmentPermit&quot;,&quot;Type&quot;:&quot;Permit&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/hsQnAMCL1Oge&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2lMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Geoff Duckwall&quot;,&quot;ScenarioName&quot;:&quot;Salon Business Licensing&quot;,&quot;SubType&quot;:&quot;BusinessSalon&quot;,&quot;Type&quot;:&quot;Business&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/AaPnAI7UDPcS&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2oMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Geoff Duckwall&quot;,&quot;ScenarioName&quot;:&quot;Storage Tank Permit&quot;,&quot;SubType&quot;:&quot;StorageTankRegistration&quot;,&quot;Type&quot;:&quot;Permit&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/pHmiA3IlklfP&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2mMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;ESRI&quot;,&quot;Personas&quot;:&quot;Geoff Duckwall&quot;,&quot;ScenarioName&quot;:&quot;Mapping with ESRI&quot;,&quot;SubType&quot;:&quot;PermitDemo&quot;,&quot;Type&quot;:&quot;Permit&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/C7jEAUI3OMvX&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2pMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermiting&quot;,&quot;Personas&quot;:&quot;Charles Green&quot;,&quot;ScenarioName&quot;:&quot;Boat Registration&quot;,&quot;SubType&quot;:&quot;BoatRegistration&quot;,&quot;Type&quot;:&quot;Asset&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/KOMbAwUT0Rks&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2iMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermiting&quot;,&quot;Personas&quot;:&quot;Charles Green&quot;,&quot;ScenarioName&quot;:&quot;Firearm Permit&quot;,&quot;SubType&quot;:&quot;FirearmRegistration&quot;,&quot;Type&quot;:&quot;Asset&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/xY6oABUcoy9U&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2xMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Charles Green&quot;,&quot;ScenarioName&quot;:&quot;Medical Cannabis Patient&quot;,&quot;SubType&quot;:&quot;CannabisPatientApplication&quot;,&quot;Type&quot;:&quot;Permit&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/AmtGAeCG1PEq&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2tMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Geoff Duckwall&quot;,&quot;ScenarioName&quot;:&quot;Cannabis Retail Dispensary Licensing&quot;,&quot;SubType&quot;:&quot;CannabisApplication&quot;,&quot;Type&quot;:&quot;Business&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/XTLFAqlK6CLk&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2yMAD&quot;,&quot;Personas&quot;:&quot;Kate Miller&quot;,&quot;ScenarioName&quot;:&quot;Foster Care Licensing&quot;,&quot;Type&quot;:&quot;Occupational&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/ABDEA5l1II3t&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2vMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Geoff Duckwall&quot;,&quot;ScenarioName&quot;:&quot;Special Events&quot;,&quot;SubType&quot;:&quot;SpecialEvent&quot;,&quot;Type&quot;:&quot;Permit&quot;},{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/GFmPA2aw7R95&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2wMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Geoff Duckwall&quot;,&quot;ScenarioName&quot;:&quot;Lottery Retailer&quot;,&quot;SubType&quot;:&quot;LotteryRetailApplication&quot;,&quot;Type&quot;:&quot;Permit&quot;}],&quot;SelectScenario&quot;:{&quot;DemoScript&quot;:&quot;https://salesforce.quip.com/hsQnAMCL1Oge&quot;,&quot;Id&quot;:&quot;a1VHs00000KQe2lMAD&quot;,&quot;Language&quot;:&quot;English&quot;,&quot;OSType&quot;:&quot;LicensingAndPermitting&quot;,&quot;Personas&quot;:&quot;Geoff Duckwall&quot;,&quot;ScenarioName&quot;:&quot;Salon Business Licensing&quot;,&quot;SubType&quot;:&quot;BusinessSalon&quot;,&quot;Type&quot;:&quot;Business&quot;},&quot;Selection&quot;:{&quot;FormatLWCName&quot;:&quot;c:licensingandpermittingBusinessSalonEnglish&quot;},&quot;language&quot;:&quot;English&quot;,&quot;localTimeZoneName&quot;:&quot;America/New_York&quot;,&quot;omniJsonDef&quot;:null,&quot;omniProcessId&quot;:&quot;0jNHs0000009I14MAE&quot;,&quot;omniscriptId&quot;:&quot;0jNHs0000009I14MAE&quot;,&quot;runMode&quot;:&quot;preview&quot;,&quot;sId&quot;:&quot;0jNHs0000009I14MAE&quot;,&quot;subType&quot;:&quot;DemoSetup&quot;,&quot;theme&quot;:&quot;lightning&quot;,&quot;timeStamp&quot;:&quot;2024-02-20T18:17:21.417Z&quot;,&quot;type&quot;:&quot;LPI&quot;,&quot;userCurrencyCode&quot;:&quot;USD&quot;,&quot;userId&quot;:&quot;005Hs00000ED7zFIAT&quot;,&quot;userName&quot;:&quot;jblankenship@testesrideploy02052024.demo&quot;,&quot;userProfile&quot;:&quot;System Administrator&quot;,&quot;userTimeZone&quot;:&quot;-480&quot;,&quot;userTimeZoneName&quot;:&quot;America/Los_Angeles&quot;}</customJavaScript>
+    <elementTypeComponentMapping>{&quot;ElementTypeToHTMLTemplateList&quot;:[]}</elementTypeComponentMapping>
+    <isActive>true</isActive>
+    <isIntegProcdSignatureAvl>false</isIntegProcdSignatureAvl>
+    <isIntegrationProcedure>true</isIntegrationProcedure>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <isMetadataCacheDisabled>false</isMetadataCacheDisabled>
+    <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+    <isTestProcedure>false</isTestProcedure>
+    <isWebCompEnabled>false</isWebCompEnabled>
+    <language>Procedure</language>
+    <name>Call Demo Log Demo Selected</name>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>DRGetWSData</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;bundle&quot; : &quot;PSSUtilGetDemoDataToSendForTracking&quot;,
+  &quot;chainOnStep&quot; : false,
+  &quot;dataRaptor Input Parameters&quot; : [ {
+    &quot;element&quot; : &quot;SelectScenario:ScenarioName&quot;,
+    &quot;inputParam&quot; : &quot;Scenario&quot;
+  }, {
+    &quot;element&quot; : &quot;userId&quot;,
+    &quot;inputParam&quot; : &quot;userId&quot;
+  }, {
+    &quot;element&quot; : &quot;DemoType&quot;,
+    &quot;inputParam&quot; : &quot;DemoType&quot;
+  } ],
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;ignoreCache&quot; : false,
+  &quot;label&quot; : &quot;DataRaptorExtractAction1&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>2.0</sequenceNumber>
+        <type>DataRaptor Extract Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>GetAccessToken</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;HTTPAction1&quot;,
+  &quot;namedCredential&quot; : &quot;&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;%endpoint%&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;POST&quot;,
+  &quot;restOptions&quot; : {
+    &quot;clientCertificateName&quot; : &quot;&quot;,
+    &quot;headers&quot; : {
+      &quot;Accept&quot; : &quot;*/*&quot;,
+      &quot;Content-Length&quot; : 260,
+      &quot;Content-Type&quot; : &quot;application/x-www-form-urlencoded&quot;,
+      &quot;Host&quot; : &quot;login.salesforce.com&quot;,
+      &quot;User-Agent&quot; : &quot;curl/8.4.0&quot;
+    },
+    &quot;isCompressed&quot; : false,
+    &quot;params&quot; : {
+      &quot;client_id&quot; : &quot;3MVG9bYGb9rFSjxQsVD0kLCXkxR_e.SY8erxgrskCiqvB6gUoPPjvPY73pWupUzeC4WsKOwjAFEx6OH6SZgt4&quot;,
+      &quot;client_secret&quot; : &quot;C85226B25A5E3562F2194015B3BB3B97B961F33FA55A96AC897FB934073EFE8E&quot;,
+      &quot;grant_type&quot; : &quot;password&quot;,
+      &quot;password&quot; : &quot;Salesforce123&quot;,
+      &quot;username&quot; : &quot;jblankenship@psdemologging2024.demo&quot;
+    },
+    &quot;sendBody&quot; : false,
+    &quot;timeout&quot; : 0,
+    &quot;xmlEscapeResponse&quot; : false
+  },
+  &quot;restPath&quot; : &quot;https://login.salesforce.com/services/oauth2/token&quot;,
+  &quot;retryCount&quot; : 0,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;type&quot; : &quot;Integration&quot;,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>1.0</sequenceNumber>
+        <type>Rest Action</type>
+    </omniProcessElements>
+    <omniProcessElements>
+        <isActive>true</isActive>
+        <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+        <level>0.0</level>
+        <name>SendToWS</name>
+        <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+        <propertySetConfig>{
+  &quot;actionMessage&quot; : &quot;&quot;,
+  &quot;additionalInput&quot; : { },
+  &quot;additionalOutput&quot; : { },
+  &quot;chainOnStep&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;executionConditionalFormula&quot; : &quot;&quot;,
+  &quot;failOnStepError&quot; : true,
+  &quot;failureConditionalFormula&quot; : &quot;&quot;,
+  &quot;failureResponse&quot; : { },
+  &quot;label&quot; : &quot;HTTPAction2&quot;,
+  &quot;namedCredential&quot; : &quot;&quot;,
+  &quot;postActionLogging&quot; : &quot;&quot;,
+  &quot;preActionLogging&quot; : &quot;%endpoint%&quot;,
+  &quot;responseJSONNode&quot; : &quot;&quot;,
+  &quot;responseJSONPath&quot; : &quot;&quot;,
+  &quot;restMethod&quot; : &quot;POST&quot;,
+  &quot;restOptions&quot; : {
+    &quot;clientCertificateName&quot; : &quot;&quot;,
+    &quot;headers&quot; : {
+      &quot;Authorization&quot; : &quot;Bearer %GetAccessToken:access_token%&quot;,
+      &quot;Content-Type&quot; : &quot;application/json&quot;
+    },
+    &quot;isCompressed&quot; : false,
+    &quot;params&quot; : { },
+    &quot;sendBody&quot; : true,
+    &quot;timeout&quot; : 0,
+    &quot;xmlEscapeResponse&quot; : false
+  },
+  &quot;restPath&quot; : &quot;https://psdemologging2024.demo.my.salesforce.com/services/apexrest/omnistudio/v1/integrationprocedure/PSUtility_LogDemoSelection/&quot;,
+  &quot;retryCount&quot; : 0,
+  &quot;returnOnlyAdditionalOutput&quot; : false,
+  &quot;returnOnlyFailureResponse&quot; : false,
+  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;DRGetWSData&quot;,
+  &quot;sendOnlyAdditionalInput&quot; : false,
+  &quot;show&quot; : null,
+  &quot;type&quot; : &quot;Integration&quot;,
+  &quot;useFormulas&quot; : true
+}</propertySetConfig>
+        <sequenceNumber>3.0</sequenceNumber>
+        <type>Rest Action</type>
+    </omniProcessElements>
+    <omniProcessKey>PSUtility_CallDemoLogWebService</omniProcessKey>
+    <omniProcessType>Integration Procedure</omniProcessType>
+    <propertySetConfig>{
+  &quot;additionalChainableResponse&quot; : { },
+  &quot;chainableActualTimeLimit&quot; : null,
+  &quot;chainableCpuLimit&quot; : 2000,
+  &quot;chainableDMLRowsLimit&quot; : null,
+  &quot;chainableDMLStatementsLimit&quot; : null,
+  &quot;chainableHeapSizeLimit&quot; : null,
+  &quot;chainableQueriesLimit&quot; : 50,
+  &quot;chainableQueryRowsLimit&quot; : null,
+  &quot;chainableSoslQueriesLimit&quot; : null,
+  &quot;columnsPropertyMap&quot; : [ ],
+  &quot;description&quot; : &quot;&quot;,
+  &quot;includeAllActionsInResponse&quot; : false,
+  &quot;labelPlural&quot; : &quot;&quot;,
+  &quot;labelSingular&quot; : &quot;&quot;,
+  &quot;linkToExternalObject&quot; : &quot;&quot;,
+  &quot;mockResponseMap&quot; : { },
+  &quot;nameColumn&quot; : &quot;&quot;,
+  &quot;queueableChainableCpuLimit&quot; : 40000,
+  &quot;queueableChainableHeapSizeLimit&quot; : 6,
+  &quot;queueableChainableQueriesLimit&quot; : 120,
+  &quot;relationshipFieldsMap&quot; : [ ],
+  &quot;rollbackOnError&quot; : false,
+  &quot;trackingCustomData&quot; : { },
+  &quot;ttlMinutes&quot; : 5
+}</propertySetConfig>
+    <subType>CallDemoLogWebService</subType>
+    <type>PSUtility</type>
+    <uniqueName>PSUtility_CallDemoLogWebService_Procedure_7</uniqueName>
+    <versionNumber>7.0</versionNumber>
+    <webComponentKey>c16b07e9-5005-dc3d-d381-9ad434b10246</webComponentKey>
+</OmniIntegrationProcedure>

@@ -1,3 +1,5 @@
 [
-    "IntegrationProcedure/GrantIntake_AnalyzeProject"
+    "IntegrationProcedure/Data_FundingOpportunitySearch",
+    "IntegrationProcedure/GrantIntake_AnalyzeProject",
+    "IntegrationProcedure/GrantIntake_AnalyzeProjectV3"
 ]

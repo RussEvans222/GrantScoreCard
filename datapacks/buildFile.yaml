@@ -1,2 +1,4 @@
 projectPath: .
 expansionPath: datapacks
+manifest:
+  - IntegrationProcedure/GrantIntake_AnalyzeProjectV3

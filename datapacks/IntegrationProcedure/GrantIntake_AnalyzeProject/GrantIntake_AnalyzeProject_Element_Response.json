@@ -13,26 +13,31 @@
     },
     "PropertySetConfig": {
         "additionalOutput": {
-            "aiSummary": "=%analysis:aiSummary%",
-            "analysisErrorMessage": "=IF(ISBLANK(%analysis:aiSummary%),'Unable to analyze project. Please try again.',null)",
-            "analysisSuccess": "=IF(ISBLANK(%analysis:aiSummary%),false,true)",
-            "confidenceScore": "=%analysis:confidenceScore%",
+            "analysisErrorMessage": null,
+            "analysisSuccess": "=true",
             "context": {
-                "aiSummary": "=%analysis:aiSummary%",
-                "analysisErrorMessage": "=IF(ISBLANK(%analysis:aiSummary%),'Unable to analyze project. Please try again.',null)",
-                "analysisSuccess": "=IF(ISBLANK(%analysis:aiSummary%),false,true)",
-                "confidenceScore": "=%analysis:confidenceScore%",
-                "fundingOpportunities": "=%analysis:fundingOpportunities%",
-                "keywords": "=%analysis:keywords%",
-                "recommendedFundingTypes": "=%analysis:recommendedFundingTypes%"
+                "analysisErrorMessage": null,
+                "analysisSuccess": "=true",
+                "fundingOpportunities": "=IF(ISBLANK(%AnalyzeProjectApex:fundingOpportunities%),[],%AnalyzeProjectApex:fundingOpportunities%)",
+                "projectDescription": "=%TransformInput:searchText%"
             },
-            "fundingOpportunities": "=%analysis:fundingOpportunities%",
-            "keywords": "=%analysis:keywords%",
-            "recommendedFundingTypes": "=%analysis:recommendedFundingTypes%"
+            "filteredFundingOpportunities": "=IF(ISBLANK(%AnalyzeProjectApex:filteredFundingOpportunities%),[],%AnalyzeProjectApex:filteredFundingOpportunities%)",
+            "fundingOpportunities": "=IF(ISBLANK(%AnalyzeProjectApex:fundingOpportunities%),[],%AnalyzeProjectApex:fundingOpportunities%)",
+            "fundingOpportunityTableRows": "=IF(ISBLANK(%AnalyzeProjectApex:fundingOpportunityTableRows%),[],%AnalyzeProjectApex:fundingOpportunityTableRows%)",
+            "initialAiAssessment": {
+                "aiSummary": "=%analysisMapped:aiSummary%",
+                "confidenceScore": "=%analysisMapped:confidenceScore%",
+                "fundingOpportunities": "=%analysisMapped:fundingOpportunities%",
+                "keywords": "=IF(ISBLANK(%analysisMapped:keywords%),[],%analysisMapped:keywords%)",
+                "projectDescription": "=%analysisMapped:projectDescription%",
+                "recommendedFundingTypes": "=IF(ISBLANK(%analysisMapped:recommendedFundingTypes%),[],%analysisMapped:recommendedFundingTypes%)"
+            },
+            "searchText": "=%TransformInput:searchText%",
+            "topFundingOpportunities": "=IF(ISBLANK(%AnalyzeProjectApex:topFundingOpportunities%),[],%AnalyzeProjectApex:topFundingOpportunities%)"
         },
         "disOnTplt": false,
         "executionConditionalFormula": "",
-        "label": "ResponseAction1",
+        "isActive": true,
         "responseDefaultData": {
         },
         "responseFormat": "JSON",

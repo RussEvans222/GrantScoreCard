@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Consent&quot; : null,
+  &quot;ContextId&quot; : &quot;a0E4S000000mTynUAE&quot;,
+  &quot;ProjectInfo&quot; : {
+    &quot;AccountId&quot; : &quot;0014S00000781FX&quot;,
+    &quot;ProjectId&quot; : &quot;a0E4S000000mTynUAE&quot;,
+    &quot;ReportInfo&quot; : {
+      &quot;FedGrantNumber&quot; : &quot;CTT11M008&quot;,
+      &quot;ProjectName&quot; : &quot;VA Electric Vehicle Charging Network&quot;
+    }
+  },
+  &quot;ReportInfo&quot; : {
+    &quot;AccountingBasis&quot; : &quot;Cash&quot;,
+    &quot;BlkGrantPeriod&quot; : {
+      &quot;GrantPeriodFrom&quot; : &quot;2023-01-01&quot;,
+      &quot;GrantPeriodTo&quot; : &quot;2023-03-31&quot;
+    },
+    &quot;FedGrantNumber&quot; : &quot;CTT11M008&quot;,
+    &quot;ProjectName&quot; : &quot;VA Electric Vehicle Charging Network&quot;,
+    &quot;RecipientAccountNumber&quot; : &quot;WIDOT2345&quot;,
+    &quot;ReportType&quot; : &quot;Quarterly&quot;,
+    &quot;ReportingEndDate&quot; : &quot;2023-03-31&quot;
+  },
+  &quot;Transactions&quot; : {
+    &quot;BlkFedCash&quot; : {
+      &quot;TransCash_CalcCashOnHand&quot; : 6993,
+      &quot;TransCash_CashDisbursements&quot; : 53000,
+      &quot;TransCash_CashReceipts&quot; : 59993
+    },
+    &quot;BlkFedExpend&quot; : {
+      &quot;TransExpend_Authorized&quot; : 14806000,
+      &quot;TransExpend_CalcBalance&quot; : 14798223,
+      &quot;TransExpend_CalcTotalFedShare&quot; : 7777,
+      &quot;TransExpend_ShareExpenditures&quot; : 4343,
+      &quot;TransExpend_Shareobligations&quot; : 3434
+    },
+    &quot;BlkProgramIncome&quot; : {
+      &quot;TransIncome_CalcUnexpendedIncome&quot; : 54536,
+      &quot;TransIncome_IncomeEarned&quot; : 54545,
+      &quot;TransIncome_IncomeExpended&quot; : 51454,
+      &quot;TransIncome_IncomeExpendedAddition&quot; : 51445
+    },
+    &quot;BlkRecipientShare&quot; : {
+      &quot;TransRecipient_CalcRecipientShare&quot; : 902,
+      &quot;TransRecipient_ShareExpenditures&quot; : 23432,
+      &quot;TransRecipient_Sharerequired&quot; : 24334
+    }
+  },
+  &quot;UserEmail&quot; : &quot;kwinderlich@salesforce.com&quot;,
+  &quot;UserFirstName&quot; : &quot;Keith&quot;,
+  &quot;UserLastName&quot; : &quot;Winderlich&quot;,
+  &quot;timeStamp&quot; : &quot;2022-03-03T22:37:08.122Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0054S000000eAieQAE&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@gpsg.demo&quot;,
+  &quot;userProfile&quot; : &quot;*GPSG System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-300&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRSaveFInancialReportingData</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c1b751d6-5dd8-4a1b-aafd-ca1222bd4a16</globalKey>
+        <inputFieldName>ReportInfo:BlkGrantPeriod:GrantPeriodTo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGProject_Period_To_Date__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveFInancialReportingDataCustom2229</globalKey>
+        <inputFieldName>ProjectInfo:ProjectId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGProject__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4f7ded17-a560-4d7f-81d8-392019e97534</globalKey>
+        <inputFieldName>ReportInfo:RecipientAccountNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGRecipient_Account_Number__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>4e968dfd-3383-4b2d-8b7b-c133399792e1</globalKey>
+        <inputFieldName>Transactions:BlkRecipientShare:TransRecipient_ShareExpenditures</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGRecipient_Share_of_Expenditures__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1e666571-efa9-4381-905b-3577f8e9614a</globalKey>
+        <inputFieldName>Transactions:BlkFedExpend:TransExpend_Shareobligations</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGFederal_Share_Unliquidated_Oblig__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7d788242-6a0f-49d9-be42-ec6f679bf823</globalKey>
+        <inputFieldName>ReportInfo:ReportType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGReport_Type__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bc90361b-3676-4bda-a5bd-be88ed9d543d</globalKey>
+        <inputFieldName>Transactions:BlkFedExpend:TransExpend_ShareExpenditures</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGFederal_Share_of_Expenditures__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e23fe4e1-ccaf-4dbc-9b92-38bcd5d94b1b</globalKey>
+        <inputFieldName>ReportInfo:ReportingEndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGReporting_Period_End_Date__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c3460d97-980d-4322-8a46-d4181398af8b</globalKey>
+        <inputFieldName>Transactions:BlkProgramIncome:TransIncome_IncomeExpendedAddition</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGIncome_for_Addition_Alternative__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Working</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>c83e439f-ccbc-4ff3-9e5b-fda139ad3b24</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGStatus__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e5a0ce36-0ea4-4e0d-ab48-9eaa0bd33243</globalKey>
+        <inputFieldName>Transactions:BlkProgramIncome:TransIncome_IncomeExpended</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGIncome_for_Deduction_Alternative__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>993cfd04-ae00-49cb-af54-369d5bfb9a89</globalKey>
+        <inputFieldName>Transactions:BlkFedExpend:TransExpend_Authorized</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGTotal_Federal_Funds_Authorized__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1fa82f6b-75c7-45cc-b813-85f08bb4ce4c</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGOrganization__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a9e42fb9-fc12-43e3-ae58-f4a27e3b8baa</globalKey>
+        <inputFieldName>Transactions:BlkProgramIncome:TransIncome_IncomeEarned</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGTotal_Federal_Program_Income_Earned__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0e00b2b2-c3da-4d01-a9dc-3e0b9661a8b3</globalKey>
+        <inputFieldName>ReportInfo:AccountingBasis</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGAccounting_Basis__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bc0b408c-e709-4aa5-a490-ef3f6731e4ed</globalKey>
+        <inputFieldName>Transactions:BlkRecipientShare:TransRecipient_Sharerequired</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGTotal_Recipient_Share_Required__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>ececf7a8-79f5-4759-91c8-a625009ef34c</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9f9eeff7-9e70-4bc3-a77b-302b80288bcf</globalKey>
+        <inputFieldName>CALCReportName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>984e32c8-f474-4c75-a804-d30f56b1aebe</globalKey>
+        <inputFieldName>Transactions:BlkFedCash:TransCash_CashDisbursements</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGCash_Disbursements__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>1e05bba6-7fdd-4c6d-9eb9-e4845071a7d9</globalKey>
+        <inputFieldName>Transactions:BlkFedCash:TransCash_CashReceipts</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGCash_Receipts__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| &quot;Financial/\/\/Report&quot; var:ReportInfo:ReportType + &quot;/\/\/FY23/\/\/Q1&quot; + CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(&quot;Financial Report&quot; +  ReportInfo:ReportType +  &quot; FY23 Q1&quot;)</formulaExpression>
+        <formulaResultPath>CALCReportName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>08995667-9e0f-4df1-8236-cffc238ad0b0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a873aa78-275e-46c9-a57e-cd7662e25a70</globalKey>
+        <inputFieldName>ReportInfo:BlkGrantPeriod:GrantPeriodFrom</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveFInancialReportingData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGProject_Period_From_Date__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;Consent&quot; : null,
+  &quot;ContextId&quot; : &quot;a0E4S000000mTynUAE&quot;,
+  &quot;ProjectInfo&quot; : {
+    &quot;AccountId&quot; : &quot;0014S00000781FX&quot;,
+    &quot;ProjectId&quot; : &quot;a0E4S000000mTynUAE&quot;,
+    &quot;ReportInfo&quot; : {
+      &quot;FedGrantNumber&quot; : &quot;CTT11M008&quot;,
+      &quot;ProjectName&quot; : &quot;VA Electric Vehicle Charging Network&quot;
+    }
+  },
+  &quot;ReportInfo&quot; : {
+    &quot;AccountingBasis&quot; : &quot;Cash&quot;,
+    &quot;BlkGrantPeriod&quot; : {
+      &quot;GrantPeriodFrom&quot; : &quot;2023-01-01&quot;,
+      &quot;GrantPeriodTo&quot; : &quot;2023-03-31&quot;
+    },
+    &quot;FedGrantNumber&quot; : &quot;CTT11M008&quot;,
+    &quot;ProjectName&quot; : &quot;VA Electric Vehicle Charging Network&quot;,
+    &quot;RecipientAccountNumber&quot; : &quot;WIDOT2345&quot;,
+    &quot;ReportType&quot; : &quot;Quarterly&quot;,
+    &quot;ReportingEndDate&quot; : &quot;2023-03-31&quot;
+  },
+  &quot;Transactions&quot; : {
+    &quot;BlkFedCash&quot; : {
+      &quot;TransCash_CalcCashOnHand&quot; : 6993,
+      &quot;TransCash_CashDisbursements&quot; : 53000,
+      &quot;TransCash_CashReceipts&quot; : 59993
+    },
+    &quot;BlkFedExpend&quot; : {
+      &quot;TransExpend_Authorized&quot; : 14806000,
+      &quot;TransExpend_CalcBalance&quot; : 14798223,
+      &quot;TransExpend_CalcTotalFedShare&quot; : 7777,
+      &quot;TransExpend_ShareExpenditures&quot; : 4343,
+      &quot;TransExpend_Shareobligations&quot; : 3434
+    },
+    &quot;BlkProgramIncome&quot; : {
+      &quot;TransIncome_CalcUnexpendedIncome&quot; : 54536,
+      &quot;TransIncome_IncomeEarned&quot; : 54545,
+      &quot;TransIncome_IncomeExpended&quot; : 51454,
+      &quot;TransIncome_IncomeExpendedAddition&quot; : 51445
+    },
+    &quot;BlkRecipientShare&quot; : {
+      &quot;TransRecipient_CalcRecipientShare&quot; : 902,
+      &quot;TransRecipient_ShareExpenditures&quot; : 23432,
+      &quot;TransRecipient_Sharerequired&quot; : 24334
+    }
+  },
+  &quot;UserEmail&quot; : &quot;kwinderlich@salesforce.com&quot;,
+  &quot;UserFirstName&quot; : &quot;Keith&quot;,
+  &quot;UserLastName&quot; : &quot;Winderlich&quot;,
+  &quot;timeStamp&quot; : &quot;2022-03-03T22:37:08.122Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0054S000000eAieQAE&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@gpsg.demo&quot;,
+  &quot;userProfile&quot; : &quot;*GPSG System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-300&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRSaveFInancialReportingData_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;CaseProceedingDetails&quot; : {
+    &quot;NewCaseDetails&quot; : {
+      &quot;CaseProceedingUpdate&quot; : {
+        &quot;Description&quot; : null,
+        &quot;Name&quot; : null
+      },
+      &quot;GeneralCaseProceedingInformation&quot; : {
+        &quot;CaseFilingDateTime&quot; : null,
+        &quot;EndDateTime&quot; : null,
+        &quot;StartDateTime&quot; : null,
+        &quot;Status&quot; : null,
+        &quot;SubType&quot; : null,
+        &quot;Type&quot; : null
+      }
+    }
+  },
+  &quot;Confirmation&quot; : { },
+  &quot;ContextId&quot; : null,
+  &quot;Participants&quot; : {
+    &quot;addNewParticipants&quot; : {
+      &quot;city&quot; : null,
+      &quot;cityFormula&quot; : null,
+      &quot;firstName&quot; : null,
+      &quot;firstNameFormula&quot; : null,
+      &quot;lastName&quot; : null,
+      &quot;lastNameFormula&quot; : null,
+      &quot;limitationFlexCard&quot; : null,
+      &quot;selectAndBuildList&quot; : null
+    },
+    &quot;complaintParticipants&quot; : {
+      &quot;SelectFromList&quot; : null
+    },
+    &quot;executeAddNewParticipantDR&quot; : null,
+    &quot;executeComplaintParticipantDR&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CaseProceedingDetails&quot; : null,
+    &quot;Confirmation&quot; : null,
+    &quot;DRGetCaseDetails&quot; : null,
+    &quot;GetCaseProceedingDetails&quot; : null,
+    &quot;Participants&quot; : null,
+    &quot;SaveCaseParticipantsWhenNewCaseCreated&quot; : null,
+    &quot;SaveCaseProceedingParticipantFromCase&quot; : null,
+    &quot;SaveWhenNewCaseProceedingCreated&quot; : null,
+    &quot;SetCaseID&quot; : null,
+    &quot;SetCaseProceedingValues&quot; : null,
+    &quot;getCaseParticipants&quot; : null,
+    &quot;setCaseProceedingValues&quot; : null,
+    &quot;setEmptyResults&quot; : null,
+    &quot;setObjectsToRetrieve&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>CreateCaseProceedingParticipantFromCase</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateCaseProceedingParticipantFromCaseCustom2576</globalKey>
+        <inputFieldName>DRId_CaseProceeding</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateCaseProceedingParticipantFromCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CaseProceedingId</outputFieldName>
+        <outputObjectName>CaseProceedingParticipant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateCaseProceedingParticipantFromCaseCustom1517</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateCaseProceedingParticipantFromCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>CaseProceedingParticipant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateCaseProceedingParticipantFromCaseCustom9543</globalKey>
+        <inputFieldName>Participants:caseParticipants:SelectFromList:selectedCaseParticipants:selectedCaseParticipants:pid</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateCaseProceedingParticipantFromCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ParticipantId</outputFieldName>
+        <outputObjectName>CaseProceedingParticipant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateCaseProceedingParticipantFromCaseCustom1321</globalKey>
+        <inputFieldName>Participants:caseParticipants:SelectFromList:selectedCaseParticipants:selectedCaseParticipants:role</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateCaseProceedingParticipantFromCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Role</outputFieldName>
+        <outputObjectName>CaseProceedingParticipant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateCaseProceedingParticipantFromCaseCustom9656</globalKey>
+        <inputFieldName>Participants:caseParticipants:SelectFromList:selectedCaseParticipants:selectedCaseParticipants:status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateCaseProceedingParticipantFromCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>CaseProceedingParticipant</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;CaseProceedingDetails&quot; : {
+    &quot;NewCaseDetails&quot; : {
+      &quot;CaseProceedingUpdate&quot; : {
+        &quot;Description&quot; : null,
+        &quot;Name&quot; : null
+      },
+      &quot;GeneralCaseProceedingInformation&quot; : {
+        &quot;CaseFilingDateTime&quot; : null,
+        &quot;EndDateTime&quot; : null,
+        &quot;StartDateTime&quot; : null,
+        &quot;Status&quot; : null,
+        &quot;SubType&quot; : null,
+        &quot;Type&quot; : null
+      }
+    }
+  },
+  &quot;Confirmation&quot; : { },
+  &quot;ContextId&quot; : null,
+  &quot;Participants&quot; : {
+    &quot;addNewParticipants&quot; : {
+      &quot;city&quot; : null,
+      &quot;cityFormula&quot; : null,
+      &quot;firstName&quot; : null,
+      &quot;firstNameFormula&quot; : null,
+      &quot;lastName&quot; : null,
+      &quot;lastNameFormula&quot; : null,
+      &quot;limitationFlexCard&quot; : null,
+      &quot;selectAndBuildList&quot; : null
+    },
+    &quot;complaintParticipants&quot; : {
+      &quot;SelectFromList&quot; : null
+    },
+    &quot;executeAddNewParticipantDR&quot; : null,
+    &quot;executeComplaintParticipantDR&quot; : null
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CaseProceedingDetails&quot; : null,
+    &quot;Confirmation&quot; : null,
+    &quot;DRGetCaseDetails&quot; : null,
+    &quot;GetCaseProceedingDetails&quot; : null,
+    &quot;Participants&quot; : null,
+    &quot;SaveCaseParticipantsWhenNewCaseCreated&quot; : null,
+    &quot;SaveCaseProceedingParticipantFromCase&quot; : null,
+    &quot;SaveWhenNewCaseProceedingCreated&quot; : null,
+    &quot;SetCaseID&quot; : null,
+    &quot;SetCaseProceedingValues&quot; : null,
+    &quot;getCaseParticipants&quot; : null,
+    &quot;setCaseProceedingValues&quot; : null,
+    &quot;setEmptyResults&quot; : null,
+    &quot;setObjectsToRetrieve&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateCaseProceedingParticipantFromCase_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
-    <active>true</active>
+    <active>false</active>
     <assignmentRulesUsed>false</assignmentRulesUsed>
     <deletedOnSuccess>false</deletedOnSuccess>
     <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;rawAiAssessment&quot; : {
+    &quot;keywords&quot; : [ ],
+    &quot;recommendedFundingTypes&quot; : [ ],
+    &quot;fundingOpportunities&quot; : [ {
+      &quot;id&quot; : &quot;&quot;,
+      &quot;name&quot; : &quot;&quot;,
+      &quot;OpenDate&quot; : &quot;&quot;,
+      &quot;CloseDate&quot; : &quot;&quot;,
+      &quot;MaxAwardAmount&quot; : 0,
+      &quot;RelevanceTier&quot; : &quot;&quot;,
+      &quot;RelevanceLabel&quot; : &quot;&quot;,
+      &quot;relevanceScore&quot; : 0,
+      &quot;RelevanceColor&quot; : &quot;&quot;,
+      &quot;EligibilitySummary&quot; : &quot;&quot;,
+      &quot;evaluationTemplateId&quot; : &quot;&quot;
+    } ],
+    &quot;confidenceScore&quot; : 0,
+    &quot;aiSummary&quot; : &quot;&quot;
+  },
+  &quot;Step_ProjectDiscovery&quot; : {
+    &quot;Inp_ProjectDescription&quot; : &quot;&quot;
+  }
+}</expectedInputJson>
     <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
     <inputType>JSON</inputType>
     <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
@@ -12,449 +36,91 @@
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:id $Vlocity.NULL != var:fundingOpportunities:id '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:id != $Vlocity.NULL, fundingOpportunities:id, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:id</formulaResultPath>
-        <formulaSequence>1.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1001</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:name $Vlocity.NULL != var:fundingOpportunities:name '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:name != $Vlocity.NULL, fundingOpportunities:name, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:name</formulaResultPath>
-        <formulaSequence>2.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1002</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:OpenDate $Vlocity.NULL != var:fundingOpportunities:OpenDate '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:OpenDate != $Vlocity.NULL, fundingOpportunities:OpenDate, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:OpenDate</formulaResultPath>
-        <formulaSequence>3.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1003</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:CloseDate $Vlocity.NULL != var:fundingOpportunities:CloseDate '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:CloseDate != $Vlocity.NULL, fundingOpportunities:CloseDate, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:CloseDate</formulaResultPath>
-        <formulaSequence>4.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1004</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:MaxAwardAmount $Vlocity.NULL != var:fundingOpportunities:MaxAwardAmount 0 IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:MaxAwardAmount != $Vlocity.NULL, fundingOpportunities:MaxAwardAmount, 0)</formulaExpression>
-        <formulaResultPath>fundingOpportunities:MaxAwardAmount</formulaResultPath>
-        <formulaSequence>5.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1005</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:RelevanceTier $Vlocity.NULL != var:fundingOpportunities:RelevanceTier '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:RelevanceTier != $Vlocity.NULL, fundingOpportunities:RelevanceTier, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:RelevanceTier</formulaResultPath>
-        <formulaSequence>6.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1006</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:RelevanceLabel $Vlocity.NULL != var:fundingOpportunities:RelevanceLabel '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:RelevanceLabel != $Vlocity.NULL, fundingOpportunities:RelevanceLabel, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:RelevanceLabel</formulaResultPath>
-        <formulaSequence>7.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1007</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:RelevanceColor $Vlocity.NULL != var:fundingOpportunities:RelevanceColor '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:RelevanceColor != $Vlocity.NULL, fundingOpportunities:RelevanceColor, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:RelevanceColor</formulaResultPath>
-        <formulaSequence>8.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1008</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:EligibilitySummary $Vlocity.NULL != var:fundingOpportunities:EligibilitySummary '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:EligibilitySummary != $Vlocity.NULL, fundingOpportunities:EligibilitySummary, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:EligibilitySummary</formulaResultPath>
-        <formulaSequence>9.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1009</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:evaluationTemplateId $Vlocity.NULL != var:fundingOpportunities:evaluationTemplateId '' IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:evaluationTemplateId != $Vlocity.NULL, fundingOpportunities:evaluationTemplateId, '')</formulaExpression>
-        <formulaResultPath>fundingOpportunities:evaluationTemplateId</formulaResultPath>
-        <formulaSequence>10.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1010</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:relevanceScore 100 * ROUND</formulaConverted>
-        <formulaExpression>ROUND(fundingOpportunities:relevanceScore * 100)</formulaExpression>
-        <formulaResultPath>fundingOpportunities:relevanceScore</formulaResultPath>
-        <formulaSequence>11.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1011</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>true</formulaConverted>
-        <formulaExpression>true</formulaExpression>
-        <formulaResultPath>fundingOpportunities:isAiSuggested</formulaResultPath>
-        <formulaSequence>12.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1012</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>&apos;Einstein Recommended&apos;</formulaConverted>
-        <formulaExpression>&apos;Einstein Recommended&apos;</formulaExpression>
-        <formulaResultPath>fundingOpportunities:displayBadge</formulaResultPath>
-        <formulaSequence>13.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1013</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <formulaConverted>| var:fundingOpportunities:RelevanceTier &apos;High&apos; == 3 var:fundingOpportunities:RelevanceTier &apos;Medium&apos; == 2 1 IF IF</formulaConverted>
-        <formulaExpression>IF(fundingOpportunities:RelevanceTier==&apos;High&apos;,3,IF(fundingOpportunities:RelevanceTier==&apos;Medium&apos;,2,1))</formulaExpression>
-        <formulaResultPath>fundingOpportunities:sortRank</formulaResultPath>
-        <formulaSequence>14.0</formulaSequence>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom1014</globalKey>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>0.0</outputCreationSequence>
-        <outputFieldName>Formula</outputFieldName>
-        <outputObjectName>Formula</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2001</globalKey>
-        <inputFieldName>projectDescription</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:projectDescription</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2002</globalKey>
-        <inputFieldName>aiSummary</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:aiSummary</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2003</globalKey>
-        <inputFieldName>confidenceScore</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:confidenceScore</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2004</globalKey>
-        <inputFieldName>keywords</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:keywords</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2005</globalKey>
-        <inputFieldName>recommendedFundingTypes</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:recommendedFundingTypes</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2006</globalKey>
-        <inputFieldName>fundingOpportunities:id</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:id</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2007</globalKey>
-        <inputFieldName>fundingOpportunities:name</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:name</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2008</globalKey>
-        <inputFieldName>fundingOpportunities:OpenDate</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:OpenDate</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
-        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2009</globalKey>
-        <inputFieldName>fundingOpportunities:CloseDate</inputFieldName>
-        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
-        <linkedObjectSequence>0.0</linkedObjectSequence>
-        <name>DRTNormalizeFundingOpportunities</name>
-        <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:CloseDate</outputFieldName>
-        <outputObjectName>json</outputObjectName>
-        <requiredForUpsert>false</requiredForUpsert>
-        <upsertKey>false</upsertKey>
-    </omniDataTransformItem>
-    <omniDataTransformItem>
-        <disabled>false</disabled>
-        <filterGroup>0.0</filterGroup>
         <globalKey>DRT_NormalizeFundingOpportunitiesCustom2010</globalKey>
-        <inputFieldName>fundingOpportunities:MaxAwardAmount</inputFieldName>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:MaxAwardAmount</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:MaxAwardAmount</outputFieldName>
+        <outputFieldName>fundingOpportunities:MaxAwardAmount</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>DRT_NormalizeFundingOpportunitiesCustom2011</globalKey>
-        <inputFieldName>fundingOpportunities:RelevanceTier</inputFieldName>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:RelevanceTier</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:RelevanceTier</outputFieldName>
+        <outputFieldName>fundingOpportunities:RelevanceTier</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>DRT_NormalizeFundingOpportunitiesCustom2012</globalKey>
-        <inputFieldName>fundingOpportunities:RelevanceLabel</inputFieldName>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:RelevanceLabel</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:RelevanceLabel</outputFieldName>
+        <outputFieldName>fundingOpportunities:RelevanceLabel</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>DRT_NormalizeFundingOpportunitiesCustom2013</globalKey>
-        <inputFieldName>fundingOpportunities:relevanceScore</inputFieldName>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:relevanceScore</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:relevanceScore</outputFieldName>
+        <outputFieldName>fundingOpportunities:relevanceScore</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>DRT_NormalizeFundingOpportunitiesCustom2014</globalKey>
-        <inputFieldName>fundingOpportunities:RelevanceColor</inputFieldName>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:RelevanceColor</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:RelevanceColor</outputFieldName>
+        <outputFieldName>fundingOpportunities:RelevanceColor</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>DRT_NormalizeFundingOpportunitiesCustom2015</globalKey>
-        <inputFieldName>fundingOpportunities:EligibilitySummary</inputFieldName>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:EligibilitySummary</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:EligibilitySummary</outputFieldName>
+        <outputFieldName>fundingOpportunities:EligibilitySummary</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
@@ -466,7 +132,7 @@
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:evaluationTemplateId</outputFieldName>
+        <outputFieldName>fundingOpportunities:evaluationTemplateId</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
         <upsertKey>false</upsertKey>
@@ -480,7 +146,7 @@
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:isAiSuggested</outputFieldName>
+        <outputFieldName>fundingOpportunities:isAiSuggested</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
         <upsertKey>false</upsertKey>
@@ -494,7 +160,7 @@
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:displayBadge</outputFieldName>
+        <outputFieldName>fundingOpportunities:displayBadge</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
         <upsertKey>false</upsertKey>
@@ -508,12 +174,192 @@
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>DRTNormalizeFundingOpportunities</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>initialAiAssessment:fundingOpportunities:sortRank</outputFieldName>
+        <outputFieldName>fundingOpportunities:sortRank</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2001</globalKey>
+        <inputFieldName>Step_ProjectDiscovery:Inp_ProjectDescription</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>projectDescription</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2002</globalKey>
+        <inputFieldName>aiSummary</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>aiSummary</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2003</globalKey>
+        <inputFieldName>confidenceScore</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>confidenceScore</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2004</globalKey>
+        <inputFieldName>keywords</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>keywords</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2005</globalKey>
+        <inputFieldName>recommendedFundingTypes</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>recommendedFundingTypes</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2006</globalKey>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>fundingOpportunities:id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2007</globalKey>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>fundingOpportunities:name</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2008</globalKey>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:OpenDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>fundingOpportunities:OpenDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRT_NormalizeFundingOpportunitiesCustom2009</globalKey>
+        <inputFieldName>rawAiAssessment:fundingOpportunities:CloseDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRTNormalizeFundingOpportunities</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>fundingOpportunities:CloseDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
     <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;rawAiAssessment&quot; : {
+    &quot;keywords&quot; : [ &quot;robotics&quot;, &quot;technology&quot;, &quot;innovation&quot;, &quot;workforce development&quot; ],
+    &quot;recommendedFundingTypes&quot; : [ &quot;Research Grants&quot;, &quot;Innovation Grants&quot;, &quot;Workforce Training Grants&quot; ],
+    &quot;fundingOpportunities&quot; : [ {
+      &quot;id&quot; : &quot;119Hp0000000FE0IAM&quot;,
+      &quot;name&quot; : &quot;2026 Community Workforce Development Grant&quot;,
+      &quot;OpenDate&quot; : &quot;2026-01-15&quot;,
+      &quot;CloseDate&quot; : &quot;2026-12-31&quot;,
+      &quot;MaxAwardAmount&quot; : 250000,
+      &quot;RelevanceTier&quot; : &quot;High&quot;,
+      &quot;RelevanceLabel&quot; : &quot;High relevance&quot;,
+      &quot;relevanceScore&quot; : 0.95,
+      &quot;RelevanceColor&quot; : &quot;#1E8449&quot;,
+      &quot;EligibilitySummary&quot; : &quot;Supports workforce robotics training and advanced manufacturing programs.&quot;,
+      &quot;evaluationTemplateId&quot; : &quot;a98Hp000000H3IBIA0&quot;
+    }, {
+      &quot;id&quot; : &quot;119Hp0000000FEXIAM&quot;,
+      &quot;name&quot; : &quot;STEM Innovation Education Grant&quot;,
+      &quot;OpenDate&quot; : &quot;2026-03-01&quot;,
+      &quot;CloseDate&quot; : &quot;2026-10-01&quot;,
+      &quot;MaxAwardAmount&quot; : 150000,
+      &quot;RelevanceTier&quot; : &quot;Medium&quot;,
+      &quot;RelevanceLabel&quot; : &quot;Moderate relevance&quot;,
+      &quot;relevanceScore&quot; : 0.62,
+      &quot;RelevanceColor&quot; : &quot;#F4D03F&quot;,
+      &quot;EligibilitySummary&quot; : &quot;Funding for robotics, coding, and engineering education initiatives.&quot;,
+      &quot;evaluationTemplateId&quot; : &quot;a98Hp000000H3IBIA1&quot;
+    }, {
+      &quot;id&quot; : &quot;119Hp0000000FEYIAM&quot;,
+      &quot;name&quot; : &quot;Community Technology Advancement Grant&quot;,
+      &quot;OpenDate&quot; : &quot;2026-02-01&quot;,
+      &quot;CloseDate&quot; : &quot;2026-09-15&quot;,
+      &quot;MaxAwardAmount&quot; : 75000,
+      &quot;RelevanceTier&quot; : &quot;Low&quot;,
+      &quot;RelevanceLabel&quot; : &quot;Lower relevance&quot;,
+      &quot;relevanceScore&quot; : 0.25,
+      &quot;RelevanceColor&quot; : &quot;#A63A3A&quot;,
+      &quot;EligibilitySummary&quot; : &quot;Funding for general community technology infrastructure projects.&quot;,
+      &quot;evaluationTemplateId&quot; : &quot;a98Hp000000H3IBIA2&quot;
+    } ],
+    &quot;confidenceScore&quot; : 0.87,
+    &quot;aiSummary&quot; : &quot;Robotics and workforce development initiatives align strongly with workforce and STEM funding opportunities.&quot;,
+    &quot;projectDescription&quot; : &quot;Robotics workforce development programs&quot;
+  },
+  &quot;Step_ProjectDiscovery&quot; : {
+    &quot;Inp_ProjectDescription&quot; : &quot;Robotics workforce development programs&quot;
+  }
+}</previewJsonData>
     <processSuperBulk>false</processSuperBulk>
     <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
     <rollbackOnError>false</rollbackOnError>

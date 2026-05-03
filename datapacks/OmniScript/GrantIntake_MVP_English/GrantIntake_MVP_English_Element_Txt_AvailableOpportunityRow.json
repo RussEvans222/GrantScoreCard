@@ -1,0 +1,42 @@
+{
+    "CurrencyIsoCode": "USD",
+    "IsActive": true,
+    "IsLocked": false,
+    "IsOmniScriptEmbeddable": true,
+    "MayEdit": true,
+    "Name": "Txt_AvailableOpportunityRow",
+    "OmniProcessId": {
+        "Name": "GrantIntakeMVP",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "ParentElementId": {
+        "Name": "resultFundingList",
+        "OmniProcessId": {
+            "Name": "GrantIntakeMVP",
+            "VlocityDataPackType": "VlocityMatchingKeyObject",
+            "VlocityMatchingRecordSourceKey": "OmniProcess/GrantIntake/MVP/English",
+            "VlocityRecordSObjectType": "OmniProcess"
+        },
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/resultFundingList",
+        "VlocityRecordSObjectType": "OmniProcessElement"
+    },
+    "ParentElementName": "resultFundingList",
+    "ParentElementType": "Block",
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "dataJSON": false,
+        "label": "Txt_AvailableOpportunityRow",
+        "sanitize": false,
+        "show": null,
+        "text": "<div style=\"width:100%;max-width:100%;box-sizing:border-box;margin:0.35rem auto 0;padding:.75rem .9rem;border:1px solid #E2E8F4;background:#FFFFFF;border-left:6px solid %resultFundingList:RelevanceColor%;border-radius:10px;color:#2f4568;\"><div style=\"display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:.6rem;align-items:start;\"><div><div style=\"font-size:.76rem;font-weight:700;color:#0176D3;text-transform:uppercase;\">Einstein Suggested</div><h3 style=\"margin:0 0 .25rem;color:#16325C;font-size:.98rem;\">%resultFundingList:name%</h3><div style=\"color:#4B5E82;font-size:.82rem;line-height:1.35;max-height:3.3rem;overflow:hidden;\">%resultFundingList:EligibilitySummary%</div></div><div style=\"font-size:.82rem;color:#33415C;\"><strong>Open</strong><br/>%resultFundingList:OpenDate%</div><div style=\"font-size:.82rem;color:#33415C;\"><strong>Close</strong><br/>%resultFundingList:CloseDate%</div><div style=\"font-size:.82rem;color:#33415C;\"><strong>Max Award</strong><br/>$%resultFundingList:MaxAwardAmount%<br/><span style=\"background:%resultFundingList:RelevanceColor%;color:#fff;border-radius:999px;padding:.15rem .5rem;font-size:.72rem;display:inline-block;margin-top:.25rem;\">%resultFundingList:RelevanceTier% - %resultFundingList:RelevanceLabel% (%resultFundingList:relevanceScore%)</span></div></div></div>",
+        "textKey": ""
+    },
+    "Type": "Text Block",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/GrantIntake/MVP/English/Txt_AvailableOpportunityRow"
+}

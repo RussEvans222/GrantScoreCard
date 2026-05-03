@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;CCM_Confirmation&quot; : { },
+  &quot;CCM_Evidence_Management&quot; : {
+    &quot;ComplaintInformation&quot; : {
+      &quot;ComplaintName&quot; : null,
+      &quot;ComplaintNumber&quot; : null,
+      &quot;IncidentDate&quot; : null,
+      &quot;OfficerName&quot; : null
+    },
+    &quot;EvidenceInformation&quot; : {
+      &quot;EvidenceDescription&quot; : null,
+      &quot;FileUpload&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ],
+      &quot;Name&quot; : null,
+      &quot;TypeOfEvidence&quot; : null
+    }
+  },
+  &quot;CCM_NewComplaint&quot; : {
+    &quot;CCM_ComplaintInformation&quot; : {
+      &quot;CCM_ComplaintDetails&quot; : {
+        &quot;CCM_ComplaintNotes&quot; : null,
+        &quot;CCM_ComplaintPriority&quot; : null,
+        &quot;CCM_ComplaintSubject&quot; : null,
+        &quot;CCM_ComplaintType&quot; : null,
+        &quot;CCM_IncidentDate&quot; : null,
+        &quot;CCM_IncidentLocation&quot; : null
+      },
+      &quot;CCM_ComplaintReporter&quot; : {
+        &quot;CCM_RegulatoryAuthority&quot; : null,
+        &quot;CCM_ReporterCategory&quot; : null,
+        &quot;CCM_ReporterFirstName&quot; : null,
+        &quot;CCM_ReporterLastName&quot; : null
+      }
+    },
+    &quot;CCM_Participants&quot; : {
+      &quot;city&quot; : null,
+      &quot;firstName&quot; : null,
+      &quot;lastName&quot; : null,
+      &quot;searchAndBuildComplaintParticipants&quot; : null
+    }
+  },
+  &quot;CCM_RegulatoryCode&quot; : {
+    &quot;CCM_SelectRegulatoryCode&quot; : null
+  },
+  &quot;ContextId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CCM_Confirmation&quot; : null,
+    &quot;CCM_DR_CreateComplaintParticipants&quot; : null,
+    &quot;CCM_DR_CreateCustodyItem&quot; : null,
+    &quot;CCM_DR_CreateCustodyItemRelation&quot; : null,
+    &quot;CCM_DR_CreatePublicComplaint&quot; : null,
+    &quot;CCM_DR_CreateRegulatoryCodeViolation&quot; : null,
+    &quot;CCM_DR_GetPublicComplaint&quot; : null,
+    &quot;CCM_DR_GetRecordTypeId&quot; : null,
+    &quot;CCM_DR_GetUserDetails&quot; : null,
+    &quot;CCM_Evidence_Management&quot; : null,
+    &quot;CCM_NewComplaint&quot; : null,
+    &quot;CCM_PublicComplaintId&quot; : null,
+    &quot;CCM_RegulatoryCode&quot; : null,
+    &quot;CCM_SetEmptyValues&quot; : null,
+    &quot;CCM_SetRecordType&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>CCMDRCreateCustodyItemRelation</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCreateCustodyItemRelationCustom1569</globalKey>
+        <inputFieldName>CCM_PublicComplaintId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCreateCustodyItemRelation</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContextId</outputFieldName>
+        <outputObjectName>CustodyItemRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCreateCustodyItemRelationCustom8726</globalKey>
+        <inputFieldName>DRId_CustodyItem</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCreateCustodyItemRelation</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CustodyItemId</outputFieldName>
+        <outputObjectName>CustodyItemRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CCMDRCreateCustodyItemRelationCustom7215</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CCMDRCreateCustodyItemRelation</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>CustodyItemRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CCMDRCreateCustodyItemRelationCustom4033</globalKey>
+        <inputFieldName>CCM_Evidence_Management:CCM_EvidenceInformation:Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CCMDRCreateCustodyItemRelation</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>CustodyItemRelation</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;CCM_Confirmation&quot; : { },
+  &quot;CCM_Evidence_Management&quot; : {
+    &quot;ComplaintInformation&quot; : {
+      &quot;ComplaintName&quot; : null,
+      &quot;ComplaintNumber&quot; : null,
+      &quot;IncidentDate&quot; : null,
+      &quot;OfficerName&quot; : null
+    },
+    &quot;EvidenceInformation&quot; : {
+      &quot;EvidenceDescription&quot; : null,
+      &quot;FileUpload&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ],
+      &quot;Name&quot; : null,
+      &quot;TypeOfEvidence&quot; : null
+    }
+  },
+  &quot;CCM_NewComplaint&quot; : {
+    &quot;CCM_ComplaintInformation&quot; : {
+      &quot;CCM_ComplaintDetails&quot; : {
+        &quot;CCM_ComplaintNotes&quot; : null,
+        &quot;CCM_ComplaintPriority&quot; : null,
+        &quot;CCM_ComplaintSubject&quot; : null,
+        &quot;CCM_ComplaintType&quot; : null,
+        &quot;CCM_IncidentDate&quot; : null,
+        &quot;CCM_IncidentLocation&quot; : null
+      },
+      &quot;CCM_ComplaintReporter&quot; : {
+        &quot;CCM_RegulatoryAuthority&quot; : null,
+        &quot;CCM_ReporterCategory&quot; : null,
+        &quot;CCM_ReporterFirstName&quot; : null,
+        &quot;CCM_ReporterLastName&quot; : null
+      }
+    },
+    &quot;CCM_Participants&quot; : {
+      &quot;city&quot; : null,
+      &quot;firstName&quot; : null,
+      &quot;lastName&quot; : null,
+      &quot;searchAndBuildComplaintParticipants&quot; : null
+    }
+  },
+  &quot;CCM_RegulatoryCode&quot; : {
+    &quot;CCM_SelectRegulatoryCode&quot; : null
+  },
+  &quot;ContextId&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;CCM_Confirmation&quot; : null,
+    &quot;CCM_DR_CreateComplaintParticipants&quot; : null,
+    &quot;CCM_DR_CreateCustodyItem&quot; : null,
+    &quot;CCM_DR_CreateCustodyItemRelation&quot; : null,
+    &quot;CCM_DR_CreatePublicComplaint&quot; : null,
+    &quot;CCM_DR_CreateRegulatoryCodeViolation&quot; : null,
+    &quot;CCM_DR_GetPublicComplaint&quot; : null,
+    &quot;CCM_DR_GetRecordTypeId&quot; : null,
+    &quot;CCM_DR_GetUserDetails&quot; : null,
+    &quot;CCM_Evidence_Management&quot; : null,
+    &quot;CCM_NewComplaint&quot; : null,
+    &quot;CCM_PublicComplaintId&quot; : null,
+    &quot;CCM_RegulatoryCode&quot; : null,
+    &quot;CCM_SetEmptyValues&quot; : null,
+    &quot;CCM_SetRecordType&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CCMDRCreateCustodyItemRelation_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

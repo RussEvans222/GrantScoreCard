@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountId&quot; : &quot;001KX000004o0N0YAI&quot;,
+  &quot;CCAP&quot; : [ {
+    &quot;AccountId&quot; : &quot;001KX000004o0N0YAI&quot;,
+    &quot;ApplicationType&quot; : &quot;Individual&quot;,
+    &quot;AppliedDate&quot; : &quot;NOW()&quot;,
+    &quot;Category&quot; : &quot;Benefit&quot;,
+    &quot;Description&quot; : &quot;Marshall Application for CCAP&quot;,
+    &quot;Status&quot; : &quot;Submitted&quot;
+  } ],
+  &quot;ContextId&quot; : &quot;0U3KX00000099Jf0AI&quot;,
+  &quot;FlattenedAssessment&quot; : {
+    &quot;Children3to5&quot; : 0,
+    &quot;Children6to13&quot; : 0,
+    &quot;ChildrenCitizenshipStatus&quot; : &quot;U.S. Citizen&quot;,
+    &quot;ChildrenUnder3&quot; : 1,
+    &quot;HouseholdSize&quot; : 2,
+    &quot;MonthlyIncome&quot; : 1000,
+    &quot;NumberOfChildren&quot; : 1
+  },
+  &quot;HeadStart&quot; : [ {
+    &quot;AccountId&quot; : &quot;001KX000004o0N0YAI&quot;,
+    &quot;ApplicationType&quot; : &quot;Individual&quot;,
+    &quot;AppliedDate&quot; : &quot;NOW()&quot;,
+    &quot;Category&quot; : &quot;Benefit&quot;,
+    &quot;Description&quot; : &quot;Marshall Application for Early HeadStart&quot;,
+    &quot;Status&quot; : &quot;Submitted&quot;
+  } ],
+  &quot;Step1&quot; : {
+    &quot;Email&quot; : &quot;pmarshall@demo.com&quot;,
+    &quot;FirstName&quot; : &quot;Paul&quot;,
+    &quot;GuardianDOB&quot; : &quot;1989-03-04&quot;,
+    &quot;HomeAddress-Block&quot; : {
+      &quot;City&quot; : &quot;Fairfax&quot;,
+      &quot;HomeAddress&quot; : null,
+      &quot;State&quot; : &quot;VA&quot;,
+      &quot;Street&quot; : &quot;5216 Maple Street&quot;,
+      &quot;ZIP&quot; : &quot;22030&quot;
+    },
+    &quot;LastName&quot; : &quot;Marshall&quot;,
+    &quot;MailingAddress-Block&quot; : null,
+    &quot;MailingSame&quot; : true,
+    &quot;Phone&quot; : &quot;5142223344&quot;,
+    &quot;SSN&quot; : &quot;123456789&quot;
+  },
+  &quot;Step2&quot; : {
+    &quot;ChildBlock&quot; : [ {
+      &quot;ChildDOB&quot; : &quot;2022-07-13&quot;,
+      &quot;ChildFirstName&quot; : &quot;Hannah&quot;,
+      &quot;ChildLastName&quot; : &quot;Marshall&quot;,
+      &quot;ChildSSN&quot; : &quot;445566778&quot;,
+      &quot;EnrolledInHeadStart&quot; : &quot;No&quot;,
+      &quot;SpecialNeedsCheck&quot; : false,
+      &quot;TypeOfCare&quot; : &quot;Full-time&quot;
+    }, {
+      &quot;ChildDOB&quot; : &quot;2017-02-13&quot;,
+      &quot;ChildFirstName&quot; : &quot;Adam&quot;,
+      &quot;ChildLastName&quot; : &quot;Marshall&quot;,
+      &quot;ChildSSN&quot; : &quot;556677888&quot;,
+      &quot;EnrolledInHeadStart&quot; : &quot;No&quot;,
+      &quot;SpecialNeedsCheck&quot; : false,
+      &quot;TypeOfCare&quot; : &quot;After-school&quot;
+    } ],
+    &quot;Children3to5&quot; : 0,
+    &quot;Children6to13&quot; : 1,
+    &quot;ChildrenCitizenshipStatus&quot; : &quot;U.S. Citizen&quot;,
+    &quot;ChildrenUnder3&quot; : 1,
+    &quot;HouseholdSize&quot; : 3,
+    &quot;MaritalStatus&quot; : &quot;Single&quot;,
+    &quot;NumberOfChildren&quot; : 2,
+    &quot;PregnantStatus&quot; : &quot;No&quot;
+  },
+  &quot;Step3&quot; : {
+    &quot;EducationBlock&quot; : {
+      &quot;EducationCompletion&quot; : &quot;2026-04-15&quot;,
+      &quot;SchoolName&quot; : &quot;Nursing School&quot;
+    },
+    &quot;EducationRadio&quot; : &quot;Yes&quot;,
+    &quot;EmployedRadio&quot; : &quot;Yes&quot;,
+    &quot;EmploymentInfoBlock&quot; : [ {
+      &quot;EmployerName&quot; : &quot;Subway&quot;,
+      &quot;MonthlyWages&quot; : 3000
+    }, {
+      &quot;EmployerName&quot; : &quot;Uber Driver&quot;,
+      &quot;MonthlyWages&quot; : 250
+    } ],
+    &quot;IncomeSource&quot; : &quot;2-Employment;3-Self-Employment&quot;,
+    &quot;MonthlyIncome&quot; : 3250,
+    &quot;SeekingEmployment&quot; : &quot;No&quot;
+  },
+  &quot;Step4&quot; : {
+    &quot;Disclosure&quot; : false
+  },
+  &quot;TANF&quot; : [ {
+    &quot;AccountId&quot; : &quot;001KX000004o0N0YAI&quot;,
+    &quot;ApplicationType&quot; : &quot;Individual&quot;,
+    &quot;AppliedDate&quot; : &quot;NOW()&quot;,
+    &quot;Category&quot; : &quot;Benefit&quot;,
+    &quot;Description&quot; : &quot;Marshall Application for TANF&quot;,
+    &quot;Status&quot; : &quot;Submitted&quot;
+  } ],
+  &quot;language&quot; : &quot;English&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/New_York&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNKX000000S3J92AK&quot;,
+  &quot;omniscriptId&quot; : &quot;0jNKX000000S3J92AK&quot;,
+  &quot;output&quot; : [ {
+    &quot;aggregationResults&quot; : { },
+    &quot;calculationResults&quot; : [ {
+      &quot;EligibleCCAP&quot; : true,
+      &quot;EligibleEarlyHeadStart&quot; : true,
+      &quot;EligibleHeadStart&quot; : false,
+      &quot;EligibleTANF&quot; : true,
+      &quot;ID&quot; : &quot;inputs&quot;
+    } ]
+  } ],
+  &quot;runMode&quot; : &quot;preview&quot;,
+  &quot;sId&quot; : &quot;0jNKX000000S3J92AK&quot;,
+  &quot;subType&quot; : &quot;ChildCareApplication&quot;,
+  &quot;theme&quot; : &quot;lightning&quot;,
+  &quot;timeStamp&quot; : &quot;2025-03-18T17:29:31.165Z&quot;,
+  &quot;type&quot; : &quot;IntegratedEligibility&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;005KX000001zrV7YAI&quot;,
+  &quot;userName&quot; : &quot;next-gen.demo-org@ng-org-17422847545850506656694.com&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/Los_Angeles&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>HHSAgentCreateChildCareCase</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <defaultValue>Services &amp; Benefits</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom565</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Type</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom7022</globalKey>
+        <inputFieldName>IndividualApplications:AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>HHSAgentCreateChildCareCaseCustom7835</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ApplicationCaseId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom4119</globalKey>
+        <inputFieldName>IndividualApplications:ApplicationType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ApplicationType</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom4832</globalKey>
+        <inputFieldName>ApplicationDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>AppliedDate</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom6820</globalKey>
+        <inputFieldName>IndividualApplications:Category</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Category</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom3117</globalKey>
+        <inputFieldName>IndividualApplications:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>HHSAgentCreateChildCareCaseCustom1130</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>SFS Case</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom8827</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Step1:LastName &quot;/\/\/Childcare/\/\/Integrated/\/\/Eligibility&quot; CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(Step1:LastName,&quot; Childcare Integrated Eligibility&quot;)</formulaExpression>
+        <formulaResultPath>CaseName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>HHSAgentCreateChildCareCaseCustom6075</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Child</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom6492</globalKey>
+        <inputFieldName>IndividualApplications:LicenseType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RegulatoryAuthorizationType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>LicenseTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Social Insurance</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom8716</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom4373</globalKey>
+        <inputFieldName>IndividualApplications:Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| NOW</formulaConverted>
+        <formulaExpression>NOW()</formulaExpression>
+        <formulaResultPath>ApplicationDate</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>HHSAgentCreateChildCareCaseCustom3269</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom2199</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom9944</globalKey>
+        <inputFieldName>AccountId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>PersonContactId</lookupByFieldName>
+        <lookupObjectName>Account</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>var:CCAP var:TANF var:HeadStart var:EarlyHeadStart</formulaConverted>
+        <formulaExpression>CCAP,TANF,HeadStart,EarlyHeadStart</formulaExpression>
+        <formulaResultPath>IndividualApplications</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>HHSAgentCreateChildCareCaseCustom8928</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>HHSAgentCreateChildCareCaseCustom9690</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Integrated Eligibility</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom7577</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SDO_Sub_Type__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Website</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom4886</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Origin</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom5403</globalKey>
+        <inputFieldName>CaseName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Medium</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>HHSAgentCreateChildCareCaseCustom6027</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>HHSAgentCreateChildCareCase</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Priority</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;001KX000004o0N0YAI&quot;,
+  &quot;CCAP&quot; : [ {
+    &quot;AccountId&quot; : &quot;001KX000004o0N0YAI&quot;,
+    &quot;ApplicationType&quot; : &quot;Individual&quot;,
+    &quot;AppliedDate&quot; : &quot;NOW()&quot;,
+    &quot;Category&quot; : &quot;Benefit&quot;,
+    &quot;Description&quot; : &quot;Marshall Application for CCAP&quot;,
+    &quot;Status&quot; : &quot;Submitted&quot;
+  } ],
+  &quot;ContextId&quot; : &quot;0U3KX00000099Jf0AI&quot;,
+  &quot;FlattenedAssessment&quot; : {
+    &quot;Children3to5&quot; : 0,
+    &quot;Children6to13&quot; : 0,
+    &quot;ChildrenCitizenshipStatus&quot; : &quot;U.S. Citizen&quot;,
+    &quot;ChildrenUnder3&quot; : 1,
+    &quot;HouseholdSize&quot; : 2,
+    &quot;MonthlyIncome&quot; : 1000,
+    &quot;NumberOfChildren&quot; : 1
+  },
+  &quot;HeadStart&quot; : [ {
+    &quot;AccountId&quot; : &quot;001KX000004o0N0YAI&quot;,
+    &quot;ApplicationType&quot; : &quot;Individual&quot;,
+    &quot;AppliedDate&quot; : &quot;NOW()&quot;,
+    &quot;Category&quot; : &quot;Benefit&quot;,
+    &quot;Description&quot; : &quot;Marshall Application for Early HeadStart&quot;,
+    &quot;Status&quot; : &quot;Submitted&quot;
+  } ],
+  &quot;Step1&quot; : {
+    &quot;Email&quot; : &quot;pmarshall@demo.com&quot;,
+    &quot;FirstName&quot; : &quot;Paul&quot;,
+    &quot;GuardianDOB&quot; : &quot;1989-03-04&quot;,
+    &quot;HomeAddress-Block&quot; : {
+      &quot;City&quot; : &quot;Fairfax&quot;,
+      &quot;HomeAddress&quot; : null,
+      &quot;State&quot; : &quot;VA&quot;,
+      &quot;Street&quot; : &quot;5216 Maple Street&quot;,
+      &quot;ZIP&quot; : &quot;22030&quot;
+    },
+    &quot;LastName&quot; : &quot;Marshall&quot;,
+    &quot;MailingAddress-Block&quot; : null,
+    &quot;MailingSame&quot; : true,
+    &quot;Phone&quot; : &quot;5142223344&quot;,
+    &quot;SSN&quot; : &quot;123456789&quot;
+  },
+  &quot;Step2&quot; : {
+    &quot;ChildBlock&quot; : [ {
+      &quot;ChildDOB&quot; : &quot;2022-07-13&quot;,
+      &quot;ChildFirstName&quot; : &quot;Hannah&quot;,
+      &quot;ChildLastName&quot; : &quot;Marshall&quot;,
+      &quot;ChildSSN&quot; : &quot;445566778&quot;,
+      &quot;EnrolledInHeadStart&quot; : &quot;No&quot;,
+      &quot;SpecialNeedsCheck&quot; : false,
+      &quot;TypeOfCare&quot; : &quot;Full-time&quot;
+    }, {
+      &quot;ChildDOB&quot; : &quot;2017-02-13&quot;,
+      &quot;ChildFirstName&quot; : &quot;Adam&quot;,
+      &quot;ChildLastName&quot; : &quot;Marshall&quot;,
+      &quot;ChildSSN&quot; : &quot;556677888&quot;,
+      &quot;EnrolledInHeadStart&quot; : &quot;No&quot;,
+      &quot;SpecialNeedsCheck&quot; : false,
+      &quot;TypeOfCare&quot; : &quot;After-school&quot;
+    } ],
+    &quot;Children3to5&quot; : 0,
+    &quot;Children6to13&quot; : 1,
+    &quot;ChildrenCitizenshipStatus&quot; : &quot;U.S. Citizen&quot;,
+    &quot;ChildrenUnder3&quot; : 1,
+    &quot;HouseholdSize&quot; : 3,
+    &quot;MaritalStatus&quot; : &quot;Single&quot;,
+    &quot;NumberOfChildren&quot; : 2,
+    &quot;PregnantStatus&quot; : &quot;No&quot;
+  },
+  &quot;Step3&quot; : {
+    &quot;EducationBlock&quot; : {
+      &quot;EducationCompletion&quot; : &quot;2026-04-15&quot;,
+      &quot;SchoolName&quot; : &quot;Nursing School&quot;
+    },
+    &quot;EducationRadio&quot; : &quot;Yes&quot;,
+    &quot;EmployedRadio&quot; : &quot;Yes&quot;,
+    &quot;EmploymentInfoBlock&quot; : [ {
+      &quot;EmployerName&quot; : &quot;Subway&quot;,
+      &quot;MonthlyWages&quot; : 3000
+    }, {
+      &quot;EmployerName&quot; : &quot;Uber Driver&quot;,
+      &quot;MonthlyWages&quot; : 250
+    } ],
+    &quot;IncomeSource&quot; : &quot;2-Employment;3-Self-Employment&quot;,
+    &quot;MonthlyIncome&quot; : 3250,
+    &quot;SeekingEmployment&quot; : &quot;No&quot;
+  },
+  &quot;Step4&quot; : {
+    &quot;Disclosure&quot; : false
+  },
+  &quot;TANF&quot; : [ {
+    &quot;AccountId&quot; : &quot;001KX000004o0N0YAI&quot;,
+    &quot;ApplicationType&quot; : &quot;Individual&quot;,
+    &quot;AppliedDate&quot; : &quot;NOW()&quot;,
+    &quot;Category&quot; : &quot;Benefit&quot;,
+    &quot;Description&quot; : &quot;Marshall Application for TANF&quot;,
+    &quot;Status&quot; : &quot;Submitted&quot;
+  } ],
+  &quot;language&quot; : &quot;English&quot;,
+  &quot;localTimeZoneName&quot; : &quot;America/New_York&quot;,
+  &quot;omniProcessId&quot; : &quot;0jNKX000000S3J92AK&quot;,
+  &quot;omniscriptId&quot; : &quot;0jNKX000000S3J92AK&quot;,
+  &quot;output&quot; : [ {
+    &quot;aggregationResults&quot; : { },
+    &quot;calculationResults&quot; : [ {
+      &quot;EligibleCCAP&quot; : true,
+      &quot;EligibleEarlyHeadStart&quot; : true,
+      &quot;EligibleHeadStart&quot; : false,
+      &quot;EligibleTANF&quot; : true,
+      &quot;ID&quot; : &quot;inputs&quot;
+    } ]
+  } ],
+  &quot;runMode&quot; : &quot;preview&quot;,
+  &quot;sId&quot; : &quot;0jNKX000000S3J92AK&quot;,
+  &quot;subType&quot; : &quot;ChildCareApplication&quot;,
+  &quot;theme&quot; : &quot;lightning&quot;,
+  &quot;timeStamp&quot; : &quot;2025-03-18T17:29:31.165Z&quot;,
+  &quot;type&quot; : &quot;IntegratedEligibility&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;005KX000001zrV7YAI&quot;,
+  &quot;userName&quot; : &quot;next-gen.demo-org@ng-org-17422847545850506656694.com&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;,
+  &quot;userTimeZoneName&quot; : &quot;America/Los_Angeles&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>HHSAgentCreateChildCareCase_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

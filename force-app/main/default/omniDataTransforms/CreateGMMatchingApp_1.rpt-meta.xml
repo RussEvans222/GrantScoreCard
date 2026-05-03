@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;DevelopmentCostsAndFundingStep&quot; : {
+    &quot;CapitalProject&quot; : {
+      &quot;FundsRequest&quot; : null,
+      &quot;ProjectType&quot; : null,
+      &quot;ProjectTypePercentage&quot; : null,
+      &quot;TotalDevelopmentCost&quot; : null
+    },
+    &quot;TotalAHSCPercentage&quot; : null,
+    &quot;TotalDevelopmentCosts&quot; : null,
+    &quot;TotalFundsRequests&quot; : null
+  },
+  &quot;IntegratedCommunityProjectStep&quot; : {
+    &quot;ICPRequirements&quot; : {
+      &quot;BeServedByAtLeastOneModeOfQualifyingTransit&quot; : null,
+      &quot;IncludesAtLeastOneTransitStation&quot; : null,
+      &quot;LocatedWithinOneHalfMileOfTransit&quot; : null
+    }
+  },
+  &quot;ProjectAreaMapStep&quot; : {
+    &quot;ProjectAreaDefinition&quot; : null
+  },
+  &quot;ProjectNameInformationStep&quot; : {
+    &quot;Account&quot; : {
+      &quot;City&quot; : null,
+      &quot;Country&quot; : null,
+      &quot;Id&quot; : null,
+      &quot;Name&quot; : null,
+      &quot;Phone&quot; : null,
+      &quot;PostalCode&quot; : null,
+      &quot;State&quot; : null,
+      &quot;Street&quot; : null,
+      &quot;Website&quot; : null
+    },
+    &quot;Contact&quot; : {
+      &quot;Email&quot; : null,
+      &quot;FirstName&quot; : null,
+      &quot;Id&quot; : null,
+      &quot;LastName&quot; : null,
+      &quot;Phone&quot; : null
+    },
+    &quot;FundingProgramName&quot; : null,
+    &quot;HousingType&quot; : null,
+    &quot;ICPorRIPA&quot; : {
+      &quot;AffordableHousingDevelopment&quot; : null,
+      &quot;HousingRelatedInfrastructure(Hri)$103(A)(2)&quot; : null,
+      &quot;ProgramCosts&quot; : null,
+      &quot;SustainableTransportationInfrastructure&quot; : null,
+      &quot;TransportationRelatedAmenities&quot; : null
+    },
+    &quot;ProjectAreaType&quot; : null,
+    &quot;ProjectName&quot; : null,
+    &quot;UpdateInfoCheckbox&quot; : null
+  },
+  &quot;RuralInnovationProjectAreasStep&quot; : null,
+  &quot;TransitOrientedDevelopmentStep&quot; : null,
+  &quot;UseDemoUser&quot; : null,
+  &quot;timeStamp&quot; : null,
+  &quot;userCurrencyCode&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>CreateGMMatchingApp</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom8715</globalKey>
+        <inputFieldName>RequestName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ApplicationName</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>$Vlocity.TODAY</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item6</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AppliedDate</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Grant Application</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item3</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Category</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item10</globalKey>
+        <inputFieldName>ContactName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>Contact</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ContactId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Community Development Investment Grant</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>FundingOpportunity</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FundingOpportunityId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item8</globalKey>
+        <inputFieldName>ProjectNameInformationStep:ProjectAreaType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>FundingRequestPurpose</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:ProjectNameInformationStep:Account:Name &apos;/\/\/-/\/\/&apos; var:ProjectNameInformationStep:ProjectName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(ProjectNameInformationStep:Account:Name,&apos; - &apos;,ProjectNameInformationStep:ProjectName)</formulaExpression>
+        <formulaResultPath>RequestName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item0</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item2</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Submitted</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom8610</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>InternalStatus</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item11</globalKey>
+        <inputFieldName>RequestName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>true</requiredForUpsert>
+        <upsertKey>true</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Grantmaking</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom9919</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item7</globalKey>
+        <inputFieldName>DevelopmentCostsAndFundingStep:TotalFundsRequests</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RequestedAmount</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Submitted</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item4</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateGMMatchingAppCustom4315</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>ApplicationId</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>CreateGMMatchingAppCustom3753</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Not Started</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom7272</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>ApplicationReview</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:ProjectNameInformationStep:Contact:FirstName &apos;/\/\/&apos; var:ProjectNameInformationStep:Contact:LastName CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(ProjectNameInformationStep:Contact:FirstName,&apos; &apos;,ProjectNameInformationStep:Contact:LastName)</formulaExpression>
+        <formulaResultPath>ContactName</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>CreateGMMatchingAppCustom0jI4S000000GyEIUA0Item9</globalKey>
+        <inputFieldName>ProjectNameInformationStep:Account:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>Account</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>CreateGMMatchingApp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AccountId</outputFieldName>
+        <outputObjectName>IndividualApplication</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;DevelopmentCostsAndFundingStep&quot; : {
+    &quot;CapitalProject&quot; : {
+      &quot;FundsRequest&quot; : 50000,
+      &quot;ProjectType&quot; : &quot;AHD&quot;,
+      &quot;ProjectTypePercentage&quot; : 50,
+      &quot;TotalDevelopmentCost&quot; : 100000
+    },
+    &quot;TotalAHSCPercentage&quot; : 50,
+    &quot;TotalDevelopmentCosts&quot; : 100000,
+    &quot;TotalFundsRequests&quot; : 50000
+  },
+  &quot;IntegratedCommunityProjectStep&quot; : {
+    &quot;ICPRequirements&quot; : {
+      &quot;BeServedByAtLeastOneModeOfQualifyingTransit&quot; : &quot;Yes&quot;,
+      &quot;IncludesAtLeastOneTransitStation&quot; : &quot;Yes&quot;,
+      &quot;LocatedWithinOneHalfMileOfTransit&quot; : &quot;Yes&quot;
+    }
+  },
+  &quot;ProjectAreaMapStep&quot; : {
+    &quot;ProjectAreaDefinition&quot; : &quot;Test&quot;
+  },
+  &quot;ProjectNameInformationStep&quot; : {
+    &quot;Account&quot; : {
+      &quot;City&quot; : &quot;Universal City&quot;,
+      &quot;Country&quot; : &quot;United States&quot;,
+      &quot;Id&quot; : &quot;0015e00000AiJ2EAAV&quot;,
+      &quot;Name&quot; : &quot;Green Developers Co&quot;,
+      &quot;Phone&quot; : &quot;5031234567&quot;,
+      &quot;PostalCode&quot; : &quot;91608&quot;,
+      &quot;State&quot; : &quot;CA&quot;,
+      &quot;Street&quot; : &quot;100 Universal City Plaza&quot;,
+      &quot;Website&quot; : &quot;greendevelopersco.com&quot;
+    },
+    &quot;Contact&quot; : {
+      &quot;Email&quot; : &quot;jsimmonsgrants062021@gmail.com&quot;,
+      &quot;FirstName&quot; : &quot;Jennifer&quot;,
+      &quot;Id&quot; : &quot;0035e0000086knjAAA&quot;,
+      &quot;LastName&quot; : &quot;Simmons&quot;,
+      &quot;Phone&quot; : &quot;361-826-0683&quot;
+    },
+    &quot;FundingProgramName&quot; : &quot;Community Development Investment Grant&quot;,
+    &quot;HousingType&quot; : &quot;Both&quot;,
+    &quot;ICPorRIPA&quot; : {
+      &quot;AffordableHousingDevelopment&quot; : true,
+      &quot;HousingRelatedInfrastructure(Hri)$103(A)(2)&quot; : false,
+      &quot;ProgramCosts&quot; : false,
+      &quot;SustainableTransportationInfrastructure&quot; : true,
+      &quot;TransportationRelatedAmenities&quot; : false
+    },
+    &quot;ProjectAreaType&quot; : &quot;Integrated Community Project&quot;,
+    &quot;ProjectName&quot; : &quot;Green Apartments&quot;,
+    &quot;UpdateInfoCheckbox&quot; : false
+  },
+  &quot;RuralInnovationProjectAreasStep&quot; : null,
+  &quot;TransitOrientedDevelopmentStep&quot; : null,
+  &quot;UseDemoUser&quot; : true,
+  &quot;timeStamp&quot; : &quot;2021-10-31T17:56:20.820Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055e000004CAWfAAO&quot;,
+  &quot;userName&quot; : &quot;arusharma@grants062021.demo&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-420&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>CreateGMMatchingApp_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -1,0 +1,5 @@
+projectPath: .
+expansionPath: datapacks
+sfdx.username: GRANTS
+manifest:
+  - DataRaptor/DRFundingList

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;Overview&quot; : {
+    &quot;CleanFacility_block&quot; : {
+      &quot;CleanFacility&quot; : null,
+      &quot;CleanFacility_assessmentresult&quot; : null,
+      &quot;CleanFacility_uploadfile&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    },
+    &quot;X1_Condition_block&quot; : {
+      &quot;X1_Condition&quot; : null,
+      &quot;X1_Condition_assessmentresult&quot; : null,
+      &quot;X1_Condition_uploadfile&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    }
+  },
+  &quot;Thank You&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRGetFacilityFromOmniTask&quot; : null,
+    &quot;DRGetLatestAssessment&quot; : null,
+    &quot;DRUpdateCurrentFacilityInspection&quot; : null,
+    &quot;DRUpdateCurrentFacilityInspectionBegin&quot; : null,
+    &quot;DataRaptorPostAction1&quot; : null,
+    &quot;Overview&quot; : null,
+    &quot;Save-Responses&quot; : null,
+    &quot;SetValueAssessData&quot; : null,
+    &quot;SetValuesInspectionStatusBegin&quot; : null,
+    &quot;SetValuesInspectionStatusCompleted&quot; : null,
+    &quot;Thank You&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRUpdateInspectionAssessment</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <defaultValue>High</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateInspectionAssessmentCustom2056</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateInspectionAssessment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AssessmentRating</outputFieldName>
+        <outputObjectName>Assessment</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Completed</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateInspectionAssessmentCustom6968</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateInspectionAssessment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>AssessmentStatus</outputFieldName>
+        <outputObjectName>Assessment</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateInspectionAssessmentCustom7991</globalKey>
+        <inputFieldName>AssessEffectiveDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateInspectionAssessment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EffectiveDateTime</outputFieldName>
+        <outputObjectName>Assessment</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateInspectionAssessmentCustom5871</globalKey>
+        <inputFieldName>AssessmentId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateInspectionAssessment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Assessment</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRUpdateInspectionAssessmentCustom2606</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRUpdateInspectionAssessment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Assessment</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateInspectionAssessmentCustom8719</globalKey>
+        <inputFieldName>AssessNameComplete</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateInspectionAssessment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>Assessment</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRUpdateInspectionAssessmentCustom6157</globalKey>
+        <inputFieldName>SiteFacilityId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRUpdateInspectionAssessment</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SiteFacility__c</outputFieldName>
+        <outputObjectName>Assessment</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : null,
+  &quot;Overview&quot; : {
+    &quot;CleanFacility_block&quot; : {
+      &quot;CleanFacility&quot; : null,
+      &quot;CleanFacility_assessmentresult&quot; : null,
+      &quot;CleanFacility_uploadfile&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    },
+    &quot;X1_Condition_block&quot; : {
+      &quot;X1_Condition&quot; : null,
+      &quot;X1_Condition_assessmentresult&quot; : null,
+      &quot;X1_Condition_uploadfile&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    }
+  },
+  &quot;Thank You&quot; : { },
+  &quot;timeStamp&quot; : null,
+  &quot;userId&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;userTimeZone&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;DRGetFacilityFromOmniTask&quot; : null,
+    &quot;DRGetLatestAssessment&quot; : null,
+    &quot;DRUpdateCurrentFacilityInspection&quot; : null,
+    &quot;DRUpdateCurrentFacilityInspectionBegin&quot; : null,
+    &quot;DataRaptorPostAction1&quot; : null,
+    &quot;Overview&quot; : null,
+    &quot;Save-Responses&quot; : null,
+    &quot;SetValueAssessData&quot; : null,
+    &quot;SetValuesInspectionStatusBegin&quot; : null,
+    &quot;SetValuesInspectionStatusCompleted&quot; : null,
+    &quot;Thank You&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRUpdateInspectionAssessment_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

@@ -3,7 +3,6 @@
     <apiVersion>66.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>Grant Intake Full Page</masterLabel>
-    <runtimeNamespace>omnistudio</runtimeNamespace>
     <targets>
         <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>

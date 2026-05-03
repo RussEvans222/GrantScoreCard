@@ -1,0 +1,10 @@
+projectPath: .
+expansionPath: datapacks
+buildFile: datapacks/buildFile.yaml
+sfdx.username: storm.afbb6a02e3e356@salesforce.com
+autoUpdateSettings: false
+autoUpdatePicklists: false
+autoFixPicklists: false
+queries:
+  - VlocityDataPackType: DataRaptor
+    query: SELECT Id, Name FROM OmniDataTransform WHERE Name = 'DRXFundingOpportunitySearch'

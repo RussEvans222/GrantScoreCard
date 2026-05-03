@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>true</errorIgnored>
+    <expectedInputJson>{
+  &quot;ContextId&quot; : null,
+  &quot;Demographics&quot; : {
+    &quot;Authorized assistant&quot; : {
+      &quot;Access to benefits&quot; : null,
+      &quot;Assistant Email&quot; : null,
+      &quot;Assistant First&quot; : null,
+      &quot;Assistant Last&quot; : null,
+      &quot;Assistant Phone&quot; : null
+    },
+    &quot;Citizenship&quot; : {
+      &quot;Citizen&quot; : null,
+      &quot;Country of origin&quot; : null,
+      &quot;Date of Entry&quot; : null,
+      &quot;INS Number&quot; : null,
+      &quot;Non-Citizenship Status&quot; : null,
+      &quot;USCitizen&quot; : null
+    },
+    &quot;City&quot; : null,
+    &quot;Communication&quot; : {
+      &quot;Communication Needs&quot; : null,
+      &quot;Language Spoken&quot; : null,
+      &quot;Language written&quot; : null,
+      &quot;Requires Interpreter&quot; : null
+    },
+    &quot;Contact Information&quot; : {
+      &quot;First Name&quot; : null,
+      &quot;Last Name&quot; : null,
+      &quot;Middle Name&quot; : null
+    },
+    &quot;Currently pregnant&quot; : null,
+    &quot;DOB&quot; : null,
+    &quot;Disability&quot; : {
+      &quot;Disability details&quot; : null,
+      &quot;Disability duration&quot; : null,
+      &quot;Has Disability&quot; : null
+    },
+    &quot;Due Date&quot; : null,
+    &quot;Email&quot; : null,
+    &quot;Ethnicity&quot; : null,
+    &quot;Gender&quot; : null,
+    &quot;HouseholdName&quot; : null,
+    &quot;I need assistance&quot; : null,
+    &quot;Last Grade&quot; : null,
+    &quot;Marital Status&quot; : null,
+    &quot;Next Steps&quot; : {
+      &quot;Expenses&quot; : null,
+      &quot;I have a family&quot; : null,
+      &quot;Income&quot; : null
+    },
+    &quot;Phone&quot; : null,
+    &quot;SSN&quot; : null,
+    &quot;State&quot; : null,
+    &quot;Street&quot; : null,
+    &quot;ZIP Code&quot; : null
+  },
+  &quot;Employment Income&quot; : {
+    &quot;IncomeBlock&quot; : [ {
+      &quot;Amount&quot; : null,
+      &quot;Frequency&quot; : null,
+      &quot;Hours&quot; : null,
+      &quot;IncomeDetail&quot; : null,
+      &quot;Source&quot; : null
+    } ]
+  },
+  &quot;Estimated Benefits&quot; : { },
+  &quot;Household Expenses&quot; : {
+    &quot;Expense&quot; : {
+      &quot;Expense Type&quot; : null,
+      &quot;Monthly amount&quot; : null,
+      &quot;Paid to&quot; : null
+    },
+    &quot;Total Monthly Expenses&quot; : null
+  },
+  &quot;Medicaid&quot; : false,
+  &quot;My Household&quot; : {
+    &quot;Family Members&quot; : {
+      &quot;Currently Pregnant - Family&quot; : null,
+      &quot;DOB - Family&quot; : null,
+      &quot;Disability - Family&quot; : {
+        &quot;Disability details - Family&quot; : null,
+        &quot;Disability duration - Family&quot; : null,
+        &quot;Has Disability - Family&quot; : null
+      },
+      &quot;Due Date - Family&quot; : null,
+      &quot;First - Family&quot; : null,
+      &quot;Gender - Family&quot; : null,
+      &quot;Last - Family&quot; : null,
+      &quot;Last Grade - Family&quot; : null,
+      &quot;Relationship&quot; : null,
+      &quot;SSN - Family&quot; : null
+    }
+  },
+  &quot;Not Eligible&quot; : { },
+  &quot;Programs&quot; : {
+    &quot;Child Care Assistance&quot; : null,
+    &quot;Medicaid&quot; : null,
+    &quot;SNAP&quot; : null,
+    &quot;TANF&quot; : null
+  },
+  &quot;SNAP&quot; : true,
+  &quot;Self Disclosure&quot; : {
+    &quot;Assertion of truth&quot; : null,
+    &quot;Double benefits&quot; : null,
+    &quot;Felony drug conviction 2013&quot; : null,
+    &quot;Felony drug conviction 2015&quot; : null,
+    &quot;Fleeing Prosecution&quot; : null,
+    &quot;Passes Screening&quot; : null,
+    &quot;Trading food stamps for drugs&quot; : null,
+    &quot;Trading food stamps for guns&quot; : null,
+    &quot;Violating Probation&quot; : null
+  },
+  &quot;TANF&quot; : true,
+  &quot;Thank you&quot; : { },
+  &quot;Upload Documentation&quot; : {
+    &quot;Proof of expenses&quot; : {
+      &quot;Expense upload&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    },
+    &quot;Proof of income&quot; : {
+      &quot;Income upload&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    }
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;Create Application&quot; : null,
+    &quot;DR - Create Expenses&quot; : null,
+    &quot;DR - Create Family&quot; : null,
+    &quot;DR - Create Household and Applicant&quot; : null,
+    &quot;DR - Create Income&quot; : null,
+    &quot;DR - Create SNAP PE and PED&quot; : null,
+    &quot;DR - Create TANF PE and PED&quot; : null,
+    &quot;DR - UploadExpenseAttachments&quot; : null,
+    &quot;DR - UploadIncomeAttachments&quot; : null,
+    &quot;Demographics&quot; : null,
+    &quot;Employment Income&quot; : null,
+    &quot;Estimated Benefits&quot; : null,
+    &quot;Household Expenses&quot; : null,
+    &quot;My Household&quot; : null,
+    &quot;Not Eligible&quot; : null,
+    &quot;Programs&quot; : null,
+    &quot;Self Disclosure&quot; : null,
+    &quot;Set Applicant and Household ID&quot; : null,
+    &quot;Set Primary Applicant on Application&quot; : null,
+    &quot;Thank you&quot; : null,
+    &quot;Upload Documentation&quot; : null
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRIECreateIncome</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| NOW</formulaConverted>
+        <formulaExpression>NOW()</formulaExpression>
+        <formulaResultPath>StartDate</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>DRIECreateIncomeCustom9973</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom913</globalKey>
+        <inputFieldName>Employment Income:IncomeBlock:Amount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>NetIncome</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Marshall Household</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom1777</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>Account</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>PartyId</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom2323</globalKey>
+        <inputFieldName>StartDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>StartDate</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Claim</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom8077</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>UsageType</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| NOW 365 +</formulaConverted>
+        <formulaExpression>NOW()+365</formulaExpression>
+        <formulaResultPath>EndDate</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>DRIECreateIncomeCustom8272</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom8868</globalKey>
+        <inputFieldName>Employment Income:IncomeBlock:IncomeDetail</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EmployerName</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom138</globalKey>
+        <inputFieldName>EndDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>EndDate</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRIECreateIncomeCustom893</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom4134</globalKey>
+        <inputFieldName>Employment Income:IncomeBlock:Amount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>IncomeAmount</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom1668</globalKey>
+        <inputFieldName>Employment Income:IncomeBlock:Frequency</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>IncomeFrequency</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{
+  &quot;Weekly&quot; : &quot;Weekly&quot;,
+  &quot;Monthly&quot; : &quot;Monthly&quot;,
+  &quot;Yearly&quot; : &quot;Yearly&quot;
+}</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Active</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom518</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>IncomeStatus</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRIECreateIncomeCustom5073</globalKey>
+        <inputFieldName>Employment Income:IncomeBlock:Source</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRIECreateIncome</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>IncomeType</outputFieldName>
+        <outputObjectName>PartyIncome</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{
+  &quot;Salary&quot; : &quot;Salary&quot;,
+  &quot;Commission&quot; : &quot;Commission&quot;,
+  &quot;Fees&quot; : &quot;Fees&quot;,
+  &quot;Unemployment Insurance&quot; : &quot;Unemployment Insurance&quot;,
+  &quot;Disability Support&quot; : &quot;Disability Support&quot;,
+  &quot;Investments&quot; : &quot;Investments&quot;
+}</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;ContextId&quot; : null,
+  &quot;Demographics&quot; : {
+    &quot;Authorized assistant&quot; : {
+      &quot;Access to benefits&quot; : null,
+      &quot;Assistant Email&quot; : null,
+      &quot;Assistant First&quot; : null,
+      &quot;Assistant Last&quot; : null,
+      &quot;Assistant Phone&quot; : null
+    },
+    &quot;Citizenship&quot; : {
+      &quot;Citizen&quot; : null,
+      &quot;Country of origin&quot; : null,
+      &quot;Date of Entry&quot; : null,
+      &quot;INS Number&quot; : null,
+      &quot;Non-Citizenship Status&quot; : null,
+      &quot;USCitizen&quot; : null
+    },
+    &quot;City&quot; : null,
+    &quot;Communication&quot; : {
+      &quot;Communication Needs&quot; : null,
+      &quot;Language Spoken&quot; : null,
+      &quot;Language written&quot; : null,
+      &quot;Requires Interpreter&quot; : null
+    },
+    &quot;Contact Information&quot; : {
+      &quot;First Name&quot; : null,
+      &quot;Last Name&quot; : null,
+      &quot;Middle Name&quot; : null
+    },
+    &quot;Currently pregnant&quot; : null,
+    &quot;DOB&quot; : null,
+    &quot;Disability&quot; : {
+      &quot;Disability details&quot; : null,
+      &quot;Disability duration&quot; : null,
+      &quot;Has Disability&quot; : null
+    },
+    &quot;Due Date&quot; : null,
+    &quot;Email&quot; : null,
+    &quot;Ethnicity&quot; : null,
+    &quot;Gender&quot; : null,
+    &quot;HouseholdName&quot; : null,
+    &quot;I need assistance&quot; : null,
+    &quot;Last Grade&quot; : null,
+    &quot;Marital Status&quot; : null,
+    &quot;Next Steps&quot; : {
+      &quot;Expenses&quot; : null,
+      &quot;I have a family&quot; : null,
+      &quot;Income&quot; : null
+    },
+    &quot;Phone&quot; : null,
+    &quot;SSN&quot; : null,
+    &quot;State&quot; : null,
+    &quot;Street&quot; : null,
+    &quot;ZIP Code&quot; : null
+  },
+  &quot;Employment Income&quot; : {
+    &quot;Current Employment&quot; : {
+      &quot;Employer&quot; : null,
+      &quot;Hours Worked / Week&quot; : null,
+      &quot;Weekly Income&quot; : null
+    },
+    &quot;Total Monthly Income&quot; : null,
+    &quot;Total Weekly Income&quot; : null
+  },
+  &quot;Estimated Benefits&quot; : { },
+  &quot;Household Expenses&quot; : {
+    &quot;Expense&quot; : {
+      &quot;Expense Type&quot; : null,
+      &quot;Monthly amount&quot; : null,
+      &quot;Paid to&quot; : null
+    },
+    &quot;Total Monthly Expenses&quot; : null
+  },
+  &quot;Medicaid&quot; : false,
+  &quot;My Household&quot; : {
+    &quot;Family Members&quot; : {
+      &quot;Currently Pregnant - Family&quot; : null,
+      &quot;DOB - Family&quot; : null,
+      &quot;Disability - Family&quot; : {
+        &quot;Disability details - Family&quot; : null,
+        &quot;Disability duration - Family&quot; : null,
+        &quot;Has Disability - Family&quot; : null
+      },
+      &quot;Due Date - Family&quot; : null,
+      &quot;First - Family&quot; : null,
+      &quot;Gender - Family&quot; : null,
+      &quot;Last - Family&quot; : null,
+      &quot;Last Grade - Family&quot; : null,
+      &quot;Relationship&quot; : null,
+      &quot;SSN - Family&quot; : null
+    }
+  },
+  &quot;Not Eligible&quot; : { },
+  &quot;Programs&quot; : {
+    &quot;Child Care Assistance&quot; : null,
+    &quot;Medicaid&quot; : null,
+    &quot;SNAP&quot; : null,
+    &quot;TANF&quot; : null
+  },
+  &quot;SNAP&quot; : true,
+  &quot;Self Disclosure&quot; : {
+    &quot;Assertion of truth&quot; : null,
+    &quot;Double benefits&quot; : null,
+    &quot;Felony drug conviction 2013&quot; : null,
+    &quot;Felony drug conviction 2015&quot; : null,
+    &quot;Fleeing Prosecution&quot; : null,
+    &quot;Passes Screening&quot; : null,
+    &quot;Trading food stamps for drugs&quot; : null,
+    &quot;Trading food stamps for guns&quot; : null,
+    &quot;Violating Probation&quot; : null
+  },
+  &quot;TANF&quot; : true,
+  &quot;Thank you&quot; : { },
+  &quot;Upload Documentation&quot; : {
+    &quot;Proof of expenses&quot; : {
+      &quot;Expense upload&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    },
+    &quot;Proof of income&quot; : {
+      &quot;Income upload&quot; : [ {
+        &quot;data&quot; : null,
+        &quot;filename&quot; : null,
+        &quot;size&quot; : null
+      } ]
+    }
+  },
+  &quot;timeStamp&quot; : null,
+  &quot;userName&quot; : null,
+  &quot;userProfile&quot; : null,
+  &quot;vlcPersistentComponent&quot; : { },
+  &quot;vlcTimeTracking&quot; : {
+    &quot;Create Application&quot; : null,
+    &quot;DR - Create Expenses&quot; : null,
+    &quot;DR - Create Family&quot; : null,
+    &quot;DR - Create Household and Applicant&quot; : null,
+    &quot;DR - Create Income&quot; : null,
+    &quot;DR - Create SNAP PE and PED&quot; : null,
+    &quot;DR - Create TANF PE and PED&quot; : null,
+    &quot;DR - UploadExpenseAttachments&quot; : null,
+    &quot;DR - UploadIncomeAttachments&quot; : null,
+    &quot;Demographics&quot; : null,
+    &quot;Employment Income&quot; : null,
+    &quot;Estimated Benefits&quot; : null,
+    &quot;Household Expenses&quot; : null,
+    &quot;My Household&quot; : null,
+    &quot;Not Eligible&quot; : null,
+    &quot;Programs&quot; : null,
+    &quot;Self Disclosure&quot; : null,
+    &quot;Set Applicant and Household ID&quot; : null,
+    &quot;Set Primary Applicant on Application&quot; : null,
+    &quot;Thank you&quot; : null,
+    &quot;Upload Documentation&quot; : null
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRIECreateIncome_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

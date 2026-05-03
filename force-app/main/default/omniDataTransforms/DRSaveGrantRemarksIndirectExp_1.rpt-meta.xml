@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;AccountId&quot; : &quot;0015f000005YjR4AAK&quot;,
+  &quot;ContactName&quot; : &quot;Charlie MacPherson&quot;,
+  &quot;DRId_Financial_Report__c&quot; : &quot;a9w5f000000U9WqAAK&quot;,
+  &quot;EditBlkIndirectExpenditures&quot; : {
+    &quot;EditIndirectExpenses&quot; : [ {
+      &quot;FinReportId&quot; : &quot;a9w5f000000U9WqAAK&quot;,
+      &quot;edit_IndirectAmountCharged&quot; : 65,
+      &quot;edit_IndirectBase&quot; : 54,
+      &quot;edit_IndirectFedShare&quot; : 65,
+      &quot;edit_IndirectPeriodFrom&quot; : &quot;2021-11-01&quot;,
+      &quot;edit_IndirectPeriodTo&quot; : &quot;2021-11-19&quot;,
+      &quot;edit_IndirectRate&quot; : 43,
+      &quot;edit_IndirectTotals&quot; : 184,
+      &quot;edit_IndirectType&quot; : &quot;Provisional&quot;
+    }, {
+      &quot;FinReportId&quot; : &quot;a9w5f000000U9WqAAK&quot;,
+      &quot;edit_IndirectAmountCharged&quot; : 76,
+      &quot;edit_IndirectBase&quot; : 76,
+      &quot;edit_IndirectFedShare&quot; : 36,
+      &quot;edit_IndirectPeriodFrom&quot; : &quot;2021-10-01&quot;,
+      &quot;edit_IndirectPeriodTo&quot; : &quot;2021-11-10&quot;,
+      &quot;edit_IndirectRate&quot; : 34,
+      &quot;edit_IndirectTotals&quot; : 188,
+      &quot;edit_IndirectType&quot; : &quot;Final&quot;
+    } ],
+    &quot;Edit_TotalAmountCharged&quot; : 141,
+    &quot;Edit_TotalBase&quot; : 130,
+    &quot;Edit_TotalFedShare&quot; : 101
+  },
+  &quot;RecipientInformation&quot; : {
+    &quot;BlkRecipients&quot; : {
+      &quot;RecipientCountry-Block&quot; : {
+        &quot;RecipientCountry&quot; : &quot;United States&quot;
+      },
+      &quot;RecipientEIN&quot; : &quot;123456&quot;,
+      &quot;RecipientName&quot; : &quot;Wisconsin Department of Transportation&quot;,
+      &quot;RecipientProvince&quot; : null,
+      &quot;RecipientState&quot; : &quot;WI&quot;,
+      &quot;RecipientStreet1&quot; : &quot;4822 Madison Yards Way&quot;,
+      &quot;RecipientUEI&quot; : &quot;123456&quot;,
+      &quot;RecipientZip&quot; : &quot;53707&quot;,
+      &quot;RecpientCity&quot; : &quot;Madison&quot;
+    }
+  },
+  &quot;RemarksAttachments&quot; : {
+    &quot;Remarks&quot; : &quot;dfsdfsdfsd&quot;
+  },
+  &quot;ReportInfo&quot; : {
+    &quot;AccountingBasis&quot; : &quot;Cash&quot;,
+    &quot;BlkGrantPeriod&quot; : {
+      &quot;GrantPeriodFrom&quot; : &quot;2021-07-01&quot;,
+      &quot;GrantPeriodTo&quot; : &quot;2021-09-30&quot;
+    },
+    &quot;BlkMultipleGrants&quot; : null,
+    &quot;BlkSingleGrant&quot; : {
+      &quot;GrantSelection-Block&quot; : {
+        &quot;FedGrantNumber&quot; : &quot;DOT-21-0002&quot;,
+        &quot;GrantSelection&quot; : &quot;DOT-21-0002&quot;,
+        &quot;ProjectId&quot; : &quot;a9q5f000000sd7OAAQ&quot;,
+        &quot;ProjectName&quot; : &quot;Clean Energy Infrastructure Improvement - Southeast Sector&quot;
+      }
+    },
+    &quot;MultpleGrantsChoice&quot; : &quot;No&quot;,
+    &quot;RecipientAccountNumber&quot; : &quot;WIDOT2345&quot;,
+    &quot;ReportType&quot; : &quot;Quarterly&quot;,
+    &quot;ReportingEndDate&quot; : &quot;2021-09-30&quot;
+  },
+  &quot;Transactions&quot; : {
+    &quot;BlkFedCash&quot; : {
+      &quot;TransCash_CalcCashOnHand&quot; : 6993,
+      &quot;TransCash_CashDisbursements&quot; : 53000,
+      &quot;TransCash_CashReceipts&quot; : 59993
+    },
+    &quot;BlkFedExpend&quot; : {
+      &quot;TransExpend_Authorized&quot; : 34343,
+      &quot;TransExpend_CalcBalance&quot; : 26566,
+      &quot;TransExpend_CalcTotalFedShare&quot; : 7777,
+      &quot;TransExpend_ShareExpenditures&quot; : 4343,
+      &quot;TransExpend_Shareobligations&quot; : 3434
+    },
+    &quot;BlkProgramIncome&quot; : {
+      &quot;TransIncome_CalcUnexpendedIncome&quot; : 54536,
+      &quot;TransIncome_IncomeEarned&quot; : 54545,
+      &quot;TransIncome_IncomeExpended&quot; : 51454,
+      &quot;TransIncome_IncomeExpendedAddition&quot; : 51445
+    },
+    &quot;BlkRecipientShare&quot; : {
+      &quot;TransRecipient_CalcRecipientShare&quot; : 902,
+      &quot;TransRecipient_ShareExpenditures&quot; : 23432,
+      &quot;TransRecipient_Sharerequired&quot; : 24334
+    }
+  },
+  &quot;Welcome&quot; : {
+    &quot;TestuserId&quot; : &quot;0055f000002kmuGAAQ&quot;
+  },
+  &quot;timeStamp&quot; : &quot;2021-11-23T14:34:31.960Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0055f000005Z6eOAAS&quot;,
+  &quot;userName&quot; : &quot;kwinderlich@grants.gps&quot;,
+  &quot;userProfile&quot; : &quot;System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>false</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>DRSaveGrantRemarksIndirectExp</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom9320</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:FinReportId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGFinancial_Reports__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectPeriodFrom &quot;MM/dd/yy&quot; FORMATDATETIME &quot;/\/\/-/\/\/&quot; | var:EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectPeriodTo &quot;MM/dd/yy&quot; FORMATDATETIME &quot;/\/\//\/\//\/\/$&quot; var:EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectAmountCharged CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(FORMATDATETIME(EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectPeriodFrom,&quot;MM/dd/yy&quot;),&quot; - &quot;, FORMATDATETIME(EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectPeriodTo,&quot;MM/dd/yy&quot;), &quot;   $&quot; , EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectAmountCharged)</formulaExpression>
+        <formulaResultPath>EditBlkIndirectExpenditures:EditIndirectExpenses:CalcIndirectName</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>ded8a769-a927-425b-8ea1-2327a1be1e3c</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom4539</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGFinancial_Reports__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom9412</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectPeriodFrom</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGPeriod_From__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom1310</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectPeriodTo</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGPeriod_To__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom6740</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectRate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGRate__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom2261</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGType_of_Rate__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>765c305f-2b3f-4377-82a2-59a39dd93f34</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom8089</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:CalcIndirectName</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Name</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom9091</globalKey>
+        <inputFieldName>RemarksAttachments:Remarks</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>GPSGRemarks__c</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom8644</globalKey>
+        <inputFieldName>DRId_GPSGFinancial_Reports__c</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>966454c8-19b1-4fc0-944c-89d1eefda654</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>GPSGFinancial_Reports__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom6134</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectAmountCharged</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGAmount_Charged__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom1569</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectBase</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGBase__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom2777</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:edit_IndirectFedShare</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGFederal_Share__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>DRSaveGrantRemarksIndirectExpCustom3397</globalKey>
+        <inputFieldName>EditBlkIndirectExpenditures:EditIndirectExpenses:FinReportId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>DRSaveGrantRemarksIndirectExp</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>GPSGFinancial_Reports__c</outputFieldName>
+        <outputObjectName>GPSGIndirect_Expense__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;AccountId&quot; : &quot;0014S00000781FX&quot;,
+  &quot;Consent&quot; : null,
+  &quot;ContextId&quot; : &quot;a0E4S000000mTynUAE&quot;,
+  &quot;DRId_GPSGFinancial_Reports__c&quot; : &quot;a0K4S00000122HlUAI&quot;,
+  &quot;EditBlkIndirectExpenditures&quot; : {
+    &quot;BlkFormIndirectExpenses&quot; : {
+      &quot;FormIndirectAmountCharged_1&quot; : 1184480,
+      &quot;FormIndirectAmountCharged_2&quot; : 740300,
+      &quot;FormIndirectBase_1&quot; : 14806000,
+      &quot;FormIndirectBase_2&quot; : 14806000,
+      &quot;FormIndirectFedShare_1&quot; : 14806000,
+      &quot;FormIndirectFedShare_2&quot; : 14806000,
+      &quot;FormIndirectPeriodFrom_1&quot; : &quot;2023-01-10T00:00:00.000Z&quot;,
+      &quot;FormIndirectPeriodFrom_2&quot; : &quot;2023-02-01T00:00:00.000Z&quot;,
+      &quot;FormIndirectPeriodTo_1&quot; : &quot;2023-03-01T00:00:00.000Z&quot;,
+      &quot;FormIndirectPeriodTo_2&quot; : &quot;2023-02-28T00:00:00.000Z&quot;,
+      &quot;FormIndirectRate_1&quot; : 8,
+      &quot;FormIndirectRate_2&quot; : 5,
+      &quot;FormIndirectTotals_1&quot; : null,
+      &quot;FormIndirectTotals_2&quot; : null,
+      &quot;FormIndirectType_1&quot; : &quot;Provisional&quot;,
+      &quot;FormIndirectType_2&quot; : &quot;Provisional&quot;
+    },
+    &quot;EditIndirectExpenses&quot; : [ {
+      &quot;FinReportId&quot; : &quot;a0K4S00000122HlUAI&quot;,
+      &quot;edit_IndirectAmountCharged&quot; : 1184480,
+      &quot;edit_IndirectBase&quot; : 14806000,
+      &quot;edit_IndirectFedShare&quot; : 14806000,
+      &quot;edit_IndirectPeriodFrom&quot; : &quot;2023-01-10&quot;,
+      &quot;edit_IndirectPeriodTo&quot; : &quot;2023-03-01&quot;,
+      &quot;edit_IndirectRate&quot; : 8,
+      &quot;edit_IndirectType&quot; : &quot;Provisional&quot;
+    }, {
+      &quot;FinReportId&quot; : &quot;a0K4S00000122HlUAI&quot;,
+      &quot;edit_IndirectAmountCharged&quot; : 740300,
+      &quot;edit_IndirectBase&quot; : 14806000,
+      &quot;edit_IndirectFedShare&quot; : 14806000,
+      &quot;edit_IndirectPeriodFrom&quot; : &quot;2023-02-01&quot;,
+      &quot;edit_IndirectPeriodTo&quot; : &quot;2023-02-28&quot;,
+      &quot;edit_IndirectRate&quot; : 5,
+      &quot;edit_IndirectType&quot; : &quot;Provisional&quot;
+    } ],
+    &quot;Edit_TotalAmountCharged&quot; : 1924780,
+    &quot;Edit_TotalBase&quot; : 29612000,
+    &quot;Edit_TotalFedShare&quot; : 29612000
+  },
+  &quot;ProjectId&quot; : &quot;a0E4S000000mTynUAE&quot;,
+  &quot;RemarksAttachments&quot; : {
+    &quot;Remarks&quot; : &quot;This report supersedes previous one that had mistakes&quot;
+  },
+  &quot;ReportInfo&quot; : {
+    &quot;AccountingBasis&quot; : &quot;Cash&quot;,
+    &quot;BlkGrantPeriod&quot; : {
+      &quot;GrantPeriodFrom&quot; : &quot;2023-01-01&quot;,
+      &quot;GrantPeriodTo&quot; : &quot;2023-03-31&quot;
+    },
+    &quot;ProjectName&quot; : &quot;VA Electric Vehicle Charging Network&quot;,
+    &quot;RecipientAccountNumber&quot; : &quot;WIDOT2345&quot;,
+    &quot;ReportType&quot; : &quot;Quarterly&quot;,
+    &quot;ReportingEndDate&quot; : &quot;2023-03-31&quot;
+  },
+  &quot;Transactions&quot; : {
+    &quot;BlkFedCash&quot; : {
+      &quot;TransCash_CalcCashOnHand&quot; : 6993,
+      &quot;TransCash_CashDisbursements&quot; : 53000,
+      &quot;TransCash_CashReceipts&quot; : 59993
+    },
+    &quot;BlkFedExpend&quot; : {
+      &quot;TransExpend_Authorized&quot; : 14806000,
+      &quot;TransExpend_CalcBalance&quot; : 14798223,
+      &quot;TransExpend_CalcTotalFedShare&quot; : 7777,
+      &quot;TransExpend_ShareExpenditures&quot; : 4343,
+      &quot;TransExpend_Shareobligations&quot; : 3434
+    },
+    &quot;BlkProgramIncome&quot; : {
+      &quot;TransIncome_CalcUnexpendedIncome&quot; : 54536,
+      &quot;TransIncome_IncomeEarned&quot; : 54545,
+      &quot;TransIncome_IncomeExpended&quot; : 51454,
+      &quot;TransIncome_IncomeExpendedAddition&quot; : 51445
+    },
+    &quot;BlkRecipientShare&quot; : {
+      &quot;TransRecipient_CalcRecipientShare&quot; : 902,
+      &quot;TransRecipient_ShareExpenditures&quot; : 23432,
+      &quot;TransRecipient_Sharerequired&quot; : 24334
+    }
+  },
+  &quot;UserEmail&quot; : &quot;kvirtue@salesforce.com&quot;,
+  &quot;UserFirstName&quot; : &quot;Keegan&quot;,
+  &quot;UserLastName&quot; : &quot;Virtue&quot;,
+  &quot;Welcome&quot; : {
+    &quot;FedAgency&quot; : &quot;Agency of the Future&quot;,
+    &quot;Text1&quot; : &quot;0034S000005LSL9QAO&quot;,
+    &quot;UseridDebug&quot; : &quot;0054S000000e7KWQAY&quot;
+  },
+  &quot;timeStamp&quot; : &quot;2022-02-23T19:19:30.720Z&quot;,
+  &quot;userCurrencyCode&quot; : &quot;USD&quot;,
+  &quot;userId&quot; : &quot;0054S000000e7KWQAY&quot;,
+  &quot;userName&quot; : &quot;kvirtue@gpsg.demo&quot;,
+  &quot;userProfile&quot; : &quot;*GPSG System Administrator&quot;,
+  &quot;userTimeZone&quot; : &quot;-480&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>-1.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>DRSaveGrantRemarksIndirectExp_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>
